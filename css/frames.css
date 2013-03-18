@@ -1,0 +1,100 @@
+body{
+margin: 0;
+padding: 0;
+border: 0;
+overflow: hidden;
+height: 100%; 
+max-height: 100%; 
+}
+
+#frame_left{
+position: absolute; 
+top: 50px; 
+left: 0px; 
+width: 250px; /*Width of left frame div*/
+height: 93%;
+overflow: auto; /*Disable scrollbars. Set to "scroll" to enable*/
+background-color: #eee;
+color: white;
+}
+
+#frame_top{
+position: absolute; 
+top: 0; 
+left: 0px; /*Set left value to WidthOfLeftFrameDiv*/
+right: 0;
+height: 50px; /*Height of top frame div*/
+overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+background-color: #069;
+color: white;
+}
+
+#frame_bottom{
+position: absolute; 
+top: auto; 
+left: 250px; /*Set left value to WidthOfLeftFrameDiv*/
+bottom: 0;
+right: 0;
+height: 20px; /*Height of bottom frame div*/
+overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+background-color: #fff;
+color: white;
+overflow: hidden;
+}
+
+#frame_main{
+position: absolute; 
+top: 110px; /*Set top value to HeightOfTopFrameDiv*/
+left: 250px; /*Set left value to WidthOfLeftFrameDiv*/
+right: 0;
+bottom: 20px; /*Set bottom value to HeightOfBottomFrameDiv*/
+overflow: auto; 
+background: #fff;
+overflow: hidden;
+}
+
+#frame_topnav {
+position: fixed; 
+top: 50px; /*Set top value to HeightOfTopFrameDiv*/
+left: 250px; /*Set left value to WidthOfLeftFrameDiv*/
+right: 0;
+bottom: 20px; /*Set bottom value to HeightOfBottomFrameDiv*/
+overflow: hidden; 
+height:34px;
+background: #eee;
+overflow: hidden;
+}
+
+#frame_devicenav {
+position: fixed; 
+top: 93px; /*Set top value to HeightOfTopFrameDiv*/
+left: 258px; /*Set left value to WidthOfLeftFrameDiv*/
+right: 0;
+bottom: 20px; /*Set bottom value to HeightOfBottomFrameDiv*/
+overflow: hidden; 
+height:26px;
+background: none;
+overflow: hidden;
+}
+
+
+.content_area{
+	margin: 4px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+	padding:0px;
+}
+
+* html body{ /*IE6 hack*/
+padding: 50px 0 20px 200px; /*Set value to (HeightOfTopFrameDiv  0 HeightOfBottomFrameDiv WidthOfLeftFrameDiv)*/
+overflow: hidden;
+}
+
+* html #frame_main{ /*IE6 hack*/
+height: 100%; 
+width: 100%; 
+overflow: hidden;
+}
+
+* html #frame_top, * html #frame_bottom{ /*IE6 hack*/
+width: 100%;
+overflow: hidden;
+}

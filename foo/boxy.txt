@@ -1,0 +1,5 @@
+<!--
+<a href='#' id="boxyfoo" onclick="showboxy('boxyfoo','portping.php','Verbindungsprüfung....',500,120);";'><? echo $_SESSION['knd_id']; ?></a>
+<br>
+<? echo "Typ: ".$_SESSION['device_type']; ?>
+-->
