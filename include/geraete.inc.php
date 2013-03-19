@@ -5,6 +5,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
 }else{
 	if (isset($_GET['page']) AND !empty($_GET['page'])) {
 		$_SESSION["page"]=$_GET['page'];
+    }
 }
 
 // Sortierung
