@@ -7,7 +7,7 @@
 !#----- Main:Begin -----#!
 <tr class="Data{$LineClass}">
 	<td align="left">
-		<a href="index.php?knd_id={$id}&page=server" target="_top">{$name}</a>
+		<a href="index.php?knd_id={$id}" target="_top">{$name}</a>
 	</td>
     <td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
 		<a href="userconf/kunden_benutzerdefiniert_verstecken.php?knd_id={$id}&site=/dokuit3/index.php">
