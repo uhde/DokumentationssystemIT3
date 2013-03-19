@@ -37,9 +37,9 @@ if (isset($_GET['knd_id'])) {
 		$_SESSION['old_knd_id']=$_GET['knd_id'];
 	}
 
-	if ($_SESSION['knd_id']<>$_SESSION['old_knd_id']) {
+	/*if ($_SESSION['knd_id']<>$_SESSION['old_knd_id']) {
 		$_SESSION['device_type']=1;
-	}
+	}*/
 }
 
 
@@ -59,17 +59,6 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
 		
         $page=$_SESSION['page'];
 	}
-}
-// Seite hinzufügen
-$add_page='add_'.$page;
-
-// Session für Seite
-if ($page<>$_SESSION['page']) {
-	$_SESSION['page']=$page;
-	$_SESSION['add_page']=$add_page;
-}else{
-	$page=$_SESSION['page'];
-	$add_page=$_SESSION['add_page'];
 }
 
 
