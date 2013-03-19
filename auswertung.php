@@ -253,7 +253,7 @@ include("include/functions.inc.php");
         //echo "<h2>Die Daten wurden gespeichert</h2>";
     }
     if (($mode["prog_del"]=='1')&&($mode["name"]=="geraete")) {
-        $sqlquery = "UPDATE `dokuit3`.`".TBL_GERAETE_LOGIN."` SET `loeschen` = '0', `loeschentime` = '".time()."' WHERE `".TBL_GERAETE_LOGIN."`.`id` = ".$mode['geraete_login_id'];
+        $sqlquery = "UPDATE `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` SET `loeschen` = '0', `loeschentime` = '".time()."' WHERE `".TBL_GERAETE_LOGIN."`.`id` = ".$mode['geraete_login_id'];
         //$sqlquery="DELETE FROM `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` WHERE `".TBL_GERAETE_LOGIN."`.`id` = ".$mode['geraete_login_id'];
         echo "Programm wurde gelöscht.";
         $objMySQL->Query($sqlquery);
@@ -261,12 +261,13 @@ include("include/functions.inc.php");
     if (($mode["mode"]=='delete')&&($mode["name"]=="geraete")) {
         //Hier wurde bereits die Routine für das verzögerte Löschen hinzugefügt
         //$sqlquery="DELETE FROM `".DB_DATABASE."`.`".TBL_GERAETE."` WHERE `".TBL_GERAETE."`.`id` = ".$mode['id'];
-        $sqlquery = "UPDATE `dokuit3`.`geraete` SET `loeschen` = '0', `loeschentime` = '".time()."'  WHERE `geraete`.`id` = ".$mode['id'];
+        $sqlquery = "UPDATE `".DB_DATABASE."`.`geraete` SET `loeschen` = '0', `loeschentime` = '".time()."'  WHERE `geraete`.`id` = ".$mode['id'];
         echo "<h2>Das Gerät wurde gelöscht</h2>";
         $objMySQL->Query($sqlquery);
         //$sql = "DELETE FROM `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` WHERE `".TBL_GERAETE_LOGIN."`.`geraete_id` = ".$mode['id'];
-        $sqlquery = "UPDATE `dokuit3`.`".TBL_GERAETE_LOGIN."` SET `loeschen` = '0', `loeschentime` = '".time()."'  WHERE `geraete_id` = ".$mode['id'];
+        $sqlquery = "UPDATE `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` SET `loeschen` = '0', `loeschentime` = '".time()."'  WHERE `geraete_id` = ".$mode['id'];
         $objMySQL->Query($sqlquery);
+        
     }
     if (($mode["mode"]=='delete')&&($mode["name"]=="kunde")) {
     

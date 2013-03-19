@@ -413,9 +413,9 @@ include("include/functions.inc.php");
         }
     }
     // Hier wird das neue Programmfeld erzeugt.
-    $sql = "INSERT INTO `dokuit3`.`programme` SET `name` = 'lokalerLogin', `url` = '', `bemerkung` = 'Lokaler Login', `id`='20';";
+    $sql = "INSERT INTO `".DB_DATABASE."`.`programme` SET `name` = 'lokalerLogin', `url` = '', `bemerkung` = 'Lokaler Login', `id`='20';";
     $objMySQL->Query($sql);
-    $sql = "INSERT INTO `dokuit3`.`programme` SET `name` = 'domaenenLogin', `url` = '', `bemerkung` = 'Domänen Login', `id`='21';"; 
+    $sql = "INSERT INTO `".DB_DATABASE."`.`programme` SET `name` = 'domaenenLogin', `url` = '', `bemerkung` = 'Domänen Login', `id`='21';"; 
     $objMySQL->Query($sql);
     // Hier wird ein IPv4 Feld und ein Feld für ein Zeitstempel erzeugt.
     $sql = "ALTER TABLE `geraete` ADD `ipv4` VARCHAR( 17 ) NULL AFTER `adresse` ";
@@ -453,10 +453,10 @@ include("include/functions.inc.php");
     $objMySQL->Query($sql);
     
     // --------Benutzerverwaltung ANFANG ---------------//
-    $sql = "CREATE TABLE `dokuit3`.`benutzer` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, `benutzername` VARCHAR(30) NOT NULL, `einstellung_dns` VARCHAR(3) NOT NULL DEFAULT 'ip') ENGINE = MyISAM;";
+    $sql = "CREATE TABLE `".DB_DATABASE."`.`benutzer` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, `benutzername` VARCHAR(30) NOT NULL, `einstellung_dns` VARCHAR(3) NOT NULL DEFAULT 'ip') ENGINE = MyISAM;";
     $objMySQL->Query($sql);
     
-    $sql = "CREATE TABLE `dokuit3`.`benutzer_kunden_einstellung` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `benutzerid` INT NOT NULL, `kundenid` INT NOT NULL DEFAULT '1', `sichtbar` TINYINT(1) NOT NULL DEFAULT '1', PRIMARY KEY (`id`)) ENGINE = MyISAM COMMENT = 'Zum Speichern, ob ein Kunde bei einem bestimmten Benutzer angezeigt werden kann';";
+    $sql = "CREATE TABLE `".DB_DATABASE."`.`benutzer_kunden_einstellung` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `benutzerid` INT NOT NULL, `kundenid` INT NOT NULL DEFAULT '1', `sichtbar` TINYINT(1) NOT NULL DEFAULT '1', PRIMARY KEY (`id`)) ENGINE = MyISAM COMMENT = 'Zum Speichern, ob ein Kunde bei einem bestimmten Benutzer angezeigt werden kann';";
     $objMySQL->Query($sql);
     
     $sql = "ALTER TABLE `benutzer`  ADD `allekunden_sichtbar` VARCHAR(5) NOT NULL DEFAULT 'FALSE' AFTER `einstellung_dns`";

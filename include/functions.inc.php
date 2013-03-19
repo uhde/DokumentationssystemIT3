@@ -91,7 +91,7 @@ function GetKundenName($objMySQL,$id) {
 }
 
 /* Geraete Tabelle kann mit 
-CREATE TABLE `dokuit3`.`geraete_login` (
+CREATE TABLE `".DB_DATABASE."`.`geraete_login` (
 `id` INT NOT NULL AUTO_INCREMENT ,
 `geraete_id` INT NOT NULL ,
 `programm_id` INT NOT NULL ,
