@@ -42,12 +42,7 @@ if (isset($_GET['knd_id'])) {
 	}
 }
 
-// Device-Typ setzen
-if (isset($_GET['device_type'])) {
-	//$_SESSION['device_type']=$_GET['device_type'];
-}else{
-	//$_SESSION['device_type']=1;
-}
+
 
 // Seite setzen
 $page=$arrTopmenu[1]['file'];
