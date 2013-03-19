@@ -28,7 +28,7 @@
     
     if(isset ($_GET["site"]))
     {
-        $seite = "http://".$_SERVER['SERVER_NAME'].$_GET["site"];
+        $seite = "../index.php";
         echo '<meta http-equiv="refresh" content="0; URL="'.$seite.'">';
         echo "</head><body> ";
         echo "<br>".$seite."</body>";
