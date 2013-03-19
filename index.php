@@ -55,9 +55,13 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
 		$page=$_GET['page'];
         $_SESSION["page"]=$_GET['page'];
 	}else{
-		//$page=$arrTopmenu[1]['file'];
-		
-        $page=$_SESSION['page'];
+        if (isset($_SESSION['page']) AND !empty($_SESSION['page'])) {
+            // Das hier wird gesetzt damit beim ersten öffnen keine 404-Seite auftaucht.
+            $_SESSION['page']=$arrTopmenu[1]['file'];
+            $page=$_SESSION['page'];
+        }else{
+            $page=$_SESSION['page'];
+        }
 	}
 }
 
