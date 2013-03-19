@@ -49,17 +49,15 @@ $page=$arrTopmenu[1]['file'];
 
 if (isset($_POST['page']) AND !empty($_POST['page'])) {
 	$page=$_POST['page'];
+    $_SESSION["page"]=$_POST['page'];
 }else{
 	if (isset($_GET['page']) AND !empty($_GET['page'])) {
 		$page=$_GET['page'];
+        $_SESSION["page"]=$_GET['page'];
 	}else{
 		//$page=$arrTopmenu[1]['file'];
-		if (!empty($_SESSION['page'])) {
-			$page=$_SESSION['page'];
-		}else{
-			$page=$arrTopmenu[1]['file'];
-		}
-
+		
+        $page=$_SESSION['page'];
 	}
 }
 // Seite hinzufügen
