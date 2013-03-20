@@ -1,5 +1,5 @@
 <?php
-include_once('../include/config.inc.php');
+include_once('config.inc.php');
 class Template{
 	/**
 	 * Constructor
