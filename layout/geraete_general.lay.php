@@ -20,17 +20,17 @@
 
 
 !#----- Data:Begin -----#!
-	<tr id="Info{$id}" class="Data{$LineClass}" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data{$LineClass}'">
-		<td class="slider" value="#trinfo{$id}">
+	<tr id="Info{$id}" class="Data{$LineClass}" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data{$LineClass}'" >
+		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}')">
 			{$name}
 		</td>
-		<td class="slider" value="#trinfo{$id}">
+		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}')">
 			{$ip_adresse}
 		</td>
-		<td class="slider" value="#trinfo{$id}">
+		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}')">
 			{$system}
 		</td>
-		<td class="slider" value="#trinfo{$id}">
+		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}')">
 			{$benutzer}
 		</td>
 
@@ -69,58 +69,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 
 
 !#----- Info:Begin -----#!
-<table class="DeviceInfo">
-	<tr>
-		<td class="Key" >DNS-Name: </td>
-		<td class="Value">{$adresse}</td>
-		<td class="Key" >DNS-Stand: </td>
-		<td colspan="3" class="Value">{$dnstimestamp}</td>
-	</tr>
-	<tr>
-		<td class="Key" >Geräte-Typ:</td>
-		<td class="Value" >{$pc}</td>
-        <td class="Key" >System-Beschreibung:</td>
-		<td class="Value">{$system}</td>     
-        <td style="width:90px;"></td>
-		<td class="Value" style="width:20px;"></td>    
-	</tr>
-    <tr>
-		<td class="Key" >Betriebssystem: </td>
-		<td class="Value">{$bs}</td>
-		<td class="Key">Drucker: </td>
-		<td  style="width:50;">{$drucker}</td> 
-	</tr>
-    <tr>
-		<td class="Key" >Standort: </td>
-		<td class="Value">{$zimmer}</td>
-		<td class="Key" >Produktnummer: </td>
-		<td class="Value" >{$produktnummer}</td>
-	</tr>
-    <tr>
-        <td class="Key" >SN:</td>
-		<td class="Value" >{$sn}</td>
-        <td class="Key" >Garantie bis:</td>
-		<td class="Value" >{$garantie}</td>   
-    </tr>
-	<tr>
-		<td class="Key" style="vertical-align:top;">Logins: </td>
-		<td class="Value" colspan="5">{$logins}</td>
-	</tr>
-	<tr>
-		<td class="Key">Bemerkung: </td>
-		<td class="Value" colspan="5">{$bemerkung}</td>
-	</tr>
-    <tr>
-		<td class="Key" style="vertical-align:top;">Aktionen: </td>
-		<td class="Value" colspan="5">{$buttons}</td>
-	</tr>
-    <tr value="#trinfo{$id}" class="TRInfoClose">
-		<!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
-		<td colspan="6" style="text-align:right;">
-			<span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick=""></input></span>
-		</td>
-	</tr>
-</table>
+ 
 !#----- Info:End -----#!
 
 
@@ -161,7 +110,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Footer:Begin -----#!
 </table>
 <span class="TRInfoCloseall" style="padding-right:10px;">
-    <input type="button"  value="Alle Infos schließen" onClick=""></input>
+    <input type="button"  value="Alle Infos schließen" onClick="ClearAllLoad()"></input>
 </span>
 </div>
 
@@ -181,11 +130,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
         <img src="syspics/switch.png" style="width:24px;height:20px;border:none" alt="DNS to IP" title="DNS/IP Name anezeigen">
     </a>
 </span>
-
     <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
-
-
-
 !#----- Footer2:End -----#!
 
 
