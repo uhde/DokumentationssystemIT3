@@ -1,67 +1,6 @@
-<?php
-/*
-session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-
-//ob_start("ob_gzhandler");
-require('include/config.inc.php');
-include("include/mysql.class.php");
-include("include/template.class.php");
-include("include/functions.inc.php");
-
-
-// DB-Connect
-$objMySQL = new MySQL();
-if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
-   echo $objMySQL->Error();
-   $objMySQL->Kill();
-}
-*/
-?>
-
 <html>
 <head>
-<!--
-<link rel="stylesheet" href="css/reset.css" type="text/css" />
-<link rel="stylesheet" href="css/frames.css" type="text/css" />
-<link rel="stylesheet" href="css/styles.css" type="text/css" />
-<link rel="stylesheet" href="css/topmenu.css" type="text/css" />
 
-<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
-<link rel="stylesheet" href="js/boxy/stylesheets/boxy.css" type="text/css" />
-<script type='text/javascript' src='js/boxy/javascripts/jquery.boxy.js'></script>
-
-<script type='text/javascript'>
-
-   
-$(document).ready(function() {
-        // Erstmal alle ausblende
-        // Wird beim reload der Page angewendet
-         $("#Buchungen .TRInfo").hide();
-         $("#Buchungen .slider").click(function(){
-            $(this).toggleClass("up");
-            name=$(this).attr("value");
-
-            $("#Buchungen .TRInfo").hide();
-                $(name).show();
-        });
-        $("#Buchungen .slider2").click(function(){
-            $(this).toggleClass("up");
-            name=$(this).attr("value");
-            $("#Buchungen .TRInfo").hide();
-                $(name).show();
-        });
-        $("#Buchungen .TRInfoClose").click(function(){
-            $(this).toggleClass("up");
-            name=$(this).attr("value");
-            $("#Buchungen .TRInfo").hide();
-        });
-
-});
-
-</script>
--->
 </head>
 <body>
 
@@ -102,11 +41,11 @@ $(document).ready(function() {
         $Value['site']=$_SERVER['PHP_SELF'];
         $objTemplate->AssignArray($Value);
         $objTemplate->Display('Footer2');
-$sql="SELECT COUNT(*) AS zaehlen FROM ".TBL_GERAETE.' ';
-//echo $sql."<br>";
-$daten_stat=$objMySQL->QueryArray($sql);
-$sql="SELECT kat.name, COUNT(*) AS zaehlen FROM ".TBL_GERAETE.' AS g, kategorien AS kat WHERE g.kategorie=kat.id GROUP BY kat.name  ORDER BY kat.id';
-$daten_stat2=$objMySQL->QueryArray($sql);
+            $sql="SELECT COUNT(*) AS zaehlen FROM ".TBL_GERAETE.' ';
+            //echo $sql."<br>";
+            $daten_stat=$objMySQL->QueryArray($sql);
+            $sql="SELECT kat.name, COUNT(*) AS zaehlen FROM ".TBL_GERAETE.' AS g, kategorien AS kat WHERE g.kategorie=kat.id GROUP BY kat.name  ORDER BY kat.id';
+            $daten_stat2=$objMySQL->QueryArray($sql);
         echo "<br> Es werden ";
         echo $daten_stat[0]["zaehlen"]." Geraete verwaltet. <br><br>";
         echo 'Davon sind <table style=width:600px>';
