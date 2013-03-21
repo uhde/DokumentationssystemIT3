@@ -55,11 +55,14 @@ if ($arrData_zugaenge!==FALSE) {
         // Dies hier stellt sicher, dass die links immer mit http:// oder https beginnen, da sie sonst wie interne links behandelt werden.
         if(!empty($Value['url']))
         {
-            if(substr($Value['url'], 0, 7) != 'http://')
+            if(substr($Value['url'], 0, 4) != 'ftp:')
             {
-                if(substr($Value['url'], 0, 8) != 'https://')
+                if(substr($Value['url'], 0, 7) != 'http://')
                 {
-                    $Value['url']='http://'.$Value['url'];
+                    if(substr($Value['url'], 0, 8) != 'https://')
+                    {
+                        $Value['url']='http://'.$Value['url'];
+                    }
                 }
             }
         }
