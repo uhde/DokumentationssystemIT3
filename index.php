@@ -100,6 +100,53 @@ if (file_exists($page.'.php')) {
 <script type='text/javascript' src='js/boxy/javascripts/jquery.boxy.js'></script>
 
 
+<script type='text/javascript'>
+
+function loadXMLDoc(Test,id)
+{
+    var xmlhttp;
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            $("#"+Test).html(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
+    xmlhttp.send();
+}
+function ClearLoad(Test)
+{
+    var xmlhttp;
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById(Test).innerHTML="";
+        }
+    }
+    xmlhttp.open("GET","getsinglegeraet.php?id=1",true);
+    xmlhttp.send();
+}
+function ClearAllLoad()
+{
+    var xmlhttp;
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            $(".TRInfo").text(" ");
+        }
+    }
+    xmlhttp.open("GET","getsinglegeraet.php?id=1",true);
+    xmlhttp.send();
+}
+
+</script>
+
 
 <script type='text/javascript'>
 // Wird zum aufpoppen lassen von boxy verwendet. 
@@ -124,114 +171,7 @@ if (file_exists($page.'.php')) {
     }
     
    
-	$(document).ready(function() {
-			// Erstmal alle ausblende
-            // Wird beim reload der Page angewendet
-	 	     $("#Buchungen .TRInfo").hide();
-            // Alles was in dieser "onklick" funktion steht wird angewendet, sobald auf eins geklickt wird
-			 $("#Buchungen .slider").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-               // $("#Buchungen .TRInfo").hide();
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-
-			});
-             $("#Buchungen .slider_invisible").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-                //$("#Buchungen2 .TRInfo").hide();
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-			});
-            $("#Buchungen .slider2").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-                //$("#Buchungen .TRInfo").hide();
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-			});
-            $("#Buchungen .TRInfoClose").click(function(){
-                $(this).toggleClass("up");
-				name=$(this).attr("value");
-                $(name).hide();
-            });
-            $("#Buchungen .TRInfoCloseall").click(function(){
-                $("#Buchungen .TRInfo").hide();
-            });
-            
-            // Das gleiche wird für die Suchfunktion noch 2 mal gemacht, da bei der Suche es immer nur eine buchungs-id geben kann.
-             // Wird bei Zugänge.php benutzt
-             $("#Buchungen2 .TRInfo").hide();
-            // Alles was in dieser "onklick" funktion steht wird angewendet, sobald auf eins geklickt wird
-
-            $("#Buchungen2 .slider3").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-                //$("#Buchungen2 .TRInfo").hide();
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-			});
-            $("#Buchungen2 .slider_invisible").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-			});
-            $("#Buchungen2 .TRInfoClose").click(function(){
-                $(this).toggleClass("up");
-				name=$(this).attr("value");
-                $(name).hide();
-                
-            });
-            
-            
-            // Wird bei dokumente.lay.php benutzt
-            $("#Buchungen3 .TRInfo").hide();
-
-            $("#Buchungen3 .slider2").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-                //$("#Buchungen3 .TRInfo").hide();
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-			});
-             $("#Buchungen3 .slider_invisible").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
-                //$("#Buchungen2 .TRInfo").hide();
-                if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
-                }
-			});
-            $("#Buchungen3 .TRInfoClose").click(function(){
-                $(this).toggleClass("up");
-				name=$(this).attr("value");
-                $(name).hide();
-            });
-
-	});
-
+	
 </script>
 <script language="JavaScript" type="text/javascript">
     <!--
