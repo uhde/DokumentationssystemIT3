@@ -27,6 +27,7 @@ include_once("include/functions.inc.php");
     $sqldata['buttons']=MakeButtons(GetGeraeteprogramme($objMySQL,$sqldata['id']),$sqldata['adresse']);
     
     echo '
+    <td colspan="6" class="info_schatten4">
 
         <table class="DeviceInfo">
             <tr>
@@ -74,7 +75,8 @@ include_once("include/functions.inc.php");
                 <td class="Value" colspan="5">'.$sqldata["buttons"].'</td>
             </tr> 
             
-        </table> ';
+        </table> 
+    </td>';
         
         
         
