@@ -106,7 +106,6 @@ function loadXMLDoc(Test,id)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
-    alert(id);
     xmlhttp.onreadystatechange=function()
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -115,7 +114,7 @@ function loadXMLDoc(Test,id)
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
             $(aufzurufende_id).html(xmlhttp.responseText);
-            alert(aufzurufende_id);
+            alert(xmlhttp.responseText);
         }
     }
     xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
