@@ -23,26 +23,54 @@ function ajaxRequest(){
 }
 function loadXMLDoc(Test,id)
 {
-    var xmlhttp = new ajaxRequest();
-    
-    xmlhttp.onreadystatechange=function()
+    //var xmlhttp = new ajaxRequest();
+    var xmlHttpObject = false;
+
+    // Überprüfen ob XMLHttpRequest-Klasse vorhanden und erzeugen von Objekte für IE7, Firefox, etc.
+    if (typeof XMLHttpRequest != 'undefined') 
     {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        xmlHttpObject = new XMLHttpRequest();
+    }
+
+    // Wenn im oberen Block noch kein Objekt erzeugt, dann versuche XMLHTTP-Objekt zu erzeugen
+    // Notwendig für IE6 oder IE5
+    if (!xmlHttpObject) 
+    {
+        try 
+        {
+            xmlHttpObject = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch(e) 
+        {
+            try 
+            {
+                xmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch(e) 
+            {
+                xmlHttpObject = null;
+            }
+        }
+    }
+    
+    xmlHttpObject.onreadystatechange=function()
+    {
+        if (xmlHttpObject.readyState==4 && xmlHttpObject.status==200)
         {
             alert(Test);
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
             //$(aufzurufende_id).empty();
             alert(id);
-            //$(aufzurufende_id).html(xmlhttp.responseText);
-            //document.getElementById('trinfo5').innerHTML = xmlhttp.responseText;
+            //$(aufzurufende_id).html(xmlHttpObject.responseText);
+            //document.getElementById('trinfo5').innerHTML = xmlHttpObject.responseText;
             document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
-            alert(xmlhttp.responseText);
+            alert(xmlHttpObject.responseText);
             alert("last");
         }
     }
-    xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
-    xmlhttp.send();
+    xmlHttpObject.open("GET","getsinglegeraet.php?id="+id,true);
+    xmlHttpObject.send();
 }
 //-->
 </script>
