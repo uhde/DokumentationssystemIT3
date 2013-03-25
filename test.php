@@ -42,7 +42,7 @@ function loadXMLDoc(Test,id)
     </td>
 </tr>
 <tr id="trinfo5" class="TRInfo">
-	
+	<td>test</td>
 </tr>
 
 </table>
