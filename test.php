@@ -20,6 +20,7 @@ function loadXMLDoc(Test,id)
             //$(aufzurufende_id).html(xmlhttp.responseText);
             document.getElementById('trinfo5').innerHTML = xmlhttp.responseText;
             alert(xmlhttp.responseText);
+            alert("last");
         }
     }
     xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
