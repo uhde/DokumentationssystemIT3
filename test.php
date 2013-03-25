@@ -1,4 +1,4 @@
-
+<?php
 <html>
 <head>
 <script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
@@ -51,4 +51,11 @@ function loadXMLDoc(Test,id)
 
 </body>
 </html>
-
+?>
+<script type="text/javascript">
+function changeText(){
+	document.getElementById('boldStuff').innerHTML = 'Fred Flinstone';
+}
+</script>
+<p>Welcome to the site <b id='boldStuff'>dude</b> </p> 
+<input type='button' onclick='changeText()' value='Change Text'/>
