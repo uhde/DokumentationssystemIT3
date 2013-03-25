@@ -60,8 +60,7 @@ function loadXMLDoc(Test,id)
             alert(Test);
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
-            //$(aufzurufende_id).empty();
-            alert(id);
+            $(aufzurufende_id).empty();
             $(aufzurufende_id).html(xmlHttpObject.responseText);
             //document.getElementById('trinfo5').innerHTML = xmlHttpObject.responseText;
             //document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
