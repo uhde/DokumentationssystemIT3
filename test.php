@@ -1,14 +1,30 @@
-<?php
-/*
+
 <html>
 <head>
 <script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
-<script>
+<script type='text/javascript'>
 <!--
+function ajaxRequest(){
+    var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] //activeX versions to check for in IE
+    if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
+        for (var i=0; i<activexmodes.length; i++){
+            try{
+                return new ActiveXObject(activexmodes[i])
+            }
+               catch(e){
+                //suppress error
+            }
+        }
+    }
+    else if (window.XMLHttpRequest) // if Mozilla, Safari etc
+        return new XMLHttpRequest()
+    else
+        return false
+}
 function loadXMLDoc(Test,id)
 {
-    var xmlhttp;
-    xmlhttp=new XMLHttpRequest();
+    var xmlhttp = new ajaxRequest();
+    
     xmlhttp.onreadystatechange=function()
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -51,8 +67,9 @@ function loadXMLDoc(Test,id)
 </div>
 
 </body>
-</html>*/
-?>
+</html>
+
+<?php /*
 <script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
 
 <script type="text/javascript">
@@ -67,3 +84,5 @@ function changeText(){
 </script>
 <p>Welcome to the site <b id='boldStuff'>dude</b> </p> 
 <input type='button' onclick='changeText()' value='Change Text'/>
+
+*/ ?>
