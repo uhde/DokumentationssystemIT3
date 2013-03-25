@@ -1,4 +1,5 @@
 <?php
+/*
 <html>
 <head>
 <script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
@@ -50,7 +51,7 @@ function loadXMLDoc(Test,id)
 </div>
 
 </body>
-</html>
+</html>*/
 ?>
 <script type="text/javascript">
 function changeText(){
