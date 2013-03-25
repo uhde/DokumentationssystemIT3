@@ -106,7 +106,7 @@ function loadXMLDoc(Test,id)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
-    alert("1");
+    alert(id);
     xmlhttp.onreadystatechange=function()
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -119,7 +119,7 @@ function loadXMLDoc(Test,id)
         }
     }
     xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
-    alert("2");
+    alert(Test);
     xmlhttp.send();
 }
 function ClearLoad(Test)
