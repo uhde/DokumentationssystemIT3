@@ -14,7 +14,8 @@ function loadXMLDoc(Test,id)
             alert(Test);
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
-            $(aufzurufende_id).empty();
+            //$(aufzurufende_id).empty();
+            alert(id);
             $(aufzurufende_id).html(xmlhttp.responseText);
             //document.getElementById(Test).innerHTML = "Dies ist ein test";
             alert(xmlhttp.responseText);
@@ -38,7 +39,7 @@ function loadXMLDoc(Test,id)
     </td>
 </tr>
 <tr id="trinfo5" class="TRInfo">
-		<!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
+	
 </tr>
 
 </table>
