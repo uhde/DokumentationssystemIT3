@@ -190,20 +190,23 @@ function MakeProgAktiv($Data,$programm_id,$runde){
 	if ($Data!==FALSE) {
 		$objTemplate=new Template("layout/geraeteedit.lay.php");
         $first=false;
-		foreach ($Data as $Value){
-            if($Value["prog_id"]==$programm_id AND $first==false){
-                $Value["runde"]=$runde;
-                $objTemplate->AssignArray($Value);
-                 if($Value['aktiv']=='0') {
-                
-                    $str="";
-                }else{
-                    $str="checked";
+        if($programm_id != '20')
+        {
+            foreach ($Data as $Value){
+                if($Value["prog_id"]==$programm_id AND $first==false){
+                    $Value["runde"]=$runde;
+                    $objTemplate->AssignArray($Value);
+                     if($Value['aktiv']=='0') {
+                    
+                        $str="";
+                    }else{
+                        $str="checked";
+                    }
+                    $first=true;
+                    $objTemplate->ClearAssign();
                 }
-                $first=true;
-                $objTemplate->ClearAssign();
             }
-		}
+        }
 		unset($objTemplate);
 		return $str;
         //return $Data;

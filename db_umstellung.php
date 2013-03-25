@@ -464,6 +464,11 @@ include("include/functions.inc.php");
     
     $sql = "ALTER TABLE `benutzer`  ADD `allegeraete_sichtbar` VARCHAR(5) NOT NULL DEFAULT 'FALSE'";
     $objMySQL->Query($sql);
+    
+    
+    // In geraetelogin.Login soll beliebig viel Text( eine lange url) eingetragen werden.
+    $sql = "ALTER TABLE `geraete_login` CHANGE `login` `login` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ";
+    $objMySQL->Query($sql);
     // --------Benutzerverwaltung ENDE ---------------//
     $daten=$objMySQL->QueryArray('Select * from `'.DB_DATABASE.'`.`'.TBL_PROGRAMME.'` ');
     foreach($daten as $Value)
