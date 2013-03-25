@@ -60,7 +60,7 @@
 	<td align="center" colspan="2">
 		<input type="submit" value="Speichern und Schließen" class="button1">
         
-        <input type="button" value="Abrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
+        <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
 	</td>
 </tr>
 </form>
@@ -134,7 +134,7 @@
             <td align="center" colspan="2">
                 <input type="submit" value="Speichern und Schließen" class="button1">
                 
-                <input type="button" value="Abrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
+                <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
             </td>
         </tr>
     </table>
