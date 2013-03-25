@@ -17,8 +17,8 @@ function loadXMLDoc(Test,id)
             aufzurufende_id = "#"+Test;
             //$(aufzurufende_id).empty();
             alert(id);
-            $(aufzurufende_id).html(xmlhttp.responseText);
-            //document.getElementById(Test).innerHTML = "Dies ist ein test";
+            //$(aufzurufende_id).html(xmlhttp.responseText);
+            document.getElementById(Test).innerHTML = xmlhttp.responseText;
             alert(xmlhttp.responseText);
         }
     }
