@@ -110,7 +110,7 @@ function loadXMLDoc(Test,id)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            alert("Test");
+            alert(Test);
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
             $(aufzurufende_id).empty();
