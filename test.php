@@ -53,37 +53,12 @@ function loadXMLDoc(Test,id)
 </body>
 </html>*/
 ?>
-<script type="text/javascript">
-function loadXMLDoc(Test,id)
-{
-    var xmlhttp;
-    xmlhttp=new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            alert(Test);
-            var aufzurufende_id;
-            aufzurufende_id = "#"+Test;
-            //$(aufzurufende_id).empty();
-            alert(id);
-            //$(aufzurufende_id).html(xmlhttp.responseText);
-            //document.getElementById('trinfo5').innerHTML = xmlhttp.responseText;
-            document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
-            alert(xmlhttp.responseText);
-            alert("last");
-        }
-    }
-    xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
-    xmlhttp.send();
-}
 
-</script>
 <script type="text/javascript">
 function changeText(){
 
             var aufzurufende_id;
-            aufzurufende_id = "boldStuff";
+            aufzurufende_id = "#boldStuff";
 
             $(aufzurufende_id).html('Fred Flinstone');
 
