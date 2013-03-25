@@ -106,14 +106,17 @@ function loadXMLDoc(Test,id)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
+    alert("1");
     xmlhttp.onreadystatechange=function()
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
+            alert("3");
             $("#"+Test).html(xmlhttp.responseText);
         }
     }
     xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
+    alert("2");
     xmlhttp.send();
 }
 function ClearLoad(Test)
