@@ -112,7 +112,7 @@ function loadXMLDoc(Test,id)
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
             alert("3");
-            $("#"+Test).html(xmlhttp.responseText);
+            $("#"+Test).html("hallo<br>");
             alert("#"+Test);
         }
     }
