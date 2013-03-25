@@ -113,6 +113,7 @@ function loadXMLDoc(Test,id)
         {
             alert("3");
             $("#"+Test).html(xmlhttp.responseText);
+            alert("#"+Test);
         }
     }
     xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
