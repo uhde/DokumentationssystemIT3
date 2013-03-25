@@ -62,9 +62,9 @@ function loadXMLDoc(Test,id)
             aufzurufende_id = "#"+Test;
             //$(aufzurufende_id).empty();
             alert(id);
-            //$(aufzurufende_id).html(xmlHttpObject.responseText);
+            $(aufzurufende_id).html(xmlHttpObject.responseText);
             //document.getElementById('trinfo5').innerHTML = xmlHttpObject.responseText;
-            document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
+            //document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
             alert(xmlHttpObject.responseText);
             alert("last");
         }
