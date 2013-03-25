@@ -81,23 +81,12 @@ function loadXMLDoc(Test,id)
 </script>
 <script type="text/javascript">
 function changeText(){
-	var xmlhttp;
-    xmlhttp=new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            alert(Test);
-            var aufzurufende_id;
-            aufzurufende_id = "#"+Test;
-            document.getElementById('boldStuff').innerHTML = 'Fred Flinstone';
 
-            alert(xmlhttp.responseText);
-            alert("last");
-        }
-    }
-    xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
-    xmlhttp.send();
+            var aufzurufende_id;
+            aufzurufende_id = "boldStuff";
+
+            $(aufzurufende_id).html('Fred Flinstone');
+
 }
 </script>
 <p>Welcome to the site <b id='boldStuff'>dude</b> </p> 
