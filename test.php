@@ -18,7 +18,8 @@ function loadXMLDoc(Test,id)
             //$(aufzurufende_id).empty();
             alert(id);
             //$(aufzurufende_id).html(xmlhttp.responseText);
-            document.getElementById('trinfo5').innerHTML = xmlhttp.responseText;
+            //document.getElementById('trinfo5').innerHTML = xmlhttp.responseText;
+            document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
             alert(xmlhttp.responseText);
             alert("last");
         }
