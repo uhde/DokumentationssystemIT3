@@ -70,7 +70,7 @@ function GetGeraeteprogramme($objMySQL,$id) {
     .TBL_KUNDEN.'.name AS kunden_name, '
     .TBL_GERAETE.'.name AS geraete_name, '.TBL_GERAETE.'.benutzer AS benutzer, '.TBL_GERAETE.'.adresse AS geraete_adresse, '.TBL_GERAETE.'.kunde AS geraete_kunde, '.TBL_GERAETE.'.ftpdir AS ftpdir
     FROM '.TBL_GERAETE_LOGIN.', '.TBL_PROGRAMME.', '.TBL_GERAETE.', '.TBL_KUNDEN.' 
-    WHERE '.TBL_KUNDEN.'.id='.TBL_GERAETE.'.kunde AND geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id='.$id.'';
+    WHERE  '.TBL_GERAETE_LOGIN.'.`loeschen` =1 AND '.TBL_KUNDEN.'.id='.TBL_GERAETE.'.kunde AND geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id='.$id.'';
 	$arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
 	if ($objMySQL->RowCount()>0) {
 		return $arrData;
