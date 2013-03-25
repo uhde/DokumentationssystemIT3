@@ -115,7 +115,7 @@ function loadXMLDoc(Test,id)
             aufzurufende_id = "#"+Test;
             $(aufzurufende_id).empty();
             //$(aufzurufende_id).html(xmlhttp.responseText);
-            getElementById(Test).innerHTML = "Dies ist ein test";
+            document.getElementById(Test).innerHTML = "Dies ist ein test";
             alert(xmlhttp.responseText);
         }
     }
