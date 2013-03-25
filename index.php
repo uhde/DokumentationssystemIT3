@@ -114,7 +114,7 @@ function loadXMLDoc(Test,id)
             alert("3");
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
-            $(aufzurufende_id).html("hallo<br>");
+            $(aufzurufende_id).html(xmlhttp.responseText);
             alert(aufzurufende_id);
         }
     }
