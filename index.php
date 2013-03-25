@@ -114,7 +114,8 @@ function loadXMLDoc(Test,id)
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
             $(aufzurufende_id).empty();
-            $("#trinfo5").html(xmlhttp.responseText);
+            $(aufzurufende_id).html(xmlhttp.responseText);
+            getElementById(Test).innerHTML = "Dies ist ein test";
             alert(xmlhttp.responseText);
         }
     }
