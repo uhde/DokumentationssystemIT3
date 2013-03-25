@@ -94,7 +94,7 @@
             <td align="right"><span class="LinkStyle">Titel: </span></td>
             <td>
                 <span class="StandardText">
-                    <input name="titel" type="text" size="30" maxlength="60" value="{$name}" >
+                    <input name="titel" type="text" size="50" maxlength="60" value="{$name}" >
                 </span>
             </td>
         </tr>
