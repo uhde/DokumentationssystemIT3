@@ -383,8 +383,8 @@
 !#----- Login_Main:Begin -----#!
 <tr>
 	<td class="Key"><select name="programm_id{$runde}" size="1">{$prog_list}  </select>  </td>
-	<td class="Value"><span id="geratelogin"> <input name="login{$runde}" type="text" size="25" maxlength="30" value="{$geraete_login}" ></input></span></td>
-	<td class="Value"><input name="passwort{$runde}" type="text" size="25" maxlength="30" value="{$geraete_pw}" ></input></td>
+	<td class="Value"><span id="geratelogin"> <input name="login{$runde}" type="text" size="25"  value="{$geraete_login}" ></input></span></td>
+	<td class="Value"><input name="passwort{$runde}" type="text" size="25" maxlength="40" value="{$geraete_pw}" ></input></td>
     <td style="text-align:center;"><a href="auswertung.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="Löschen"   >
         <img src="syspics/button_drop.png" style="border:none:width:12px;height:12px;" alt="Programm löschen"></a></td>
     <td class="Value">
