@@ -18,7 +18,7 @@ function loadXMLDoc(Test,id)
             //$(aufzurufende_id).empty();
             alert(id);
             //$(aufzurufende_id).html(xmlhttp.responseText);
-            document.getElementById(Test).innerHTML = xmlhttp.responseText;
+            document.getElementById('trinfo5').innerHTML = xmlhttp.responseText;
             alert(xmlhttp.responseText);
         }
     }
