@@ -62,7 +62,7 @@ function loadXMLDoc(Test,id)
             aufzurufende_id = "#"+Test;
             $(aufzurufende_id).empty();
             $(aufzurufende_id).html(xmlHttpObject.responseText);
-            getElementById('trinfo5').innerHTML = xmlHttpObject.responseText;
+            document.getElementById('trinfo5').innerHTML = xmlHttpObject.responseText;
             //document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
             alert(xmlHttpObject.responseText);
             alert("last");
@@ -71,8 +71,10 @@ function loadXMLDoc(Test,id)
     xmlHttpObject.open("GET","getsinglegeraet.php?id="+id,true);
     xmlHttpObject.send();
 }
+//http://forum.netzgemein.de/ftopic2826.html
 //-->
 </script>
+
 <title>Funktion bei Wechsel im Select-Feld ausführen (onChange)</title>
 </head>
 <body>
