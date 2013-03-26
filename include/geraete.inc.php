@@ -74,7 +74,55 @@ $Count=0;
 if (is_array($arrData)) {
 	$objTemplate->Display('Header');
 	foreach ($arrData AS $Value) {
-	
+        // Hier wird die Anzeige der IP Adresse bestimmt.
+        // Falls die IP Adresse Fest ist, wird sie grün eingefärbt.
+        if (filter_var($sqldata['adresse'], FILTER_VALIDATE_IP)) {        
+            $sqldata['ip_adresse'] = '<span style="color:green">'.$sqldata['adresse']." (fest)".'</span>';
+        } else {
+            
+            //Falls die Sessionvariable "ipordns" dns lautet, werden nur dns namen angezeigt
+            if(isset($_SESSION['ipordns'])&&$_SESSION['ipordns']=='ip')
+            {
+                if($sqldata['ipv4']==NULL || $sqldata['ipv4']=='0'  ) {
+                    
+                    // Falls nichts eingetragen ist
+                    if($sqldata['adresse'] == '<span class="keine_ip" title="Keine IP vorhanden!">------</span>')
+                    {
+                        $sqldata['ip_adresse'] = $sqldata['adresse'];
+                    } else {
+                        if($sqldata['dnstimestamp']>$yesterday)
+                        {
+                            // Solange die DNS-Adresse nicht älter als ein Tag ist, wird sie Blau eingefärbt
+                            $sqldata['ip_adresse'] = '<span style="color:blue">'.$sqldata['adresse'].'</span>';
+                        } else {
+                            // Ansonsten wird sie orange eingefärbt
+                            $sqldata['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$sqldata['adresse'].'</span>';
+                        }
+                    }
+                } else {
+                    if($sqldata['dnstimestamp']>$yesterday) {
+                        $sqldata['ip_adresse']='<span style="color:black">'.$sqldata['ipv4'].'</span>';
+                    } else {
+                     $sqldata['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$sqldata['ipv4'].'</span>';
+                     }
+                }
+                
+            } else {
+                if($sqldata['adresse'] == '<span class="keine_ip" title="Keine IP vorhanden!">------</span>')
+                {
+                    $sqldata['ip_adresse'] = $sqldata['adresse'];
+                } else {
+                    if($sqldata['dnstimestamp']>$yesterday)
+                    {
+                        // Solange die DNS-Adresse nicht älter als ein Tag ist, wird sie Blau eingefärbt
+                        $sqldata['ip_adresse'] = '<span style="color:blue">'.$sqldata['adresse'].'</span>';
+                    } else {
+                        // Ansonsten wird sie orange eingefärbt
+                        $sqldata['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$sqldata['adresse'].'</span>';
+                    }
+                }
+            }
+        }
  
 		if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
 			$_SESSION['knd_id']=$Value['id'];
