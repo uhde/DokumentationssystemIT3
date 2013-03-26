@@ -87,9 +87,12 @@ function loadXMLDoc(Test,id)
         name
     </td>
 </tr>
-<tr  class="TRInfo">
-	<span id="trinfo5">
-    </span>
+<tr >
+    <td>
+        <span id="trinfo5">
+            test
+        </span>
+    </td>
 </tr>
 
 </table>
