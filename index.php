@@ -110,13 +110,13 @@ function loadXMLDoc(Test,id)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            alert(Test);
+            //alert(Test);
             var aufzurufende_id;
             aufzurufende_id = "#"+Test;
             $(aufzurufende_id).empty();
-            //$(aufzurufende_id).html(xmlhttp.responseText);
-            document.getElementById(Test).innerHTML = "Dies ist ein test";
-            alert(xmlhttp.responseText);
+            $(aufzurufende_id).html(xmlhttp.responseText);
+            //document.getElementById(Test).innerHTML = "Dies ist ein test";
+            //alert(xmlhttp.responseText);
         }
     }
     xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
@@ -124,31 +124,11 @@ function loadXMLDoc(Test,id)
 }
 function ClearLoad(Test)
 {
-    var xmlhttp;
-    xmlhttp=new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            document.getElementById(Test).innerHTML="";
-        }
-    }
-    xmlhttp.open("GET","getsinglegeraet.php?id=1",true);
-    xmlhttp.send();
+    document.getElementById(Test).innerHTML="";
 }
 function ClearAllLoad()
 {
-    var xmlhttp;
-    xmlhttp=new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            $(".TRInfo").text(" ");
-        }
-    }
-    xmlhttp.open("GET","getsinglegeraet.php?id=1",true);
-    xmlhttp.send();
+    $(".TRInfo").text(" ");
 }
 
 </script>
