@@ -76,6 +76,9 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 		<td class="Key" >DNS-Stand: </td>
 		<td colspan="3" class="Value">{$dnstimestamp}</td>
 	</tr>
+    <tr>
+        <td class="Key" >MAC-Adresse: </td>
+		<td class="Value">{$mac_adresse}</td>
 	<tr>
 		<td class="Key" >Geräte-Typ:</td>
 		<td class="Value" >{$pc}</td>
