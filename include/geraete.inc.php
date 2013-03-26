@@ -74,121 +74,13 @@ $Count=0;
 if (is_array($arrData)) {
 	$objTemplate->Display('Header');
 	foreach ($arrData AS $Value) {
-		// Logins auslesen, und in eine eigene Tabelle schreiben. Tabelle wird hierbei noch nicht dargestellt.
-		// Logins werden nur in dem Info teil aufgerufen. Dort wird einfach die Variable '$logins' 
-        // in die Tabelle geschrieben.
-        if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
-        {
-            $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        }else {
-            $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        }
-        $Value['buttons']=MakeButtons(GetGeraeteprogramme($objMySQL,$Value['id']),$Value['adresse']);
-		// Falls Session mit Kunden-ID nicht da: Setzen
+	
+ 
 		if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
 			$_SESSION['knd_id']=$Value['id'];
 			session_commit();
 		}
         
-
-		// Keine IP
-		if ($Value['adresse']==NULL) {
-			$Value['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
-		}else{
-			// IP-String zu IP
-			
-            //StringtoIP($Value['adresse']);
-		}   
-        
-        // Wenn der DNS Name mit dem ipv4 feld Übereinstimmt, steht in dem DNS Feld die IP-Adresse
-        if (filter_var($Value['adresse'], FILTER_VALIDATE_IP)) {        
-            $Value['ip_adresse'] = '<span style="color:green">'.$Value['adresse']." (fest)".'</span>';
-        } else {
-            
-            //Falls die Sessionvariable "ipordns" dns lautet, werden nur dns namen angezeigt
-            if(isset($_SESSION['ipordns'])&&$_SESSION['ipordns']=='ip')
-            {
-                if($Value['ipv4']==NULL || $Value['ipv4']=='0'  ) {
-                    
-                    // Falls nichts eingetragen ist
-                    if($Value['adresse'] == '<span class="keine_ip" title="Keine IP vorhanden!">------</span>')
-                    {
-                        $Value['ip_adresse'] = $Value['adresse'];
-                    } else {
-                        if($Value['dnstimestamp']>$yesterday)
-                        {
-                            // Solange die DNS-Adresse nicht älter als ein Tag ist, wird sie Blau eingefärbt
-                            $Value['ip_adresse'] = '<span style="color:blue">'.$Value['adresse'].'</span>';
-                        } else {
-                            // Ansonsten wird sie orange eingefärbt
-                            $Value['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$Value['adresse'].'</span>';
-                        }
-                    }
-                } else {
-                    if($Value['dnstimestamp']>$yesterday) {
-                        $Value['ip_adresse']='<span style="color:black">'.$Value['ipv4'].'</span>';
-                    } else {
-                     $Value['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$Value['ipv4'].'</span>';
-                     }
-                }
-                
-            } else {
-                if($Value['adresse'] == '<span class="keine_ip" title="Keine IP vorhanden!">------</span>')
-                {
-                    $Value['ip_adresse'] = $Value['adresse'];
-                } else {
-                    if($Value['dnstimestamp']>$yesterday)
-                    {
-                        // Solange die DNS-Adresse nicht älter als ein Tag ist, wird sie Blau eingefärbt
-                        $Value['ip_adresse'] = '<span style="color:blue">'.$Value['adresse'].'</span>';
-                    } else {
-                        // Ansonsten wird sie orange eingefärbt
-                        $Value['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$Value['adresse'].'</span>';
-                    }
-                }
-            }
-        }
-        // Achtung: Es gibt in der alten DB, die nun wieder benutzt wird, das feld IP_adresse nicht
-        
-        
-		// Daten kürzen
-		if (strlen($Value['name'])>30) {
-			$Value['name']='<span title="'.$Value['name'].'">'.substr($Value['name'],0,27).'...</span>';
-		}
-
-		if (strlen($Value['system'])>30) {
-			$Value['system']='<span title="'.$Value['system'].'">'.substr($Value['system'],0,27).'...</span>';
-		}
-		if (strlen($Value['zimmer'])>30) {
-			$Value['zimmer']='<span title="'.$Value['zimmer'].'">'.substr($Value['zimmer'],0,27).'...</span>';
-		}
-
-		// Datum + Zeit von der DNS-Abfrage
-        if(!empty($Value['dnstimestamp']))
-        {
-            $Value['dnstimestamp']=date('d.m.Y, H:i',$Value['dnstimestamp']).' Uhr';
-        } else {
-            $Value['dnstimestamp']="DNS wurde nicht abgerufen.";
-        }
-		// Garantie prüfen
-		if (!empty($Value['garantie'])) {
-			// Abgelaufen
-			if ($Value['garantie']<time()) {
-				$Value['garantie']='<span style="color:#f00" title="Garantie abgelaufen">'.date('d.m.Y',$Value['garantie']).'</span>';
-			}
-            else
-            {
-                // Garantie
-                if ($Value['garantie']>time()) {
-                    $Value['garantie']='<span style="color:#0f0" title="Garantie vorhanden">'.date('d.m.Y',$Value['garantie']).'</span>';
-                }
-
-            }
-		}
-
-		// Zeilenumbrüche in HTML Umbrüche Konvertieren
-		$Value['bemerkung']=nl2br($Value['bemerkung']);
-
 		// Datensatz dem Template zuweisen
 		$objTemplate->AssignArray($Value);
 		$objTemplate->Assign('LineClass',$Count%2);
