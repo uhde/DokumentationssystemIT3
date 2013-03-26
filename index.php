@@ -290,13 +290,13 @@ function ClearAllLoad()
 <tr>
 	<td valign="middle" style="padding-top:6px;padding-left:10px;">
 		<span style="font-size:16pt; font-family:Verdana, Arial, Helvetica, sans-serif; font-weight:bold; color:#FFFFFF;">
-			DokuIT v3.3
+			DokuIT v3.4
 		</span>
 	</td>
 	<td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
         <a onclick='activex.run("F:/Fernwartung/TV_Start/tv_starter.exe");' style="text-align:right;color:#FFFFFF; font-weight:bold; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:10pt;vertical-align: middle;" href="#">
-   Teamviewer
-   </a> 
+            Teamviewer
+       </a> 
 	</td>
 	
     <td width="50" align="left" style="vertical-align: middle;" >
