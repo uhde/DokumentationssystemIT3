@@ -18,6 +18,10 @@ include_once("include/functions.inc.php");
        $objMySQL->Kill();
     }
     $sqldata=$objMySQL->QuerySingleRowArray("Select * FROM ".TBL_GERAETE." WHERE id=".$_GET['id']);
+    
+    // Logins auslesen, und in eine eigene Tabelle schreiben. Tabelle wird hierbei noch nicht dargestellt.
+    // Logins werden nur in dem Info teil aufgerufen. Dort wird einfach die Variable '$logins' 
+    // in die Tabelle geschrieben.
     if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
     {
         $sqldata['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$sqldata['id'],0));
@@ -26,52 +30,145 @@ include_once("include/functions.inc.php");
     }
     $sqldata['buttons']=MakeButtons(GetGeraeteprogramme($objMySQL,$sqldata['id']),$sqldata['adresse']);
     
+    // #### Hier kommen Bearbeitungen die die Optische Anzeige betreffen... z.b. wird die IP Adresse farblich anders dargestellt
+    if ($sqldata['adresse']==NULL) {
+        $sqldata['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
+    }
+    // Hier wird die Anzeige der IP Adresse bestimmt.
+    // Falls die IP Adresse Fest ist, wird sie grün eingefärbt.
+    if (filter_var($sqldata['adresse'], FILTER_VALIDATE_IP)) {        
+        $sqldata['ip_adresse'] = '<span style="color:green">'.$sqldata['adresse']." (fest)".'</span>';
+    } else {
+        
+        //Falls die Sessionvariable "ipordns" dns lautet, werden nur dns namen angezeigt
+        if(isset($_SESSION['ipordns'])&&$_SESSION['ipordns']=='ip')
+        {
+            if($sqldata['ipv4']==NULL || $sqldata['ipv4']=='0'  ) {
+                
+                // Falls nichts eingetragen ist
+                if($sqldata['adresse'] == '<span class="keine_ip" title="Keine IP vorhanden!">------</span>')
+                {
+                    $sqldata['ip_adresse'] = $sqldata['adresse'];
+                } else {
+                    if($sqldata['dnstimestamp']>$yesterday)
+                    {
+                        // Solange die DNS-Adresse nicht älter als ein Tag ist, wird sie Blau eingefärbt
+                        $sqldata['ip_adresse'] = '<span style="color:blue">'.$sqldata['adresse'].'</span>';
+                    } else {
+                        // Ansonsten wird sie orange eingefärbt
+                        $sqldata['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$sqldata['adresse'].'</span>';
+                    }
+                }
+            } else {
+                if($sqldata['dnstimestamp']>$yesterday) {
+                    $sqldata['ip_adresse']='<span style="color:black">'.$sqldata['ipv4'].'</span>';
+                } else {
+                 $sqldata['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$sqldata['ipv4'].'</span>';
+                 }
+            }
+            
+        } else {
+            if($sqldata['adresse'] == '<span class="keine_ip" title="Keine IP vorhanden!">------</span>')
+            {
+                $sqldata['ip_adresse'] = $sqldata['adresse'];
+            } else {
+                if($sqldata['dnstimestamp']>$yesterday)
+                {
+                    // Solange die DNS-Adresse nicht älter als ein Tag ist, wird sie Blau eingefärbt
+                    $sqldata['ip_adresse'] = '<span style="color:blue">'.$sqldata['adresse'].'</span>';
+                } else {
+                    // Ansonsten wird sie orange eingefärbt
+                    $sqldata['ip_adresse'] = '<span title="DNS Name konnte seit einem Tag nicht mehr aufgelöst werden" style="color:red">'.$sqldata['adresse'].'</span>';
+                }
+            }
+        }
+    }
+    // Hier werden die angezeigten Feldinhalte gekürzt, sollten sie besonders lang sein.
+    // Dies wird benutzt, damit besonders lange Inhalte nicht das Layout sprengen
+    if (strlen($sqldata['name'])>30) {
+        $sqldata['name']='<span title="'.$sqldata['name'].'">'.substr($sqldata['name'],0,27).'...</span>';
+    }
+
+    if (strlen($sqldata['system'])>30) {
+        $sqldata['system']='<span title="'.$sqldata['system'].'">'.substr($sqldata['system'],0,27).'...</span>';
+    }
+    if (strlen($sqldata['zimmer'])>30) {
+        $sqldata['zimmer']='<span title="'.$sqldata['zimmer'].'">'.substr($sqldata['zimmer'],0,27).'...</span>';
+    }
+    
+    // Hier wird das Datum (+Zeit) der letzten erfolgreichen DNS Abfrage(bezüglich diesen PCs) lesbar gemacht.
+    // Falls kein Datum vorhanden ist, wird nichts eingetragen
+    if(!empty($sqldata['dnstimestamp']))
+    {
+        $sqldata['dnstimestamp']=date('d.m.Y, H:i',$sqldata['dnstimestamp']).' Uhr';
+    } else {
+        $sqldata['dnstimestamp']="DNS wurde nicht abgerufen.";
+    }
+    // Garantie prüfen
+    if (!empty($sqldata['garantie'])) {
+        // Abgelaufen
+        if ($sqldata['garantie']<time()) {
+            $sqldata['garantie']='<span style="color:#f00" title="Garantie abgelaufen">'.date('d.m.Y',$sqldata['garantie']).'</span>';
+        }
+        else
+        {
+            // Garantie
+            if ($sqldata['garantie']>time()) {
+                $sqldata['garantie']='<span style="color:#0f0" title="Garantie vorhanden">'.date('d.m.Y',$sqldata['garantie']).'</span>';
+            }
+
+        }
+    }    
+    
+    // Zeilenumbrüche in HTML Umbrüche Konvertieren
+    $sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
+    
     echo '
     
         <table class="DeviceInfo">
             <tr>
                 <td class="Key" >DNS-Name: </td>
-                <td class="Value">'.$sqldata["adresse"].'</td>
+                <td class="sqldata">'.$sqldata["adresse"].'</td>
                 <td class="Key" >DNS-Stand: </td>
-                <td colspan="3" class="Value">'.$sqldata["dnstimestamp"].'</td>
+                <td colspan="3" class="sqldata">'.$sqldata["dnstimestamp"].'</td>
             </tr>
             <tr>
                 <td class="Key" >Ger?te-Typ:</td>
-                <td class="Value" >'.$sqldata["pc"].'</td>
+                <td class="sqldata" >'.$sqldata["pc"].'</td>
                 <td class="Key" >System-Beschreibung:</td>
-                <td class="Value">'.$sqldata["system"].'</td>     
+                <td class="sqldata">'.$sqldata["system"].'</td>     
                 <td style="width:90px;"></td>
-                <td class="Value" style="width:20px;"></td>    
+                <td class="sqldata" style="width:20px;"></td>    
             </tr>
             <tr>
                 <td class="Key" >Betriebssystem: </td>
-                <td class="Value">'.$sqldata["bs"].'</td>
+                <td class="sqldata">'.$sqldata["bs"].'</td>
                 <td class="Key">Drucker: </td>
                 <td  style="width:50;">'.$sqldata["drucker"].'</td> 
             </tr>
             <tr>
                 <td class="Key" >Standort: </td>
-                <td class="Value">'.$sqldata["zimmer"].'</td>
+                <td class="sqldata">'.$sqldata["zimmer"].'</td>
                 <td class="Key" >Produktnummer: </td>
-                <td class="Value" >'.$sqldata["produktnummer"].'</td>
+                <td class="sqldata" >'.$sqldata["produktnummer"].'</td>
             </tr>
             <tr>
                 <td class="Key" >SN:</td>
-                <td class="Value" >'.$sqldata["sn"].'</td>
+                <td class="sqldata" >'.$sqldata["sn"].'</td>
                 <td class="Key" >Garantie bis:</td>
-                <td class="Value" >'.$sqldata["garantie"].'</td>   
+                <td class="sqldata" >'.$sqldata["garantie"].'</td>   
             </tr>
             <tr>
                 <td class="Key" style="vertical-align:top;">Logins: </td>
-                <td class="Value" colspan="5">'.$sqldata["logins"].'</td>
+                <td class="sqldata" colspan="5">'.$sqldata["logins"].'</td>
             </tr>
             <tr>
                 <td class="Key">Bemerkung: </td>
-                <td class="Value" colspan="5">'.$sqldata["bemerkung"].'</td>
+                <td class="sqldata" colspan="5">'.$sqldata["bemerkung"].'</td>
             </tr>
             <tr>
                 <td class="Key" style="vertical-align:top;">Aktionen: </td>
-                <td class="Value" colspan="5">'.$sqldata["buttons"].'</td>
+                <td class="sqldata" colspan="5">'.$sqldata["buttons"].'</td>
             </tr> 
             
         </table> 
@@ -86,23 +183,23 @@ function MakeLoginTable($Data){
 	if (is_array($Data)) {
 		$objTemplate=new Template("layout/server.lay.php");
 		$str=$objTemplate->DisplayToString('Login_Header');
-		foreach ($Data as $Value){
-            if($Value['geraete_login']=="" AND $Value['geraete_pw']=="")
+		foreach ($Data as $sqldata){
+            if($sqldata['geraete_login']=="" AND $sqldata['geraete_pw']=="")
             {
             }
             else
             {
                 // Da der TeamViewer-Lan sich immer auf die IP-Adresse verbindet, wird hier im Feld "geraete_login" die Ip-Adresse eingetragen.
-                if($Value['programm_id']==16) {
-                    if((isset($Value['geraete_ipv4'])&&$Value['geraete_ipv4']!=0)) {
-                        $Value['geraete_login']=$Value['geraete_ipv4'];
+                if($sqldata['programm_id']==16) {
+                    if((isset($sqldata['geraete_ipv4'])&&$sqldata['geraete_ipv4']!=0)) {
+                        $sqldata['geraete_login']=$sqldata['geraete_ipv4'];
                     } else { 
-                        $Value['geraete_login']=$Value['geraete_adresse'];
+                        $sqldata['geraete_login']=$sqldata['geraete_adresse'];
                     }
                 }
-                $objTemplate->AssignArray($Value);
+                $objTemplate->AssignArray($sqldata);
                 $str.=$objTemplate->DisplayToString('Login_Main');
-                //$str.=implode('&nbsp;|&nbsp;',$Value)."<br />";
+                //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
                 $objTemplate->ClearAssign();
             }
 		}
@@ -118,45 +215,45 @@ function MakeButtons($Data, $adresse){
 	if (is_array($Data)) {
 		$objTemplate=new Template("layout/geraete_general.lay.php");
         $str="";
-		foreach ($Data as $Value){
-            if($Value['aktiv']=='0')
+		foreach ($Data as $sqldata){
+            if($sqldata['aktiv']=='0')
             {
             
             }
             else
             {
                 // Syntax:  $ausgabe=preg_replace($suchmuster,$ersetzung,$zeichenkette);
-                $ausgabe=$Value["url"];
+                $ausgabe=$sqldata["url"];
         
-                $ausgabe=str_replace('{geraete_login}',$Value['geraete_login'],$ausgabe);
-                $ausgabe=str_replace('{geraete_pw}',$Value['geraete_pw'],$ausgabe);
-                $ausgabe=str_replace('{adresse}',$Value['geraete_adresse'],$ausgabe);
-                $ausgabe=str_replace('{name}',$Value['geraete_name'],$ausgabe);
-                $ausgabe=str_replace('{benutzer}',$Value['benutzer'],$ausgabe);
-                $ausgabe=str_replace('{kunde}',$Value['kunden_name'],$ausgabe);
+                $ausgabe=str_replace('{geraete_login}',$sqldata['geraete_login'],$ausgabe);
+                $ausgabe=str_replace('{geraete_pw}',$sqldata['geraete_pw'],$ausgabe);
+                $ausgabe=str_replace('{adresse}',$sqldata['geraete_adresse'],$ausgabe);
+                $ausgabe=str_replace('{name}',$sqldata['geraete_name'],$ausgabe);
+                $ausgabe=str_replace('{benutzer}',$sqldata['benutzer'],$ausgabe);
+                $ausgabe=str_replace('{kunde}',$sqldata['kunden_name'],$ausgabe);
                 $ausgabe=str_replace('{benutzer}',$_SERVER['PHP_AUTH_USER'],$ausgabe);
-                $ausgabe=str_replace('{ftpdir}',$Value['ftpdir'],$ausgabe);
+                $ausgabe=str_replace('{ftpdir}',$sqldata['ftpdir'],$ausgabe);
                 
                 
                 
                 /*$benutzer="%ProgramFiles%/TeamViewer/Version5/Teamviewer.exe";
                 $adresse="192.168.200.4";
-                $geraete_login=$Value['geraete_login'];
-                $geraete_pw=$Value['geraete_pw'];
+                $geraete_login=$sqldata['geraete_login'];
+                $geraete_pw=$sqldata['geraete_pw'];
                 $ausgabe="";*/
                 
-                $Value['activex']=$ausgabe;
+                $sqldata['activex']=$ausgabe;
 
-                $objTemplate->AssignArray($Value);
+                $objTemplate->AssignArray($sqldata);
                 $str.=$objTemplate->DisplayToString('Button_Main');
-                //$str.=implode('&nbsp;|&nbsp;',$Value)."<br />";
+                //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
                 $objTemplate->ClearAssign();
             }
 		}
-        $Value['bemerkung']="Ping";
+        $sqldata['bemerkung']="Ping";
         $ausgabe="ping.exe -n 9 ".$adresse;
-        $Value['activex']=$ausgabe;
-        $objTemplate->AssignArray($Value);
+        $sqldata['activex']=$ausgabe;
+        $objTemplate->AssignArray($sqldata);
         $str.=$objTemplate->DisplayToString('Button_ping');
         $objTemplate->ClearAssign();
         
