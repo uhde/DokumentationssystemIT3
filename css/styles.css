@@ -290,6 +290,7 @@ tr.Data1 {
 
 tr.Aktiv {
  background-color: #BADCFF;
+ border-top:2px solid #ccc
  }
 
 tr.Data_Selected {
