@@ -124,7 +124,7 @@ include_once("include/functions.inc.php");
             </tr> 
             <tr>
                 <td colspan="6" style="text-align:right;">
-                    <span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick="ClearLoad(trinfo'.$sqldata["id"].')></input></span>
+                    <span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick="ClearLoad(trinfo'.$sqldata["id"].')"></input></span>
                 </td>
             </tr>
             
