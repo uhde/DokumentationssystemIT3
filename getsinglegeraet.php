@@ -122,6 +122,11 @@ include_once("include/functions.inc.php");
                 <td class="Key" style="vertical-align:top;">Aktionen: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["buttons"].'</td>
             </tr> 
+            <tr>
+                <td colspan="6" style="text-align:right;">
+                    <span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick="ClearLoad(trinfo'.$sqldata["id"].')></input></span>
+                </td>
+            </tr>
             
         </table> 
         ';

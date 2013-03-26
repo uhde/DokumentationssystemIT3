@@ -124,7 +124,9 @@ function loadXMLDoc(Test,id)
 }
 function ClearLoad(Test)
 {
-    document.getElementById(Test).innerHTML="";
+    var aufzurufende_id;
+    aufzurufende_id = "#"+Test;
+    $(aufzurufende_id).html("");
 }
 function ClearAllLoad()
 {
