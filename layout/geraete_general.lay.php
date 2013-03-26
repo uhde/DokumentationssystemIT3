@@ -46,7 +46,7 @@
 		</td>
 	</tr>
 	<tr >
-        <td>
+        <td colspan=6 >
             <span id="trinfo{$id}" class="TRInfo">
             
             </span>
