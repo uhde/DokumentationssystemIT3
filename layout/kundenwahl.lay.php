@@ -1,6 +1,6 @@
 !#----- Header:Begin -----#!
 <p class="Kundenwahl">&nbsp;Kunden</p>
-<table width="93.1%" border="0" cellspacing="0"  align="left">
+<table width="100%" border="0" cellspacing="0"  align="left">
 !#----- Header:End -----#!
 
 
