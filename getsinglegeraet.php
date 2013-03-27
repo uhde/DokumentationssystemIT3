@@ -21,6 +21,11 @@ include_once("include/functions.inc.php");
     }
     $sqldata=$objMySQL->QuerySingleRowArray("Select * FROM ".TBL_GERAETE." WHERE id=".$_GET['id']);
     
+    foreach($sqldata AS $Key=>$Value)
+    {
+        $sqldata[$Key]=utf8_encode($Value);
+    }
+    
     // Logins auslesen, und in eine eigene Tabelle schreiben. Tabelle wird hierbei noch nicht dargestellt.
     // Logins werden nur in dem Info teil aufgerufen. Dort wird einfach die Variable '$logins' 
     // in die Tabelle geschrieben.
@@ -87,7 +92,7 @@ include_once("include/functions.inc.php");
                 <td colspan="3" class="sqldata">'.$sqldata["dnstimestamp"].'</td>
             </tr>
             <tr>
-                <td class="Key" >Ger?te-Typ:</td>
+                <td class="Key" >Geräte-Typ:</td>
                 <td class="sqldata" >'.$sqldata["pc"].'</td>
                 <td class="Key" >System-Beschreibung:</td>
                 <td class="sqldata">'.$sqldata["system"].'</td>     
