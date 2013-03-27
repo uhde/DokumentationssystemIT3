@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+ï»¿<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
@@ -37,7 +37,7 @@ include_once("include/functions.inc.php");
         $sqldata['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
     }
     
-    // Hier werden die angezeigten Feldinhalte gekürzt, sollten sie besonders lang sein.
+    // Hier werden die angezeigten Feldinhalte gekÃ¼rzt, sollten sie besonders lang sein.
     // Dies wird benutzt, damit besonders lange Inhalte nicht das Layout sprengen
     if (strlen($sqldata['name'])>30) {
         $sqldata['name']='<span title="'.$sqldata['name'].'">'.substr($sqldata['name'],0,27).'...</span>';
@@ -50,7 +50,7 @@ include_once("include/functions.inc.php");
         $sqldata['zimmer']='<span title="'.$sqldata['zimmer'].'">'.substr($sqldata['zimmer'],0,27).'...</span>';
     }
     
-    // Hier wird das Datum (+Zeit) der letzten erfolgreichen DNS Abfrage(bezüglich diesen PCs) lesbar gemacht.
+    // Hier wird das Datum (+Zeit) der letzten erfolgreichen DNS Abfrage(bezÃ¼glich diesen PCs) lesbar gemacht.
     // Falls kein Datum vorhanden ist, wird nichts eingetragen
     if(!empty($sqldata['dnstimestamp']))
     {
@@ -58,7 +58,7 @@ include_once("include/functions.inc.php");
     } else {
         $sqldata['dnstimestamp']="DNS wurde nicht abgerufen.";
     }
-    // Garantie prüfen
+    // Garantie prÃ¼fen
     if (!empty($sqldata['garantie'])) {
         // Abgelaufen
         if ($sqldata['garantie']<time()) {
@@ -74,7 +74,7 @@ include_once("include/functions.inc.php");
         }
     }    
     
-    // Zeilenumbrüche in HTML Umbrüche Konvertieren
+    // ZeilenumbrÃ¼che in HTML UmbrÃ¼che Konvertieren
     $sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
     
     echo '
@@ -126,7 +126,7 @@ include_once("include/functions.inc.php");
             </tr> 
             <tr value="#trinfo'.$sqldata["id"].'" class="TRInfoClose">
                 <td colspan="6" style="text-align:right;">
-                    <span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick=""></input></span>
+                    <span style="padding-right:10px;"><input type="button"  value="Info SchlieÃŸen" onClick=""></input></span>
                 </td>
             </tr>
             
