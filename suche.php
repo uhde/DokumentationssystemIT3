@@ -29,7 +29,7 @@
         //echo $key." -> ".$value." post<br>"; 
         $mode[$key]=$value;
     }
-    if(!empty($mode['suche']))
+    if(!empty($mode['suchfeld']))
     {
         $time_start=microtime(true);
         //$mode['suche']=$_POST['suchfeld'];
