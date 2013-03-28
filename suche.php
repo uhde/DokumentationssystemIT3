@@ -29,23 +29,30 @@
         //echo $key." -> ".$value." post<br>"; 
         $mode[$key]=$value;
     }
-    $time_start=microtime(true);
-    //$mode['suche']=$_POST['suchfeld'];
-    $objTemplate=new Template("layout/geraete_general.lay.php");
-    include('include/geraete.inc.php'); 
-    echo '<div id="topmenuline">&nbsp;</div>';
-    include('dokumente.php');
-    echo '<div id="topmenuline">&nbsp;</div>';
-    include('zugaenge.php');
-    
-    // name`,`system`,`produktnummer`,`pc`,`benutzer`
-     echo "<br><br>Suche Abgeschlossen. <br><br>";
-    echo " Erläuterung: Es kann bei den Geräten in den Feldern: Name, Produktnummer, PC-Typ, Geräte-Typ und Benutzer gesucht werden.";
-    echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder Name und Bemerkung durchsucht werden";
+    if(!empty($mode['suche']))
+    {
+        $time_start=microtime(true);
+        //$mode['suche']=$_POST['suchfeld'];
+        $objTemplate=new Template("layout/geraete_general.lay.php");
+        include('include/geraete.inc.php'); 
+        echo '<div id="topmenuline">&nbsp;</div>';
+        include('dokumente.php');
+        echo '<div id="topmenuline">&nbsp;</div>';
+        include('zugaenge.php');
+        
+        // name`,`system`,`produktnummer`,`pc`,`benutzer`
+         echo "<br><br>Suche Abgeschlossen. <br><br>";
+        echo " Erläuterung: Es kann bei den Geräten in den Feldern: Name, Produktnummer, PC-Typ, Geräte-Typ und Benutzer gesucht werden.";
+        echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder Name und Bemerkung durchsucht werden";
 
-    $time_stop=microtime(true);
-    $time_used=$time_stop-$time_start;
-    echo "<br>Die Suchanfrage wurde in ".$time_used." Sekunden bearbeitet. ";
+        $time_stop=microtime(true);
+        $time_used=$time_stop-$time_start;
+        echo "<br>Die Suchanfrage wurde in ".$time_used." Sekunden bearbeitet. ";
+    }else {
+        echo "Bitte geben sie einen Suchtext ein";
+        $_SESSION['device_type']=1;
+        $_SESSION['page']=$arrTopmenu[1]['file'];
+    }
 ?>
 <script type="text/javascript">
 document.getElementById('suche').style.visibility='hidden';
