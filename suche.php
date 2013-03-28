@@ -49,7 +49,7 @@
         $time_used=$time_stop-$time_start;
         echo "<br>Die Suchanfrage wurde in ".$time_used." Sekunden bearbeitet. ";
     }else {
-        echo "Bitte geben sie einen Suchtext ein";
+        echo '<h1 style="color:red">Bitte geben sie einen Suchtext ein</h1>';
         $_SESSION['device_type']=1;
         $_SESSION['page']=$arrTopmenu[1]['file'];
     }
