@@ -70,7 +70,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 
 
 !#----- Info:Begin -----#!
- 
+
 !#----- Info:End -----#!
 
 

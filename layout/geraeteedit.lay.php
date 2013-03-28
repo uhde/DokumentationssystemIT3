@@ -38,6 +38,10 @@
 	<td>
 		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="30" value="{$adresse}" ></span>
 	</td>
+    <td align="right"><span class="LinkStyle">MAC-Adresse </span></td>
+	<td>
+		<span class="StandardText"><input name="mac_adresse" type="text" size="17" maxlength="17" value="{$mac_adresse}" > </span>
+	</td>
 </tr>
 
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
@@ -199,6 +203,10 @@
 	<td align="right"><span class="LinkStyle">IP: </span></td>
 	<td>
 		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="30" value="{$adresse}" ></span>
+	</td>
+    <td align="right"><span class="LinkStyle">MAC-Adresse </span></td>
+	<td>
+		<span class="StandardText"><input name="mac_adresse" type="text" size="17" maxlength="17" value="{$mac_adresse}" > </span>
 	</td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
