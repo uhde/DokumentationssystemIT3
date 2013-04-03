@@ -11,7 +11,6 @@ include("include/template.class.php");
 include("include/functions.inc.php");
 include("userconf/benutzer_verwaltung.php"); 
 
-
 // DB-Connect
 $objMySQL = new MySQL();
 if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
@@ -42,8 +41,6 @@ if (isset($_GET['knd_id'])) {
 	}*/
 }
 
-
-
 // Seite setzen
 $page=$arrTopmenu[1]['file'];
 
@@ -65,7 +62,6 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
 	}
 }
 
-
 // Existiert Seite oder Fehler?
 if (file_exists($page.'.php')) {
 	$page=$page.'.php';
@@ -77,10 +73,6 @@ if (file_exists($page.'.php')) {
 		$page='error404.php';
 	}
 }
-
-
-
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
