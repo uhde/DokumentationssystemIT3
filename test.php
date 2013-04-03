@@ -1,81 +1,26 @@
 
 <html>
 <head>
-<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>+
+<link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+<script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
 <script type='text/javascript'>
-<!--
-function ajaxRequest(){
-    var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] //activeX versions to check for in IE
-    if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
-        for (var i=0; i<activexmodes.length; i++){
-            try{
-                return new ActiveXObject(activexmodes[i])
-            }
-               catch(e){
-                //suppress error
-            }
-        }
-    }
-    else if (window.XMLHttpRequest) // if Mozilla, Safari etc
-        return new XMLHttpRequest()
-    else
-        return false
-}
-function loadXMLDoc(Test,id)
-{
-    //var xmlhttp = new ajaxRequest();
-    var xmlHttpObject = false;
-
-    // Überprüfen ob XMLHttpRequest-Klasse vorhanden und erzeugen von Objekte für IE7, Firefox, etc.
-    if (typeof XMLHttpRequest != 'undefined') 
-    {
-        xmlHttpObject = new XMLHttpRequest();
-    }
-
-    // Wenn im oberen Block noch kein Objekt erzeugt, dann versuche XMLHTTP-Objekt zu erzeugen
-    // Notwendig für IE6 oder IE5
-    if (!xmlHttpObject) 
-    {
-        try 
-        {
-            xmlHttpObject = new ActiveXObject("Msxml2.XMLHTTP");
-        }
-        catch(e) 
-        {
-            try 
-            {
-                xmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            catch(e) 
-            {
-                xmlHttpObject = null;
-            }
-        }
-    }
-    
-    xmlHttpObject.onreadystatechange=function()
-    {
-        if (xmlHttpObject.readyState==4 && xmlHttpObject.status==200)
-        {
-            alert(Test);
-            var aufzurufende_id;
-            aufzurufende_id = "#"+Test;
-           // $(aufzurufende_id).empty();
-            $(aufzurufende_id).html(xmlHttpObject.responseText);
-            //document.getElementById('trinfo5').innerHTML = xmlHttpObject.responseText;
-            //document.getElementById('trinfo5').innerHTML = 'Fred Flinstone';
-            alert(xmlHttpObject.responseText);
-            alert("last");
-        }
-    }
-    xmlHttpObject.open("GET","getsinglegeraet.php?id="+id,true);
-    xmlHttpObject.send();
-}
-//http://forum.netzgemein.de/ftopic2826.html
-//-->
+$(document).ready(function() {
+	$(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});
 </script>
 
-<title>Funktion bei Wechsel im Select-Feld ausführen (onChange)</title>
+<title>Testseite</title>
 </head>
 <body>
 
@@ -83,17 +28,16 @@ function loadXMLDoc(Test,id)
 <div id="Buchungen">
 <table>
 <tr id="Info5" class="Data0" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data0'" >
-    <td class="slider" value="#trinfo5" onclick="loadXMLDoc('trinfo5','5')">
-        name
-    </td>
+    <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
+        <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit','Geräte bearbeiten','720','720');">
+        <img src="syspics/edit.png" alt="Eintrag bearbeiten">
+        </a>
+        <a class="fancybox" rel="gallery1" href="http://farm9.staticflickr.com/8200/8207750975_bd288a2a1f_b.jpg" title="Templanza (Chico Team)">
+            <img src="http://farm9.staticflickr.com/8200/8207750975_bd288a2a1f_m.jpg" alt="" />
+        </a>
+    </td> 
 </tr>
-<tr >
-    <td>
-        <span id="trinfo5">
-            test
-        </span>
-    </td>
-</tr>
+
 
 </table>
 
@@ -102,20 +46,3 @@ function loadXMLDoc(Test,id)
 </body>
 </html>
 
-<?php /*
-<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
-
-<script type="text/javascript">
-function changeText(){
-
-            var aufzurufende_id;
-            aufzurufende_id = "#boldStuff";
-
-            $(aufzurufende_id).html('Fred Flinstone');
-
-}
-</script>
-<p>Welcome to the site <b id='boldStuff'>dude</b> </p> 
-<input type='button' onclick='changeText()' value='Change Text'/>
-
-*/ ?>
