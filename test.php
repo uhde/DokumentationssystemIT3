@@ -1,6 +1,7 @@
 
 <html>
 <head>
+ <meta charset="utf-8">
 <script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>+
 <link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
 <script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
@@ -27,17 +28,32 @@ $(document).ready(function() {
 <form>
 <div id="Buchungen">
 <table>
-<tr id="Info5" class="Data0" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data0'" >
-    <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
-        <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit','Geräte bearbeiten','720','720');">
-        <img src="syspics/edit.png" alt="Eintrag bearbeiten">
-        </a>
-        <a class="fancybox" rel="gallery1" href="http://farm9.staticflickr.com/8200/8207750975_bd288a2a1f_b.jpg" title="Templanza (Chico Team)">
-            <img src="http://farm9.staticflickr.com/8200/8207750975_bd288a2a1f_m.jpg" alt="" />
-        </a>
-    </td> 
-</tr>
+<ul class="list">
+	<li>
+		<a class="various fancybox.ajax" href="/demo/ajax.php">Ajax</a>
+	</li>
+	<li>
+		<a class="various" data-fancybox-type="iframe" href="/demo/iframe.html">Iframe</a>
+	</li>
+	<li>
+		<a class="various" href="#inline">Inline</a>
+	</li>
+	<li>
+		<a class="various" href="http://www.adobe.com/jp/events/cs3_web_edition_tour/swfs/perform.swf">SWF</a>
+	</li>
+</ul>
 
+<ul class="list">
+	<li>
+		<a class="various fancybox.iframe" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1">Youtube (iframe)</a>
+	</li>
+	<li>
+		<a class="various fancybox.iframe" href="http://maps.google.com/?output=embed&f=q&source=s_q&hl=en&geocode=&q=London+Eye,+County+Hall,+Westminster+Bridge+Road,+London,+United+Kingdom&hl=lv&ll=51.504155,-0.117749&spn=0.00571,0.016512&sll=56.879635,24.603189&sspn=10.280244,33.815918&vpsrc=6&hq=London+Eye&radius=15000&t=h&z=17">Google maps (iframe)</a>
+	</li>
+	<li>
+		<a class="various" href="/data/non_existing_image.jpg">Non-existing url</a>
+	</li>
+</ul>
 
 </table>
 
