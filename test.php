@@ -2,7 +2,7 @@
 <html>
 <head>
  <meta charset="utf-8">
-<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>+
+<script type='text/javascript' src='js/jquery-1.9.1.min.js'></script>+
 <link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
 <script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
 <script type='text/javascript'>
