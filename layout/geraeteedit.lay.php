@@ -376,7 +376,7 @@
 	<th>Login</th>
 	<th>Passwort</th>
     <th></th>
-    <th>Aktiv?</th>
+    <th>Button?</th>
 </tr>
 !#----- Login_Header:End -----#!
 
@@ -388,7 +388,7 @@
     <td style="text-align:center;"><a href="auswertung.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="Löschen"   >
         <img src="syspics/button_drop.png" style="border:none:width:12px;height:12px;" alt="Programm löschen"></a></td>
     <td class="Value">
-        <input name="prog_aktiv{$runde}" title="Checkbox die darstellt das der Button angezeigt werden soll." type="checkbox" {$aktive}></input>
+        <input name="prog_aktiv{$runde}" title="Checkbox die darstellt, dass der Button angezeigt werden soll." type="checkbox" {$aktive}></input>
     </td>
 </tr>
 !#----- Login_Main:End -----#!
