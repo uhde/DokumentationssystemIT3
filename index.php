@@ -87,7 +87,7 @@ if (file_exists($page.'.php')) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="x-ua-compatible" content="ie=8">
-<META HTTP-EQUIV="Expires" CONTENT="20">
+<META HTTP-EQUIV="Expires" CONTENT="0">
 <span style="font-family: Verdana, Arial, Helvetica, sans-serif;">
 <title>DokuIT - Dokumentationsverwaltung v3</title>
 </span>
