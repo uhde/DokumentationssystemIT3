@@ -121,7 +121,7 @@ function loadXMLDoc(Test,id,time)
             //alert(xmlhttp.responseText);
         }
     }
-    xmlhttp.open("GET","getsinglegeraet.php?id="+id+"&time="+time,true);
+    xmlhttp.open("GET","include/getsinglegeraet.php?id="+id+"&time="+time,true);
     xmlhttp.send();
 }
 function ClearLoad(Test)
