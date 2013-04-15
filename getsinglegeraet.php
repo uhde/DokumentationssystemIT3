@@ -42,6 +42,7 @@ include_once("include/functions.inc.php");
         $sqldata['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
     }
     
+    
     // Hier werden die angezeigten Feldinhalte gekürzt, sollten sie besonders lang sein.
     // Dies wird benutzt, damit besonders lange Inhalte nicht das Layout sprengen
     if (strlen($sqldata['name'])>30) {
@@ -91,6 +92,9 @@ include_once("include/functions.inc.php");
                 <td class="Key" >DNS-Stand: </td>
                 <td colspan="3" class="sqldata">'.$sqldata["dnstimestamp"].'</td>
             </tr>
+            <tr>
+                <td class="Key" >MAC-Adresse: </td>
+                <td class="Value">'.$sqldata["mac_adresse"].'</td>
             <tr>
                 <td class="Key" >Geräte-Typ:</td>
                 <td class="sqldata" >'.$sqldata["pc"].'</td>
