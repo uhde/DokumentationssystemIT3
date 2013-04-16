@@ -19,12 +19,13 @@ include("include/functions.inc.php");
        $objMySQL->Kill();
     }
     echo "test3";
-    /*
+    
     $sql = 'Select * from `'.DB_DATABASE.'`.`'.TBL_GERAETE.'` ';
     echo $sql;
     //Mit einer schleife durchlaufen, und jede Variable abrüfen, ob sie unter 30 zeichen lang ist
     //strlen(variable) gibt die stringlänge zurück
     $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
+    /*
     echo $arrData;
     i=0;
     
