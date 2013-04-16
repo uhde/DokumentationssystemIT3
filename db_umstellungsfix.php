@@ -1,6 +1,11 @@
-﻿test
+﻿<html>
+<head>
+</head>
+<body>
+test
 <?php
-error_reporting(E_ALL);
+echo "test2";
+/*error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 //db_umstellungsfix
 require('include/config.inc.php');
@@ -13,7 +18,7 @@ include("include/functions.inc.php");
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
-    echo "test";
+    echo "test3";
     
     $sql = 'Select * from `'.DB_DATABASE.'`.`'.TBL_GERAETE.'` ';
     echo $sql;
@@ -58,6 +63,9 @@ include("include/functions.inc.php");
         
     }
     echo "<br><br> Es sind insgesamt ".i." Fehler gefunden  worden.";
-    
+    */
     ?>
+    
+</body>
+</html>
     
