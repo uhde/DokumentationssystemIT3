@@ -20,7 +20,7 @@ include("include/functions.inc.php");
     $arrData=$objMySQL->QueryArray($mysql,MYSQL_ASSOC);
     echo $arrData;
     i=0;
-    foreach($Value in $arrData)
+    foreach($arrData as $Value)
     {
         // die login Variable durfte 30 zeichen lang sein, die Passwort 40 Zeichen lang
         if(strlen($Value['login'])>30)
