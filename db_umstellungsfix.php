@@ -15,7 +15,7 @@ include("include/functions.inc.php");
     }
     echo "test";
     
-    $sql = "SELECT * FROM geraete";
+    $sql = 'Select * from `'.DB_DATABASE.'`.`'.TBL_GERAETE.'` ';
     echo $sql;
     //Mit einer schleife durchlaufen, und jede Variable abrüfen, ob sie unter 30 zeichen lang ist
     //strlen(variable) gibt die stringlänge zurück
