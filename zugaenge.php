@@ -46,7 +46,7 @@ if ($arrData_zugaenge!==FALSE) {
 	$objTemplate->Display('Header');
 	foreach ($arrData_zugaenge AS $Value) {
 		// Logins auslesen
-
+        $Value["zusatz"]=nl2br($Value["zusatz"]);
 		// Falls Session mit Kunden-ID nicht da: Setzen
 		if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
 			$_SESSION['knd_id']=$Value['id'];
