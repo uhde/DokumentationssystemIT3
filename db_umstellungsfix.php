@@ -27,45 +27,45 @@ include("include/functions.inc.php");
     $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
     
     echo $arrData;
-    i=0;
-    /*
+    $i=0;
+    
     foreach($arrData as $Value)
     {
         // die login Variable durfte 30 zeichen lang sein, die Passwort 40 Zeichen lang
         if(strlen($Value['login'])>30)
         {
             echo "<br>".$Value['name']." ist in der Variable login zu lang:".$Value['login'];
-            i++;
+            $i++;
         }
         if(strlen($Value['passwort'])>40)
         {
             echo "<br>".$Value['name']." ist in der Variable passwort zu lang:".$Value['passwort'];
-            i++;
+            $i++;
         }
         if(strlen($Value['ftplogin'])>30)
         {
             echo "<br>".$Value['name']." ist in der Variable ftplogin zu lang:".$Value['ftplogin'];
-            i++;
+            $i++;
         }
         if(strlen($Value['ftppasswort'])>40)
         {
             echo "<br>".$Value['name']." ist in der Variable ftppasswort zu lang:".$Value['ftppasswort'];
-            i++;
+            $i++;
         }
         if(strlen($Value['vncpasswort'])>40)
         {
             echo "<br>".$Value['name']." ist in der Variable vncpasswort zu lang:".$Value['vncpasswort'];
-            i++;
+            $i++;
         }
         if(strlen($Value['xurl'])>30)
         {
             echo "<br>".$Value['name']." ist in der Variable xurl zu lang:".$Value['xurl'];
-            i++;
+            $i++;
         }
         
     }
-    echo "<br><br> Es sind insgesamt ".i." Fehler gefunden  worden.";
-    */
+    echo "<br><br> Es sind insgesamt ".$i." Fehler gefunden  worden.";
+    
     ?>
     
 </body>
