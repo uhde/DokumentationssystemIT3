@@ -1,4 +1,5 @@
-﻿<?php
+﻿test
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 //db_umstellungsfix
@@ -12,12 +13,13 @@ include("include/functions.inc.php");
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
+    echo "test";
     
-    $mysql = "SELECT * FROM geraete";
-    echo $mysql;
+    $sql = "SELECT * FROM geraete";
+    echo $sql;
     //Mit einer schleife durchlaufen, und jede Variable abrüfen, ob sie unter 30 zeichen lang ist
     //strlen(variable) gibt die stringlänge zurück
-    $arrData=$objMySQL->QueryArray($mysql,MYSQL_ASSOC);
+    $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
     echo $arrData;
     i=0;
     foreach($arrData as $Value)
