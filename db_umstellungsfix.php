@@ -25,10 +25,10 @@ include("include/functions.inc.php");
     //Mit einer schleife durchlaufen, und jede Variable abrüfen, ob sie unter 30 zeichen lang ist
     //strlen(variable) gibt die stringlänge zurück
     $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
-    /*
+    
     echo $arrData;
     i=0;
-    
+    /*
     foreach($arrData as $Value)
     {
         // die login Variable durfte 30 zeichen lang sein, die Passwort 40 Zeichen lang
