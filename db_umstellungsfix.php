@@ -11,7 +11,7 @@ include("include/functions.inc.php");
        $objMySQL->Kill();
     }
     
-    mysql = "SELECT * FROM geraete";
+    $mysql = "SELECT * FROM geraete";
     //Mit einer schleife durchlaufen, und jede Variable abrüfen, ob sie unter 30 zeichen lang ist
     //strlen(variable) gibt die stringlänge zurück
     $arrData=$objMySQL->QueryArray($mysql,MYSQL_ASSOC);
