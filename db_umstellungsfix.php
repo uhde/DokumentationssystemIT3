@@ -5,7 +5,7 @@
 test
 <?php
 echo "test2";
-/*error_reporting(E_ALL);
+error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 //db_umstellungsfix
 require('include/config.inc.php');
@@ -27,6 +27,7 @@ include("include/functions.inc.php");
     $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
     echo $arrData;
     i=0;
+    /*
     foreach($arrData as $Value)
     {
         // die login Variable durfte 30 zeichen lang sein, die Passwort 40 Zeichen lang
