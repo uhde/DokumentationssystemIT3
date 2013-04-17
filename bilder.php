@@ -29,7 +29,7 @@ if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
 }
 $arrData=$objMySQL->QueryArray ($sql);
 if ($arrData!==FALSE) {
-
+    $Value["bemerkung"]=nl2br($Value["bemerkung"]);
 	$objTemplate->Display('Header');
 	foreach ($arrData AS $Value) {
 		// Logins auslesen

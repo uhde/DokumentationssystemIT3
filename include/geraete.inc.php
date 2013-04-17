@@ -131,7 +131,7 @@ if (is_array($arrData)) {
 			$_SESSION['knd_id']=$Value['id'];
 			session_commit();
 		}
-        
+        $Value["time"]=time();
 		// Datensatz dem Template zuweisen
 		$objTemplate->AssignArray($Value);
 		$objTemplate->Assign('LineClass',$Count%2);

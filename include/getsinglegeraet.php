@@ -2,18 +2,18 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="css/styles.css" type="text/css" />
-<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<link rel="stylesheet" href="../css/styles.css" type="text/css" />
+<link rel="stylesheet" href="../css/reset.css" type="text/css" />
 </head>
 <body>
 <?php
 /*
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);*/
-require_once('include/config.inc.php');
-include_once("include/mysql.class.php");
-include_once("include/template.class.php");
-include_once("include/functions.inc.php");
+require_once('config.inc.php');
+include_once("mysql.class.php");
+include_once("template.class.php");
+include_once("functions.inc.php");
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
@@ -41,6 +41,7 @@ include_once("include/functions.inc.php");
     if ($sqldata['adresse']==NULL) {
         $sqldata['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
     }
+    
     
     // Hier werden die angezeigten Feldinhalte gekürzt, sollten sie besonders lang sein.
     // Dies wird benutzt, damit besonders lange Inhalte nicht das Layout sprengen
@@ -92,6 +93,9 @@ include_once("include/functions.inc.php");
                 <td colspan="3" class="sqldata">'.$sqldata["dnstimestamp"].'</td>
             </tr>
             <tr>
+                <td class="Key" >MAC-Adresse: </td>
+                <td class="Value">'.$sqldata["mac_adresse"].'</td>
+            <tr>
                 <td class="Key" >Geräte-Typ:</td>
                 <td class="sqldata" >'.$sqldata["pc"].'</td>
                 <td class="Key" >System-Beschreibung:</td>
@@ -140,7 +144,7 @@ include_once("include/functions.inc.php");
         
 function MakeLoginTable($Data){
 	if (is_array($Data)) {
-		$objTemplate=new Template("layout/server.lay.php");
+		$objTemplate=new Template("../layout/server.lay.php");
 		$str=$objTemplate->DisplayToString('Login_Header');
 		foreach ($Data as $sqldata){
             if($sqldata['geraete_login']=="" AND $sqldata['geraete_pw']=="")
@@ -172,7 +176,7 @@ function MakeLoginTable($Data){
 
 function MakeButtons($Data, $adresse){
 	if (is_array($Data)) {
-		$objTemplate=new Template("layout/geraete_general.lay.php");
+		$objTemplate=new Template("../layout/geraete_general.lay.php");
         $str="";
 		foreach ($Data as $sqldata){
             if($sqldata['aktiv']=='0')

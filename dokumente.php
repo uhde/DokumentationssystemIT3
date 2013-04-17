@@ -36,7 +36,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
 }
 $arrData_dok=$objMySQL->QueryArray ($sql);
 if ($arrData_dok!==FALSE) {
-
+    $Value["bemerkung"]=nl2br($Value["bemerkung"]);
 	$objTemplate->Display('Header');
 	foreach ($arrData_dok AS $Value) {
 		// Logins auslesen

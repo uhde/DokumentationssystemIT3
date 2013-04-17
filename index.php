@@ -96,7 +96,7 @@ if (file_exists($page.'.php')) {
 
 <script type='text/javascript'>
 
-function loadXMLDoc(Test,id)
+function loadXMLDoc(Test,id,time)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
@@ -113,7 +113,7 @@ function loadXMLDoc(Test,id)
             //alert(xmlhttp.responseText);
         }
     }
-    xmlhttp.open("GET","getsinglegeraet.php?id="+id,true);
+    xmlhttp.open("GET","include/getsinglegeraet.php?id="+id+"&time="+time,true);
     xmlhttp.send();
 }
 function ClearLoad(Test)
