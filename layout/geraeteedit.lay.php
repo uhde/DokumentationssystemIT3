@@ -34,9 +34,9 @@
 	</td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">IP: </span></td>
+	<td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
 	<td>
-		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="30" value="{$adresse}" ></span>
+		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
 	</td>
     <td align="right"><span class="LinkStyle">MAC-Adresse </span></td>
     <td>
@@ -200,9 +200,9 @@
 	</td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">IP: </span></td>
+	<td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
 	<td>
-		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="30" value="{$adresse}" ></span>
+		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
 	</td>
     <td align="right"><span class="LinkStyle">MAC-Adresse </span></td>
     <td>
