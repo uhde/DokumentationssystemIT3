@@ -155,6 +155,9 @@ function ClearAllLoad()
     
    
 	$(document).ready(function() {
+            $(".various").fancybox({
+
+            });
 			// Erstmal alle ausblende
             // Wird beim reload der Page angewendet
 	 	     $("#Buchungen .TRInfo").hide();
