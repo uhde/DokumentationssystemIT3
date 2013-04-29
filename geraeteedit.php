@@ -17,11 +17,6 @@ if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
 if($mode["mode"]=="edit")
 {
     $arrData=$objMySQL->QuerySingleRowArray('SELECT * FROM '.TBL_GERAETE.' WHERE kunde='.$mode["kunde"].' AND id='.$mode["id"].'',MYSQL_ASSOC);
-    // Konvertiert die Variablen ins UTF-8 Format
-    foreach($arrData AS $Key=>$Value)
-    {
-        $arrData[$Key]=utf8_encode($Value);
-    }
 } else{
     $arrData=FALSE;
 }
@@ -112,11 +107,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
 		$objTemplate=new Template("layout/geraeteedit.lay.php");
 		$str=$objTemplate->DisplayToString('Login_Header');
 		foreach ($Data as $Value){
-            // Konvertiert die Variablen ins UTF-8 Format
-            foreach($Value AS $Key=>$Value2)
-            {
-                $Value[$Key]=utf8_encode($Value2);
-            }           
+                     
             $Value['runde']=$runde;
             $Value['prog_list']=MakeProgList($Data2,$Value['prog_id']);
             $Value['aktive']=MakeProgAktiv($Data,$Value['prog_id'],$runde);
@@ -177,11 +168,6 @@ function MakeProgList($Data,$programm_id){
 		$objTemplate=new Template("layout/geraeteedit.lay.php");
 		$str="";
 		foreach ($Data as $Value){
-            // Konvertiert die Variablen ins UTF-8 Format
-            foreach($Value AS $Key=>$Value2)
-            {
-                $Value[$Key]=utf8_encode($Value2);
-            }
             $Value['runde']=$runde;
             $objTemplate->AssignArray($Value);
             if($Value['id']==$programm_id)
