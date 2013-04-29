@@ -30,12 +30,12 @@
         <td class="slider3">{$passwort}</td>
         {$suche_kunde}
 		<td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
-			<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_zugaenge.php?kunde={$kunde}&id={$id}&mode=edit','Zugänge bearbeiten','710','300');">
+			<a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?kunde={$kunde}&id={$id}&mode=edit" >
 			<img src="syspics/edit.png" alt="Eintrag bearbeiten">
 			</a>
 		</td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
-			<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','auswertung_dokumente.php?name=zugaenge&kunde={$kunde}&id={$id}&mode=delete','Zugaenge löschen','400','150');">
+			<a class="edit" data-fancybox-type="iframe" href="auswertung_dokumente.php?name=zugaenge&kunde={$kunde}&id={$id}&mode=delete" >
 			<img src="syspics/button_drop.png" alt="Eintrag löschen">
 			</a>
 		</td>
