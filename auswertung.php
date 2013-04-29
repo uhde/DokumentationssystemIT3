@@ -108,7 +108,6 @@ include("include/functions.inc.php");
 
 
 <body style="margin:0;padding:0;text-align:center;">
-<span style=""
 <?php
     
 /*if(isset($mode["askuser"])) {
@@ -323,6 +322,5 @@ include("include/functions.inc.php");
         </div>
     </div>
     -->
-</span>
 </body>
 </html>
