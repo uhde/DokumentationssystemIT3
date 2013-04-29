@@ -107,8 +107,8 @@ include("include/functions.inc.php");
 </head>
 
 
-<body style="margin:0;padding:0;">
-<span style="text-align:center;font-family: Verdana,Arial,Helvetica,sans-serif;"
+<body style="margin:0;padding:0;text-align:center;">
+<span style=""
 <?php
     
 /*if(isset($mode["askuser"])) {
