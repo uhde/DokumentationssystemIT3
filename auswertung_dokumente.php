@@ -48,7 +48,7 @@ include("include/functions.inc.php");
 </head>
 
 
-<body style="margin:0;padding:0;">
+<body style="margin:0;padding:0;text-align:center;">
 <?php
 
     //echo '<a href="geraeteedit.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit"> testtasdasdkhjg</a>';
@@ -114,13 +114,7 @@ include("include/functions.inc.php");
   
 ?>
     <!--<br><br>Die Daten wurden gespeichert.<br><br>-->
-    <br>
-    <div style="height:33px;width:200px;">
-        <div style="position:relative;top:4px;left:90%;">
-            <input type="button" value="Schließen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide(window.parent.location.reload(true)));" class="button1">
-        </div>
-    </div>
-    
+
 
 </body>
 </html>
