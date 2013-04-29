@@ -29,6 +29,8 @@ include("include/functions.inc.php");
     foreach($_POST as $key=>$value) 
     { 
         $value=mysql_real_escape_string($value);
+        // Da die Variablen (von geraeteedit) in utf-8 kommen, müssen diese erst wieder zurückkonvertiert werden
+        $value=utf8_decode($value);
         //echo $key." -> ".$value."<br>";
         if(strpos($key,'programm_id')!==false) {
             // Hier wird zuerst die Zählvariable ausgelesen
