@@ -35,7 +35,7 @@
 		</td>
 
 		<td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
-			<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit','Geräte bearbeiten','720','720');">
+			<a class="edit" data-fancybox-type="iframe" href="geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit" >
 			<img src="syspics/edit.png" alt="Eintrag bearbeiten">
 			</a>
 		</td>        
