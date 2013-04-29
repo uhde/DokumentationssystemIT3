@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Kunden verwalten</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta name="creation_date" content="2012-11-16">
 	<meta name="revisit-after" content="5 days">
@@ -179,6 +180,7 @@
 <html>
 <head>
 	<title>Kunden verwalten</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta name="creation_date" content="2012-11-16">
 	<meta name="revisit-after" content="5 days">
