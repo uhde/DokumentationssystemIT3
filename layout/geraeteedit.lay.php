@@ -158,7 +158,7 @@
 	<td align="center" colspan="2">
     
 		<input type="submit" value="Speichern" >
-        <input type="button" value="Abbrechen" onClick="javascript:parent.$.fancybox.close();" >
+        <input type="button" value="Abbrechen" onClick="javascript:$.fancybox.close();" >
 	</td>
     <td>
         <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
