@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Kunden verwalten</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta name="creation_date" content="2012-11-16">
 	<meta name="revisit-after" content="5 days">
@@ -150,7 +149,7 @@
 
 <tr>
     <td>
-        Bei dem Programm "Teamviewer Lan" wird das Login Feld nicht Ã¼bernommen.<br>
+        Bei dem Programm "Teamviewer Lan" wird das Login Feld nicht übernommen.<br>
     </td>
 </tr>
 
@@ -161,7 +160,7 @@
         <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" >
 	</td>
     <td>
-        <input type="submit"  value="Neues Programm hinzufÃ¼gen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
+        <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
     </td>
 </tr>
 </form>
@@ -180,7 +179,6 @@
 <html>
 <head>
 	<title>Kunden verwalten</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta name="creation_date" content="2012-11-16">
 	<meta name="revisit-after" content="5 days">
@@ -323,7 +321,7 @@
 <tr>
     
     <td colspan="4">
-       Klicken sie auf den Button: "Programm hinzufÃ¼gen" um ein, oder mehrere Programme einzupflegen.<br>
+       Klicken sie auf den Button: "Programm hinzufügen" um ein, oder mehrere Programme einzupflegen.<br>
     </td>
 </tr>
 
@@ -334,7 +332,7 @@
         <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
 	</td>
      <td>
-        <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufÃ¼gen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
+        <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
     </td>
 </tr>
 </form>
@@ -395,8 +393,8 @@
 	<td class="Key"><select name="programm_id{$runde}" size="1">{$prog_list}  </select>  </td>
 	<td class="Value"><span id="geratelogin"> <input name="login{$runde}" type="text" size="25"  value="{$geraete_login}" ></input></span></td>
 	<td class="Value"><input name="passwort{$runde}" type="text" size="25" maxlength="40" value="{$geraete_pw}" ></input></td>
-    <td style="text-align:center;"><a href="auswertung.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="LÃ¶schen"   >
-        <img src="syspics/button_drop.png" style="border:none:width:12px;height:12px;" alt="Programm lÃ¶schen"></a></td>
+    <td style="text-align:center;"><a href="auswertung.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="Löschen"   >
+        <img src="syspics/button_drop.png" style="border:none:width:12px;height:12px;" alt="Programm löschen"></a></td>
     <td class="Value">
         <input name="prog_aktiv{$runde}" title="Checkbox die darstellt, dass der Button angezeigt werden soll." type="checkbox" {$aktive}></input>
     </td>
