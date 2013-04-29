@@ -155,7 +155,7 @@ function ClearAllLoad()
     
    
 	$(document).ready(function() {
-            $(".various").fancybox({
+            $(".edit").fancybox({
 
             });
 			// Erstmal alle ausblende
