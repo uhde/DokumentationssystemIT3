@@ -17,6 +17,10 @@ if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
 if($mode["mode"]=="edit")
 {
     $arrData=$objMySQL->QuerySingleRowArray('SELECT * FROM '.TBL_GERAETE.' WHERE kunde='.$mode["kunde"].' AND id='.$mode["id"].'',MYSQL_ASSOC);
+    foreach($arrData AS $Key=>$Value)
+    {
+        $arrData[$Key]=utf8_encode($Value);
+    }
 } else{
     $arrData=FALSE;
 }
@@ -33,9 +37,17 @@ if($mode["mode"]=="edit")
                 WHERE '.TBL_GERAETE_LOGIN.'.loeschen=1 AND geraete_id='.$mode["id"].' AND programm_id='.TBL_PROGRAMME.'.id ';
     }
     $arrData2=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
+    foreach($arrData2 AS $Key=>$Value)
+    {
+        $arrData2[$Key]=utf8_encode($Value);
+    }
     $arrData3=$objMySQL->QueryArray('SELECT *
                 FROM '.TBL_PROGRAMME.' ORDER BY id
-                ',MYSQL_ASSOC);            
+                ',MYSQL_ASSOC);           
+    foreach($arrData3 AS $Key=>$Value)
+    {
+        $arrData3[$Key]=utf8_encode($Value);
+    }                
 //	$arrData4=$objMySQL->QueryArray('SELECT * FROM '.TBL_GERAETE_LOGIN.' WHERE geraete_id='.$mode['id'].' ',MYSQL_ASSOC);  
                  
 // Wenn die get Variable prog_add gesetzt ist,                  
