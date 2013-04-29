@@ -30,12 +30,12 @@
 			{$name}
 		</td>
 		<td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
-			<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_dokumente.php?kunde={$kunde}&id={$id}&mode=edit','Dokumente','710','270');">
+			<a class="edit" data-fancybox-type="iframe" href="edit_dokumente.php?kunde={$kunde}&id={$id}&mode=edit" >
 			<img src="syspics/edit.png" alt="Eintrag bearbeiten">
 			</a>
 		</td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
-			<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','auswertung_dokumente.php?name=dokumente&kunde={$kunde}&id={$id}&mode=delete','Bilder','400','200');">
+			<a class="edit" data-fancybox-type="iframe" href="auswertung_dokumente.php?name=dokumente&kunde={$kunde}&id={$id}&mode=delete" >
 			<img src="syspics/button_drop.png" alt="Eintrag löschen">
 			</a>
 		</td>

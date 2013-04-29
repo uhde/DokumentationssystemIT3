@@ -14,7 +14,7 @@
             <img src="syspics/user_invisible.png" style="border:none:width:12px;height:12px;" alt="Kunde Verstecken"></a>
     </td>
 	<td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
-		<a href="#" id="kundenwahl" title="Info und Edit" onclick="showboxy('kundenwahl','kundeninfo.php?knd_id={$id}','Kundeninfo','710','680');">
+		<a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?knd_id={$id}" >
             <img src="syspics/info.png" style="border:none:width:12px;height:12px;" alt="Kundeninfo"></a>
     </td>
 </tr>
