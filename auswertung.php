@@ -315,11 +315,13 @@ include("include/functions.inc.php");
 //}
 ?>
 <br>
-    <div style="height:33px;width:200px;">
+   <!-- 
+   <div style="height:33px;width:200px;">
         <div style="position:relative;top:4px;left:90%;">
             <input type="button" value="Schließen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide(window.parent.location.reload(true)));" class="button1">
         </div>
     </div>
+    -->
 
 </body>
 </html>
