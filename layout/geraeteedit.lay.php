@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Kunden verwalten</title>
-    <meta http-equiv="x-ua-compatible" content="ie=8">
+    <meta http-equiv="x-ua-compatible" content="ie=9">
 	<meta name="robots" content="INDEX,FOLLOW">
 	<meta name="creation_date" content="2012-11-16">
 	<meta name="revisit-after" content="5 days">
@@ -14,6 +14,14 @@
 
 
 <body style="margin:0;padding:0;">
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <desc>Example Star</desc>
+  <polygon 
+      fill="blue" stroke="blue" stroke-width="10" 
+      points="350,75  379,161 469,161 397,215 423,301 
+              350,250 277,301 303,215 231,161 321,161" />
+</svg>
 
 <form name="Form1" method="post" action="auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
