@@ -89,7 +89,7 @@
 	<td>
 		<span class="StandardText"><input name="sn" type="text" size="30" maxlength="30" value="{$sn}" ></input></span>
 	</td>
-	<td align="right"><span class="LinkStyle">Garantie<br>(dd/mm/yyyy) </span></td>
+	<td align="right"><span class="LinkStyle">Garantie<br>(TT/MM/JJJJ) </span></td>
 	<td>
 		<span class="StandardText">
         <input name="garantied" type="text" size="2" maxlength="2" value="{$garantied}"></input>
@@ -254,7 +254,7 @@
 	<td>
 		<span class="StandardText"><input name="sn" type="text" size="30" maxlength="30" value="{$sn}" ></input></span>
 	</td>
-	<td align="right"><span class="LinkStyle">Garantie<br></span></td>
+	<td align="right"><span class="LinkStyle">Garantie<br>(TT/MM/JJJJ) </span></td>
 	<td>
 		<span class="StandardText">
         <input name="garantied" type="text" size="2" maxlength="2" value="{$garantied}"></input>
