@@ -158,8 +158,7 @@
 	<td align="center" colspan="2">
     
 		<input type="submit" value="Speichern" >
-        <input type="button" value="Abbrechen" onClick="javascript:parent.$.fancybox.close();" >
-	</td>
+    </td>
     <td>
         <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
     </td>
@@ -329,9 +328,7 @@
 <tr >
 	<td align="center" colspan="2">
 		<input type="submit" value="Speichern" class="button1">
-        
-        <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
-	</td>
+        </td>
      <td>
         <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
     </td>
