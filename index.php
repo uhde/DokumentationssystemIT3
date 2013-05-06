@@ -161,7 +161,10 @@ function ClearAllLoad()
    
 	$(document).ready(function() {
             $(".edit").fancybox({
-
+                afterClose : function() {
+                    location.reload();
+                    return;
+                }
             });
 			// Erstmal alle ausblende
             // Wird beim reload der Page angewendet
