@@ -1,7 +1,8 @@
 !#----- dokumente_edit:Begin -----#!
 <html>
 <head>
-    <title>Kunden verwalten</title>
+    <title>Dokumente verwalten</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="creation_date" content="2012-11-16">
     <meta name="revisit-after" content="5 days">
