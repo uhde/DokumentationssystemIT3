@@ -102,7 +102,7 @@ if (file_exists($page.'.php')) {
 
 <script type='text/javascript'>
 
-function loadXMLDoc(Test,id,time)
+function loadXMLDoc(seite,id,time)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
@@ -110,16 +110,14 @@ function loadXMLDoc(Test,id,time)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            //alert(Test);
             var aufzurufende_id;
-            aufzurufende_id = "#"+Test;
             $(aufzurufende_id).empty();
             $(aufzurufende_id).html(xmlhttp.responseText);
-            //document.getElementById(Test).innerHTML = "Dies ist ein test";
+            //document.getElementById().innerHTML = "Dies ist ein test";
             //alert(xmlhttp.responseText);
         }
     }
-    xmlhttp.open("GET","include/getsinglegeraet.php?id="+id+"&time="+time,true);
+    xmlhttp.open("GET",seite+"?id="+id+"&time="+time,true);
     xmlhttp.send();
 }
 function ClearLoad(Test)

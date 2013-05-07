@@ -21,16 +21,16 @@
 
 !#----- Data:Begin -----#!
     <tr id="Info{$id}" class="Data{$LineClass}" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data{$LineClass}'" >
-        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','{$id}','{$time}')">
             {$name}
         </td>
-        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','{$id}','{$time}')">
             {$ip_adresse}
         </td>
-        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','{$id}','{$time}')">
             {$system}
         </td>
-        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','{$id}','{$time}')">
             {$benutzer}
         </td>
 
