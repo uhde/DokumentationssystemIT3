@@ -201,6 +201,16 @@ function ClearAllLoad()
                     $(name).hide();
                 }
             });
+            $("#Buchungen .slider4").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
             $("#Buchungen .TRInfoClose").click(function(){
                 $(this).toggleClass("up");
                 name=$(this).attr("value");

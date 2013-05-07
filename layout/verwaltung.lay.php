@@ -21,7 +21,7 @@
         <td class="slider_invisible">
             &#160;
         </td>
-        <td class="slider2" value="#trinfo{$id}">
+        <td class="slider4" value="#trinfo{$id}">
             {$bemerkung}
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">

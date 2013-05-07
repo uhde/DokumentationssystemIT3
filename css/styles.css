@@ -263,6 +263,17 @@ td.slider3 {
     padding-top:8px;
     padding-bottom:8px;
 }
+td.slider4 {
+    width:92%;
+    text-align:left;
+    vertical-align:middle;
+    border-right:1px solid #aaa;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #eee;
+    cursor:pointer;
+    padding-top:8px;
+    padding-bottom:8px;
+}
 td.slider_invisible {
     width:20%;
     text-align:left;
