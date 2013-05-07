@@ -118,6 +118,7 @@ function loadXMLDoc(seite,id,time)
         }
     }
     xmlhttp.open("GET",seite+"?id="+id+"&time="+time,true);
+    alert(seite+"?id="+id+"&time="+time);
     xmlhttp.send();
 }
 function ClearLoad(Test)
