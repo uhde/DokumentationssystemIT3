@@ -101,24 +101,32 @@ if (file_exists($page.'.php')) {
 
 
 <script type='text/javascript'>
-
-function loadXMLDoc(seite,id,time)
+// Diese Funktion lädt die spezifischen Daten einer Sache nach, und fügt dies dann in den dafür
+// vorgesehenen Platz ein.
+function loadXMLDoc(seite,jq_aufzurufende_id,id,time)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function()
     {
+        // Wenn die website mit ajax geladen wurde, wird diese If Anweisung ausgeführt
+        // Dort wird dann der geladene Inhalt erst in das Dokument eingebaut
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
             var aufzurufende_id;
+            aufzurufende_id = "#"+jq_aufzurufende_id;
+            // Hier wird das Feld geleert, bevor etwas neues reingeschrieben wird. 
+            // Dies wird vor allem gemacht, um Fehler im IE vorzubeugen.
             $(aufzurufende_id).empty();
+            // Hier wird das Feld befüllt
             $(aufzurufende_id).html(xmlhttp.responseText);
             //document.getElementById().innerHTML = "Dies ist ein test";
             //alert(xmlhttp.responseText);
         }
     }
+    // Der eigentliche Request.
     xmlhttp.open("GET",seite+"?id="+id+"&time="+time,true);
-    alert(seite+"?id="+id+"&time="+time);
+    //alert(seite+"?id="+id+"&time="+time);
     xmlhttp.send();
 }
 function ClearLoad(Test)
