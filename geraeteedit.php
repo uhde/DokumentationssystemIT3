@@ -39,7 +39,7 @@ if($mode["mode"]=="edit")
     
     
          
-//	$arrData4=$objMySQL->QueryArray('SELECT * FROM '.TBL_GERAETE_LOGIN.' WHERE geraete_id='.$mode['id'].' ',MYSQL_ASSOC);  
+//    $arrData4=$objMySQL->QueryArray('SELECT * FROM '.TBL_GERAETE_LOGIN.' WHERE geraete_id='.$mode['id'].' ',MYSQL_ASSOC);  
                  
 // Wenn die get Variable prog_add gesetzt ist,                  
 if((isset($mode['prog_add'])&&(!empty($mode['prog_add'])))||$mode["mode"]=="create")
@@ -102,11 +102,11 @@ if ($arrData!==FALSE) {
 
 
 function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
-	if ($Data!==FALSE) {
+    if ($Data!==FALSE) {
         $runde=1;
-		$objTemplate=new Template("layout/geraeteedit.lay.php");
-		$str=$objTemplate->DisplayToString('Login_Header');
-		foreach ($Data as $Value){
+        $objTemplate=new Template("layout/geraeteedit.lay.php");
+        $str=$objTemplate->DisplayToString('Login_Header');
+        foreach ($Data as $Value){
                      
             $Value['runde']=$runde;
             $Value['prog_list']=MakeProgList($Data2,$Value['prog_id']);
@@ -119,7 +119,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             }
             $objTemplate->ClearAssign();
             $runde++;
-		}
+        }
         
         //Die Variablen müssen hier auf "" gesetzt werden, da sonst die Werte des letzten durchlaufes übernommen werden.
         $test=array();
@@ -133,16 +133,16 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             $str.=$objTemplate->DisplayToString('Login_Main');
             $objTemplate->ClearAssign();
             $runde++;
-		}
+        }
             
             
-		$str.=$objTemplate->DisplayToString('Login_Footer');
-		unset($objTemplate);
-		return $str;
+        $str.=$objTemplate->DisplayToString('Login_Footer');
+        unset($objTemplate);
+        return $str;
         //return $Data;
-	}
+    }
         $runde=1;
-		$objTemplate=new Template("layout/geraeteedit.lay.php");
+        $objTemplate=new Template("layout/geraeteedit.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
         $test['geraete_login']="";$test['geraete_pw']="";$test['geraete_login']="";$test['aktiv']="0";
         for ($i=0;$i<=$prog_add;$i++)  {
@@ -153,9 +153,9 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             $str.=$objTemplate->DisplayToString('Login_Main');
             $objTemplate->ClearAssign();
             $runde++;
-		}
+        }
         $str.=$objTemplate->DisplayToString('Login_Footer');
-		unset($objTemplate);
+        unset($objTemplate);
         return $str;
         
     return FALSE;
@@ -163,11 +163,11 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
 
 // MakeProgList macht Dropdownliste der Programme, die in MakeLoginTable dann verwendet wird
 function MakeProgList($Data,$programm_id){
-	if ($Data!==FALSE) {
+    if ($Data!==FALSE) {
         $runde=1;
-		$objTemplate=new Template("layout/geraeteedit.lay.php");
-		$str="";
-		foreach ($Data as $Value){
+        $objTemplate=new Template("layout/geraeteedit.lay.php");
+        $str="";
+        foreach ($Data as $Value){
             $Value['runde']=$runde;
             $objTemplate->AssignArray($Value);
             if($Value['id']==$programm_id)
@@ -181,18 +181,18 @@ function MakeProgList($Data,$programm_id){
             
             $objTemplate->ClearAssign();
             $runde++;
-		}
-		unset($objTemplate);
-		return $str;
+        }
+        unset($objTemplate);
+        return $str;
         //return $Data;
-	}
+    }
     return FALSE;
 }
 
 
 function MakeProgAktiv($Data,$programm_id,$runde){
-	if ($Data!==FALSE) {
-		$objTemplate=new Template("layout/geraeteedit.lay.php");
+    if ($Data!==FALSE) {
+        $objTemplate=new Template("layout/geraeteedit.lay.php");
         $first=false;
         if($programm_id != '20')
         {
@@ -211,10 +211,10 @@ function MakeProgAktiv($Data,$programm_id,$runde){
                 }
             }
         }
-		unset($objTemplate);
-		return $str;
+        unset($objTemplate);
+        return $str;
         //return $Data;
-	}
+    }
     return FALSE;   
 }
 

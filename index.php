@@ -21,37 +21,37 @@ if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
 
 // Gerätetyp setzen
 if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
-	$_SESSION['device_type']=$_GET['device_type'];
+    $_SESSION['device_type']=$_GET['device_type'];
 }else{
-	if (!isset($_SESSION['device_type']) OR empty($_SESSION['device_type'])) {
-		$_SESSION['device_type']=1;
-	}
+    if (!isset($_SESSION['device_type']) OR empty($_SESSION['device_type'])) {
+        $_SESSION['device_type']=1;
+    }
 }
 
 
 // Kunden-ID setzen
 if (isset($_GET['knd_id'])) {
-	$_SESSION['knd_id']=$_GET['knd_id'];
-	if (isset($_SESSION['old_knd_id'])) {
-		$_SESSION['old_knd_id']=$_GET['knd_id'];
-	}
+    $_SESSION['knd_id']=$_GET['knd_id'];
+    if (isset($_SESSION['old_knd_id'])) {
+        $_SESSION['old_knd_id']=$_GET['knd_id'];
+    }
 
-	/*if ($_SESSION['knd_id']<>$_SESSION['old_knd_id']) {
-		$_SESSION['device_type']=1;
-	}*/
+    /*if ($_SESSION['knd_id']<>$_SESSION['old_knd_id']) {
+        $_SESSION['device_type']=1;
+    }*/
 }
 
 // Seite setzen
 $page=$arrTopmenu[1]['file'];
 
 if (isset($_POST['page']) AND !empty($_POST['page'])) {
-	$page=$_POST['page'];
+    $page=$_POST['page'];
     $_SESSION["page"]=$_POST['page'];
 }else{
-	if (isset($_GET['page']) AND !empty($_GET['page'])) {
-		$page=$_GET['page'];
+    if (isset($_GET['page']) AND !empty($_GET['page'])) {
+        $page=$_GET['page'];
         $_SESSION["page"]=$_GET['page'];
-	}else{
+    }else{
         if (!(isset($_SESSION['page']) AND !empty($_SESSION['page']))) {
             // Das hier wird gesetzt damit beim ersten öffnen keine 404-Seite auftaucht.
             $_SESSION['page']=$arrTopmenu[1]['file'];
@@ -59,19 +59,19 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
         }else{
             $page=$_SESSION['page'];
         }
-	}
+    }
 }
 
 // Existiert Seite oder Fehler?
 if (file_exists($page.'.php')) {
-	$page=$page.'.php';
+    $page=$page.'.php';
 }else{
-	if (file_exists($page.'.html')) {
-		$page=$page.'.html';
-	}else{
-		$error_page=$page;
-		$page='error404.php';
-	}
+    if (file_exists($page.'.html')) {
+        $page=$page.'.html';
+    }else{
+        $error_page=$page;
+        $page='error404.php';
+    }
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -138,10 +138,10 @@ function ClearAllLoad()
 
 <script type='text/javascript'>
 // Wird zum aufpoppen lassen von boxy verwendet. 
-	function showboxy(myactuator,url,title,width,height) {
-		mycontent='<iframe application="yes" width="' + width + '" height="' + height + '" border=0 src="' + url + '">You need a Browser which can display iframes</iframe>';
-		new Boxy( mycontent, {unloadOnHide: true, draggable: true, show: true, modal: true, title: title, closeText:"<img src='syspics/close_window.png' border=0 title='Schließen' alt='Schließen'>", actuator: $('#'+myactuator)[0]});
-	}
+    function showboxy(myactuator,url,title,width,height) {
+        mycontent='<iframe application="yes" width="' + width + '" height="' + height + '" border=0 src="' + url + '">You need a Browser which can display iframes</iframe>';
+        new Boxy( mycontent, {unloadOnHide: true, draggable: true, show: true, modal: true, title: title, closeText:"<img src='syspics/close_window.png' border=0 title='Schließen' alt='Schließen'>", actuator: $('#'+myactuator)[0]});
+    }
     function loadboxy() {
         alert('2');
     }
@@ -159,51 +159,51 @@ function ClearAllLoad()
     }
     
    
-	$(document).ready(function() {
+    $(document).ready(function() {
             $(".edit").fancybox({
                 afterClose : function() {
                     location.reload();
                     return;
                 }
             });
-			// Erstmal alle ausblende
+            // Erstmal alle ausblende
             // Wird beim reload der Page angewendet
-	 	     $("#Buchungen .TRInfo").hide();
+              $("#Buchungen .TRInfo").hide();
             // Alles was in dieser "onklick" funktion steht wird angewendet, sobald auf eins geklickt wird
-			 $("#Buchungen .slider").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+             $("#Buchungen .slider").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                // $("#Buchungen .TRInfo").hide();
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
 
-			});
+            });
              $("#Buchungen .slider_invisible").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                 //$("#Buchungen2 .TRInfo").hide();
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
-			});
+            });
             $("#Buchungen .slider2").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                 //$("#Buchungen .TRInfo").hide();
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
-			});
+            });
             $("#Buchungen .TRInfoClose").click(function(){
                 $(this).toggleClass("up");
-				name=$(this).attr("value");
+                name=$(this).attr("value");
                 $(name).hide();
             });
             $("#Buchungen .TRInfoCloseall").click(function(){
@@ -216,27 +216,27 @@ function ClearAllLoad()
             // Alles was in dieser "onklick" funktion steht wird angewendet, sobald auf eins geklickt wird
 
             $("#Buchungen2 .slider3").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                 //$("#Buchungen2 .TRInfo").hide();
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
-			});
+            });
             $("#Buchungen2 .slider_invisible").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
-			});
+            });
             $("#Buchungen2 .TRInfoClose").click(function(){
                 $(this).toggleClass("up");
-				name=$(this).attr("value");
+                name=$(this).attr("value");
                 $(name).hide();
                 
             });
@@ -246,32 +246,32 @@ function ClearAllLoad()
             $("#Buchungen3 .TRInfo").hide();
 
             $("#Buchungen3 .slider2").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                 //$("#Buchungen3 .TRInfo").hide();
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
-			});
+            });
              $("#Buchungen3 .slider_invisible").click(function(){
-				$(this).toggleClass("up");
-				name=$(this).attr("value");
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
                 //$("#Buchungen2 .TRInfo").hide();
                 if($(this).hasClass('up')) {
-					$(name).show();
-				}else{
-					$(name).hide();
+                    $(name).show();
+                }else{
+                    $(name).hide();
                 }
-			});
+            });
             $("#Buchungen3 .TRInfoClose").click(function(){
                 $(this).toggleClass("up");
-				name=$(this).attr("value");
+                name=$(this).attr("value");
                 $(name).hide();
             });
 
-	});
+    });
 
 </script>
 
@@ -296,17 +296,17 @@ function ClearAllLoad()
 <div class="content_area">
 <table width="100%" height="30" border="0" align="center">
 <tr>
-	<td valign="middle" style="padding-top:6px;padding-left:10px;">
-		<span style="font-size:16pt; font-family:Verdana, Arial, Helvetica, sans-serif; font-weight:bold; color:#FFFFFF;">
-			DokuIT v3.4
-		</span>
-	</td>
-	<td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
+    <td valign="middle" style="padding-top:6px;padding-left:10px;">
+        <span style="font-size:16pt; font-family:Verdana, Arial, Helvetica, sans-serif; font-weight:bold; color:#FFFFFF;">
+            DokuIT v3.4
+        </span>
+    </td>
+    <td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
         <a onclick='activex.run("F:/Fernwartung/TV_Start/tv_starter.exe");' style="text-align:right;color:#FFFFFF; font-weight:bold; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:10pt;vertical-align: middle;" href="#">
             Teamviewer
        </a> 
-	</td>
-	
+    </td>
+    
     <td width="50" align="left" style="vertical-align: middle;" >
         <a href="index.php?page=verwaltung&device_type=10" target="_self" style="color:#FFFFFF; font-weight:bold; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:10pt;vertical-align: middle;">
             Verwaltung
@@ -319,7 +319,7 @@ function ClearAllLoad()
                 <input type="image" src="syspics/search.png" title="Suchen" alt="Absenden" style="width:20px;height:20px;border:none">
             </form>
         </div>
-	</td>
+    </td>
     
 </tr>
 </table>
@@ -350,10 +350,10 @@ require($page);
 
 <!-- overlayed element -->
 <div class="modal" id="overlay" >
-	<div class="contentWrap"></div>
-	<p>
-		<button class="close"> Abbruch </button>
-	</p>
+    <div class="contentWrap"></div>
+    <p>
+        <button class="close"> Abbruch </button>
+    </p>
 </div>
 
 </body>

@@ -62,11 +62,11 @@ echo "\n<br />\n";
 $db->ThrowExceptions = true;
 
 try {
-	// This next line will always cause an error
-	$db->Query("BAD SQL QUERY TO CREATE AN ERROR");
+    // This next line will always cause an error
+    $db->Query("BAD SQL QUERY TO CREATE AN ERROR");
 } catch(Exception $e) {
-	// If an error occurs, do this (great for transaction processing!)
-	echo "We caught the error: " . $e->getMessage();
+    // If an error occurs, do this (great for transaction processing!)
+    echo "We caught the error: " . $e->getMessage();
 }
 
 // Or let's show a stack trace if we do not use a try/catch

@@ -1,18 +1,18 @@
 !#----- Header:Begin -----#!
 <div id="frame_devicenav">
-	<table style="padding-right:20px;width:98%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
-	<thead>
-	<tr>
-	<th style="width:23%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
-	<th style="width:23%;text-align:center;vertical-align:middle;" class="{$adresse_sort_order}"><a href="index.php?sort_name=adresse&sort_order={$sort_order}">IP-Adresse</a>{$ip_adresse_IMG}</th>
-	<th style="width:23%;text-align:center;vertical-align:middle;" class="{$system_sort_order}"><a href="index.php?sort_name=system&sort_order={$sort_order}">Systemtyp</a>{$system_IMG}</th>
-	<th style="width:23%;text-align:center;vertical-align:middle;" class="{$benutzer_sort_order}"><a href="index.php?sort_name=benutzer&sort_order={$sort_order}">Benutzer</a>{$zimmer_IMG}</th>
+    <table style="padding-right:20px;width:98%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
+    <thead>
+    <tr>
+    <th style="width:23%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
+    <th style="width:23%;text-align:center;vertical-align:middle;" class="{$adresse_sort_order}"><a href="index.php?sort_name=adresse&sort_order={$sort_order}">IP-Adresse</a>{$ip_adresse_IMG}</th>
+    <th style="width:23%;text-align:center;vertical-align:middle;" class="{$system_sort_order}"><a href="index.php?sort_name=system&sort_order={$sort_order}">Systemtyp</a>{$system_IMG}</th>
+    <th style="width:23%;text-align:center;vertical-align:middle;" class="{$benutzer_sort_order}"><a href="index.php?sort_name=benutzer&sort_order={$sort_order}">Benutzer</a>{$zimmer_IMG}</th>
 
-	<th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
-	</tr>
-	</thead>
-	</table>
+    <th style="width:4%;">&nbsp;</th>
+    </tr>
+    </thead>
+    </table>
 </div>
 <div id="Buchungen">
 <table style="width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #eee;border-bottom:none;" id="DeviceData">
@@ -20,38 +20,38 @@
 
 
 !#----- Data:Begin -----#!
-	<tr id="Info{$id}" class="Data{$LineClass}" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data{$LineClass}'" >
-		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
-			{$name}
-		</td>
-		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
-			{$ip_adresse}
-		</td>
-		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
-			{$system}
-		</td>
-		<td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
-			{$benutzer}
-		</td>
+    <tr id="Info{$id}" class="Data{$LineClass}" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data{$LineClass}'" >
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+            {$name}
+        </td>
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+            {$ip_adresse}
+        </td>
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+            {$system}
+        </td>
+        <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('trinfo{$id}','{$id}','{$time}')">
+            {$benutzer}
+        </td>
 
-		<td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
-			<a class="edit" data-fancybox-type="iframe" href="geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit" >
-			<img src="syspics/edit.png" alt="Eintrag bearbeiten">
-			</a>
-		</td>        
+        <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
+            <a class="edit" data-fancybox-type="iframe" href="geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit" >
+            <img src="syspics/edit.png" alt="Eintrag bearbeiten">
+            </a>
+        </td>        
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
-			<a class="edit" data-fancybox-type="iframe" href="auswertung.php?name=geraete&kunde={$kunde}&id={$id}&mode=delete&askuser=true" >
+            <a class="edit" data-fancybox-type="iframe" href="auswertung.php?name=geraete&kunde={$kunde}&id={$id}&mode=delete&askuser=true" >
                 <img src="syspics/button_drop.png" alt="Eintrag löschen">
-			</a>
-		</td>
-	</tr>
-	<tr >
+            </a>
+        </td>
+    </tr>
+    <tr >
         <td colspan=6 class="info_schatten4">
             <span id="trinfo{$id}" class="TRInfo">
             
             </span>
         </td>
-	</tr>
+    </tr>
 !#----- Data:End -----#!
 
 
@@ -62,7 +62,7 @@
 Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <br /><br />
 <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','geraeteedit.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}','Gerät eintragen','720','720');">
-	<img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 </p>
 !#----- Keine_Daten:End -----#!
@@ -76,30 +76,30 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Login_Header:Begin -----#!
 <table class="Logins_Table">
 <tr style="background-color:#666;">
-	<th>Typ</th>
-	<th>Login</th>
-	<th>Passwort</th>
+    <th>Typ</th>
+    <th>Login</th>
+    <th>Passwort</th>
 </tr>
 !#----- Login_Header:End -----#!
 
 
 !#----- Login_Main:Begin -----#!
 <tr>
-	<td class="Key">{$bemerkung}</td>
-	<td class="Value">{$geraete_login}</td>
-	<td class="Value">{$geraete_pw}</td>
-	<!-- <td class="Value" style="text-align:left;">{$bemerkung}</td> -->
+    <td class="Key">{$bemerkung}</td>
+    <td class="Value">{$geraete_login}</td>
+    <td class="Value">{$geraete_pw}</td>
+    <!-- <td class="Value" style="text-align:left;">{$bemerkung}</td> -->
 </tr>
 !#----- Login_Main:End -----#!
 
 !#----- Button_Main:Begin -----#!
 
-	<input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'>
+    <input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'>
     
 !#----- Button_Main:End -----#!
 !#----- Button_ping:Begin -----#!
 
-	<span style="float:right;padding-right:10px;"><input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'></span>
+    <span style="float:right;padding-right:10px;"><input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'></span>
     
 !#----- Button_ping:End -----#!
 
@@ -118,7 +118,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Footer2:Begin -----#!
 
 <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','geraeteedit.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}','Gerät eintragen','720','720');">
-	<img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 <span style="">
     <a href="dnsaufloesung.php?site={$site}" id="boxyfoo" > <!--onclick="showboxy('kundenwahl','dnsaufloesung.php','DNS Auflösung','400','200');" -->

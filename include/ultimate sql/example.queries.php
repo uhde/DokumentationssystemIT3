@@ -48,18 +48,18 @@ $result = $db->InsertRow("Test", $values);
 
 // If we have an error
 if (! $result) {
-	// Show the error and kill the script
-	$db->Kill();
+    // Show the error and kill the script
+    $db->Kill();
 } else {
-	// No error, show the new record's ID
-	echo "The new record's ID is: " . $db->GetLastInsertID() . "\n<br />\n";
+    // No error, show the new record's ID
+    echo "The new record's ID is: " . $db->GetLastInsertID() . "\n<br />\n";
 
-	// Show the record using the values array to generate the WHERE clause
-	// We will use the SelectRows() method to query the database
-	$db->SelectRows("Test", $values);
+    // Show the record using the values array to generate the WHERE clause
+    // We will use the SelectRows() method to query the database
+    $db->SelectRows("Test", $values);
 
-	// Show the results in an HTML table
-	echo $db->GetHTML();
+    // Show the results in an HTML table
+    echo $db->GetHTML();
 }
 
 // =========================================================================
@@ -87,8 +87,8 @@ $result = $db->UpdateRows("test", $update, $where);
 
 // If we have an error
 if (! $result) {
-	// Show the error and kill the script
-	$db->Kill();
+    // Show the error and kill the script
+    $db->Kill();
 }
 
 // --------------------------------------------------------------------------
@@ -190,20 +190,20 @@ $db->ThrowExceptions = true;
 // Here's our try/catch block
 try {
 
-	// Begin our transaction
-	$db->TransactionBegin();
+    // Begin our transaction
+    $db->TransactionBegin();
 
-	//Execute query/queries
-	$db->Query($sql);
+    //Execute query/queries
+    $db->Query($sql);
 
-	// Commit - this line never runs if there is an error
-	$db->TransactionEnd();
+    // Commit - this line never runs if there is an error
+    $db->TransactionEnd();
 
 } catch(Exception $e) {
 
-	// If an error occurs, rollback and show the error
-	$db->TransactionRollback();
-	exit($e->getMessage());
+    // If an error occurs, rollback and show the error
+    $db->TransactionRollback();
+    exit($e->getMessage());
 
 }
 

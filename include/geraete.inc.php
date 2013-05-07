@@ -6,11 +6,11 @@ if(isset($_SESSION['sort_name']))
     $old_sort_name=$_SESSION['sort_name'];
 }
 if (isset($_GET['sort_name'])) {
-	$_SESSION['sort_name']=$_GET['sort_name'];
-	$sort_name=$_GET['sort_name'];
+    $_SESSION['sort_name']=$_GET['sort_name'];
+    $sort_name=$_GET['sort_name'];
 }else{
-	$_SESSION['sort_name']='name';
-	$sort_name=$_SESSION['sort_name'];
+    $_SESSION['sort_name']='name';
+    $sort_name=$_SESSION['sort_name'];
 }
 
 
@@ -28,8 +28,8 @@ if (isset($_GET['sort_order']) AND !empty($_GET['sort_order'])) {
     }
 } else {
     $_SESSION['sort_order']='asc';
-	$sort_order='asc';
-	$objTemplate->Assign('sort_order','desc');
+    $sort_order='asc';
+    $objTemplate->Assign('sort_order','desc');
 }
 
 
@@ -72,8 +72,8 @@ $arrData=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
 $Count=0;
 
 if (is_array($arrData)) {
-	$objTemplate->Display('Header');
-	foreach ($arrData AS $Value) {
+    $objTemplate->Display('Header');
+    foreach ($arrData AS $Value) {
         if ($Value['adresse']==NULL) {
             $Value['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
         }
@@ -127,25 +127,25 @@ if (is_array($arrData)) {
             }
         }
  
-		if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
-			$_SESSION['knd_id']=$Value['id'];
-			session_commit();
-		}
+        if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
+            $_SESSION['knd_id']=$Value['id'];
+            session_commit();
+        }
         $Value["time"]=time();
-		// Datensatz dem Template zuweisen
-		$objTemplate->AssignArray($Value);
-		$objTemplate->Assign('LineClass',$Count%2);
+        // Datensatz dem Template zuweisen
+        $objTemplate->AssignArray($Value);
+        $objTemplate->Assign('LineClass',$Count%2);
 
-		// Info-Tabelle einfügen
-		$objTemplate->Assign('InfoTable',$objTemplate->DisplayToString('Info'));
+        // Info-Tabelle einfügen
+        $objTemplate->Assign('InfoTable',$objTemplate->DisplayToString('Info'));
 
-		// Template anzeigen
-		$objTemplate->Display('Data');
-		flush();ob_flush();flush();ob_flush();flush();
-		// Datencache leeren
-		$objTemplate->ClearAssign();
-		$Count++; 
-	}
+        // Template anzeigen
+        $objTemplate->Display('Data');
+        flush();ob_flush();flush();ob_flush();flush();
+        // Datencache leeren
+        $objTemplate->ClearAssign();
+        $Count++; 
+    }
     foreach ($Daten AS $Value) {
         $Value['site']=$_SERVER['PHP_SELF'];
         $objTemplate->AssignArray($Value);
@@ -171,10 +171,10 @@ unset($objTemplate);
 
 
 function MakeLoginTable($Data){
-	if (is_array($Data)) {
-		$objTemplate=new Template("layout/server.lay.php");
-		$str=$objTemplate->DisplayToString('Login_Header');
-		foreach ($Data as $Value){
+    if (is_array($Data)) {
+        $objTemplate=new Template("layout/server.lay.php");
+        $str=$objTemplate->DisplayToString('Login_Header');
+        foreach ($Data as $Value){
             if($Value['geraete_login']=="" AND $Value['geraete_pw']=="")
             {
             }
@@ -193,20 +193,20 @@ function MakeLoginTable($Data){
                 //$str.=implode('&nbsp;|&nbsp;',$Value)."<br />";
                 $objTemplate->ClearAssign();
             }
-		}
-		$str.=$objTemplate->DisplayToString('Login_Footer');
-		unset($objTemplate);
-		return $str;
+        }
+        $str.=$objTemplate->DisplayToString('Login_Footer');
+        unset($objTemplate);
+        return $str;
         //return $Data;
-	}
+    }
     return FALSE;
 }
 
 function MakeButtons($Data, $adresse){
-	if (is_array($Data)) {
-		$objTemplate=new Template("layout/geraete_general.lay.php");
+    if (is_array($Data)) {
+        $objTemplate=new Template("layout/geraete_general.lay.php");
         $str="";
-		foreach ($Data as $Value){
+        foreach ($Data as $Value){
             if($Value['aktiv']=='0')
             {
             
@@ -240,7 +240,7 @@ function MakeButtons($Data, $adresse){
                 //$str.=implode('&nbsp;|&nbsp;',$Value)."<br />";
                 $objTemplate->ClearAssign();
             }
-		}
+        }
         $Value['bemerkung']="Ping";
         $ausgabe="ping.exe -n 9 ".$adresse;
         $Value['activex']=$ausgabe;
@@ -248,12 +248,12 @@ function MakeButtons($Data, $adresse){
         $str.=$objTemplate->DisplayToString('Button_ping');
         $objTemplate->ClearAssign();
         
-		unset($objTemplate);
+        unset($objTemplate);
        // echo $str."<br>";
-		return $str;
+        return $str;
         //return $Data;
-	}
+    }
     return FALSE;
-	
+    
 }
 ?>

@@ -27,7 +27,7 @@ if ($arrData!==FALSE) {
     else {
         $arrData['checked2']='checked';
     }
-	$objTemplate->AssignArray($arrData);
+    $objTemplate->AssignArray($arrData);
     
     
     if (isset($edit) AND $edit==true) {

@@ -144,10 +144,10 @@ include_once("functions.inc.php");
         
         
 function MakeLoginTable($Data){
-	if (is_array($Data)) {
-		$objTemplate=new Template("../layout/server.lay.php");
-		$str=$objTemplate->DisplayToString('Login_Header');
-		foreach ($Data as $sqldata){
+    if (is_array($Data)) {
+        $objTemplate=new Template("../layout/server.lay.php");
+        $str=$objTemplate->DisplayToString('Login_Header');
+        foreach ($Data as $sqldata){
             if($sqldata['geraete_login']=="" AND $sqldata['geraete_pw']=="")
             {
             }
@@ -166,20 +166,20 @@ function MakeLoginTable($Data){
                 //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
                 $objTemplate->ClearAssign();
             }
-		}
-		$str.=$objTemplate->DisplayToString('Login_Footer');
-		unset($objTemplate);
-		return $str;
+        }
+        $str.=$objTemplate->DisplayToString('Login_Footer');
+        unset($objTemplate);
+        return $str;
         //return $Data;
-	}
+    }
     return FALSE;
 }
 
 function MakeButtons($Data, $adresse){
-	if (is_array($Data)) {
-		$objTemplate=new Template("../layout/geraete_general.lay.php");
+    if (is_array($Data)) {
+        $objTemplate=new Template("../layout/geraete_general.lay.php");
         $str="";
-		foreach ($Data as $sqldata){
+        foreach ($Data as $sqldata){
             if($sqldata['aktiv']=='0')
             {
             
@@ -213,7 +213,7 @@ function MakeButtons($Data, $adresse){
                 //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
                 $objTemplate->ClearAssign();
             }
-		}
+        }
         $sqldata['bemerkung']="Ping";
         $ausgabe="ping.exe -n 9 ".$adresse;
         $sqldata['activex']=$ausgabe;
@@ -221,13 +221,13 @@ function MakeButtons($Data, $adresse){
         $str.=$objTemplate->DisplayToString('Button_ping');
         $objTemplate->ClearAssign();
         
-		unset($objTemplate);
+        unset($objTemplate);
        // echo $str."<br>";
-		return $str;
+        return $str;
         //return $Data;
-	}
+    }
     return FALSE;
-	
+    
 }
 ?>
 </body>

@@ -1,54 +1,54 @@
 <?
 // Ist String eine IP
 function isIP($string) {
-	if (eregi('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$',$string)) {
-		return true;
-	}else{
-		return false;
-	}
+    if (eregi('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$',$string)) {
+        return true;
+    }else{
+        return false;
+    }
 }
 
 // IP über Hostname ermitteln  (NICHT VERWENDEN!!!)
 function getAddrByHost($host, $timeout = 3) {
    $query = `nslookup -timeout=$timeout -retry=1 $host`;
-	if(preg_match('/\nAddress: (.*)\n/', $query, $matches))
-	return trim($matches[1]);
+    if(preg_match('/\nAddress: (.*)\n/', $query, $matches))
+    return trim($matches[1]);
    return $host;
 }
 
 // DNS-Abfrage für Hostname
 function fnGetIP($name) {
-	$ip="";
-	if ($ip=="" and file_exists("/usr/bin/dig")) {
-		exec("/usr/bin/dig $name A +short",$arrIP);
-	//// !!!!!!!!!!!!! Array durchlaufen und IP suchen
-		$ip=$arrIP[0];
-		if (!eregi("[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",$ip)) $ip="";
-	}
-	if ($ip=="") {
-		$ip=$name;
-	}
-	return $ip;
+    $ip="";
+    if ($ip=="" and file_exists("/usr/bin/dig")) {
+        exec("/usr/bin/dig $name A +short",$arrIP);
+    //// !!!!!!!!!!!!! Array durchlaufen und IP suchen
+        $ip=$arrIP[0];
+        if (!eregi("[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",$ip)) $ip="";
+    }
+    if ($ip=="") {
+        $ip=$name;
+    }
+    return $ip;
 }
 
 // IP-Fomat: xxx.xxx.xxx.xxx
 function IPtoString($string){
-	if (isIP($string)) {
-		$arrIP=explode('.',$string);
-		return str_repeat('0',3-strlen($arrIP[0])).$arrIP[0].'.'.str_repeat('0',3-strlen($arrIP[1])).$arrIP[1].'.'.str_repeat('0',3-strlen($arrIP[2])).$arrIP[2].'.'.str_repeat('0',3-strlen($arrIP[3])).$arrIP[3];
-	}else{
-		return FALSE;
-	}
+    if (isIP($string)) {
+        $arrIP=explode('.',$string);
+        return str_repeat('0',3-strlen($arrIP[0])).$arrIP[0].'.'.str_repeat('0',3-strlen($arrIP[1])).$arrIP[1].'.'.str_repeat('0',3-strlen($arrIP[2])).$arrIP[2].'.'.str_repeat('0',3-strlen($arrIP[3])).$arrIP[3];
+    }else{
+        return FALSE;
+    }
 }
 
 // IP-Fomat: xxx.xxx.xxx.xxx
 function StringtoIP($string){
-	if (isIP($string)) {
-		$arrIP=explode('.',$string);
-		return (int)$arrIP[0].'.'.(int)$arrIP[1].'.'.(int)$arrIP[2].'.'.(int)$arrIP[3];
-	}else{
-		return FALSE;
-	}
+    if (isIP($string)) {
+        $arrIP=explode('.',$string);
+        return (int)$arrIP[0].'.'.(int)$arrIP[1].'.'.(int)$arrIP[2].'.'.(int)$arrIP[3];
+    }else{
+        return FALSE;
+    }
 }
 
 // Alle Logins eines Gerätes ermitteln
@@ -57,12 +57,12 @@ function GetGeraeteLogin($objMySQL,$id,$loeschen) {
     '.TBL_GERAETE_LOGIN.'.login AS geraete_login,'.TBL_GERAETE_LOGIN.'.passwort AS geraete_pw, '.TBL_PROGRAMME.'.bemerkung FROM 
         '.TBL_GERAETE.', '.TBL_GERAETE_LOGIN.', '.TBL_PROGRAMME.' 
         WHERE  '.TBL_GERAETE_LOGIN.'.loeschen='.$loeschen.' AND geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id=geraete_id ';
-	$arrData=$objMySQL->QueryArray($sqlquery,MYSQL_ASSOC);
-	if ($objMySQL->RowCount()>0) {
-		return $arrData;
-	}else{
+    $arrData=$objMySQL->QueryArray($sqlquery,MYSQL_ASSOC);
+    if ($objMySQL->RowCount()>0) {
+        return $arrData;
+    }else{
         return $sqlquery;
-	}
+    }
 }
 function GetGeraeteprogramme($objMySQL,$id) {
     $sql = 'SELECT '.TBL_GERAETE_LOGIN.'.login AS geraete_login, geraete_id, '.TBL_GERAETE_LOGIN.'.passwort AS geraete_pw, '.TBL_GERAETE_LOGIN.'.aktiv, '
@@ -71,23 +71,23 @@ function GetGeraeteprogramme($objMySQL,$id) {
     .TBL_GERAETE.'.name AS geraete_name, '.TBL_GERAETE.'.benutzer AS benutzer, '.TBL_GERAETE.'.adresse AS geraete_adresse, '.TBL_GERAETE.'.kunde AS geraete_kunde, '.TBL_GERAETE.'.ftpdir AS ftpdir
     FROM '.TBL_GERAETE_LOGIN.', '.TBL_PROGRAMME.', '.TBL_GERAETE.', '.TBL_KUNDEN.' 
     WHERE  '.TBL_GERAETE_LOGIN.'.`loeschen` =1 AND '.TBL_KUNDEN.'.id='.TBL_GERAETE.'.kunde AND geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id='.$id.'';
-	$arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
-	if ($objMySQL->RowCount()>0) {
-		return $arrData;
-	}else{
+    $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
+    if ($objMySQL->RowCount()>0) {
+        return $arrData;
+    }else{
      // echo $sql."<br>";
-		return $sql;
-	}
+        return $sql;
+    }
 }
 function GetKundenName($objMySQL,$id) {
     $sql = "SELECT name FROM ".TBL_KUNDEN.' WHERE id='.$id.'';
     $arrData=$objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
     if ($objMySQL->RowCount()>0) {
         return $arrData["name"];
-	}else{
+    }else{
      // echo $sql."<br>";
-		return $sql;
-	}
+        return $sql;
+    }
 }
 
 /* Geraete Tabelle kann mit 

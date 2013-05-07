@@ -14,20 +14,20 @@ $objMySQL->Query('SELECT * FROM '.TBL_KUNDEN.' ORDER BY name');
 
 if ($objMySQL->RowCount()>0) {
     //zeigt die Überschrift "Kunden" an, nötig für Tabellenstruktur
-	$objTemplate->Display('Header');
-	$Count=0;
-	while ($Data = $objMySQL->Row()) {
-		// Falls Session mit Kunden-ID nicht da: Setzen
-		if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
-			$_SESSION['knd_id']=$Data->id;
-			session_commit();
-		}
+    $objTemplate->Display('Header');
+    $Count=0;
+    while ($Data = $objMySQL->Row()) {
+        // Falls Session mit Kunden-ID nicht da: Setzen
+        if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
+            $_SESSION['knd_id']=$Data->id;
+            session_commit();
+        }
         // Hier werden die Daten abgerufen, die benötigt werden um die Sichtbarkeit der Kunden zu managen
         $sql = "SELECT sichtbar FROM ".TBL_BKE." WHERE kundenid='".$Data->id."' AND benutzerid='".$_SESSION['nutzerid']."'";
         $test = $objMySQL2->QuerySingleRowArray($sql,MYSQL_ASSOC);   
         
         
-		// Hier ist mancher Code doppelt. Vor allem um sicherzustellen, das die Kunden weiterhin abwechselnd eingefärbt werden
+        // Hier ist mancher Code doppelt. Vor allem um sicherzustellen, das die Kunden weiterhin abwechselnd eingefärbt werden
         // Und hier nicht auch die "versteckten" kunden mitbeachtet werden.
         
         if(isset($test["sichtbar"]))
@@ -68,12 +68,12 @@ if ($objMySQL->RowCount()>0) {
             $Count++;
             
         }
-		$objTemplate->ClearAssign();
-		
-	}
-	$objTemplate->Display('Footer');
+        $objTemplate->ClearAssign();
+        
+    }
+    $objTemplate->Display('Footer');
 }else{
-	echo 'Keine Kunden vorhanden!<br />';
+    echo 'Keine Kunden vorhanden!<br />';
 }
 unset($objTemplate);
 

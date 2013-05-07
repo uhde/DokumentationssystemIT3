@@ -6,15 +6,15 @@
 
 !#----- Main:Begin -----#!
 <tr class="Data{$LineClass}">
-	<td align="left">
-		<a href="index.php?knd_id={$id}" target="_top">{$name}</a>
-	</td>
+    <td align="left">
+        <a href="index.php?knd_id={$id}" target="_top">{$name}</a>
+    </td>
     <td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
-		<a href="userconf/kunden_benutzerdefiniert_verstecken.php?knd_id={$id}&site=/dokuit3/index.php">
+        <a href="userconf/kunden_benutzerdefiniert_verstecken.php?knd_id={$id}&site=/dokuit3/index.php">
             <img src="syspics/user_invisible.png" style="border:none:width:12px;height:12px;" alt="Kunde Verstecken"></a>
     </td>
-	<td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
-		<a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?knd_id={$id}" >
+    <td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
+        <a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?knd_id={$id}" >
             <img src="syspics/info.png" style="border:none:width:12px;height:12px;" alt="Kundeninfo"></a>
     </td>
 </tr>

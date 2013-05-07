@@ -1,14 +1,14 @@
 !#----- geraeteedit:Begin -----#!
 <html>
 <head>
-	<title>Kunden verwalten</title>
+    <title>Kunden verwalten</title>
     <meta http-equiv="x-ua-compatible" content="ie=9">
-	<meta name="robots" content="INDEX,FOLLOW">
-	<meta name="creation_date" content="2012-11-16">
-	<meta name="revisit-after" content="5 days">
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<LINK rel="stylesheet" href="css/styles.css"> 
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="creation_date" content="2012-11-16">
+    <meta name="revisit-after" content="5 days">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <LINK rel="stylesheet" href="css/styles.css"> 
 
 </head>
 
@@ -18,27 +18,27 @@
 <form name="Form1" method="post" action="auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Name: </span></td>
-	<td>
-		<span class="StandardText"><input name="name" type="text" size="30" maxlength="30" value="{$name}" ></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Name: </span></td>
+    <td>
+        <span class="StandardText"><input name="name" type="text" size="30" maxlength="30" value="{$name}" ></span>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Kategorie: </span></td>
-	<td>
+    <td align="right"><span class="LinkStyle">Kategorie: </span></td>
+    <td>
         <select name="kategorie"> 
              <option {$kat_active_server} value="1">Server</option>
              <option {$kat_active_pc} value="2">Computer</option>
              <option {$kat_active_drucker} value="3">Drucker</option>
              <option {$kat_active_netzwerk} value="4">Netzwerk</option>
         </select>
-	</td>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
-	<td>
-		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
-	</td>
+    <td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
+    <td>
+        <span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
+    </td>
     <td align="right"><span class="LinkStyle">MAC-Adresse </span></td>
     <td>
         <span class="StandardText"><input name="mac_adresse" type="text" size="17" maxlength="17" value="{$mac_adresse}" > </span>
@@ -49,32 +49,32 @@
 
 <!--
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">UNC-Pfad: </span></td>
-	<td>
-		<span class="StandardText">{$starturl}</span>
-	</td>
+    <td align="right"><span class="LinkStyle">UNC-Pfad: </span></td>
+    <td>
+        <span class="StandardText">{$starturl}</span>
+    </td>
 </tr>
 
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 -->
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">System-Beschreibung </span></td>
-	<td>
-		<span class="StandardText"><input name="system" type="text" size="30" maxlength="30" value="{$system}"  ></span>
-	</td>
+    <td align="right"><span class="LinkStyle">System-Beschreibung </span></td>
+    <td>
+        <span class="StandardText"><input name="system" type="text" size="30" maxlength="30" value="{$system}"  ></span>
+    </td>
 </tr>
 
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Betriebssystem </span></td>
-	<td>
-		<span class="StandardText"><input name="bs" type="text" size="30" maxlength="30" value="{$bs}" ></span>
-	</td>
-	<td align="right"><span class="LinkStyle">PC-Typ </span></td>
-	<td>
-		<span class="StandardText"><input name="pc" type="text" size="30" maxlength="30" value="{$pc}" > </span>
-	</td>
+    <td align="right"><span class="LinkStyle">Betriebssystem </span></td>
+    <td>
+        <span class="StandardText"><input name="bs" type="text" size="30" maxlength="30" value="{$bs}" ></span>
+    </td>
+    <td align="right"><span class="LinkStyle">PC-Typ </span></td>
+    <td>
+        <span class="StandardText"><input name="pc" type="text" size="30" maxlength="30" value="{$pc}" > </span>
+    </td>
 </tr>
 <tr>
     <td align="right"><span class="LinkStyle">Produktnummer </span></td>
@@ -85,62 +85,62 @@
 
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Seriennummer</span></td>
-	<td>
-		<span class="StandardText"><input name="sn" type="text" size="30" maxlength="30" value="{$sn}" ></input></span>
-	</td>
-	<td align="right"><span class="LinkStyle">Garantie<br>(TT/MM/JJJJ) </span></td>
-	<td>
-		<span class="StandardText">
+    <td align="right"><span class="LinkStyle">Seriennummer</span></td>
+    <td>
+        <span class="StandardText"><input name="sn" type="text" size="30" maxlength="30" value="{$sn}" ></input></span>
+    </td>
+    <td align="right"><span class="LinkStyle">Garantie<br>(TT/MM/JJJJ) </span></td>
+    <td>
+        <span class="StandardText">
         <input name="garantied" type="text" size="2" maxlength="2" value="{$garantied}"></input>
         <input name="garantiem" type="text" size="2" maxlength="2" value="{$garantiem}"></input>
         <input name="garantiey" type="text" size="4" maxlength="4" value="{$garantiey}"></input></span>
         <!--<a href="#" onclick="document.Form1.garantied.value='{$garantied_set}';document.Form1.garantiem.value='{$garantiem_set}';document.Form1.garantiey.value='{$garantiey_set}';">Garantie auf 3 Jahre setzten.</a>-->
-	</td>
+    </td>
 </tr>
 
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Benutzer</span></td>
-	<td>
-		<span class="StandardText"><input name="benutzer" type="text" size="30" maxlength="30" value="{$benutzer}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Benutzer</span></td>
+    <td>
+        <span class="StandardText"><input name="benutzer" type="text" size="30" maxlength="30" value="{$benutzer}" ></input></span>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Zimmer: </span></td>
-	<td>
-		<span class="StandardText"><input name="zimmer" type="text" size="30" maxlength="30" value="{$zimmer}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Zimmer: </span></td>
+    <td>
+        <span class="StandardText"><input name="zimmer" type="text" size="30" maxlength="30" value="{$zimmer}" ></input></span>
+    </td>
 
-	<td align="right"><span class="LinkStyle">Drucker </span></td>
-	<td>
-		<span class="StandardText"><input name="drucker" type="text" size="30" maxlength="30" value="{$drucker}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Drucker </span></td>
+    <td>
+        <span class="StandardText"><input name="drucker" type="text" size="30" maxlength="30" value="{$drucker}" ></input></span>
+    </td>
 </tr>
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Router </span></td>
-	<td>
-		<span class="StandardText"><input name="router" type="text" size="30" maxlength="30" value="{$router}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Router </span></td>
+    <td>
+        <span class="StandardText"><input name="router" type="text" size="30" maxlength="30" value="{$router}" ></input></span>
+    </td>
 
-	<td align="right"><span class="LinkStyle">Irdpport </span></td>
-	<td>
-		<span class="StandardText"><input name="irdpport" type="text" size="30" maxlength="30" value="{$irdpport}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Irdpport </span></td>
+    <td>
+        <span class="StandardText"><input name="irdpport" type="text" size="30" maxlength="30" value="{$irdpport}" ></input></span>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Ftpdir </span></td>
-	<td>
-		<span class="StandardText"><input name="ftpdir" type="text" size="30" maxlength="30" value="{$ftpdir}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Ftpdir </span></td>
+    <td>
+        <span class="StandardText"><input name="ftpdir" type="text" size="30" maxlength="30" value="{$ftpdir}" ></input></span>
+    </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 <tr class="Data0">
-	<td align="right" valign="top"><span class="LinkStyle">Bemerkung: </span></td>
-	<td colspan="3">
-		<textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung"   onFocus="this.className='aktiv'" onBlur="this.className='text'">{$bemerkung}</textarea>
-	</td>
+    <td align="right" valign="top"><span class="LinkStyle">Bemerkung: </span></td>
+    <td colspan="3">
+        <textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung"   onFocus="this.className='aktiv'" onBlur="this.className='text'">{$bemerkung}</textarea>
+    </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 
@@ -155,9 +155,9 @@
 </tr>
 
 <tr >
-	<td align="center" colspan="2">
+    <td align="center" colspan="2">
     
-		<input type="submit" value="Speichern" >
+        <input type="submit" value="Speichern" >
     </td>
     <td>
         <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
@@ -178,13 +178,13 @@
 !#----- geraetecreate:Begin -----#!
 <html>
 <head>
-	<title>Kunden verwalten</title>
-	<meta name="robots" content="INDEX,FOLLOW">
-	<meta name="creation_date" content="2012-11-16">
-	<meta name="revisit-after" content="5 days">
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<LINK rel="stylesheet" href="css/styles.css"> 
+    <title>Kunden verwalten</title>
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="creation_date" content="2012-11-16">
+    <meta name="revisit-after" content="5 days">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <LINK rel="stylesheet" href="css/styles.css"> 
 
 </head>
 
@@ -194,16 +194,16 @@
 <form name="Form4" method="post" action="auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Name: </span></td>
-	<td>
-		<span class="StandardText"><input name="name" type="text" size="30" maxlength="30" value="" ></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Name: </span></td>
+    <td>
+        <span class="StandardText"><input name="name" type="text" size="30" maxlength="30" value="" ></span>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
-	<td>
-		<span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
-	</td>
+    <td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
+    <td>
+        <span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
+    </td>
     <td align="right"><span class="LinkStyle">MAC-Adresse </span></td>
     <td>
         <span class="StandardText"><input name="mac_adresse" type="text" size="17" maxlength="17" value="{$mac_adresse}" > </span>
@@ -213,32 +213,32 @@
 
 <!--
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">UNC-Pfad: </span></td>
-	<td>
-		<span class="StandardText">{$starturl}</span>
-	</td>
+    <td align="right"><span class="LinkStyle">UNC-Pfad: </span></td>
+    <td>
+        <span class="StandardText">{$starturl}</span>
+    </td>
 </tr>
 
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 -->
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">System-Beschreibung </span></td>
-	<td>
-		<span class="StandardText"><input name="system" type="text" size="30" maxlength="30" value="{$system}"  ></span>
-	</td>
+    <td align="right"><span class="LinkStyle">System-Beschreibung </span></td>
+    <td>
+        <span class="StandardText"><input name="system" type="text" size="30" maxlength="30" value="{$system}"  ></span>
+    </td>
 </tr>
 
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Betriebssystem </span></td>
-	<td>
-		<span class="StandardText"><input name="bs" type="text" size="30" maxlength="30" value="{$bs}" ></span>
-	</td>
-	<td align="right"><span class="LinkStyle">PC-Typ </span></td>
-	<td>
-		<span class="StandardText"><input name="pc" type="text" size="30" maxlength="30" value="{$pc}" > </span>
-	</td>
+    <td align="right"><span class="LinkStyle">Betriebssystem </span></td>
+    <td>
+        <span class="StandardText"><input name="bs" type="text" size="30" maxlength="30" value="{$bs}" ></span>
+    </td>
+    <td align="right"><span class="LinkStyle">PC-Typ </span></td>
+    <td>
+        <span class="StandardText"><input name="pc" type="text" size="30" maxlength="30" value="{$pc}" > </span>
+    </td>
 </tr>
 <tr>
     <td align="right"><span class="LinkStyle">Produktnummer </span></td>
@@ -249,64 +249,64 @@
 
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Seriennummer</span></td>
-	<td>
-		<span class="StandardText"><input name="sn" type="text" size="30" maxlength="30" value="{$sn}" ></input></span>
-	</td>
-	<td align="right"><span class="LinkStyle">Garantie<br>(TT/MM/JJJJ) </span></td>
-	<td>
-		<span class="StandardText">
+    <td align="right"><span class="LinkStyle">Seriennummer</span></td>
+    <td>
+        <span class="StandardText"><input name="sn" type="text" size="30" maxlength="30" value="{$sn}" ></input></span>
+    </td>
+    <td align="right"><span class="LinkStyle">Garantie<br>(TT/MM/JJJJ) </span></td>
+    <td>
+        <span class="StandardText">
         <input name="garantied" type="text" size="2" maxlength="2" value="{$garantied}"></input>
         <input name="garantiem" type="text" size="2" maxlength="2" value="{$garantiem}"></input>
         <input name="garantiey" type="text" size="4" maxlength="4" value="{$garantiey}"></input></span>
         <!--<a href="#" onclick="document.Form1.garantied.value='{$garantied_set}';document.Form1.garantiem.value='{$garantiem_set}';document.Form1.garantiey.value='{$garantiey_set}';">Garantie auf 3 Jahre setzten.</a>-->
-	</td>
+    </td>
 
     
 </tr>
 
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Benutzer</span></td>
-	<td>
-		<span class="StandardText"><input name="benutzer" type="text" size="30" maxlength="30" value="{$benutzer}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Benutzer</span></td>
+    <td>
+        <span class="StandardText"><input name="benutzer" type="text" size="30" maxlength="30" value="{$benutzer}" ></input></span>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Zimmer: </span></td>
-	<td>
-		<span class="StandardText"><input name="zimmer" type="text" size="30" maxlength="30" value="{$zimmer}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Zimmer: </span></td>
+    <td>
+        <span class="StandardText"><input name="zimmer" type="text" size="30" maxlength="30" value="{$zimmer}" ></input></span>
+    </td>
 
-	<td align="right"><span class="LinkStyle">Drucker </span></td>
-	<td>
-		<span class="StandardText"><input name="drucker" type="text" size="30" maxlength="30" value="{$drucker}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Drucker </span></td>
+    <td>
+        <span class="StandardText"><input name="drucker" type="text" size="30" maxlength="30" value="{$drucker}" ></input></span>
+    </td>
 </tr>
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Router </span></td>
-	<td>
-		<span class="StandardText"><input name="router" type="text" size="30" maxlength="30" value="{$router}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Router </span></td>
+    <td>
+        <span class="StandardText"><input name="router" type="text" size="30" maxlength="30" value="{$router}" ></input></span>
+    </td>
 
-	<td align="right"><span class="LinkStyle">Irdpport </span></td>
-	<td>
-		<span class="StandardText"><input name="irdpport" type="text" size="30" maxlength="30" value="{$irdpport}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Irdpport </span></td>
+    <td>
+        <span class="StandardText"><input name="irdpport" type="text" size="30" maxlength="30" value="{$irdpport}" ></input></span>
+    </td>
 </tr>
 <tr class="Data0">
-	<td align="right"><span class="LinkStyle">Ftpdir </span></td>
-	<td>
-		<span class="StandardText"><input name="ftpdir" type="text" size="30" maxlength="30" value="{$ftpdir}" ></input></span>
-	</td>
+    <td align="right"><span class="LinkStyle">Ftpdir </span></td>
+    <td>
+        <span class="StandardText"><input name="ftpdir" type="text" size="30" maxlength="30" value="{$ftpdir}" ></input></span>
+    </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 <tr class="Data0">
-	<td align="right" valign="top"><span class="LinkStyle">Bemerkung: </span></td>
-	<td colspan="3">
-		<textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung"   onFocus="this.className='aktiv'" onBlur="this.className='text'">{$bemerkung}</textarea>
-	</td>
+    <td align="right" valign="top"><span class="LinkStyle">Bemerkung: </span></td>
+    <td colspan="3">
+        <textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung"   onFocus="this.className='aktiv'" onBlur="this.className='text'">{$bemerkung}</textarea>
+    </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 <tr>
@@ -326,8 +326,8 @@
 </tr>
 
 <tr >
-	<td align="center" colspan="2">
-		<input type="submit" value="Speichern" class="button1">
+    <td align="center" colspan="2">
+        <input type="submit" value="Speichern" class="button1">
         </td>
      <td>
         <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
@@ -340,13 +340,13 @@
 </body>
 </html>
 <head>
-	<title>Kunden verwalten</title>
-	<meta name="robots" content="INDEX,FOLLOW">
-	<meta name="creation_date" content="2012-11-16">
-	<meta name="revisit-after" content="5 days">
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<LINK rel="stylesheet" href="css/styles.css"> 
+    <title>Kunden verwalten</title>
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="creation_date" content="2012-11-16">
+    <meta name="revisit-after" content="5 days">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <LINK rel="stylesheet" href="css/styles.css"> 
 </head>
 
 </html>
@@ -357,13 +357,13 @@
 !#----- nogeraete:Begin -----#!
 <html>
 <head>
-	<title>Kunden verwalten</title>
-	<meta name="robots" content="INDEX,FOLLOW">
-	<meta name="creation_date" content="2002-07-21">
-	<meta name="revisit-after" content="5 days">
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="Expires" content="0">
-	<LINK rel="stylesheet" href="css/styles.css"> 
+    <title>Kunden verwalten</title>
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="creation_date" content="2002-07-21">
+    <meta name="revisit-after" content="5 days">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <LINK rel="stylesheet" href="css/styles.css"> 
 </head>
 
 
@@ -378,9 +378,9 @@
 !#----- Login_Header:Begin -----#!
 <table class="Logins_Table" name="LoginTable" align="center">
 <tr style="background-color:#666;">
-	<th>Typ</th>
-	<th>Login</th>
-	<th>Passwort</th>
+    <th>Typ</th>
+    <th>Login</th>
+    <th>Passwort</th>
     <th></th>
     <th>Button?</th>
 </tr>
@@ -388,9 +388,9 @@
 
 !#----- Login_Main:Begin -----#!
 <tr>
-	<td class="Key"><select name="programm_id{$runde}" size="1">{$prog_list}  </select>  </td>
-	<td class="Value"><span id="geratelogin"> <input name="login{$runde}" type="text" size="25"  value="{$geraete_login}" ></input></span></td>
-	<td class="Value"><input name="passwort{$runde}" type="text" size="25" maxlength="40" value="{$geraete_pw}" ></input></td>
+    <td class="Key"><select name="programm_id{$runde}" size="1">{$prog_list}  </select>  </td>
+    <td class="Value"><span id="geratelogin"> <input name="login{$runde}" type="text" size="25"  value="{$geraete_login}" ></input></span></td>
+    <td class="Value"><input name="passwort{$runde}" type="text" size="25" maxlength="40" value="{$geraete_pw}" ></input></td>
     <td style="text-align:center;"><a href="auswertung.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="Löschen"   >
         <img src="syspics/button_drop.png" style="border:none:width:12px;height:12px;" alt="Programm löschen"></a></td>
     <td class="Value">

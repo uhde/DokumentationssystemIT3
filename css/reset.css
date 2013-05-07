@@ -7,30 +7,30 @@ small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 101%;
-	font-family: inherit;
-	font-variant: inherit;
-	vertical-align: baseline;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 101%;
+    font-family: inherit;
+    font-variant: inherit;
+    vertical-align: baseline;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 /* Remember to define focus styles! */
 :focus { outline: 0px }
 ol, ul { list-style: none }
 /* Tables still need 'cellspacing="0"' in the markup. */
 table {
-	border-collapse: separate;
-	border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 caption, th, td {
-	text-align: left;
-	font-weight: normal;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-weight: normal;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {content: none}
@@ -39,32 +39,32 @@ ul, ol, dl {position: relative}
 
 
 html {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size:8pt;
-	overflow: auto;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:8pt;
+    overflow: auto;
 }
 
 body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	margin:10px;
-	line-height: 1;
-	color: black;
-	background: white;
-	font-size:8pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin:10px;
+    line-height: 1;
+    color: black;
+    background: white;
+    font-size:8pt;
 }
 
 
 input {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size:8pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:8pt;
 }
 
 
 td {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size:8pt;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:8pt;
 }
 
 frame [
-	overflow: hidden;
+    overflow: hidden;
 }

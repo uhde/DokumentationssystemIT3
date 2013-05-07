@@ -13,8 +13,8 @@ if (isset($_GET['sort_order']) AND !empty($_GET['sort_order'])) {
     }
 } else {
     $_SESSION['sort_order']='asc';
-	$sort_order='asc';
-	$objTemplate->Assign('sort_order','desc');
+    $sort_order='asc';
+    $objTemplate->Assign('sort_order','desc');
 }
 
 // Setzt das suchfeld. Wird nur aufgerufen, wenn gesucht wird.
@@ -43,15 +43,15 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
 }
 $arrData_zugaenge=$objMySQL->QueryArray ($sql);
 if ($arrData_zugaenge!==FALSE) {
-	$objTemplate->Display('Header');
-	foreach ($arrData_zugaenge AS $Value) {
-		// Logins auslesen
+    $objTemplate->Display('Header');
+    foreach ($arrData_zugaenge AS $Value) {
+        // Logins auslesen
         $Value["zusatz"]=nl2br($Value["zusatz"]);
-		// Falls Session mit Kunden-ID nicht da: Setzen
-		if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
-			$_SESSION['knd_id']=$Value['id'];
-			session_commit();
-		}
+        // Falls Session mit Kunden-ID nicht da: Setzen
+        if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
+            $_SESSION['knd_id']=$Value['id'];
+            session_commit();
+        }
         // Dies hier stellt sicher, dass die links immer mit http:// oder https beginnen, da sie sonst wie interne links behandelt werden.
         if(!empty($Value['url']))
         {
@@ -67,8 +67,8 @@ if ($arrData_zugaenge!==FALSE) {
             }
         }
         if (strlen($Value['url'])>50) {
-			$Value['url_text']=substr($Value['url'],0,47).'...';
-		} else {
+            $Value['url_text']=substr($Value['url'],0,47).'...';
+        } else {
             $Value['url_text']=$Value['url'];
         }
         if(isset($mode['suche'])&&(!empty($mode['suche'])))
@@ -76,19 +76,19 @@ if ($arrData_zugaenge!==FALSE) {
             $Value['suche_kunde']='<td class="slider2" value="#trinfo{$id}">'.GetKundenName($objMySQL,$Value["kunde"]).'</td>';
            // $Value['suche_titel']='<th style="width=10%">Kunde</th>';            
         }
-		// Datensatz dem Template zuweisen
-		$objTemplate->AssignArray($Value);
-		$objTemplate->Assign('LineClass',$Count%2);
+        // Datensatz dem Template zuweisen
+        $objTemplate->AssignArray($Value);
+        $objTemplate->Assign('LineClass',$Count%2);
 
 
-		// Template anzeigen
-		$objTemplate->Display('Data');
-		flush();ob_flush();flush();ob_flush();flush();
-		// Datencache leeren
-		$objTemplate->ClearAssign();
-		$Count++;
-	}
-	 if(!(isset($mode['suche'])&&(!empty($mode['suche'])))) {
+        // Template anzeigen
+        $objTemplate->Display('Data');
+        flush();ob_flush();flush();ob_flush();flush();
+        // Datencache leeren
+        $objTemplate->ClearAssign();
+        $Count++;
+    }
+     if(!(isset($mode['suche'])&&(!empty($mode['suche'])))) {
         $objTemplate->AssignArray($Value);
         $objTemplate->Display('Footer');
     } else {

@@ -79,8 +79,8 @@ overflow: hidden;
 
 
 .content_area{
-	margin: 4px; /*Margins for inner DIV inside each DIV (to provide padding)*/
-	padding:0px;
+    margin: 4px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+    padding:0px;
 }
 
 * html body{ /*IE6 hack*/

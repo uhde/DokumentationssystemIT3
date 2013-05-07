@@ -29,8 +29,8 @@ if ($arrData!==FALSE) {
         $objTemplate->AssignArray($arrData);
         $objTemplate->display("zugaenge_edit");
         flush();ob_flush();flush();ob_flush();flush();
-		// Datencache leeren
-		$objTemplate->ClearAssign();
+        // Datencache leeren
+        $objTemplate->ClearAssign();
     }
     else{
         //objTemplate->display("nogeraete");
@@ -41,8 +41,8 @@ if ($arrData!==FALSE) {
         $objTemplate->AssignArray($mode);
         $objTemplate->display("zugaenge_create");
         flush();ob_flush();flush();ob_flush();flush();
-		// Datencache leeren
-		$objTemplate->ClearAssign();
+        // Datencache leeren
+        $objTemplate->ClearAssign();
     }
     else{
         //$mysqlfail="'SELECT * FROM '.TBL_GERAETE.' WHERE id='.$_GET['id'].' AND kunde='.$_GET['knd_id'],MYSQL_ASSOC";
