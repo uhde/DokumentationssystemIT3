@@ -62,7 +62,8 @@
 !#----- dokumente_create:Begin -----#!
 <html>
 <head>
-    <title>Kunden verwalten</title>
+    <title>Dokumente verwalten</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="creation_date" content="2013-01-03">
     <meta name="revisit-after" content="5 days">
@@ -120,8 +121,9 @@
 !#----- prog_edit:Begin -----#!
 <html>
 <head>
-    <title>Kunden verwalten</title>
+    <title>Programme verwalten</title>
     <meta name="robots" content="INDEX,FOLLOW">
+    <meta http-equiv="x-ua-compatible" content="ie=9">
     <meta name="creation_date" content="2012-11-16">
     <meta name="revisit-after" content="5 days">
     <meta http-equiv="pragma" content="no-cache">
@@ -183,7 +185,8 @@
 !#----- prog_create:Begin -----#!
 <html>
 <head>
-    <title>Kunden verwalten</title>
+    <title>Programme verwalten</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="creation_date" content="2012-11-16">
     <meta name="revisit-after" content="5 days">

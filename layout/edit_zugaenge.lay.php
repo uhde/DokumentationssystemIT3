@@ -75,7 +75,8 @@
 !#----- zugaenge_create:Begin -----#!
 <html>
 <head>
-    <title>Kunden verwalten</title>
+    <title>Zugänge verwalten</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="creation_date" content="2013-01-03">
     <meta name="revisit-after" content="5 days">
