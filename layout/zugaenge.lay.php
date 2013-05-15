@@ -23,11 +23,15 @@
 !#----- Data:Begin -----#!
     <tr id="Info{$id}" class="Data{$LineClass}" onmouseover="this.className='Aktiv'"  onmouseout="this.className='Data{$LineClass}'">
         
-        <td class="slider3" value="#trinfo{$id}">
+        <td class="slider3" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','trinfo{$id}','{$id}','{$time}')">
                 {$titel}
         </td>
-        <td class="slider3">{$login}</td>
-        <td class="slider3">{$passwort}</td>
+        <td class="slider3" onclick="loadXMLDoc('include/getsinglegeraet.php','trinfo{$id}','{$id}','{$time}')">
+            {$login}
+        </td>
+        <td class="slider3" onclick="loadXMLDoc('include/getsinglegeraet.php','trinfo{$id}','{$id}','{$time}')">
+            {$passwort}
+        </td>
         {$suche_kunde}
         <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
             <a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?kunde={$kunde}&id={$id}&mode=edit" >
@@ -43,30 +47,7 @@
     <tr id="trinfo{$id}" class="TRInfo">
         <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
         <td colspan="5" class="info_schatten4">
-            <table class="DeviceInfo">
-                <tr>
-                    <td class="Key2" >Login: </td>
-                    <td class="Value2" >{$login}</td>
-                    <td class="Key2" >Passwort: </td>
-                    <td  class="Value2" >{$passwort}</td>
-     
-                </tr>
-                 <tr>
-                    <td class="Key2">Link: </td>
-                    <td class="Value2" ><a href="{$url}" target="_blank"><span title="{$url}">{$url_text}</span></a></td>
-                </tr>
-                <tr>
-                    <td class="Key2">Bemerkung: </td>
-                    <td class="Value2" colspan="5">{$zusatz}</td>
-                </tr>
-
-                <tr value="#trinfo{$id}" class="TRInfoClose">
-                    <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
-                    <td colspan="6" style="text-align:right;">
-                        <span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick=""></input></span>
-                    </td>
-                </tr>
-            </table>
+            
         </td>
     </tr>
     
