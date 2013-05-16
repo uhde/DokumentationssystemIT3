@@ -35,12 +35,12 @@
         {$suche_kunde}
         <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
             <a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?kunde={$kunde}&id={$id}&mode=edit" >
-                <img src="syspics/edit.png" alt="Eintrag bearbeiten">
+            <img src="syspics/edit.png" alt="Eintrag bearbeiten">
             </a>
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
             <a class="edit" data-fancybox-type="iframe" href="auswertung_dokumente.php?name=zugaenge&kunde={$kunde}&id={$id}&mode=delete" >
-                <img src="syspics/button_drop.png" alt="Eintrag löschen">
+            <img src="syspics/button_drop.png" alt="Eintrag löschen">
             </a>
         </td>
     </tr>
@@ -59,7 +59,8 @@
 !#----- Footer:Begin -----#!
 </table>
 </div>
-<a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
+<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_zugaenge.php?mode=create&kunde={$kunde}','Zugänge','700','300');">
+<!--<a href="index.php?page=<?php  /*if (file_exists($add_page)) { echo $add_page; } */?> ">-->
     <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 !#----- Footer:End -----#!
@@ -74,8 +75,8 @@
 <p class="Keine_Daten">
 Es sind keine Zugang bei diesem Kunden eingetragen!
 <br /><br />
-<a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
-    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+<a href="#">
+<img src="syspics/edit.png" alt="Neuen Zugang erfassen">&nbsp;&nbsp;Neuen Zugang erfassen
 </a>
 </p>
 !#----- Keine_Daten:End -----#!

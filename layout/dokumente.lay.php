@@ -73,7 +73,7 @@
 </table>
 </div>
 <br>
-    <a class="edit" data-fancybox-type="iframe" href="edit_dokumente.php?kunde={$kunde}&mode=create">
+    <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_dokumente.php?kunde={$kunde}&mode=create','Dokumente','710','270');">
         <img src="syspics/new_entry.png" alt="Dokument hinzufügen">Dokument hinzufügen
     </a>
    <br><br><br>
@@ -82,10 +82,6 @@
     - Die URL ist ein UNC Pfadt<br>
     - In der URL befindet sich ein Leerzeichen
     
-   
-   <!--
-   showboxy('kundenwahl','edit_dokumente.php?kunde={$kunde}&mode=create','Dokumente','710','270');"> 
-   -->
    
 !#----- Footer:End -----#!
 
@@ -101,7 +97,7 @@
 <p class="Keine_Daten">
 Es sind keine Dokumente bei diesem Kunden eingetragen!
 <br /><br />
-    <a class="edit" data-fancybox-type="iframe" href="edit_dokumente.php?kunde={$kunde}&mode=create">
+    <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_dokumente.php?kunde={$kunde}&mode=create','Dokumente','710','270');">
         <img src="syspics/new_entry.png" alt="Dokument hinzufügen"> Dokument hinzufügen
     </a>
 </p>

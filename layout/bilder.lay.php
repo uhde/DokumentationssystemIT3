@@ -51,7 +51,7 @@
             <table class="DeviceInfo">
                 <tr>
                     <td>
-                        <a class="edit" data-fancybox-type="iframe" href="{$bigurl}"><img src="{$url}" alt="Bild kann nicht angezeigt werden, der Pfadt ist folgender: {$url}"></a>
+                        <a href="#" onClick="showboxy('kundenwahl','{$bigurl}','{$name}','990','735');"><img src="{$url}" alt="Bild kann nicht angezeigt werden, der Pfadt ist folgender: {$url}"></a>
                     <td>
                 </tr>
 
@@ -78,7 +78,7 @@
 !#----- Footer:Begin -----#!
 </table>
 </div>
-<a class="edit" data-fancybox-type="iframe" href="edit_bilder.php?kunde={$kunde}&mode=create">
+<a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_bilder.php?kunde={$kunde}&mode=create','Bilder','710','270');">
         <img src="syspics/new_entry.png" alt="Neues Bild eintragen">&nbsp;&nbsp;Neues Bild hochladen.
 </a>
 !#----- Footer:End -----#!
@@ -88,7 +88,7 @@
 <p class="Keine_Daten">
 Es sind keine Bilder bei diesem Kunden eingetragen!
 <br /><br />
-    <a class="edit" data-fancybox-type="iframe" href="edit_bilder.php?kunde={$kunde}&mode=create">
+    <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_bilder.php?kunde={$kunde}&mode=create','Bilder','710','270');">
         <img src="syspics/new_entry.png" alt="Neues Bild eintragen">&nbsp;&nbsp;Neues Bild hochladen.
     </a>
 </p>
