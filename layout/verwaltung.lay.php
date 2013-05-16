@@ -18,10 +18,10 @@
 
 !#----- Data:Begin -----#!
     <tr id="Info{$id}" class="Data{$LineClass}" >
-        <td class="slider_invisible">
+        <td class="slider_invisible" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsingle_programm.php','trinfo{$id}','{$id}','{$time}')">
             &#160;
         </td>
-        <td class="slider4" value="#trinfo{$id}">
+        <td class="slider4" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsingle_programm.php','trinfo{$id}','{$id}','{$time}')" >
             {$bemerkung}
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
@@ -37,28 +37,12 @@
           
     </tr>
   
-    <tr id="trinfo{$id}" class="TRInfo">
+    <tr>
         <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
         <td colspan="5" class="info_schatten4">
-            <table class="DeviceInfo">
-                <tr>
-                    <td class="Key" style="width:90px;">Name: </td>
-                    <td class="Value">{$name} </td>
-                </tr>
-                    <td class="Key">URL: </td>
-                    <td class="Value" colspan="5">{$url}</td>
-                </tr>
-                </tr>
-                    <td class="Key">ID: </td>
-                    <td class="Value" colspan="5">{$id}</td>
-                </tr>
-                <tr value="#trinfo{$id}" class="TRInfoClose">
-                    <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
-                    <td colspan="6" style="text-align:right;">
-                        <span style="padding-right:10px;"><input type="button"  value="Info Schließen" onClick=""></input></span>
-                    </td>
-                </tr>
-            </table>
+            <span id="trinfo{$id}" class="TRInfo">
+            
+            </span>
         </td>
     </tr>
     
