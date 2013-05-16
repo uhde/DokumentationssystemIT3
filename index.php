@@ -144,14 +144,7 @@ function ClearAllLoad()
 
 
 <script type='text/javascript'>
-// Wird zum aufpoppen lassen von boxy verwendet.
-function showboxy(myactuator,url,title,width,height) {
-mycontent='<iframe application="yes" width="' + width + '" height="' + height + '" border=0 src="' + url + '">You need a Browser which can display iframes</iframe>';
-new Boxy( mycontent, {unloadOnHide: true, draggable: true, show: true, modal: true, title: title, closeText:"<img src='syspics/close_window.png' border=0 title='Schließen' alt='Schließen'>", actuator: $('#'+myactuator)[0]});
-}
-function loadboxy() {
-alert('2');
-}
+
     function slider_generell() {
         $(this).toggleClass("up");
         name=$(this).attr("value");
