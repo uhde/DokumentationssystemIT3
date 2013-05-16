@@ -16,7 +16,8 @@
     </td>
     <td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
         <a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?knd_id={$id}" >
-            <img src="syspics/info.png" style="border:none:width:12px;height:12px;" alt="Kundeninfo"></a>
+            <img src="syspics/info.png" style="border:none:width:12px;height:12px;" alt="Kundeninfo">
+        </a>
     </td>
 </tr>
 <tr><td colspan="2" height="5"></td></tr>
