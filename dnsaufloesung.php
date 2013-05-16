@@ -1,7 +1,7 @@
 
 <?php
-error_reporting(E_ALL);
-    ini_set('display_errors', TRUE);
+    /*error_reporting(E_ALL);
+    ini_set('display_errors', TRUE);*/
 //if($_GET["mode"]!="inc")
 
     require_once('include/config.inc.php');
