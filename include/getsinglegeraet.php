@@ -145,7 +145,7 @@ include_once("functions.inc.php");
         
 function MakeLoginTable($Data){
     if (is_array($Data)) {
-        $objTemplate=new Template("../layout/server.lay.php");
+        $objTemplate=new Template("../layout/geraete_general.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
         foreach ($Data as $sqldata){
             if($sqldata['geraete_login']=="" AND $sqldata['geraete_pw']=="")

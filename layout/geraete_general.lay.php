@@ -83,6 +83,16 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Login_Header:End -----#!
 
 
+!#----- Login_Header:Begin -----#!
+<table class="Logins_Table">
+<tr style="background-color:#666;">
+    <th>Typ</th>
+    <th>Login</th>
+    <th>Passwort</th>
+</tr>
+!#----- Login_Header:End -----#!
+
+
 !#----- Login_Main:Begin -----#!
 <tr>
     <td class="Key">{$bemerkung}</td>
@@ -92,11 +102,11 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 </tr>
 !#----- Login_Main:End -----#!
 
-!#----- Button_Main:Begin -----#!
 
-    <input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'>
-    
-!#----- Button_Main:End -----#!
+!#----- Login_Footer:Begin -----#!
+</table>
+<br />
+!#----- Login_Footer:End -----#!
 !#----- Button_ping:Begin -----#!
 
     <span style="float:right;padding-right:10px;"><input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'></span>
