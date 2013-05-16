@@ -62,7 +62,7 @@
 <p class="Keine_Daten">
 Es sind keine Programme eingetragen!
 <br /><br />
-    <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_prog.php?&mode=create','Programm Verwaltung','710','270');">
+    <a class="edit" data-fancybox-type="iframe" href="edit_prog.php?&mode=create">
         <img src="syspics/new_entry.png" alt="Neues Programm eintragen">&nbsp;&nbsp;Neues Programm eintragen.
     </a>
     <br>
@@ -71,7 +71,7 @@ Es sind keine Programme eingetragen!
 
 !#----- Footer2:Begin -----#!
 <br /><br />
-    <a href="#" id="boxyfoo" onclick="showboxy('kundenwahl','edit_prog.php?&mode=create','Programm Verwaltung','710','270');">
+    <a class="edit" data-fancybox-type="iframe" href="edit_prog.php?&mode=create">
         <img src="syspics/new_entry.png" alt="Neues Programm eintragen">&nbsp;&nbsp;Neues Programm eintragen.
     </a>
     <br>

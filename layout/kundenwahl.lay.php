@@ -26,7 +26,7 @@
 !#----- Footer:Begin -----#!
 <tr>
     <td>
-        <a href="#" id="kundenwahl" title="Neuer Eintrag" onclick="showboxy('kundenwahl','kundeninfo.php?create=true','Neuer Kunde','710','650');">
+        <a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?create=true">
             <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
         </a>
     
