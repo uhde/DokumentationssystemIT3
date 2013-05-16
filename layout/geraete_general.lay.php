@@ -112,7 +112,11 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
     <span style="float:right;padding-right:10px;"><input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'></span>
     
 !#----- Button_ping:End -----#!
+!#----- Button_Main:Begin -----#!
 
+    <input type="button" onClick='activex.run("{$activex}");' value='{$bemerkung}'>
+    
+!#----- Button_Main:End -----#!
 !#----- Login_Footer:Begin -----#!
 </table>
 <br />
