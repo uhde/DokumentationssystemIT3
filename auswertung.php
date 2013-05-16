@@ -1,7 +1,5 @@
 <html>
 <head>
-
-
 <?php
 /*
 error_reporting(E_ALL);
@@ -314,7 +312,6 @@ include("include/functions.inc.php");
     } 
 //}
 ?>
-<br>
    <!-- 
    <div style="height:33px;width:200px;">
         <div style="position:relative;top:4px;left:90%;">

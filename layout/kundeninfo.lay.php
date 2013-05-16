@@ -136,12 +136,10 @@
 
 <tr class="footer">
     <td align="center" colspan="2">
-        <input type="submit" value="Speichern und Schließen" class="button1">
+        <input type="submit" value="Speichern" class="button1">
         
     </td>
-    <td align="center" colspan="2">
-        <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
-    </td>
+   
 </tr>
 </form>
 
@@ -293,11 +291,7 @@
 <tr height="14"><td colspan="2" align="center"></td></tr>
 
 <tr class="footer">
-    <td align="center" colspan="2">
-        <!--<a href="javascript:void(top.Boxy.linkedTo( top.$('#boxyfoo')[0]).hide());">Close</a> -->
-        <input type="button" value="Schließen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
-        
-    </td>
+
     <td align="center" >
         <input type="button" value="Editieren" onClick="javascript:location.replace('kundeninfo.php?knd_id={$id}&edit=true')" class="button1">
     </td>
@@ -461,12 +455,10 @@
 
 <tr class="footer">
     <td align="center" colspan="2">
-        <input type="submit" value="Speichern und Schließen" class="button1">
+        <input type="submit" value="Speichern " class="button1">
         
     </td>
-    <td align="center" colspan="2">
-        <input type="button" value="Abbrechen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide());" class="button1">
-    </td>
+
 </tr>
 </form>
 
