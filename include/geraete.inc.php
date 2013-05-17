@@ -131,7 +131,27 @@ if (is_array($arrData)) {
             $_SESSION['knd_id']=$Value['id'];
             session_commit();
         }
+        // Time wird vor allem als Placebo- Parameter benötigt, um das caching zu umgehen
         $Value["time"]=time();
+        
+        // In dieser Variable "img_loeschen" wird der Bildpfadt zum entsprechenden Bild vermerkt.
+        // Standard ist der Drop Button, aber wenn das geraet bereits im mülleimer liegt, 
+        // wird das andere bild verwendet
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $Value['loeschen_img']="syspics/recycle-bin.png";
+        }else {
+            $Value['loeschen_img']="syspics/button_drop.png";
+        }
+        // Hier wird der löschen modus gesetzt. Wenn das gerät bereits im mülleimer ist, 
+        // wird der modus auf renew (erneuern) gesetzt
+        // Mit diesem modus kann ein gerät dann wieder hergestellt werden.
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $Value['loeschen_mode']="renew";
+        }else {
+            $Value['loeschen_mode']="delete";
+        }
         // Datensatz dem Template zuweisen
         $objTemplate->AssignArray($Value);
         if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
