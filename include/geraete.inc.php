@@ -134,7 +134,12 @@ if (is_array($arrData)) {
         $Value["time"]=time();
         // Datensatz dem Template zuweisen
         $objTemplate->AssignArray($Value);
-        $objTemplate->Assign('LineClass',$Count%2);
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $objTemplate->Assign('LineClass','9');
+        }else{
+            $objTemplate->Assign('LineClass',$Count%2);
+        }
 
         // Info-Tabelle einfügen
         $objTemplate->Assign('InfoTable',$objTemplate->DisplayToString('Info'));

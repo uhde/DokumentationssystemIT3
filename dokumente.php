@@ -49,7 +49,12 @@ if ($arrData_dok!==FALSE) {
         $Value['avtivexurl']=mysql_real_escape_string($Value['url']);
         // Datensatz dem Template zuweisen
         $objTemplate->AssignArray($Value);
-        $objTemplate->Assign('LineClass',$Count%2);
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $objTemplate->Assign('LineClass','9');
+        }else{
+            $objTemplate->Assign('LineClass',$Count%2);
+        }
 
 
         // Template anzeigen

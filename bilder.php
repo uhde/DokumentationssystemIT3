@@ -21,7 +21,7 @@ if (isset($_GET['sort_order']) AND !empty($_GET['sort_order'])) {
 $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
-if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
 {
     $sql='SELECT * FROM '.TBL_BILDER.' WHERE kunde='.MySQL::SQLValue($_SESSION['knd_id']).' ORDER BY name '.$_SESSION['sort_order'];
 } else {
@@ -43,7 +43,12 @@ if ($arrData!==FALSE) {
         $Value['bigurl']=$big_url;
         // Datensatz dem Template zuweisen
         $objTemplate->AssignArray($Value);
-        $objTemplate->Assign('LineClass',$Count%2);
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $objTemplate->Assign('LineClass','9');
+        }else{
+            $objTemplate->Assign('LineClass',$Count%2);
+        }
 
 
         // Template anzeigen
