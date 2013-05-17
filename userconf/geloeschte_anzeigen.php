@@ -21,8 +21,7 @@ Bitte warten....
     } else {
         $_SESSION['wiederherstellen']='true';
     }
-    $objMySQL->Query($sql);
-    
+
     if(isset ($_GET["site"]))
     {
         $seite = "http://".$_SERVER['SERVER_NAME'].$_GET["site"];
@@ -36,6 +35,6 @@ Bitte warten....
                 //-->
                 </script> ';//
     } else {
-        echo "<a href=index.php> hier klicken um zurückzukommen </a>";
+        echo '<a href="../index.php"> hier klicken um zurückzukommen </a>';
     }
 ?>

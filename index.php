@@ -313,7 +313,7 @@ function ClearAllLoad()
     </td>
     <td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
         <a href="userconf/geloeschte_anzeigen" title="Gelöschte Dateien ein/ausblenden">
-            <img src="syspics/recycle-bin.png" >
+            <img src="syspics/recycle-bin.png" width="40" height="44">
         </a>
     </td>
     <td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
