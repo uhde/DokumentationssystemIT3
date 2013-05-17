@@ -78,8 +78,12 @@ if ($arrData_zugaenge!==FALSE) {
         }
         // Datensatz dem Template zuweisen
         $objTemplate->AssignArray($Value);
-        $objTemplate->Assign('LineClass',$Count%2);
-
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $objTemplate->Assign('LineClass','9');
+        }else{
+            $objTemplate->Assign('LineClass',$Count%2);
+        }
 
         // Template anzeigen
         $objTemplate->Display('Data');
