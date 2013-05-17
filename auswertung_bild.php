@@ -31,10 +31,9 @@ include("include/functions.inc.php");
         //echo $key." -> ".$value."<br>";
     }
 
-    if ($mode["name"]=="bilder")
-    {
-        $tabelle=TBL_BILDER;
-    }
+
+    $tabelle=TBL_BILDER;
+
    
 
     if(isset($_FILES['bild']['name'])&&(!empty($_FILES['bild']['name']))) {
