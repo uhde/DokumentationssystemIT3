@@ -1,3 +1,10 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+</head>
+<body>
 Bitte warten....
 <?php
     session_start() ;
