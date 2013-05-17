@@ -25,7 +25,7 @@ $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
     }else{
@@ -33,7 +33,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     }
     //echo $sql."<br>";
 } else {
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id'])." ORDER BY titel ".$_SESSION['sort_order'];
    }else{

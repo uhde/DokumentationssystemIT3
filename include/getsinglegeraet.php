@@ -30,7 +30,7 @@ include_once("functions.inc.php");
     // Logins auslesen, und in eine eigene Tabelle schreiben. Tabelle wird hierbei noch nicht dargestellt.
     // Logins werden nur in dem Info teil aufgerufen. Dort wird einfach die Variable '$logins' 
     // in die Tabelle geschrieben.
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sqldata['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$sqldata['id'],0));
     }else {

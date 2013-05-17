@@ -20,7 +20,7 @@ if($mode["mode"]=="edit")
 } else{
     $arrData=FALSE;
 }
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sql='SELECT '.TBL_GERAETE_LOGIN.'.id AS geraete_login_id,'.TBL_GERAETE_LOGIN.'.login AS geraete_login,'.TBL_GERAETE_LOGIN.'.passwort AS geraete_pw, '.TBL_GERAETE_LOGIN.'.aktiv  , 
                 '.TBL_PROGRAMME.'.id AS  prog_id, '.TBL_PROGRAMME.' .bemerkung 

@@ -8,7 +8,7 @@
     //$Daten[1]['kunde']=$_SESSION['knd_id'];
 
     $objTemplate=new Template("layout/verwaltung.lay.php");
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sql="SELECT * FROM ".TBL_PROGRAMME.' WHERE loeschen=0 ORDER BY id';
     } else{

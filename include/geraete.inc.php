@@ -51,7 +51,7 @@ $Daten[1]['kategorie']=$_SESSION['device_type'];
 $yesterday=time() - (24*60*60); //aktuelle zeit minus 1 tag
 // Wenn die Variable suche gesetzt ist (get) dann wird ein anderes SQL-Query erzeugt.
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
     }else {
@@ -59,7 +59,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     }
    // echo $sql."<br>";
 } else {
-    if(isset($mode['wiederherstellen'])&&(!empty($mode['wiederherstellen'])))
+    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sql = 'SELECT * FROM '.TBL_GERAETE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id']).' AND kategorie='.MySQL::SQLValue($_SESSION['device_type']).'ORDER BY '.$_SESSION['sort_name'].' '.$_SESSION['sort_order'];
     } else {
