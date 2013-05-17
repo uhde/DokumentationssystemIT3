@@ -140,6 +140,11 @@ include("include/functions.inc.php");
         echo "Das Bild wurde gelöscht.";
         $objMySQL->Query($sqlquery);
     }
+    if ($mode["mode"]=='renew') {
+        $sqlquery = "UPDATE `".DB_DATABASE."`.`".$tabelle."` SET `loeschen` = '1', `loeschentime` = NULL WHERE `".TBL_BILDER."`.`id` = ".$mode['id'];
+        echo "Das Bild wurde wiederhergestellt.";
+        $objMySQL->Query($sqlquery);
+    }
     
   
 ?>

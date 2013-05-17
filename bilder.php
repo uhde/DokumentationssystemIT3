@@ -41,6 +41,24 @@ if ($arrData!==FALSE) {
         }
         $big_url=preg_replace('/thumbnail/i','',$Value["url"]);
         $Value['bigurl']=$big_url;
+        // In dieser Variable "img_loeschen" wird der Bildpfadt zum entsprechenden Bild vermerkt.
+        // Standard ist der Drop Button, aber wenn das geraet bereits im mülleimer liegt, 
+        // wird das andere bild verwendet
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $Value['loeschen_img']="syspics/recycle-bin.png";
+        }else {
+            $Value['loeschen_img']="syspics/button_drop.png";
+        }
+        // Hier wird der löschen modus gesetzt. Wenn das gerät bereits im mülleimer ist, 
+        // wird der modus auf renew (erneuern) gesetzt
+        // Mit diesem modus kann ein gerät dann wieder hergestellt werden.
+        if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
+        {
+            $Value['loeschen_mode']="renew";
+        }else {
+            $Value['loeschen_mode']="delete";
+        }
         // Datensatz dem Template zuweisen
         $objTemplate->AssignArray($Value);
         if(isset($Value['loeschen'])&&$Value['loeschen']=='0')
@@ -49,7 +67,6 @@ if ($arrData!==FALSE) {
         }else{
             $objTemplate->Assign('LineClass',$Count%2);
         }
-
 
         // Template anzeigen
         $objTemplate->Display('Data');

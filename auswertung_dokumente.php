@@ -110,6 +110,11 @@ include("include/functions.inc.php");
         $objMySQL->Query($sqlquery);
         echo "Der Eintrag wurde gelöscht.";
     }
+    if ($mode["mode"]=='renew') {
+        $sqlquery = "UPDATE `".DB_DATABASE."`.`".$tabelle."` SET `loeschen` = '1', `loeschentime` = NULL WHERE `id` = ".$mode['id'];
+        $objMySQL->Query($sqlquery);
+        echo "Der Eintrag wurde wiederhergestellt.";
+    }
     
   
 ?>

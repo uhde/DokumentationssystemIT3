@@ -35,8 +35,8 @@
             </a>
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
-            <a class="edit" data-fancybox-type="iframe" href="auswertung_dokumente.php?name=dokumente&kunde={$kunde}&id={$id}&mode=delete" >
-            <img src="syspics/button_drop.png" alt="Eintrag löschen">
+            <a class="edit" data-fancybox-type="iframe" href="auswertung_dokumente.php?name=dokumente&kunde={$kunde}&id={$id}&mode={$loeschen_mode}" >
+            <img src="{$loeschen_img}" alt="Eintrag löschen">
             </a>
         </td>
     </tr>
