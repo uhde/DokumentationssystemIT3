@@ -1,55 +1,5 @@
 <?
-// Ist String eine IP
-function isIP($string) {
-    if (eregi('^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$',$string)) {
-        return true;
-    }else{
-        return false;
-    }
-}
 
-// IP über Hostname ermitteln  (NICHT VERWENDEN!!!)
-function getAddrByHost($host, $timeout = 3) {
-   $query = `nslookup -timeout=$timeout -retry=1 $host`;
-    if(preg_match('/\nAddress: (.*)\n/', $query, $matches))
-    return trim($matches[1]);
-   return $host;
-}
-
-// DNS-Abfrage für Hostname
-function fnGetIP($name) {
-    $ip="";
-    if ($ip=="" and file_exists("/usr/bin/dig")) {
-        exec("/usr/bin/dig $name A +short",$arrIP);
-    //// !!!!!!!!!!!!! Array durchlaufen und IP suchen
-        $ip=$arrIP[0];
-        if (!eregi("[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",$ip)) $ip="";
-    }
-    if ($ip=="") {
-        $ip=$name;
-    }
-    return $ip;
-}
-
-// IP-Fomat: xxx.xxx.xxx.xxx
-function IPtoString($string){
-    if (isIP($string)) {
-        $arrIP=explode('.',$string);
-        return str_repeat('0',3-strlen($arrIP[0])).$arrIP[0].'.'.str_repeat('0',3-strlen($arrIP[1])).$arrIP[1].'.'.str_repeat('0',3-strlen($arrIP[2])).$arrIP[2].'.'.str_repeat('0',3-strlen($arrIP[3])).$arrIP[3];
-    }else{
-        return FALSE;
-    }
-}
-
-// IP-Fomat: xxx.xxx.xxx.xxx
-function StringtoIP($string){
-    if (isIP($string)) {
-        $arrIP=explode('.',$string);
-        return (int)$arrIP[0].'.'.(int)$arrIP[1].'.'.(int)$arrIP[2].'.'.(int)$arrIP[3];
-    }else{
-        return FALSE;
-    }
-}
 
 // Alle Logins eines Gerätes ermitteln
 function GetGeraeteLogin($objMySQL,$id,$loeschen) {
