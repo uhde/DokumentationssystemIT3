@@ -35,7 +35,7 @@
         </td>
 
         <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
-            <a class="edit" data-fancybox-type="iframe" href="geraeteedit.php?kunde={$kunde}&id={$id}&mode=edit" >
+            <a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&id={$id}&mode=edit" >
             <img src="syspics/edit.png" alt="Eintrag bearbeiten">
             </a>
         </td>        
@@ -61,7 +61,7 @@
 <p class="Keine_Daten">
 Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <br /><br />
-<a class="edit" data-fancybox-type="iframe" href="geraeteedit.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
+<a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 </p>
@@ -131,7 +131,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Footer:End -----#!
 !#----- Footer2:Begin -----#!
 
-<a class="edit" data-fancybox-type="iframe" href="geraeteedit.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
+<a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 <span style="">

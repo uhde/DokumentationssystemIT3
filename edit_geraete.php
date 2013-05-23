@@ -79,10 +79,10 @@ if ($arrData!==FALSE) {
         $arrData['garantiey_set']=date("Y")+3;
         
         $objTemplate->AssignArray($arrData);
-        $objTemplate->display("geraeteedit");
+        $objTemplate->edit_geraete.php("geraeteedit");
     }
     else{
-        //objTemplate->display("nogeraete");
+        //objTemplate->edit_geraete.php("nogeraete");
     }
         
 }else{
@@ -92,11 +92,11 @@ if ($arrData!==FALSE) {
         $mode['garantiey_set']=date("Y")+3;
         $mode['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $objTemplate->AssignArray($mode);
-        $objTemplate->display("geraetecreate");
+        $objTemplate->edit_geraete.php("geraetecreate");
     }
     else{
         //$mysqlfail="'SELECT * FROM '.TBL_GERAETE.' WHERE id='.$_GET['id'].' AND kunde='.$_GET['knd_id'],MYSQL_ASSOC";
-        $objTemplate->display("nogeraete");
+        $objTemplate->edit_geraete.php("nogeraete");
     }
 }
 
@@ -105,7 +105,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
     if ($Data!==FALSE) {
         $runde=1;
         $objTemplate=new Template("layout/geraeteedit.lay.php");
-        $str=$objTemplate->DisplayToString('Login_Header');
+        $str=$objTemplate->edit_geraete.phpToString('Login_Header');
         foreach ($Data as $Value){
                      
             $Value['runde']=$runde;
@@ -115,7 +115,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             $Value['kunden_id']=$kunden_id;
             $objTemplate->AssignArray($Value);
             if(!(isset($Value['passwort']))) {
-                $str.=$objTemplate->DisplayToString('Login_Main');
+                $str.=$objTemplate->edit_geraete.phpToString('Login_Main');
             }
             $objTemplate->ClearAssign();
             $runde++;
@@ -130,31 +130,31 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             $test['prog_list']=MakeProgList($Data2,"20");
             $test['aktive']=MakeProgAktiv($Data,"20",$runde);
             $objTemplate->AssignArray($test);
-            $str.=$objTemplate->DisplayToString('Login_Main');
+            $str.=$objTemplate->edit_geraete.phpToString('Login_Main');
             $objTemplate->ClearAssign();
             $runde++;
         }
             
             
-        $str.=$objTemplate->DisplayToString('Login_Footer');
+        $str.=$objTemplate->edit_geraete.phpToString('Login_Footer');
         unset($objTemplate);
         return $str;
         //return $Data;
     }
         $runde=1;
         $objTemplate=new Template("layout/geraeteedit.lay.php");
-        $str=$objTemplate->DisplayToString('Login_Header');
+        $str=$objTemplate->edit_geraete.phpToString('Login_Header');
         $test['geraete_login']="";$test['geraete_pw']="";$test['geraete_login']="";$test['aktiv']="0";
         for ($i=0;$i<=$prog_add;$i++)  {
             $test['runde']=$runde;
             $test['prog_list']=MakeProgList($Data2,"20");
             $test['aktive']=MakeProgAktiv($Data,"20",$runde);
             $objTemplate->AssignArray($test);
-            $str.=$objTemplate->DisplayToString('Login_Main');
+            $str.=$objTemplate->edit_geraete.phpToString('Login_Main');
             $objTemplate->ClearAssign();
             $runde++;
         }
-        $str.=$objTemplate->DisplayToString('Login_Footer');
+        $str.=$objTemplate->edit_geraete.phpToString('Login_Footer');
         unset($objTemplate);
         return $str;
         
@@ -172,11 +172,11 @@ function MakeProgList($Data,$programm_id){
             $objTemplate->AssignArray($Value);
             if($Value['id']==$programm_id)
             {
-                $str.=$objTemplate->DisplayToString('Prog_selected_liste');
+                $str.=$objTemplate->edit_geraete.phpToString('Prog_selected_liste');
             }
             else
             {
-                $str.=$objTemplate->DisplayToString('Prog_liste');
+                $str.=$objTemplate->edit_geraete.phpToString('Prog_liste');
             }
             
             $objTemplate->ClearAssign();

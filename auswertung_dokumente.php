@@ -51,7 +51,7 @@ include("include/functions.inc.php");
 <body style="margin:0;padding:0;text-align:center;">
 <?php
 
-    //echo '<a href="geraeteedit.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit"> testtasdasdkhjg</a>';
+    //echo '<a href="edit_geraete.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit"> testtasdasdkhjg</a>';
     
     //---------------- Falls nur Werte geändert werden sollen. $tabelle muss gesetzt sein. ------------------- 
     

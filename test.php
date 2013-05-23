@@ -22,7 +22,7 @@ $(document).ready(function() {
 <table>
 
 
-<a class="various" data-fancybox-type="iframe" href="geraeteedit.php?kunde=5&id=5&mode=edit">link</a>
+<a class="various" data-fancybox-type="iframe" href="edit_geraete.php?kunde=5&id=5&mode=edit">link</a>
 
 
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
 <br>
 <ul class="list">
     <li>
-        <a class="various" data-fancybox-type="iframe" href="geraeteedit.php?kunde=5&id=5&mode=edit">link</a>
+        <a class="various" data-fancybox-type="iframe" href="edit_geraete.php?kunde=5&id=5&mode=edit">link</a>
     </li>
     <li>
         <a class="various fancybox.ajax" href="/demo/ajax.php">Ajax</a>

@@ -94,10 +94,10 @@ include("include/functions.inc.php");
     }
     // Falls entweder nur ein Programm gelöscht, oder weitere Programme angezeigt werden sollen, wird man gleich wieder auf die Seite zurückgeleitet
     if((isset($mode['prog_add'])&&(!empty($mode['prog_add'])))&&$mode["mode"]!="create") {
-        echo '<meta http-equiv="refresh" content="0; URL=geraeteedit.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit">';
+        echo '<meta http-equiv="refresh" content="0; URL=edit_geraete.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit">';
     }  
     if(isset($mode['prog_del'])&&(!empty($mode['prog_del']))) {
-        echo '<meta http-equiv="refresh" content="0; URL=geraeteedit.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&mode=edit">';
+        echo '<meta http-equiv="refresh" content="0; URL=edit_geraete.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&mode=edit">';
     }  
 
     
@@ -113,7 +113,7 @@ include("include/functions.inc.php");
     echo '<input type="button" onClick="window.location.reload();">';
 } else {*/
     
-    //echo '<a href="geraeteedit.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit"> testtasdasdkhjg</a>';
+    //echo '<a href="edit_geraete.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit"> testtasdasdkhjg</a>';
     
     //---------------- Falls nur Werte geändert werden sollen. $tabelle muss gesetzt sein. ------------------- 
     if ($mode["mode"]=="edit")
@@ -315,7 +315,7 @@ include("include/functions.inc.php");
         $objMySQL->Query($sqlquery);
     }
      if((isset($mode['prog_add'])&&(!empty($mode['prog_add'])))&&$mode["mode"]=="create") {
-        echo '<meta http-equiv="refresh" content="0; URL=geraeteedit.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit">';
+        echo '<meta http-equiv="refresh" content="0; URL=edit_geraete.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit">';
     } 
 //}
 ?>
