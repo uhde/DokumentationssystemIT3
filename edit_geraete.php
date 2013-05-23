@@ -4,7 +4,7 @@ include("include/mysql.class.php");
 include("include/template.class.php");
 include("include/functions.inc.php");
 
-$objTemplate=new Template("layout/geraeteedit.lay.php");
+$objTemplate=new Template("layout/edit_geraete.lay.php");
 foreach($_GET as $key=>$value) 
 { 
         //echo $key." -> ".$value."<br>"; 
@@ -104,7 +104,7 @@ if ($arrData!==FALSE) {
 function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
     if ($Data!==FALSE) {
         $runde=1;
-        $objTemplate=new Template("layout/geraeteedit.lay.php");
+        $objTemplate=new Template("layout/edit_geraete.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
         foreach ($Data as $Value){
                      
@@ -142,7 +142,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
         //return $Data;
     }
         $runde=1;
-        $objTemplate=new Template("layout/geraeteedit.lay.php");
+        $objTemplate=new Template("layout/edit_geraete.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
         $test['geraete_login']="";$test['geraete_pw']="";$test['geraete_login']="";$test['aktiv']="0";
         for ($i=0;$i<=$prog_add;$i++)  {
@@ -165,7 +165,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
 function MakeProgList($Data,$programm_id){
     if ($Data!==FALSE) {
         $runde=1;
-        $objTemplate=new Template("layout/geraeteedit.lay.php");
+        $objTemplate=new Template("layout/edit_geraete.lay.php");
         $str="";
         foreach ($Data as $Value){
             $Value['runde']=$runde;
@@ -192,7 +192,7 @@ function MakeProgList($Data,$programm_id){
 
 function MakeProgAktiv($Data,$programm_id,$runde){
     if ($Data!==FALSE) {
-        $objTemplate=new Template("layout/geraeteedit.lay.php");
+        $objTemplate=new Template("layout/edit_geraete.lay.php");
         $first=false;
         if($programm_id != '20')
         {
