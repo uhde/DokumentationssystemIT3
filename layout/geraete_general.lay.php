@@ -123,9 +123,9 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Login_Footer:End -----#!
 !#----- Footer:Begin -----#!
 </table>
-<span class="TRInfoCloseall" style="padding-right:10px;">
-    <input type="button"  value="Alle Infos schließen" onClick="ClearAllLoad()"></input>
-</span>
+    <span class="TRInfoCloseall" style="padding-right:10px;">
+        <input type="button"  value="Alle Infos schließen" onClick="ClearAllLoad()"></input>
+    </span>
 </div>
 
 !#----- Footer:End -----#!
