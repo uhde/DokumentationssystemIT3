@@ -1,6 +1,6 @@
 
 <?php 
-    echo '<form name="Form2" method="post" action="auswertung.php?name=kunde&id='.$_GET['id'].'&mode=delete">';
+    echo '<form name="Form2" method="post" action="auswertung_kunden_geraete.php?name=kunde&id='.$_GET['id'].'&mode=delete">';
 ?>
 
     <h2 style="color:red;">Wollen sie den Kunden wirklich löschen?</h2><br>

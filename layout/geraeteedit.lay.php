@@ -15,7 +15,7 @@
 
 <body style="margin:0;padding:0;">
 
-<form name="Form1" method="post" action="auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}">
+<form name="Form1" method="post" action="auswertung_kunden_geraete.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
     <td align="right"><span class="LinkStyle">Name: </span></td>
@@ -160,7 +160,7 @@
         <input type="submit" value="Speichern" >
     </td>
     <td>
-        <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
+        <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
     </td>
 </tr>
 </form>
@@ -192,7 +192,7 @@
 
 <body style="margin:0;padding:0;">
 
-<form name="Form4" method="post" action="auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}">
+<form name="Form4" method="post" action="auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
     <td align="right"><span class="LinkStyle">Name: </span></td>
@@ -331,7 +331,7 @@
         <input type="submit" value="Speichern" class="button1">
         </td>
      <td>
-        <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
+        <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
     </td>
 </tr>
 </form>
@@ -383,7 +383,7 @@
     <td class="Key"><select name="programm_id{$runde}" size="1">{$prog_list}  </select>  </td>
     <td class="Value"><span id="geratelogin"> <input name="login{$runde}" type="text" size="25"  value="{$geraete_login}" ></input></span></td>
     <td class="Value"><input name="passwort{$runde}" type="text" size="25" maxlength="40" value="{$geraete_pw}" ></input></td>
-    <td style="text-align:center;"><a href="auswertung.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="Löschen"   >
+    <td style="text-align:center;"><a href="auswertung_kunden_geraete.php?name=geraete&prog_del=1&geraete_login_id={$geraete_login_id}&id={$geraet_id}&kunde={$kunden_id}" title="Löschen"   >
         <img src="syspics/button_drop.png" style="border:none:width:12px;height:12px;" alt="Programm löschen"></a></td>
     <td class="Value">
         <input name="prog_aktiv{$runde}" title="Checkbox die darstellt, dass der Button angezeigt werden soll." type="checkbox" {$aktive}></input>

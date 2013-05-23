@@ -40,7 +40,7 @@
             </a>
         </td>        
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
-            <a class="edit" data-fancybox-type="iframe" href="auswertung.php?name=geraete&kunde={$kunde}&id={$id}&mode={$loeschen_mode}&askuser=true" >
+            <a class="edit" data-fancybox-type="iframe" href="auswertung_kunden_geraete.php?name=geraete&kunde={$kunde}&id={$id}&mode={$loeschen_mode}&askuser=true" >
                 <img src="{$loeschen_img}" alt="Eintrag löschen" width="11" height="13">
             </a>
         </td>

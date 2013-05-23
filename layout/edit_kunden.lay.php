@@ -13,7 +13,7 @@
 
 
 <body style="margin:0;padding:0;" >
-<form name="Form1" method="post" action="auswertung.php?name=kunde&mode=edit&id={$id}">
+<form name="Form1" method="post" action="auswertung_kunden_geraete.php?name=kunde&mode=edit&id={$id}">
 <table width="710" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
     <td align="right"><span class="LinkStyle">Name: </span></td>
@@ -326,7 +326,7 @@
 
 
 <body style="margin:0;padding:0;">
-<form name="Form2" method="post" action="auswertung.php?name=kunde&mode=create">
+<form name="Form2" method="post" action="auswertung_kunden_geraete.php?name=kunde&mode=create">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
     <td align="right"><span class="LinkStyle">Name: </span></td>
