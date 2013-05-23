@@ -1,13 +1,9 @@
-test
 <?
-
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
 include("include/functions.inc.php");
-echo "<br>test2";
+
 $objTemplate=new Template("layout/geraeteedit.lay.php");
 foreach($_GET as $key=>$value) 
 { 
@@ -52,8 +48,7 @@ if((isset($mode['prog_add'])&&(!empty($mode['prog_add'])))||$mode["mode"]=="crea
 } else {
     $prog_add=-1;
     }
-          
-echo "<br>test3";          
+                
 if ($arrData!==FALSE) {
     switch( $arrData["kategorie"] ) {
         case 1:
@@ -84,10 +79,10 @@ if ($arrData!==FALSE) {
         $arrData['garantiey_set']=date("Y")+3;
         
         $objTemplate->AssignArray($arrData);
-        $objTemplate->edit_geraete.php("geraeteedit");
+        $objTemplate->display("geraeteedit");
     }
     else{
-        //objTemplate->edit_geraete.php("nogeraete");
+        //objTemplate->display("nogeraete");
     }
         
 }else{
@@ -97,11 +92,11 @@ if ($arrData!==FALSE) {
         $mode['garantiey_set']=date("Y")+3;
         $mode['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $objTemplate->AssignArray($mode);
-        $objTemplate->edit_geraete.php("geraetecreate");
+        $objTemplate->display("geraetecreate");
     }
     else{
         //$mysqlfail="'SELECT * FROM '.TBL_GERAETE.' WHERE id='.$_GET['id'].' AND kunde='.$_GET['knd_id'],MYSQL_ASSOC";
-        $objTemplate->edit_geraete.php("nogeraete");
+        $objTemplate->display("nogeraete");
     }
 }
 
@@ -110,7 +105,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
     if ($Data!==FALSE) {
         $runde=1;
         $objTemplate=new Template("layout/geraeteedit.lay.php");
-        $str=$objTemplate->edit_geraete.phpToString('Login_Header');
+        $str=$objTemplate->DisplayToString('Login_Header');
         foreach ($Data as $Value){
                      
             $Value['runde']=$runde;
@@ -120,7 +115,7 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             $Value['kunden_id']=$kunden_id;
             $objTemplate->AssignArray($Value);
             if(!(isset($Value['passwort']))) {
-                $str.=$objTemplate->edit_geraete.phpToString('Login_Main');
+                $str.=$objTemplate->DisplayToString('Login_Main');
             }
             $objTemplate->ClearAssign();
             $runde++;
@@ -135,31 +130,31 @@ function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
             $test['prog_list']=MakeProgList($Data2,"20");
             $test['aktive']=MakeProgAktiv($Data,"20",$runde);
             $objTemplate->AssignArray($test);
-            $str.=$objTemplate->edit_geraete.phpToString('Login_Main');
+            $str.=$objTemplate->DisplayToString('Login_Main');
             $objTemplate->ClearAssign();
             $runde++;
         }
             
             
-        $str.=$objTemplate->edit_geraete.phpToString('Login_Footer');
+        $str.=$objTemplate->DisplayToString('Login_Footer');
         unset($objTemplate);
         return $str;
         //return $Data;
     }
         $runde=1;
         $objTemplate=new Template("layout/geraeteedit.lay.php");
-        $str=$objTemplate->edit_geraete.phpToString('Login_Header');
+        $str=$objTemplate->DisplayToString('Login_Header');
         $test['geraete_login']="";$test['geraete_pw']="";$test['geraete_login']="";$test['aktiv']="0";
         for ($i=0;$i<=$prog_add;$i++)  {
             $test['runde']=$runde;
             $test['prog_list']=MakeProgList($Data2,"20");
             $test['aktive']=MakeProgAktiv($Data,"20",$runde);
             $objTemplate->AssignArray($test);
-            $str.=$objTemplate->edit_geraete.phpToString('Login_Main');
+            $str.=$objTemplate->DisplayToString('Login_Main');
             $objTemplate->ClearAssign();
             $runde++;
         }
-        $str.=$objTemplate->edit_geraete.phpToString('Login_Footer');
+        $str.=$objTemplate->DisplayToString('Login_Footer');
         unset($objTemplate);
         return $str;
         
@@ -177,11 +172,11 @@ function MakeProgList($Data,$programm_id){
             $objTemplate->AssignArray($Value);
             if($Value['id']==$programm_id)
             {
-                $str.=$objTemplate->edit_geraete.phpToString('Prog_selected_liste');
+                $str.=$objTemplate->DisplayToString('Prog_selected_liste');
             }
             else
             {
-                $str.=$objTemplate->edit_geraete.phpToString('Prog_liste');
+                $str.=$objTemplate->DisplayToString('Prog_liste');
             }
             
             $objTemplate->ClearAssign();
@@ -224,5 +219,3 @@ function MakeProgAktiv($Data,$programm_id,$runde){
 }
 
 ?>
-
-
