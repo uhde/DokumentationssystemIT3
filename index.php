@@ -297,7 +297,7 @@ function ClearAllLoad()
 <div id="frame_left">
 <div class="content_area">
 <!-- Hiermit wird die Anzeige des linken Frames mit der Auflistung aller Kunden bewirkt -->
-<? include('kunden.php'); ?>
+<? include('kunden_wahl.php'); ?>
 </div>
 </div>
 
