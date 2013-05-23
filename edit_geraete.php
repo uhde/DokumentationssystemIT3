@@ -1,9 +1,13 @@
+test
 <?
+
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
 include("include/functions.inc.php");
-
+echo "<br>test2";
 $objTemplate=new Template("layout/geraeteedit.lay.php");
 foreach($_GET as $key=>$value) 
 { 
@@ -48,7 +52,8 @@ if((isset($mode['prog_add'])&&(!empty($mode['prog_add'])))||$mode["mode"]=="crea
 } else {
     $prog_add=-1;
     }
-                
+          
+echo "<br>test3";          
 if ($arrData!==FALSE) {
     switch( $arrData["kategorie"] ) {
         case 1:
