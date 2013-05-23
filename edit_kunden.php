@@ -3,7 +3,7 @@ include("include/config.inc.php");
 include("include/mysql.class.php");
 include("include/template.class.php");
 
-$objTemplate=new Template("layout/kundeninfo.lay.php");
+$objTemplate=new Template("layout/edit_kunden.lay.php");
 if (isset($_GET['edit'])) {
     $edit=true;
 }

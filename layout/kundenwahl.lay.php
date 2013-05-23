@@ -15,7 +15,7 @@
             <img src="syspics/user_invisible.png" style="border:none:width:12px;height:12px;" alt="Kunde Verstecken"></a>
     </td>
     <td align="left" style="padding-left:3px;padding-top:3px;padding-bottom:3px;">
-        <a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?knd_id={$id}" >
+        <a class="edit" data-fancybox-type="iframe" href="edit_kunden.php?knd_id={$id}" >
             <img src="syspics/info.png" style="border:none:width:12px;height:12px;" alt="Kundeninfo">
         </a>
     </td>
@@ -26,7 +26,7 @@
 !#----- Footer:Begin -----#!
 <tr>
     <td>
-        <a class="edit" data-fancybox-type="iframe" href="kundeninfo.php?create=true">
+        <a class="edit" data-fancybox-type="iframe" href="edit_kunden.php?create=true">
             <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
         </a>
     

@@ -293,7 +293,7 @@
 <tr class="footer">
 
     <td align="center" >
-        <input type="button" value="Editieren" onClick="javascript:location.replace('kundeninfo.php?knd_id={$id}&edit=true')" class="button1">
+        <input type="button" value="Editieren" onClick="javascript:location.replace('edit_kunden.php?knd_id={$id}&edit=true')" class="button1">
     </td>
     <td align="center">
         <input type="button" value="Kunden Löschen" onClick="javascript:location.replace('kundenloeschen.php?id={$id}')" class="button1" />
