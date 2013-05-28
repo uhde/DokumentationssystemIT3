@@ -52,6 +52,7 @@ include_once("functions.inc.php");
     } else {
         $sqldata['url_text']=$sqldata['url'];
     }*/
+    $sqldata['url_text']=$sqldata['url'];
     echo '
     
         <table class="DeviceInfo">
