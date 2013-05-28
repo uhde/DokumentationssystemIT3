@@ -66,6 +66,8 @@ if ($arrData_zugaenge!==FALSE) {
                 }
             }
         }
+        // Setzt die Time Variable, um ein caching in der ***HTA-Anwendung zu verhindern
+        $Value['time']=time();
         if (strlen($Value['url'])>50) {
             $Value['url_text']=substr($Value['url'],0,47).'...';
         } else {
