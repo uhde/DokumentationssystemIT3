@@ -47,12 +47,13 @@ include_once("functions.inc.php");
     }
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
-    /*if (strlen($sqldata['url'])>50) {
+    if (strlen($sqldata['url'])>50) {
         $sqldata['url_text']=substr($sqldata['url'],0,47).'...';
+        $gekuerzed = true;
     } else {
         $sqldata['url_text']=$sqldata['url'];
-    }*/
-    $sqldata['url_text']=$sqldata['url'];
+        $gekuerzed = false;
+    }
     echo '
     
         <table class="DeviceInfo">
@@ -64,13 +65,24 @@ include_once("functions.inc.php");
             </tr>
             <tr>
                 <td class="Key">Link: </td>
-                <td style="max-width:200px;background-color:none;padding:5px;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 8pt;color: #000000;">
+                <td class="Value">
                     <a href="'.$sqldata["url"].'" target="_blank">
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
                 </td>
 
             <tr>
+            ';
+    if($gekuerzed) {
+        echo '<tr>
+                <td class="Key">Link (kopieren): </td>
+                <td class="Value">
+                    <input type="text">'.$sqldata["url_text"].'</input>
+                </td>
+            <tr>';
+    }
+            
+    echo '
                 <td class="Key">Bemerkung: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["zusatz"].'</td>
             </tr> 
