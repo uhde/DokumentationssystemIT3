@@ -47,11 +47,11 @@ include_once("functions.inc.php");
     }
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
-    if (strlen($sqldata['url'])>50) {
+    /*if (strlen($sqldata['url'])>50) {
         $sqldata['url_text']=substr($sqldata['url'],0,47).'...';
     } else {
         $sqldata['url_text']=$sqldata['url'];
-    }
+    }*/
     echo '
     
         <table class="DeviceInfo">
