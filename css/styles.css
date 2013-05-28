@@ -172,6 +172,7 @@ td.Value{
      font-size: 8pt;
      color: #000000;
      border:none;
+     max-width:200px;
 }
 td.Value2{
     text-align:left;
