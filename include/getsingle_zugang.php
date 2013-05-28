@@ -64,7 +64,7 @@ include_once("functions.inc.php");
             </tr>
             <tr>
                 <td class="Key">Link: </td>
-                <td class="Value">
+                <td style="max-width:200px;background-color:none;padding:5px;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 8pt;color: #000000;">
                     <a href="'.$sqldata["url"].'" target="_blank">
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
