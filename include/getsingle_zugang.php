@@ -77,7 +77,7 @@ include_once("functions.inc.php");
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
                 <td class="Value">
-                    <input type="text" value="'.$sqldata["url_text"].'"></input>
+                    <input type="text" value="'.$sqldata["url"].'"></input>
                 </td>
             <tr>';
     }
