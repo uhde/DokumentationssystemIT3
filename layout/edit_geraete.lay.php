@@ -170,6 +170,9 @@
     <td>
         <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
     </td>
+    <td>
+        <input type="submit"  value="Kopie des Gerätes Speichern" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&id={$id}';" />
+    </td>
 </tr>
 </form>
 
