@@ -112,6 +112,7 @@ function MakeKundenAuswahl($kunde_aktuell, $arr_kundendata)
         $tempstring=$objTemplate->DisplayToString('kunden_liste_start');
         foreach ($arr_kundendata as $Value)
         {
+            $objTemplate->AssignArray($Value);
             if($Value['id']==$kunde_aktuell)
             {
                 $tempstring.=$objTemplate->DisplayToString('kunden_liste_selected');
