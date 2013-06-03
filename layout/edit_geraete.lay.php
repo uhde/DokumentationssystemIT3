@@ -24,6 +24,12 @@
     </td>
 </tr>
 <tr class="Data0">
+    <td align="right"><span class="LinkStyle">Kunde: </span></td>
+    <td>
+     {$kundenliste}   
+    </td>
+</tr>
+<tr class="Data0">
     <td align="right"><span class="LinkStyle">Kategorie: </span></td>
     <td>
         <select name="kategorie"> 
@@ -32,12 +38,6 @@
              <option {$kat_active_drucker} value="3">Drucker</option>
              <option {$kat_active_netzwerk} value="4">Netzwerk</option>
         </select>
-    </td>
-</tr>
-<tr class="Data0">
-    <td align="right"><span class="LinkStyle">Kunde: </span></td>
-    <td>
-     {$kundenliste}   
     </td>
 </tr>
 <tr class="Data0">
