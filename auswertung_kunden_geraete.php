@@ -165,7 +165,7 @@ include("include/functions.inc.php");
                 $sqlquery=$sqlquery.", `".$key."` = '".$value."' ";
             }
         }
-        if ($mode["name"]=="geraete" && $mode['copy']!=1)
+        if ($mode["name"]=="geraete" && $mode['kopieren']!=1)
         {
             $sqlquery=$sqlquery.", `kunde` = '".$mode['kunde']."' ";
             $sqlquery=$sqlquery.", `kategorie` = '".$mode['kategorie']."' ";
