@@ -145,7 +145,7 @@ include("include/functions.inc.php");
         //$sqlquery=mysql_real_escape_string($sqlquery);
         //echo "<h3>Hier ist der SQL-Update Befehl.</h3><br>".$sqlquery;
         $objMySQL->Query($sqlquery);
-         echo "<h2>Die Daten wurden gespeichert</h2>";
+         echo "<h2>Der Eintrag wurde aktualisiert</h2>";
     }
         
     
@@ -173,7 +173,7 @@ include("include/functions.inc.php");
         //echo "<h1>Hier ist der SQL-Update Befehl.</h1><br>".$sqlquery;
         $objMySQL->Query($sqlquery);
         $mode['id']=mysql_insert_id();
-         echo "<h2>Die Daten wurden gespeichert</h2>";
+         echo "<h2>Der Eintrag wurde erstellt</h2>";
     }
     if ($mode["name"]=="geraete")
     {  
