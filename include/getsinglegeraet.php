@@ -82,6 +82,9 @@ include_once("functions.inc.php");
     }    
     
     // Zeilenumbrüche in HTML Umbrüche Konvertieren
+    
+    $sqldata['bemerkung']=link_klickbar_machen($sqldata['bemerkung']);
+    
     $sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
     
     echo '
