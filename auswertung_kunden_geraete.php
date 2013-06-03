@@ -20,14 +20,14 @@ include("include/functions.inc.php");
     // Damit werden die Get Variablen geholt, und in das Array "mode" gespeichert.
     foreach($_GET as $key=>$value) 
     { 
-        //echo $key." -> ".$value."<br>"; 
+        echo "MODE: ".$key." -> ".$value."<br>"; 
         $mode[$key]=mysql_real_escape_string($value);
     }     
     // Damit werden die Post Variablen geholt, und in das Array "daten" gespeichert.
     foreach($_POST as $key=>$value) 
     { 
         $value=mysql_real_escape_string($value);
-        
+        echo "POST: ".$key." -> ".$value."<br>"; 
         //echo $key." -> ".$value."<br>";
         if(strpos($key,'programm_id')!==false) {
             // Hier wird zuerst die Zählvariable ausgelesen
