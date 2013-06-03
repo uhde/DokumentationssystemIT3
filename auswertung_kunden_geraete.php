@@ -171,7 +171,7 @@ include("include/functions.inc.php");
                 $sqlquery=$sqlquery.", `".$key."` = '".$value."' ";
             }
         }
-        if ($mode["name"]=="geraete" && ($kunde_post == false))
+        if ($mode["name"]=="geraete" && ($kunde_post == true))
         {
             $sqlquery=$sqlquery.", `kunde` = '".$mode['kunde']."' ";
             $sqlquery=$sqlquery.", `kategorie` = '".$mode['kategorie']."' ";
