@@ -35,7 +35,9 @@ if($mode["mode"]=="edit")
     $arrData2=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
     
     
-    $arrData3=$objMySQL->QueryArray('SELECT * FROM '.TBL_PROGRAMME.' ORDER BY id ',MYSQL_ASSOC);           
+    $arrData3=$objMySQL->QueryArray('SELECT * FROM '.TBL_PROGRAMME.' ORDER BY id ',MYSQL_ASSOC); 
+$sql = "SELECT * FROM ".TBL_KUNDEN;
+$arrkunden_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);   
     
     
          
@@ -77,6 +79,7 @@ if ($arrData!==FALSE) {
         $arrData['garantied_set']=date("d");
         $arrData['garantiem_set']=date("m");
         $arrData['garantiey_set']=date("Y")+3;
+        $arrData['kundenliste'] = MakeKundenAuswahl($arrData['kunde'],$arrkunden_data);
         
         $objTemplate->AssignArray($arrData);
         $objTemplate->display("geraeteedit");
@@ -91,6 +94,7 @@ if ($arrData!==FALSE) {
         $mode['garantiem_set']=date("m");
         $mode['garantiey_set']=date("Y")+3;
         $mode['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
+        $mode['kundenliste'] = MakeKundenAuswahl($mode['kunde'],$arrkunden_data);
         $objTemplate->AssignArray($mode);
         $objTemplate->display("geraetecreate");
     }
@@ -99,7 +103,28 @@ if ($arrData!==FALSE) {
         $objTemplate->display("nogeraete");
     }
 }
-
+function MakeKundenAuswahl($kunde_aktuell, $arr_kundendata)
+{
+    $objTemplate=new Template("layout/edit_geraete.lay.php");
+    $tempstring = "";
+    if (is_array($arr_kundendata))
+    {
+        $tempstring=$objTemplate->DisplayToString('kunden_liste_start');
+        foreach ($arr_kundendata as $Value)
+        {
+            if($Value['id']==$kunde_aktuell)
+            {
+                $tempstring.=$objTemplate->DisplayToString('kunden_liste_selected');
+            } else {
+                $tempstring.=$objTemplate->DisplayToString('kunden_liste');
+            }
+        }
+        $tempstring.=$objTemplate->DisplayToString('kunden_liste_end');
+    }else {
+        $tempstring = " ERROR: Die Kundenliste konnte nicht erstellt werden.";
+    }
+    return $tempstring;
+}
 
 function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
     if ($Data!==FALSE) {

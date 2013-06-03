@@ -35,6 +35,12 @@
     </td>
 </tr>
 <tr class="Data0">
+    <td align="right"><span class="LinkStyle">Kunde: </span></td>
+    <td>
+     {$kundenliste}   
+    </td>
+</tr>
+<tr class="Data0">
     <td align="right"><span class="LinkStyle">IP/DNS Adresse: </span></td>
     <td>
         <span class="StandardText"><input name="adresse" type="text" size="30" maxlength="100" value="{$adresse}" ></span>
@@ -150,7 +156,9 @@
 
 <tr>
     <td>
-        Bei dem Programm "Teamviewer Lan" wird das Login Feld nicht übernommen.<br>
+        <span class="StandardText">
+            Bei dem Programm "Teamviewer Lan" wird das Login Feld nicht übernommen.<br>
+        </span>
     </td>
 </tr>
 
@@ -320,9 +328,10 @@
 </tr>
 
 <tr>
-    
     <td colspan="4">
-       Klicken sie auf den Button: "Programm hinzufügen" um ein, oder mehrere Programme einzupflegen.<br>
+        <span class="StandardText">
+            Klicken sie auf den Button: "Programm hinzufügen" um ein, oder mehrere Programme einzupflegen.<br>
+        </span>
     </td>
 </tr>
 
@@ -403,3 +412,18 @@
 !#----- Prog_selected_liste:Begin -----#!
 <option selected value="{$id}">{$bemerkung}</option>
 !#----- Prog_selected_liste:End -----#!
+
+
+!#----- kunden_liste_start:Begin -----#!
+<select name="kunde" size="1">
+!#----- kunden_liste_start:End -----#!
+!#----- kunden_liste_selected:Begin -----#!
+<option selected value="{$id}">{$name}</option>
+!#----- kunden_liste_selected:End -----#!
+!#----- kunden_liste:Begin -----#!
+<option value="{$id}">{$name}</option>
+!#----- kunden_liste:End -----#!
+!#----- kunden_liste_end:Begin -----#!
+</select>
+!#----- kunden_liste_end:End -----#!
+
