@@ -170,7 +170,7 @@ include("include/functions.inc.php");
             $sqlquery=$sqlquery.", `kunde` = '".$mode['kunde']."' ";
             $sqlquery=$sqlquery.", `kategorie` = '".$mode['kategorie']."' ";
         }
-        //echo "<h1>Hier ist der SQL-Update Befehl.</h1><br>".$sqlquery;
+        echo "<h1>Hier ist der SQL-Update Befehl.</h1><br>".$sqlquery."<br>";
         $objMySQL->Query($sqlquery);
         $mode['id']=mysql_insert_id();
          echo "<h2>Der Eintrag wurde erstellt</h2>";
