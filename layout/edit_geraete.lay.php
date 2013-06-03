@@ -156,7 +156,7 @@
 
 <tr>
     <td>
-        <span class="LinkStyle">
+        <span class="StandardText">
             Bei dem Programm "Teamviewer Lan" wird das Login Feld nicht übernommen.<br>
         </span>
     </td>
@@ -332,7 +332,7 @@
 
 <tr>
     <td colspan="4">
-        <span class="LinkStyle">
+        <span class="StandardText">
             Klicken sie auf den Button: "Programm hinzufügen" um ein, oder mehrere Programme einzupflegen.<br>
         </span>
     </td>
