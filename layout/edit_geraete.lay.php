@@ -171,7 +171,7 @@
         <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
     </td>
     <td>
-        <input type="submit"  value="Kopie des Gerätes Speichern" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}';" />
+        <input type="submit"  value="Kopie des Gerätes Speichern" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&copy=1';" />
     </td>
 </tr>
 </form>
@@ -203,7 +203,7 @@
 
 <body style="margin:0;padding:0;">
 
-<form name="Form4" method="post" action="auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}">
+<form name="Form4" method="post" action="auswertung_kunden_geraete.php?copy=0&name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}">
 <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
 <tr class="Data0">
     <td align="right"><span class="LinkStyle">Name: </span></td>
@@ -343,7 +343,7 @@
         <input type="submit" value="Speichern" class="button1">
         </td>
      <td>
-        <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
+        <input type="submit"  class="button1" value="Speichern und Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?copy=0&name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}&prog_add=5';" />
     </td>
 </tr>
 </form>
