@@ -26,6 +26,12 @@ include("include/functions.inc.php");
     // Damit werden die Post Variablen geholt, und in das Array "daten" gespeichert.
     foreach($_POST as $key=>$value) 
     { 
+        if(isset($_Post['kunde']))
+        {
+            $kunde_post = true;
+        } else {
+            $kunde_post = false;
+        }
         $value=mysql_real_escape_string($value);
         echo "POST: ".$key." -> ".$value."<br>"; 
         //echo $key." -> ".$value."<br>";
@@ -165,7 +171,7 @@ include("include/functions.inc.php");
                 $sqlquery=$sqlquery.", `".$key."` = '".$value."' ";
             }
         }
-        if ($mode["name"]=="geraete")
+        if ($mode["name"]=="geraete" AND $kunde_post == false)
         {
             $sqlquery=$sqlquery.", `kunde` = '".$mode['kunde']."' ";
             $sqlquery=$sqlquery.", `kategorie` = '".$mode['kategorie']."' ";
