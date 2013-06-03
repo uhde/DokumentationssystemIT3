@@ -1,69 +1,25 @@
+<?php
+$text = "http://www.php-einfach.de und klaus@mustermann.de";
 
-<html>
-<head>
- <meta charset="utf-8">
-<script type='text/javascript' src='js/jquery-1.9.1.min.js'></script>
-<link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
-<script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
-<script type='text/javascript'>
-$(document).ready(function() {
-    $(".various").fancybox({
+//Aus http://url wird [URL]http://url[/URL]
+$urlsuch[]="/([^]_a-z0-9-=\"'\/])((https?|ftp):\/\/|www\.)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
+$urlsuch[]="/^((https?|ftp):\/\/|www\.)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
 
-    });
-});
-</script>
+$urlreplace[]="\\1[URL]\\2\\4[/URL]";
+$urlreplace[]="[URL]\\1\\3[/URL]";
 
-<title>Testseite</title>
-</head>
-<body>
-
-<form>
-<div id="Buchungen">
-<table>
+$text = preg_replace($urlsuch, $urlreplace, $text);
 
 
-<a class="various" data-fancybox-type="iframe" href="edit_geraete.php?kunde=5&id=5&mode=edit">link</a>
+//Die URL's werden zu Links
+$text = preg_replace("/\[URL\]www.(.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"http://www.\\1\">www.\\1</a>", $text); 
+
+$text = preg_replace("/\[URL\](.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"\\1\">\\1</a>", $text); 
+
+$text = preg_replace("/\[URL=www.(.*?)\](.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"http://www.\\1\">\\2</a>", $text); 
+
+$text = preg_replace("/\[URL=(.*?)\](.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"\\1\">\\2</a>", $text); 
 
 
-
-<br>
-<br>
-<br>
-<br>
-<ul class="list">
-    <li>
-        <a class="various" data-fancybox-type="iframe" href="edit_geraete.php?kunde=5&id=5&mode=edit">link</a>
-    </li>
-    <li>
-        <a class="various fancybox.ajax" href="/demo/ajax.php">Ajax</a>
-    </li>
-    <li>
-        <a class="various" data-fancybox-type="iframe" href="/demo/iframe.html">Iframe</a>
-    </li>
-    <li>
-        <a class="various" href="#inline">Inline</a>
-    </li>
-    <li>
-        <a class="various" href="http://www.adobe.com/jp/events/cs3_web_edition_tour/swfs/perform.swf">SWF</a>
-    </li>
-</ul>
-
-<ul class="list">
-    <li>
-        <a class="various fancybox.iframe" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1">Youtube (iframe)</a>
-    </li>
-    <li>
-        <a class="various fancybox.iframe" href="http://maps.google.com/?output=embed&f=q&source=s_q&hl=en&geocode=&q=London+Eye,+County+Hall,+Westminster+Bridge+Road,+London,+United+Kingdom&hl=lv&ll=51.504155,-0.117749&spn=0.00571,0.016512&sll=56.879635,24.603189&sspn=10.280244,33.815918&vpsrc=6&hq=London+Eye&radius=15000&t=h&z=17">Google maps (iframe)</a>
-    </li>
-    <li>
-        <a class="various" href="/data/non_existing_image.jpg">Non-existing url</a>
-    </li>
-</ul>
-
-</table>
-
-</div>
-
-</body>
-</html>
-
+echo $text;
+?>
