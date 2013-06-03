@@ -36,7 +36,7 @@ if($mode["mode"]=="edit")
     
     
     $arrData3=$objMySQL->QueryArray('SELECT * FROM '.TBL_PROGRAMME.' ORDER BY id ',MYSQL_ASSOC); 
-$sql = "SELECT * FROM ".TBL_KUNDEN." ORDER BY name;
+$sql = "SELECT * FROM ".TBL_KUNDEN." ORDER BY name";
 $arrkunden_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);   
     
     
