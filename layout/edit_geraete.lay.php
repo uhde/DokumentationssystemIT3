@@ -156,7 +156,7 @@
 
 <tr>
     <td>
-        <span class="StandardText">
+        <span class="LinkStyle">
             Bei dem Programm "Teamviewer Lan" wird das Login Feld nicht übernommen.<br>
         </span>
     </td>
@@ -171,7 +171,7 @@
         <input type="submit"  value="Neues Programm hinzufügen" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=edit&kunde={$kunde}&id={$id}&prog_add=5';" />
     </td>
     <td>
-        <input type="submit"  value="Kopie des Gerätes Speichern" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&id={$id}';" />
+        <input type="submit"  value="Kopie des Gerätes Speichern" onclick="javascript: form.action='auswertung_kunden_geraete.php?name=geraete&mode=create&kunde={$kunde}&kategorie={$kategorie}';" />
     </td>
 </tr>
 </form>
@@ -332,7 +332,7 @@
 
 <tr>
     <td colspan="4">
-        <span class="StandardText">
+        <span class="LinkStyle">
             Klicken sie auf den Button: "Programm hinzufügen" um ein, oder mehrere Programme einzupflegen.<br>
         </span>
     </td>
