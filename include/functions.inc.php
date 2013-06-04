@@ -20,8 +20,8 @@ function link_klickbar_machen($text) {
     //Die URL's werden zu Links
     $text = preg_replace("/\[URL\]www.(.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"http://www.\\1\">www.\\1</a>", $text); 
     $text = preg_replace("/\[URL\](.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"\\1\">\\1</a>", $text); 
-    $text = preg_replace("/\[URL=www.(.*?)\](.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"http://www.\\1\">\\2</a>", $text); 
-    $text = preg_replace("/\[URL=(.*?)\](.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"\\1\">\\2</a>", $text); 
+    $text = preg_replace("/\[URL=www.(.*?)\](.*?)\[\/URL\]/si", "<span style=\"color:red\"><a target=\"_blank\" href=\"http://www.\\1\">\\2</a></span>", $text); 
+    $text = preg_replace("/\[URL=(.*?)\](.*?)\[\/URL\]/si", "<span style=\"color:red\"><a target=\"_blank\" href=\"\\1\">\\2</a></span>", $text); 
     //E-Mail Adressen werden zu links
     $text = preg_replace("/\[EMAIL\](.*?)\[\/EMAIL\]/si", "<a href=\"mailto:\\1\">\\1</a>", $text); 
     $text = preg_replace("/\[EMAIL=(.*?)\](.*?)\[\/EMAIL\]/si", "<a href=\"mailto:\\1\">\\2</a>", $text); 
