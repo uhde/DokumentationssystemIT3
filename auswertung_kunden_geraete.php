@@ -173,7 +173,7 @@ include("include/functions.inc.php");
         //echo "<h1>Hier ist der SQL-Update Befehl.</h1><br>".$sqlquery."<br>";
         $objMySQL->Query($sqlquery);
         $mode['id']=mysql_insert_id();
-         echo '<span class="StandardText">Der Eintrag wurde erstellt</span>';
+         echo 'Der Eintrag wurde erstellt.';
     }
     if ($mode["name"]=="geraete")
     {  
@@ -319,16 +319,5 @@ include("include/functions.inc.php");
     } 
 //}
 ?>
-    
-    <table width="200" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
-        <tr class="Data0">
-            <td align="right"><span class="LinkStyle">Titel: </span></td>
-            <td>
-                <span class="StandardText">
-                    <input name="titel" type="text" size="50" maxlength="60" value="{$name}" >
-                </span>
-            </td>
-        </tr>
-    </table>
 </body>
 </html>
