@@ -3,8 +3,8 @@
 function link_klickbar_machen($text) {
 //http://www.php-einfach.de/tuts_php_links.php
     //Aus http://url wird [URL]http://url[/URL]
-    $urlsuch[]="/([^]_a-z0-9-=\"'\/])(\\\\)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
-    $urlsuch[]="/^(\\\\)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
+    $urlsuch[]="/([^]_a-z0-9-=\"'\/])(\\\\[a-z]:)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
+    $urlsuch[]="/^(\\\\[a-z]:)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
     $urlreplace[]="\\1[URL]\\2\\4[/URL]";
     $urlreplace[]="[URL]\\1\\3[/URL]";
     //Aus klaus@mustermann.de wird [EMAIL]klaus@mustermann.de [/EMAIL]
@@ -13,9 +13,10 @@ function link_klickbar_machen($text) {
     $emailreplace[]="\\1[EMAIL]\\2[/EMAIL]";
     $emailreplace[]="[EMAIL]\\0[/EMAIL]";
     $text = preg_replace($urlsuch, $urlreplace, $text);
+    echo "ersetzt1: ".$text"<br>";
     if (strpos($text, "@"))
     {
-    $text = preg_replace($emailsuch, $emailreplace, $text);
+        $text = preg_replace($emailsuch, $emailreplace, $text);
     }
     //Die URL's werden zu Links
     $text = preg_replace("/\[URL\]www.(.*?)\[\/URL\]/si", "<a target=\"_blank\" href=\"http://www.\\1\">www.\\1</a>", $text); 
