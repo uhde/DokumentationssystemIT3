@@ -3,10 +3,10 @@
 function link_klickbar_machen($text) {
 //http://www.php-einfach.de/tuts_php_links.php
     //Aus http://url wird [URL]http://url[/URL]
-    //$urlsuch[]="/([^]_a-z0-9-=\"'\/])(\\\\[a-z]:)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
-    $urlsuch[]="/^(\\[\\]{+}[a-z]:)([ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
-    //$urlreplace[]="\\1[URL]\\2\\4[/URL]";
-    $urlreplace[]="[URL]\\1\\3[/URL]";
+    $urlsuch[]="/([^]_a-z0-9-=\"'\/])(\\\\[a-z]:)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
+    //$urlsuch[]="/^(\\[\\]{+}[a-z]:)([ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
+    $urlreplace[]="\\1[URL]\\2\\4[/URL]";
+    //$urlreplace[]="[URL]\\1\\3[/URL]";
     //Aus klaus@mustermann.de wird [EMAIL]klaus@mustermann.de [/EMAIL]
     $emailsuch[]="/([\s])([_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,}))/si"; 
     $emailsuch[]="/^([_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,}))/si"; 
