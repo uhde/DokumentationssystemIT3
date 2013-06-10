@@ -105,7 +105,7 @@ include("include/functions.inc.php");
 </head>
 
 
-<body style="margin:0;padding:0;text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;">
+<body >
 <?php
     
 /*if(isset($mode["askuser"])) {
@@ -145,7 +145,7 @@ include("include/functions.inc.php");
         //$sqlquery=mysql_real_escape_string($sqlquery);
         //echo "<h3>Hier ist der SQL-Update Befehl.</h3><br>".$sqlquery;
         $objMySQL->Query($sqlquery);
-         echo '<span class="StandardText">Der Eintrag wurde aktualisiert</span>';
+         echo 'Der Eintrag wurde aktualisiert.';
     }
         
     
