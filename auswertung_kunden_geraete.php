@@ -1,5 +1,13 @@
 <html>
 <head>
+    <title>Zugänge auswerten</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="creation_date" content="2013-01-03">
+    <meta name="revisit-after" content="5 days">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <LINK rel="stylesheet" href="css/styles.css"> 
 <?php
 /*
 error_reporting(E_ALL);
@@ -102,20 +110,10 @@ include("include/functions.inc.php");
 
     
 ?>
-
-    <title>Zugänge auswertung</title>
-    <meta http-equiv="x-ua-compatible" content="ie=9">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="creation_date" content="2013-01-03">
-    <meta name="revisit-after" content="5 days">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <LINK rel="stylesheet" href="css/styles.css"> 
-
 </head>
 
 
-<body style="margin:0;padding:0;">
+<body style="margin:0;padding:0;text-align:center;">
 <?php
     
 /*if(isset($mode["askuser"])) {
@@ -155,7 +153,7 @@ include("include/functions.inc.php");
         //$sqlquery=mysql_real_escape_string($sqlquery);
         //echo "<h3>Hier ist der SQL-Update Befehl.</h3><br>".$sqlquery;
         $objMySQL->Query($sqlquery);
-         echo 'Der Eintrag wurde aktualisiert.';
+         echo '<span class="StandardText">Der Eintrag wurde aktualisiert</span>';
     }
         
     
@@ -183,7 +181,7 @@ include("include/functions.inc.php");
         //echo "<h1>Hier ist der SQL-Update Befehl.</h1><br>".$sqlquery."<br>";
         $objMySQL->Query($sqlquery);
         $mode['id']=mysql_insert_id();
-         echo 'Der Eintrag wurde erstellt.';
+         echo '<span class="StandardText">Der Eintrag wurde erstellt</span>';
     }
     if ($mode["name"]=="geraete")
     {  
@@ -329,5 +327,12 @@ include("include/functions.inc.php");
     } 
 //}
 ?>
+   <!-- 
+   <div style="height:33px;width:200px;">
+        <div style="position:relative;top:4px;left:90%;">
+            <input type="button" value="Schließen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide(window.parent.location.reload(true)));" class="button1">
+        </div>
+    </div>
+    -->
 </body>
 </html>
