@@ -319,12 +319,16 @@ include("include/functions.inc.php");
     } 
 //}
 ?>
-   <!-- 
-   <div style="height:33px;width:200px;">
-        <div style="position:relative;top:4px;left:90%;">
-            <input type="button" value="Schließen" onClick="javascript:void(top.Boxy.linkedTo( top.$('#kundenwahl')[0]).hide(window.parent.location.reload(true)));" class="button1">
-        </div>
-    </div>
-    -->
+    
+    <table width="200" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
+        <tr class="Data0">
+            <td align="right"><span class="LinkStyle">Titel: </span></td>
+            <td>
+                <span class="StandardText">
+                    <input name="titel" type="text" size="50" maxlength="60" value="{$name}" >
+                </span>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
