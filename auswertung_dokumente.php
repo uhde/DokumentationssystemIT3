@@ -48,7 +48,7 @@ include("include/functions.inc.php");
 </head>
 
 
-<body style="margin:0;padding:0;text-align:center;">
+<body style="margin:0;padding:0;text-align:center;font-family: Verdana, Arial, Helvetica, sans-serif;">
 <?php
 
     //echo '<a href="edit_geraete.php?kunde='.$mode["kunde"].'&id='.$mode["id"].'&prog_add='.$mode["prog_add"].'&mode=edit"> testtasdasdkhjg</a>';
