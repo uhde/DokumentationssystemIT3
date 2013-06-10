@@ -13,7 +13,8 @@ function link_klickbar_machen($text) {
     $emailreplace[]="\\1[EMAIL]\\2[/EMAIL]";
     $emailreplace[]="[EMAIL]\\0[/EMAIL]";
     $text = preg_replace($urlsuch, $urlreplace, $text);
-    echo "ersetzt1: ".$text"<br>";
+    //echo "ersetzt1: ".$text"<br>";
+    return $text;
     if (strpos($text, "@"))
     {
         $text = preg_replace($emailsuch, $emailreplace, $text);
