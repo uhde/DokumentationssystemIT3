@@ -6,7 +6,7 @@ function link_klickbar_machen($text) {
     // aus \\\\\\\\ wird \\ (man muss wegen php das einmal escapen, und noch einmal wegen regxp)
     $urlsuch[]="/(\\\\\\\\[a-z]:\\\\)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
     //$urlsuch[]="/^((https?|ftp):\/\/|www\.)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
-    $urlreplace[]="\\2[URL]\\1\\3[/URL]";
+    $urlreplace[]="\\3[URL]\\1\\2[/URL]";
     //$urlreplace[]="[URL]\\1\\3[/URL]";
     //Aus klaus@mustermann.de wird [EMAIL]klaus@mustermann.de [/EMAIL]
     $emailsuch[]="/([\s])([_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,}))/si"; 
