@@ -3,7 +3,8 @@
 function link_klickbar_machen($text) {
 //http://www.php-einfach.de/tuts_php_links.php
     //Aus http://url wird [URL]http://url[/URL]
-    $urlsuch[]="/((https?|ftp):\/\/|www\.)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
+    // aus \\\\\\\\ wird \\ (man muss wegen php das einmal escapen, und noch einmal wegen regxp)
+    $urlsuch[]="/(\\\\\\\\[a-z]:\\\\)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
     //$urlsuch[]="/^((https?|ftp):\/\/|www\.)([^ \r\n\(\)\^\$!`\"'\|\[\]\{\}<>]*)/si";
     $urlreplace[]="\\2[URL]\\1\\3[/URL]";
     //$urlreplace[]="[URL]\\1\\3[/URL]";
