@@ -37,7 +37,7 @@
         </a>
         <span style="paddin:4px;">&nbsp;</span>
         <a href="userconf/geloeschte_anzeigen.php?site=<?php  echo $_SERVER['PHP_SELF']; ?>" title="Gelöschte Dateien ein/ausblenden" class="K_change_bt">
-            <img src="syspics/recycle-bin.png" width="40" height="44">
+            <img src="syspics/recycle-bin.png" style="width:24px;height:20px;border:none">
         </a>
     </td>
 </tr>
