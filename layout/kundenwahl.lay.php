@@ -30,7 +30,7 @@
         <a class="K_change_bt" data-fancybox-type="iframe" href="edit_kunden.php?create=true">
             <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
         </a>
-    
+        <span style="paddin:4px;">&nbsp;</span>
         <a href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" class="K_change_bt" > 
             <img src="syspics/kunde.png" style="width:24px;height:20px;border:none" alt="Alle Kunden anzeigen" title="Kunden anzeigen/verstecken">
             <img src="syspics/switch.png" style="width:24px;height:20px;border:none" alt="Alle Kunden anzeigen" title="Kunden anzeigen/verstecken">
