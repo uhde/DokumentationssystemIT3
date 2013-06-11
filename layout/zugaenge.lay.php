@@ -60,7 +60,7 @@
 </table>
 </div>
 <a class="footer_bt" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
-    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 !#----- Footer:End -----#!
 !#----- Footer2:Begin -----#!
@@ -75,7 +75,7 @@
 Es sind keine Zugang bei diesem Kunden eingetragen!
 <br /><br />
 <a class="footer_bt" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
-    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 </p>
 !#----- Keine_Daten:End -----#!

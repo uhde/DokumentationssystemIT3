@@ -62,7 +62,7 @@
 Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <br /><br />
 <a class="footer_bt" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
-    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 </p>
 !#----- Keine_Daten:End -----#!
@@ -132,15 +132,15 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Footer2:Begin -----#!
 
 <a class="footer_bt" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
-    <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 <span style="paddin:4px;">&nbsp;</span>
 <a class="footer_bt" href="dnsaufloesung.php?site={$site}" id="boxyfoo" > <!--onclick="showboxy('kundenwahl','dnsaufloesung.php','DNS Auflösung','400','200');" -->
-    <img src="syspics/button_refresh.png" style="width:24px;height:20px;border:none" alt="DNS Refresh" title="IP Adressen aktualisieren">
+    <img src="syspics/button_refresh.png" class="footer_img" alt="DNS Refresh" title="IP Adressen aktualisieren">
 </a>
 <span style="paddin:4px;">&nbsp;</span>
 <a class="footer_bt" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
-    <img src="syspics/switch.png" style="width:24px;height:20px;border:none" alt="DNS to IP" title="DNS/IP Name anezeigen">
+    <img src="syspics/switch.png" class="footer_img" alt="DNS to IP" title="DNS/IP Name anezeigen">
 </a>
 
     <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->

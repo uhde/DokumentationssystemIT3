@@ -84,7 +84,7 @@ Es sind keine Programme eingetragen!
         <td>
             <span style="">
                 <a class="footer_bt" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
-                    <img src="syspics/switch.png" style="width:24px;height:20px;border:none" alt="DNS to IP" title="DNS Name anezeigen">
+                    <img src="syspics/switch.png" class="footer_img" alt="DNS to IP" title="DNS Name anezeigen">
                 </a>
             </span></td>
         <td>    
@@ -95,8 +95,8 @@ Es sind keine Programme eingetragen!
             <br>
             <span style="text-align: center;">
                 <a class="footer_bt" href="userconf/kunden_anzeigen.php?site={$site}" id="boxyfoo" > 
-                    <img src="syspics/kunde.png" style="width:24px;height:20px;border:none" alt="Alle Kunden anzeigen" title="Alle Kunden anzeigen">
-                    <img src="syspics/switch.png" style="width:24px;height:20px;border:none" alt="Alle Kunden anzeigen" title="Alle Kunden anzeigen">
+                    <img src="syspics/kunde.png" class="footer_img" alt="Alle Kunden anzeigen" title="Alle Kunden anzeigen">
+                    <img src="syspics/switch.png" class="footer_img" alt="Alle Kunden anzeigen" title="Alle Kunden anzeigen">
                 </a>
             </span>
         </td>

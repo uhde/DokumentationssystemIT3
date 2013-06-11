@@ -32,8 +32,8 @@
         </a>
         <span style="paddin:4px;">&nbsp;</span>
         <a class="footer_bt" href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" title="Kunden anzeigen/verstecken"> 
-            <img src="syspics/kunde.png" style="width:24px;height:20px;border:none"  >
-            <img src="syspics/switch.png" style="width:24px;height:20px;border:none" >
+            <img src="syspics/kunde.png" class="footer_img"  >
+            <img src="syspics/switch.png" class="footer_img" >
         </a>
     </td>
 </tr>
