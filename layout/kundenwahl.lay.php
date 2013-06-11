@@ -30,7 +30,7 @@
             <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" alt="Neuer Eintrag" title="Neuer Eintrag">
         </a>
     
-        <a href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php"  > 
+        <a href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" style="border-style:groove;border-width:4px;border-color:green;padding-left=4px;" > 
             <img src="syspics/kunde.png" style="width:24px;height:20px;border:none" alt="Alle Kunden anzeigen" title="Kunden anzeigen/verstecken">
             <img src="syspics/switch.png" style="width:24px;height:20px;border:none" alt="Alle Kunden anzeigen" title="Kunden anzeigen/verstecken">
         </a>
