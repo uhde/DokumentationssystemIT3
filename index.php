@@ -312,6 +312,11 @@ function ClearAllLoad()
         </span>
     </td>
     <td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
+        <a href="userconf/geloeschte_anzeigen.php?site=<?php  echo $_SERVER['PHP_SELF']; ?>" title="Geloeschte Eintraege ein/ausblenden" class="K_change_bt">
+            <img src="syspics/recycle-bin.png" style="width:36px;height:36px;border:none">
+        </a>
+    </td>
+    <td width="200" align="right" style="vertical-align: middle;text-align:right; padding-right:10px;">
         <a onclick='activex.run("F:/Fernwartung/TV_Start/tv_starter.exe");' style="text-align:right;color:#FFFFFF; font-weight:bold; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:10pt;vertical-align: middle;" href="#">
             Teamviewer
        </a> 
