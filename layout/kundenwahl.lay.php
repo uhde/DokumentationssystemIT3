@@ -6,7 +6,7 @@
     border-style:groove;
     border-width:4px;
     border-color:green;
-    padding-left=20px;
+    padding-left=200px;
     border-top-width:0px;
 }
 </style>
