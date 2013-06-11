@@ -28,7 +28,7 @@
 <tr>
     <td>
         <a class="footer_bt" data-fancybox-type="iframe" href="edit_kunden.php?create=true" title="Neuer Eintrag">
-            <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" >
+            <img src="syspics/new_entry.png" class="footer_img" >
         </a>
         <span style="paddin:4px;">&nbsp;</span>
         <a class="footer_bt" href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" title="Kunden anzeigen/verstecken"> 

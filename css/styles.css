@@ -402,7 +402,7 @@ a:hover {
     padding:3px;
     margin-bottom:3px;
 }
-/* Buttons generell*/
+/* Footer Buttons */
 a.footer_bt {
     height=22px;
     border-style:groove;
@@ -411,7 +411,12 @@ a.footer_bt {
     padding-left=40px;
     border-top-width:0px;
 }
-
+/* Footer Button Bilder */
+img.footer_img {
+    width:24px;
+    height:20px;
+    border:none;
+}
 /* Texte */
 .LinkStyleError {
  font-family: Verdana, Arial, Helvetica, sans-serif;
