@@ -27,11 +27,11 @@
 !#----- Footer:Begin -----#!
 <tr>
     <td>
-        <a class="K_change_bt" data-fancybox-type="iframe" href="edit_kunden.php?create=true" title="Neuer Eintrag">
+        <a class="footer_bt" data-fancybox-type="iframe" href="edit_kunden.php?create=true" title="Neuer Eintrag">
             <img src="syspics/new_entry.png" style="width:24px;height:20px;border:none" >
         </a>
         <span style="paddin:4px;">&nbsp;</span>
-        <a href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" class="K_change_bt" title="Kunden anzeigen/verstecken"> 
+        <a class="footer_bt" href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" title="Kunden anzeigen/verstecken"> 
             <img src="syspics/kunde.png" style="width:24px;height:20px;border:none"  >
             <img src="syspics/switch.png" style="width:24px;height:20px;border:none" >
         </a>

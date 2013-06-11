@@ -402,7 +402,8 @@ a:hover {
     padding:3px;
     margin-bottom:3px;
 }
-a.K_change_bt {
+/* Buttons generell*/
+a.footer_bt {
     height=22px;
     border-style:groove;
     border-width:4px;
