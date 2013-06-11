@@ -1,6 +1,15 @@
 !#----- Header:Begin -----#!
 <p class="Kundenwahl">&nbsp;Kunden</p>
 <table width="100%" border="0" cellspacing="0"  align="left">
+<style>
+.K_change_bt {
+    border-style:groove;
+    border-width:4px;
+    border-color:green;
+    padding-left=4px;
+    border-top-width:0px;
+}
+</style>
 !#----- Header:End -----#!
 
 
