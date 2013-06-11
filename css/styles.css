@@ -412,7 +412,7 @@ a.footer_bt {
     border-top-width:0px;
 }
 /* Footer Button Bilder */
-img.footer_img {
+.footer_img {
     width:24px;
     height:20px;
     border:none;
