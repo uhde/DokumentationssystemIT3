@@ -36,7 +36,7 @@
             <img src="syspics/switch.png" style="width:24px;height:20px;border:none" >
         </a>
         <span style="paddin:4px;">&nbsp;</span>
-        <a href="userconf/geloeschte_anzeigen.php?site=<?php  echo $_SERVER['PHP_SELF']; ?>" title="Geloeschte Dateien ein/ausblenden" class="K_change_bt">
+        <a href="userconf/geloeschte_anzeigen.php?site=<?php  echo $_SERVER['PHP_SELF']; ?>" title="Geloeschte Eintraege ein/ausblenden" class="K_change_bt">
             <img src="syspics/recycle-bin.png" style="width:24px;height:20px;border:none">
         </a>
     </td>
