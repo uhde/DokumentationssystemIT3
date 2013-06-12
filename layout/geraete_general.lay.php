@@ -11,6 +11,7 @@
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
+    <th style="width:40px;">&nbsp;</th>
     </tr>
     </thead>
     </table>
