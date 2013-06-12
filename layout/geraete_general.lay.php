@@ -16,7 +16,7 @@
     </table>
 </div>
 <div id="Buchungen">
-<table style="width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #eee;border-bottom:none;" id="DeviceData">
+<table style="width:100%-20px;border:none;background-color:#666;border-collapse:collapse;border:1px solid #eee;border-bottom:none;" id="DeviceData">
 !#----- Header:End -----#!
 
 
