@@ -11,7 +11,7 @@
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
-    <th style="width:100px;">&nbsp;</th>
+    <th style="width:120px;">&nbsp;</th>
     </tr>
     </thead>
     </table>
@@ -48,7 +48,7 @@
         </td>        
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
             <a class="edit" data-fancybox-type="iframe" href="auswertung_kunden_geraete.php?name=geraete&kunde={$kunde}&id={$id}&mode={$loeschen_mode}&askuser=true" >
-                <img src="{$loeschen_img}" alt="Eintrag löschen" width="11" height="13">
+                <img src="{$loeschen_img}" alt="Eintrag löschen" width="11" height="13" title="Eintrag löschen">
             </a>
         </td>
     </tr>
