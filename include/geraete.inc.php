@@ -74,10 +74,10 @@ $Count=0;
 if (is_array($arrData)) {
     $objTemplate->Display('Header');
     foreach ($arrData AS $Value) {
+        $Value['ping']=$Value["adresse"];
         if ($Value['adresse']==NULL) {
             $Value['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
         }
-        $Value['ping']=$Value["adresse"];
         // Hier wird die Anzeige der IP Adresse bestimmt.
         // Falls die IP Adresse Fest ist, wird sie grün eingefärbt.
         if (filter_var($Value['adresse'], FILTER_VALIDATE_IP)) {        
