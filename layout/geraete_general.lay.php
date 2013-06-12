@@ -1,6 +1,6 @@
 !#----- Header:Begin -----#!
 <div id="frame_devicenav">
-    <table style="padding-right:20px;width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;overflow:scroll;" id="DeviceData">
+    <table style="padding-right:20px;width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
     <thead>
     <tr>
     <th style="width:22%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
@@ -11,6 +11,7 @@
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
+    <th style="width:200px;">&nbsp;</th>
     </tr>
     </thead>
     </table>
