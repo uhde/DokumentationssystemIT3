@@ -35,7 +35,7 @@
         <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','trinfo{$id}','{$id}','{$time}')">
             {$benutzer}
         </td>
-        <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
+        <td style="text-align:center;vertical-align:middle;width:4%;border-right:1px solid #aaa;border-top:1px solid #ccc;">
             <a href="#" onclick="activex.run('ping.exe -n 9 {$ping}');" title="Ping">
                 <img src="syspics/Actions-go-next-view-icon.png" alt="Ping" width="11" height="13">
             </a>
