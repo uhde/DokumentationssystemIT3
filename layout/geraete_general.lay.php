@@ -3,15 +3,15 @@
     <table style="padding-right:20px;width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
     <thead>
     <tr>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$adresse_sort_order}"><a href="index.php?sort_name=adresse&sort_order={$sort_order}">IP-Adresse</a>{$ip_adresse_IMG}</th>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$system_sort_order}"><a href="index.php?sort_name=system&sort_order={$sort_order}">Systemtyp</a>{$system_IMG}</th>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$benutzer_sort_order}"><a href="index.php?sort_name=benutzer&sort_order={$sort_order}">Benutzer</a>{$zimmer_IMG}</th>
+    <th style="width:21.5%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
+    <th style="width:21.5%;text-align:center;vertical-align:middle;" class="{$adresse_sort_order}"><a href="index.php?sort_name=adresse&sort_order={$sort_order}">IP-Adresse</a>{$ip_adresse_IMG}</th>
+    <th style="width:21.5%;text-align:center;vertical-align:middle;" class="{$system_sort_order}"><a href="index.php?sort_name=system&sort_order={$sort_order}">Systemtyp</a>{$system_IMG}</th>
+    <th style="width:21.5%;text-align:center;vertical-align:middle;" class="{$benutzer_sort_order}"><a href="index.php?sort_name=benutzer&sort_order={$sort_order}">Benutzer</a>{$zimmer_IMG}</th>
 
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
-    <th style="width:120px;">&nbsp;</th>
+    <th style="width:160px;">&nbsp;</th>
     </tr>
     </thead>
     </table>
@@ -43,7 +43,7 @@
 
         <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
             <a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&id={$id}&mode=edit" >
-            <img src="syspics/edit.png" alt="Eintrag bearbeiten">
+            <img src="syspics/edit.png" title="Eintrag bearbeiten">
             </a>
         </td>        
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
