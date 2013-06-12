@@ -3,10 +3,10 @@
     <table style="padding-right:20px;width:98%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
     <thead>
     <tr>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$adresse_sort_order}"><a href="index.php?sort_name=adresse&sort_order={$sort_order}">IP-Adresse</a>{$ip_adresse_IMG}</th>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$system_sort_order}"><a href="index.php?sort_name=system&sort_order={$sort_order}">Systemtyp</a>{$system_IMG}</th>
-    <th style="width:22%;text-align:center;vertical-align:middle;" class="{$benutzer_sort_order}"><a href="index.php?sort_name=benutzer&sort_order={$sort_order}">Benutzer</a>{$zimmer_IMG}</th>
+    <th style="width:21%;text-align:center;vertical-align:middle;" class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Name</a>{$name_IMG}</th>
+    <th style="width:21%;text-align:center;vertical-align:middle;" class="{$adresse_sort_order}"><a href="index.php?sort_name=adresse&sort_order={$sort_order}">IP-Adresse</a>{$ip_adresse_IMG}</th>
+    <th style="width:21%;text-align:center;vertical-align:middle;" class="{$system_sort_order}"><a href="index.php?sort_name=system&sort_order={$sort_order}">Systemtyp</a>{$system_IMG}</th>
+    <th style="width:21%;text-align:center;vertical-align:middle;" class="{$benutzer_sort_order}"><a href="index.php?sort_name=benutzer&sort_order={$sort_order}">Benutzer</a>{$zimmer_IMG}</th>
 
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
@@ -51,7 +51,7 @@
         </td>
     </tr>
     <tr >
-        <td colspan=6 class="info_schatten4">
+        <td colspan=7 class="info_schatten4">
             <span id="trinfo{$id}" class="TRInfo">
             
             </span>
