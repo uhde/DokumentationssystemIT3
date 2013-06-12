@@ -34,7 +34,7 @@
             {$benutzer}
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
-            <a href="#" onclick="activex.run('ping.exe -n 9 {$adresse}");'>
+            <a href="#" onclick="activex.run('ping.exe -n 9 {$ping}");'>
                 <img src="syspics/Actions-go-next-view-icon.png" alt="Ping" width="11" height="13">
             </a>
         </td>
