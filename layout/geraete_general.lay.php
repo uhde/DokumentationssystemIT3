@@ -11,7 +11,7 @@
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
     <th style="width:4%;">&nbsp;</th>
-    <th style="width:160px;">&nbsp;</th>
+    <th style="width:40px;">&nbsp;</th>
     </tr>
     </thead>
     </table>
@@ -37,7 +37,7 @@
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-right:1px solid #aaa;border-top:1px solid #ccc;">
             <a href="#" onclick="activex.run('ping.exe -n 9 {$ping}');" title="Ping">
-                <img src="syspics/Actions-go-next-view-icon.png" alt="Ping" width="11" height="13">
+                <img src="syspics/ping.png" alt="Ping" width="11" height="13">
             </a>
         </td>
 
