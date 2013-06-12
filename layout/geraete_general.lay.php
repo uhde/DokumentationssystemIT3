@@ -37,7 +37,7 @@
         </td>
         <td style="text-align:center;vertical-align:middle;width:4%;border-right:1px solid #aaa;border-top:1px solid #ccc;">
             <a href="#" onclick="activex.run('ping.exe -n 9 {$ping}');" title="Ping">
-                <img src="syspics/ping3.png" alt="Ping" width="18" height="13">
+                <img src="syspics/ping4.png" alt="Ping" width="18" height="13">
             </a>
         </td>
 
