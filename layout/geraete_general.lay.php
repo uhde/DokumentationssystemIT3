@@ -33,6 +33,11 @@
         <td class="slider" value="#trinfo{$id}" onclick="loadXMLDoc('include/getsinglegeraet.php','trinfo{$id}','{$id}','{$time}')">
             {$benutzer}
         </td>
+        <td style="text-align:center;vertical-align:middle;width:4%;border-left:1px solid #aaa;border-top:1px solid #ccc;">
+            <a href="#" onclick='activex.run("ping.exe -n 9 ");'>
+                <img src="syspics/Actions-go-next-view-icon.png" alt="Ping" width="11" height="13">
+            </a>
+        </td>
 
         <td style="text-align:center;vertical-align:middle;width:4%;border-top:1px solid #ccc;">
             <a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&id={$id}&mode=edit" >
