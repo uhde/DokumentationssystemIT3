@@ -246,10 +246,13 @@ echo "<br>";
 if ($handle = opendir($path)) {
     while (false !== ($file = readdir($handle))) {
         if ($file != "." && $file != "..") {
-            if ((time()-$hold_backups)>filemtime($path.$file)) {
-                echo $file." wurde gelöscht ----<br>";
-            } else {
-                echo $file." wird aufbewahrt<br>";
+            // Löscht nur Daten Dateien.
+            if (strpos($file,"data") === true) {
+                if ((time()-$hold_backups)>filemtime($path.$file)) {
+                    echo $file." wurde gelöscht ----<br>";
+                } else {
+                    echo $file." wird aufbewahrt<br>";
+                }
             }
         }
     }
