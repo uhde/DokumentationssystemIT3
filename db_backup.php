@@ -34,7 +34,7 @@ $compression = 0;
 
 //Falls Gzip nicht vorhanden, kein Gzip
 if(!extension_loaded("zlib"))
-   $compression = 0;
+   $compression = 1;
 
 // Pfad zur aktuellen Datei
 $path = ereg_replace ("\\\\","/",__FILE__);
