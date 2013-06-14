@@ -30,11 +30,11 @@ $email = "email@adresse";
 
 // 0: Normale Datei
 // 1: GZip-Datei
-$compression = 0;
+$compression = 1;
 
 //Falls Gzip nicht vorhanden, kein Gzip
 if(!extension_loaded("zlib"))
-   $compression = 1;
+   $compression = 0;
 
 // Pfad zur aktuellen Datei
 $path = ereg_replace ("\\\\","/",__FILE__);
