@@ -46,7 +46,8 @@ $path .= "/backup/";
 
 // Zeit in Tagen, in denen alte Dateien nicht gelöscht werden sollen.
 // Anschließend wird der Wert in sekunden umgerechnet, um mit dem unix zeitstempel zu rechnen
-$hold_backups = 7;
+// Daten sollen einen Monat aufbewahrt werden (eig. 31 tage, 1 tag zu sicherheit^^)
+$hold_backups = 32;
 $hold_backups = $hold_backups * 24 * 60 * 60;
 
 
@@ -119,18 +120,18 @@ function get_content($dbname, $table) {
 }
 
 //Funktion um Backup auf dem Server zu speichern
-function write_backup($val,$newfile,$newfile_data)
+function write_backup($val,$newfile_data)
    {
    global $compression,$path,$cur_date,$filetype,$backup_pfad;
 
-   $backup_pfad[] = $path.$val."_structur_".$cur_date.".".$filetype;
+   //$backup_pfad[] = $path.$val."_structur_".$cur_date.".".$filetype;
    $backup_pfad[] = $path.$val."_data_".$cur_date.".".$filetype;
 
    if ($compression==1)
       {
-      $fp = gzopen($path.$val."_structur_".$cur_date.".".$filetype,"w9");
+     /* $fp = gzopen($path.$val."_structur_".$cur_date.".".$filetype,"w9");
       gzwrite ($fp,$newfile);
-      gzclose ($fp);
+      gzclose ($fp);*/
 
 
       $fp = gzopen($path.$val."_data_".$cur_date.".".$filetype,"w9");
@@ -139,9 +140,9 @@ function write_backup($val,$newfile,$newfile_data)
       }
    else
       {
-      $fp = fopen ($path.$val."_structur_".$cur_date.".".$filetype,"w");
+     /* $fp = fopen ($path.$val."_structur_".$cur_date.".".$filetype,"w");
       fwrite ($fp,$newfile);
-      fclose ($fp);
+      fclose ($fp);*/
 
 
       $fp = fopen($path.$val."_data_".$cur_date.".".$filetype,"w");
@@ -200,7 +201,7 @@ function mail_att($to, $from, $subject, $message) {
 //Backup erstellen
 while (list(,$val) = each($dbname))
    {
-   $newfile="# Strukturbackup: $cur_time \r\n# www.php-einfach.de \r\n";
+   //$newfile="# Strukturbackup: $cur_time \r\n# www.php-einfach.de \r\n";
    $newfile_data="# Datenbackup: $cur_time \r\n# www.php-einfach.de \r\n";
 
    //backup schreiben
@@ -210,11 +211,11 @@ while (list(,$val) = each($dbname))
    while($i < $num_tables)
       {
       $table = mysql_tablename($tables, $i);
-
+      /*
       $newfile .= "\n# ----------------------------------------------------------\n#\n";
       $newfile .= "# structur for Table '$table'\n#\n";
       $newfile .= get_def($val,$table);
-      $newfile .= "\n\n";
+      $newfile .= "\n\n";*/
 
 
       $newfile_data .= "\n# ----------------------------------------------------------\n#\n";
@@ -224,7 +225,7 @@ while (list(,$val) = each($dbname))
       $i++;
       }
 
-   write_backup($val,$newfile,$newfile_data);
+   write_backup($val,$newfile_data);
    } //End: while
 
 
