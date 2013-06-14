@@ -5,9 +5,9 @@
     
     require_once('/include/config.inc.php');
     
-    include_once("/include/mysql.class.php");
-    include_once("/include/template.class.php");
-    include_once("/include/functions.inc.php");
+    include_once("include/mysql.class.php");
+    include_once("include/template.class.php");
+    include_once("include/functions.inc.php");
 
 
 // entnommen von http://www.php-einfach.de/codeschnipsel_926.php 
