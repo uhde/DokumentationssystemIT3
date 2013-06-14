@@ -240,15 +240,15 @@ if($send == 1)
       echo "Es konnte <b>keine</b> Email gesendet werden<br>";
 
 }
-echo "\n";
+echo "<br>";
 // Löscht alle Dateien die älter sind als in $hold_backups angegeben.
 if ($handle = opendir($path)) {
     while (false !== ($file = readdir($handle))) {
         if ($file != "." && $file != "..") {
             if ((time()-$hold_backups)>filemtime($path.$file)) {
-                echo $file." wurde gelöscht ----\n";
+                echo $file." wurde gelöscht ----<br>";
             } else {
-                echo $file." wird aufbewahrt\n";
+                echo $file." wird aufbewahrt<br>";
             }
         }
     }
