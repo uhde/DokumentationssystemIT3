@@ -1,7 +1,8 @@
 <?php
+/*
     session_start() ;
     error_reporting(E_ALL);
-    ini_set('display_errors', TRUE);
+    ini_set('display_errors', TRUE);*/
     
     require_once('include/config.inc.php');
     
@@ -43,7 +44,10 @@ $path = trim($path);
 // Pfad zum Backup
 $path .= "/backup/";
 
-
+// Zeit in Tagen, in denen alte Dateien nicht gelöscht werden sollen.
+// Anschließend wird der Wert in sekunden umgerechnet, um mit dem unix zeitstempel zu rechnen
+$hold_backups = 7;
+$hold_backups = $hold_backups * 24 * 60 * 60;
 
 
 //Dateityp
@@ -228,15 +232,28 @@ while (list(,$val) = each($dbname))
 
 //Backup per Email senden
 if($send == 1)
-   {
-   $text="Datenbank-Backup vom: ".date("d.m.Y H:i")."\n\n\n w";
-   $from = "backup@server.de";
+{
+    $text="Datenbank-Backup vom: ".date("d.m.Y H:i")."\n\n\n w";
+    $from = "backup@server.de";
 
-   if(!mail_att($email, $from, "Datenbank-Backup ".date("Y-m-d"), $text))
+    if(!mail_att($email, $from, "Datenbank-Backup ".date("Y-m-d"), $text))
       echo "Es konnte <b>keine</b> Email gesendet werden<br>";
 
-   }
-
+}
+echo "\n";
+// Löscht alle Dateien die älter sind als in $hold_backups angegeben.
+if ($handle = opendir($path)) {
+    while (false !== ($file = readdir($handle))) {
+        if ($file != "." && $file != "..") {
+            if ((time()-$hold_backups)>filemtime($path.$file)) {
+                echo $file." wurde gelöscht ----\n";
+            } else {
+                echo $file." wird aufbewahrt\n";
+            }
+        }
+    }
+    closedir($handle);
+}
 
 echo "<h3>Backup ist fertig</h3>";
 ?> 
