@@ -1,5 +1,15 @@
 <?php
-require_once('include/config.inc.php');
+    session_start() ;
+    error_reporting(E_ALL);
+    ini_set('display_errors', TRUE);
+    
+    require_once('/include/config.inc.php');
+    
+    include_once("/include/mysql.class.php");
+    include_once("/include/template.class.php");
+    include_once("/include/functions.inc.php");
+
+
 // entnommen von http://www.php-einfach.de/codeschnipsel_926.php 
 @set_time_limit(0);
 //Verbindung zur Datenbank
