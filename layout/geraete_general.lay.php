@@ -68,11 +68,9 @@
 <p class="Keine_Daten">
 Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <br /><br />
-<span class="footer_bt">
-    <a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
-        <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
-    </a>
-</span>
+<a class="footer_bt" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
+</a>
 </p>
 !#----- Keine_Daten:End -----#!
 
@@ -140,18 +138,15 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Footer:End -----#!
 !#----- Footer2:Begin -----#!
 
-<a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
+<a class="footer_bt" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 <span style="paddin:4px;">&nbsp;</span>
-    <span class="footer_bt">
-    <a class="edit" href="dnsaufloesung.php?site={$site}" id="boxyfoo" > <!--onclick="showboxy('kundenwahl','dnsaufloesung.php','DNS Auflösung','400','200');" -->
-        <img src="syspics/button_refresh.png" class="footer_img" alt="DNS Refresh" title="IP Adressen aktualisieren">
-    </a>
-</span>
+<a class="footer_bt" href="dnsaufloesung.php?site={$site}" id="boxyfoo" > <!--onclick="showboxy('kundenwahl','dnsaufloesung.php','DNS Auflösung','400','200');" -->
+    <img src="syspics/button_refresh.png" class="footer_img" alt="DNS Refresh" title="IP Adressen aktualisieren">
+</a>
 <span style="paddin:4px;">&nbsp;</span>
-<span class="footer_bt">
-<a class="edit" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
+<a class="footer_bt" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
     <img src="syspics/switch.png" class="footer_img" alt="DNS to IP" title="DNS/IP Name anezeigen">
 </a>
 

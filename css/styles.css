@@ -403,7 +403,7 @@ a:hover {
     margin-bottom:3px;
 }
 /* Footer Buttons */
-a.edit {
+a.footer_bt {
     height=22px;
     border-style:groove;
     border-width:4px;

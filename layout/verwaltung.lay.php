@@ -82,20 +82,19 @@ Es sind keine Programme eingetragen!
 <table >
     <tr>
         <td>
-            <span class="footer_bt">
-                <a class="edit" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
+            <span style="">
+                <a class="footer_bt" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
                     <img src="syspics/switch.png" class="footer_img" alt="DNS to IP" title="DNS Name anezeigen">
                 </a>
-            </span>
-        </td>
+            </span></td>
         <td>    
             : Zeigt DNS-Namen statt IP-Adressen an. Bei einem zweiten Klick wird dies wieder rückgängig gemacht</td>
     </tr>
     <tr>
         <td>
             <br>
-            <span class="footer_bt">
-                <a class="edit" href="userconf/kunden_anzeigen.php?site={$site}" id="boxyfoo" > 
+            <span style="text-align: center;">
+                <a class="footer_bt" href="userconf/kunden_anzeigen.php?site={$site}" id="boxyfoo" > 
                     <img src="syspics/kunde.png" class="footer_img" alt="Alle Kunden anzeigen" title="Alle Kunden anzeigen">
                     <img src="syspics/switch.png" class="footer_img" alt="Alle Kunden anzeigen" title="Alle Kunden anzeigen">
                 </a>

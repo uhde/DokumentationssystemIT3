@@ -59,11 +59,9 @@
 !#----- Footer:Begin -----#!
 </table>
 </div>
-<span class="footer_bt">
-    <a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
-        <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
-    </a>
-</span>
+<a class="footer_bt" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
+</a>
 !#----- Footer:End -----#!
 !#----- Footer2:Begin -----#!
 </table>
@@ -76,10 +74,9 @@
 <p class="Keine_Daten">
 Es sind keine Zugang bei diesem Kunden eingetragen!
 <br /><br />
-<span class="footer_bt">
-    <a class="edit" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
-        <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
-    </a>
+<a class="footer_bt" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
+</a>
 </p>
 !#----- Keine_Daten:End -----#!
 

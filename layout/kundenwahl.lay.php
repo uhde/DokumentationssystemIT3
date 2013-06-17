@@ -27,18 +27,14 @@
 !#----- Footer:Begin -----#!
 <tr>
     <td>
-        <span class="footer_bt">
-            <a class="edit" data-fancybox-type="iframe" href="edit_kunden.php?create=true" title="Neuer Eintrag">
-                <img src="syspics/new_entry.png" class="footer_img" >
-            </a>
-        </span>
+        <a class="footer_bt" data-fancybox-type="iframe" href="edit_kunden.php?create=true" title="Neuer Eintrag">
+            <img src="syspics/new_entry.png" class="footer_img" >
+        </a>
         <span style="paddin:4px;">&nbsp;</span>
-        <span class="footer_bt">
-            <a class="edit" href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" title="Kunden anzeigen/verstecken"> 
-                <img src="syspics/kunde.png" class="footer_img"  >
-                <img src="syspics/switch.png" class="footer_img" >
-            </a>
-        </span>
+        <a class="footer_bt" href="userconf/kunden_anzeigen.php?site=/dokuit3/index.php" title="Kunden anzeigen/verstecken"> 
+            <img src="syspics/kunde.png" class="footer_img"  >
+            <img src="syspics/switch.png" class="footer_img" >
+        </a>
     </td>
 </tr>
 </table>

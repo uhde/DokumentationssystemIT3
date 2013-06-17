@@ -166,6 +166,12 @@ function ClearAllLoad()
                     return;
                 }
             });
+            $(".footer_bt").fancybox({
+                afterClose : function() {
+                    location.reload();
+                    return;
+                }
+            });
             // Erstmal alle ausblende
             // Wird beim reload der Page angewendet
               $("#Buchungen .TRInfo").hide();
