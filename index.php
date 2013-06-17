@@ -33,7 +33,7 @@ if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
 if (isset($_GET['knd_id'])) {
     $_SESSION['knd_id']=$_GET['knd_id'];
 }
-if (!isset($_SESSION['knd_id'])) {
+if (!isset($_SESSION['knd_id'])||empty($_SESSION['knd_id'])) {
     $sql = "SELECT letzer_kunde FROM `".DB_DATABASE."`.`".TBL_BENUTZER."` WHERE benutzername='".$_SERVER['PHP_AUTH_USER'];
     $objMySQL->Query($sql);
 }
