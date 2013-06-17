@@ -6,16 +6,17 @@
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
- 
     $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE id=1";
     //echo $sql."<br>";
     $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
+    if(isset($_SESSION['knd_id'])){
+        $_SESSION['knd_id']=$test["letzer_kunde"];
+    }
     if (is_array($test))
     {
         $_SESSION['ipordns']=$test["einstellung_dns"];
         $_SESSION['nutzerid']=$test["id"];
         $_SESSION['allekunden']=$test["allekunden_sichtbar"];
-        $_SESSION['knd_id']=$test["letzer_kunde"];
         // Hier noch nutzersichtbar id einfügen!!!
     } else {
         $sql = "INSERT INTO `".DB_DATABASE."`.`".TBL_BENUTZER."` SET ";
