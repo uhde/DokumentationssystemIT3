@@ -23,7 +23,7 @@
         //echo $sql;
         $objMySQL->Query($sql);
     }
-    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzer_kunde` = '".$_SESSION['knd_id']."' WHERE benutzername='".$_SERVER['PHP_AUTH_USER'];
+    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzer_kunde` = '".$_SESSION['knd_id']."' WHERE id=1";
     echo $sql;
     $objMySQL->Query($sql);
     unset($objMySQL);
