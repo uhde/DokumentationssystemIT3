@@ -68,7 +68,7 @@
 <p class="Keine_Daten">
 Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <br /><br />
-<a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
+<a class="footer_bt" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 </p>
@@ -138,7 +138,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 !#----- Footer:End -----#!
 !#----- Footer2:Begin -----#!
 
-<a class="footer_bt" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
+<a class="edit" data-fancybox-type="iframe" href="edit_geraete.php?kunde={$kunde}&mode=create&name=geraete&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
 <span style="paddin:4px;">&nbsp;</span>
