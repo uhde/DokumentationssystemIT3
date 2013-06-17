@@ -35,7 +35,8 @@ if (isset($_GET['knd_id'])) {
 }
 if (!isset($_SESSION['knd_id'])||empty($_SESSION['knd_id'])) {
     $sql = "SELECT letzer_kunde FROM `".DB_DATABASE."`.`".TBL_BENUTZER."` WHERE id=1";
-    $objMySQL->Query($sql);
+    $letzer_kunde=$objMySQL->Query($sql);
+    echo "letzter_kunde= ".$letzer_kunde;
 }
 // Seite setzen
 $page=$arrTopmenu[1]['file'];
