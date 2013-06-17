@@ -32,15 +32,11 @@ if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
 // Kunden-ID setzen
 if (isset($_GET['knd_id'])) {
     $_SESSION['knd_id']=$_GET['knd_id'];
-    if (isset($_SESSION['old_knd_id'])) {
-        $_SESSION['old_knd_id']=$_GET['knd_id'];
-    }
-
-    /*if ($_SESSION['knd_id']<>$_SESSION['old_knd_id']) {
-        $_SESSION['device_type']=1;
-    }*/
 }
-
+if (!isset($_SESSION['knd_id'])) {
+    $sql = "SELECT letzer_kunde FROM `".DB_DATABASE."`.`".TBL_BENUTZER."` WHERE benutzername='".$_SERVER['PHP_AUTH_USER'];
+    $objMySQL->Query($sql);
+}
 // Seite setzen
 $page=$arrTopmenu[1]['file'];
 
