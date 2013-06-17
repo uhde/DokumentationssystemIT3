@@ -9,6 +9,8 @@ require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
 include("include/functions.inc.php");
+
+
 include("userconf/benutzer_verwaltung.php"); 
 
 // DB-Connect
@@ -33,11 +35,7 @@ if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
 if (isset($_GET['knd_id'])) {
     $_SESSION['knd_id']=$_GET['knd_id'];
 }
-if (!isset($_SESSION['knd_id'])||empty($_SESSION['knd_id'])) {
-    $sql = "SELECT letzer_kunde FROM `".DB_DATABASE."`.`".TBL_BENUTZER."` WHERE id=1";
-    $letzer_kunde=$objMySQL->Query($sql);
-    echo "letzter_kunde= ".$letzer_kunde;
-}
+
 // Seite setzen
 $page=$arrTopmenu[1]['file'];
 
