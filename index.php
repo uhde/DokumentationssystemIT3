@@ -34,6 +34,9 @@ if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
 // Kunden-ID setzen
 if (isset($_GET['knd_id'])) {
     $_SESSION['knd_id']=$_GET['knd_id'];
+    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzer_kunde` = '".$_SESSION['knd_id']."' WHERE id=1";
+    echo $sql;
+    $objMySQL->Query($sql);
 }
 
 // Seite setzen

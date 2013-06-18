@@ -25,9 +25,7 @@
         //echo $sql;
         $objMySQL->Query($sql);
     }
-    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzer_kunde` = '".$_SESSION['knd_id']."' WHERE id=1";
-    echo $sql;
-    $objMySQL->Query($sql);
+    
     unset($objMySQL);
     unset($test);
     unset($sql);
