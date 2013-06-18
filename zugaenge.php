@@ -17,6 +17,8 @@ if (isset($_GET['sort_order']) AND !empty($_GET['sort_order'])) {
     $objTemplate->Assign('sort_order','desc');
 }
 
+$browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+
 // Setzt das suchfeld. Wird nur aufgerufen, wenn gesucht wird.
 if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
    $mode['suche']=$_POST['suchfeld'];
@@ -66,6 +68,9 @@ if ($arrData_zugaenge!==FALSE) {
                 }
             }
         }
+        
+        // Hier wird festgelegt, aus welchem Browser der Link gestartet werden soll.
+        $Value['ax_link']='activex.run("'.$browser.' '.$Value['url'].'");';
         // Setzt die Time Variable, um ein caching in der ***HTA-Anwendung zu verhindern
         $Value['time']=time();
         if (strlen($Value['url'])>50) {

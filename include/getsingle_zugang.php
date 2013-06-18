@@ -15,6 +15,7 @@ require_once('config.inc.php');
 include_once("mysql.class.php");
 include_once("template.class.php");
 include_once("functions.inc.php");
+$browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
@@ -45,6 +46,7 @@ include_once("functions.inc.php");
             }
         }
     }
+    $ax_link='activex.run("'.$browser.' '.$Value['url'].'");';
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
@@ -66,7 +68,7 @@ include_once("functions.inc.php");
             <tr>
                 <td class="Key">Link: </td>
                 <td class="Value">
-                    <a href="'.$sqldata["url"].'" target="_blank">
+                    <a href="#" target="_blank" onClick="'.$ax_link.'">
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
                 </td>
