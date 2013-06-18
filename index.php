@@ -34,8 +34,8 @@ if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
 // Kunden-ID setzen
 if (isset($_GET['knd_id'])) {
     $_SESSION['knd_id']=$_GET['knd_id'];
-    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzter_kunde` = '".$_SESSION['knd_id']."' WHERE id=1";
-    echo $sql;
+    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzter_kunde` = '".$_SESSION['knd_id']."' WHERE benutzername='".$_SERVER['PHP_AUTH_USER']."'";
+    //echo $sql;
     $objMySQL->Query($sql);
 }
 
@@ -54,7 +54,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
             // Das hier wird gesetzt damit beim ersten öffnen keine 404-Seite auftaucht.
             // Kundenid wird initial gesetzt
             // Funktioniert nie...
-            $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE id=1";
+            $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE WHERE benutzername='".$_SERVER['PHP_AUTH_USER']."'";
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
             
             $_SESSION['knd_id']=$test['letzter_kunde'];

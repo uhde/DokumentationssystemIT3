@@ -6,7 +6,7 @@
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
-    $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE id=1";
+    $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE benutzername='".$_SERVER['PHP_AUTH_USER']."'";
     //echo $sql."<br>";
     $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
    
