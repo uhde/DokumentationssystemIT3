@@ -56,7 +56,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
             
             $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE WHERE id='".$_SESSION['nutzerid']."'";
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
-            
+            echo "letzter_kunde:".$test['letzter_kunde'];
             $_SESSION['knd_id']=22;
             
             
