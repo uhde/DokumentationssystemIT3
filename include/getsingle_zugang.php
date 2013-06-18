@@ -46,7 +46,7 @@ $browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
             }
         }
     }
-    $ax_link=$browser.' '.$Value['url'];
+    $ax_link='\"'.$browser.'\" google.de';
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
@@ -68,7 +68,7 @@ $browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
             <tr>
                 <td class="Key">Link: </td>
                 <td class="Value">
-                    <a href="#" target="_blank" onClick=\'activex.run("'.$ax_link.'")\';>
+                    <a href="#" target="_blank" onClick=\'activex.run("'.$ax_link.'");\'>
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
                 </td>
