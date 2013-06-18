@@ -54,9 +54,10 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
             // Das hier wird gesetzt damit beim ersten öffnen keine 404-Seite auftaucht.
             // Kundenid wird initial gesetzt
             // Funktioniert nie...
+            $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE id=1";
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
             
-            $_SESSION['knd_id']=22;
+            $_SESSION['knd_id']=$test['letzer_kunde'];
             
             
             $_SESSION['page']=$arrTopmenu[1]['file'];
