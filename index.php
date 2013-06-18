@@ -53,7 +53,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
         if (!(isset($_SESSION['page']) AND !empty($_SESSION['page']))) {
             // Das hier wird gesetzt damit beim ersten öffnen keine 404-Seite auftaucht.
             // Kundenid wird initial gesetzt
-            // Funktioniert nie...
+            
             $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE WHERE benutzername='".$_SERVER['PHP_AUTH_USER']."'";
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
             
