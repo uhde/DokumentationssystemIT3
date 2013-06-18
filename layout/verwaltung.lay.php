@@ -76,7 +76,7 @@ Es sind keine Programme eingetragen!
     </a>
     <br>
 <br><br>
-<a href="db_umstellung.php" target="_blank">DB umstellungsscript... Nur bei der Übernahme der alten Datenbank benutzen</a>
+<!--<a href="db_umstellung.php" target="_blank">DB umstellungsscript... Nur bei der Übernahme der alten Datenbank benutzen</a>-->
 <br>
 <br>
 <table >
