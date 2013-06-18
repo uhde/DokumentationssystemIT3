@@ -46,7 +46,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             }
         }
     }
-    $ax_link='\''.$browser.'\' google.de';
+    $ax_link='\\\''.$browser.'\\\' google.de';
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
