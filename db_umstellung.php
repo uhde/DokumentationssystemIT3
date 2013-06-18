@@ -22,8 +22,8 @@ include("include/functions.inc.php");
     echo "Falls die Programm Tabelle noch nicht erweitert wurde, bitte folgenden Befehl ausgeben: <br>".$sql;
     echo "<br>Vergessen sie danach nicht, die notwendigen Informationen in die Datenbank einzutragen.<br><br>";
     *///Überprüft ob schon die Datenbank incl Datensätze vorhanden ist
-    // Fügt neue Spalte namens letzer_kunde in die Tabelle benutzer ein.
-    $sql = "ALTER TABLE `benutzer` ADD `letzer_kunde` INT NOT NULL ";
+    // Fügt neue Spalte namens letzter_kunde in die Tabelle benutzer ein.
+    $sql = "ALTER TABLE `benutzer` ADD `letzter_kunde` INT NOT NULL ";
     $objMySQL->Query($sql);
     if(($arrData=$objMySQL->QueryArray("SHOW TABLES FROM ".TBL_GERAETE_LOGIN.""))==false)
     {   

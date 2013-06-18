@@ -34,7 +34,7 @@ if (isset($_GET['device_type']) AND !empty($_GET['device_type'])) {
 // Kunden-ID setzen
 if (isset($_GET['knd_id'])) {
     $_SESSION['knd_id']=$_GET['knd_id'];
-    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzer_kunde` = '".$_SESSION['knd_id']."' WHERE id=1";
+    $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET `letzter_kunde` = '".$_SESSION['knd_id']."' WHERE id=1";
     echo $sql;
     $objMySQL->Query($sql);
 }
@@ -57,7 +57,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
             $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE id=1";
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
             
-            $_SESSION['knd_id']=$test['letzer_kunde'];
+            $_SESSION['knd_id']=$test['letzter_kunde'];
             
             
             $_SESSION['page']=$arrTopmenu[1]['file'];
