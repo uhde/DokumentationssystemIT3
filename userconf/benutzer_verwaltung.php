@@ -9,9 +9,7 @@
     $sql = "SELECT * FROM ".TBL_BENUTZER." As be WHERE id=1";
     //echo $sql."<br>";
     $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
-    if(isset($_SESSION['knd_id'])){
-        $_SESSION['knd_id']=$test["letzer_kunde"];
-    }
+   
     if (is_array($test))
     {
         $_SESSION['ipordns']=$test["einstellung_dns"];
