@@ -15,7 +15,7 @@ require_once('config.inc.php');
 include_once("mysql.class.php");
 include_once("template.class.php");
 include_once("functions.inc.php");
-$browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+$browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
