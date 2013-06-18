@@ -52,6 +52,12 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
     }else{
         if (!(isset($_SESSION['page']) AND !empty($_SESSION['page']))) {
             // Das hier wird gesetzt damit beim ersten öffnen keine 404-Seite auftaucht.
+            // Kundenid wird initial gesetzt
+            $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
+            if(isset($_SESSION['knd_id'])){
+                $_SESSION['knd_id']=$test["letzer_kunde"];
+            }
+            
             $_SESSION['page']=$arrTopmenu[1]['file'];
             $page=$_SESSION['page'];
         }else{
