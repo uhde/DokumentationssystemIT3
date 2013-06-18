@@ -56,7 +56,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
             
             $sql = "SELECT letzter_kunde FROM ".TBL_BENUTZER." WHERE id='".$_SESSION['nutzerid']."'";
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
-            echo "letzter_kunde:".$test['letzter_kunde'];
+            //echo "letzter_kunde:".$test['letzter_kunde'];
             $_SESSION['knd_id']=$test['letzter_kunde'];
             
             
