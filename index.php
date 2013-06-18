@@ -56,7 +56,7 @@ if (isset($_POST['page']) AND !empty($_POST['page'])) {
             // Funktioniert nie...
             $test = $objMySQL->QuerySingleRowArray($sql,MYSQL_ASSOC);
             
-            $_SESSION['knd_id']=$test["letzer_kunde"];
+            $_SESSION['knd_id']=22;
             
             
             $_SESSION['page']=$arrTopmenu[1]['file'];
