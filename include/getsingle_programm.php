@@ -20,7 +20,7 @@ include_once("functions.inc.php");
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
-    $sqldata=$objMySQL->QuerySingleRowArray("Select * FROM ".TBL_ZUGAENGE." WHERE id=".$_GET['id']);
+    $sqldata=$objMySQL->QuerySingleRowArray("Select * FROM ".TBL_PROGRAMME." WHERE id=".$_GET['id']);
     
     foreach($sqldata AS $Key=>$Value)
     {
