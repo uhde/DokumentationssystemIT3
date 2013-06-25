@@ -8,9 +8,9 @@
 </head>
 <body>
 <?php
-/*
+
 error_reporting(E_ALL);
-ini_set('display_errors', TRUE);*/
+ini_set('display_errors', TRUE);
 require_once('config.inc.php');
 include_once("mysql.class.php");
 include_once("template.class.php");
@@ -99,19 +99,19 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
 <?php
 function MakeButtons($ausgabe){
 
-        $objTemplate=new Template("../layout/geraete_general.lay.php");
-        
-        $sqldata['activex']=$ausgabe;
+    $objTemplate=new Template("../layout/geraete_general.lay.php");
 
-        $objTemplate->AssignArray($sqldata);
-        $str.=$objTemplate->DisplayToString('Button_Main');
-        //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
-        $objTemplate->ClearAssign();
-        
-        unset($objTemplate);
-       // echo $str."<br>";
-        return $str;
-        //return $Data;
+    $sqldata['activex']=$ausgabe;
+
+    $objTemplate->AssignArray($sqldata);
+    $str.=$objTemplate->DisplayToString('Button_Main');
+    //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
+    $objTemplate->ClearAssign();
+    
+    unset($objTemplate);
+   // echo $str."<br>";
+    return $str;
+    //return $Data;
     
 }
 </body>
