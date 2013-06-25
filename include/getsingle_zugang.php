@@ -114,9 +114,9 @@ function MakeButtons($ausgabe){
     
     unset($objTemplate);
    // echo $str."<br>";
-    return $str;
+    //return $str;
     //return $Data;
-    //return "test";
+    return "test";
 }
 ?>
 </body>
