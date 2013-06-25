@@ -75,19 +75,22 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
                     </a>
                 </td>
 
-            <tr>
+            </tr>
+            
             ';
-    echo $button;
+    echo '<tr><td>'
+    echo $button.'</tr></td>';
     if($gekuerzed) {
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
                 <td class="Value">
                     <input type="text" value="'.$sqldata["url"].'"></input>
                 </td>
-            <tr>';
+            </tr>';
     }
             
     echo '
+        <tr>
                 <td class="Key">Bemerkung: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["zusatz"].'</td>
             </tr> 
