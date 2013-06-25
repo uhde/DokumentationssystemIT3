@@ -47,7 +47,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         }
     }
     $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
-    $ax_link='\"c:\\progra~1\\intern~1\\iexplore.exe\" google.de';
+    $ax_link = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"test\" -prg=\"c:\\progra~2\\Mozilla Firefox\\firefox.exe\" -arg=\"http://www.google.de\" -kunde=\"5\"  -partner=\"5\"';
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
@@ -69,7 +69,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             <tr>
                 <td class="Key">Link: </td>
                 <td class="Value">
-                    <a href="#" onClick=\'activex.run("'.$ax_link2.'");\'>
+                    <a href="#" onClick=\'activex.run("'.$ax_link.'");\'>
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
                 </td>
@@ -92,6 +92,54 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
      
         </table> 
     ';
+    
+    
+    function MakeButtons($Data, $adresse){
+    if (is_array($Data)) {
+        $objTemplate=new Template("../layout/geraete_general.lay.php");
+        $str="";
+        foreach ($Data as $sqldata){
+            
+            // Syntax:  $ausgabe=preg_replace($suchmuster,$ersetzung,$zeichenkette);
+            $ausgabe=$sqldata["url"];
+    
+            $ausgabe=str_replace('{geraete_login}',$sqldata['geraete_login'],$ausgabe);
+            $ausgabe=str_replace('{geraete_pw}',$sqldata['geraete_pw'],$ausgabe);
+            $ausgabe=str_replace('{adresse}',$sqldata['geraete_adresse'],$ausgabe);
+            $ausgabe=str_replace('{name}',$sqldata['geraete_name'],$ausgabe);
+            $ausgabe=str_replace('{benutzer}',$sqldata['benutzer'],$ausgabe);
+            $ausgabe=str_replace('{kunde}',$sqldata['kunden_name'],$ausgabe);
+            $ausgabe=str_replace('{benutzer}',$_SERVER['PHP_AUTH_USER'],$ausgabe);
+            $ausgabe=str_replace('{ftpdir}',$sqldata['ftpdir'],$ausgabe);
+            
+            
+            
+            /*$benutzer="%ProgramFiles%/TeamViewer/Version5/Teamviewer.exe";
+            $adresse="192.168.200.4";
+            $geraete_login=$sqldata['geraete_login'];
+            $geraete_pw=$sqldata['geraete_pw'];
+            $ausgabe="";*/
+            
+            $sqldata['activex']=$ausgabe;
+
+            $objTemplate->AssignArray($sqldata);
+            $str.=$objTemplate->DisplayToString('Button_Main');
+            //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
+            $objTemplate->ClearAssign();
+            
+        }
+        $sqldata['bemerkung']="Ping";
+        $ausgabe="ping.exe -n 9 ".$adresse;
+        $sqldata['activex']=$ausgabe;
+        $objTemplate->AssignArray($sqldata);
+        $str.=$objTemplate->DisplayToString('Button_ping');
+        $objTemplate->ClearAssign();
+        
+        unset($objTemplate);
+       // echo $str."<br>";
+        return $str;
+        //return $Data;
+    }
 ?>
 </body>
 </html>
