@@ -93,53 +93,6 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         </table> 
     ';
     
-    
-    function MakeButtons($Data, $adresse){
-    if (is_array($Data)) {
-        $objTemplate=new Template("../layout/geraete_general.lay.php");
-        $str="";
-        foreach ($Data as $sqldata){
-            
-            // Syntax:  $ausgabe=preg_replace($suchmuster,$ersetzung,$zeichenkette);
-            $ausgabe=$sqldata["url"];
-    
-            $ausgabe=str_replace('{geraete_login}',$sqldata['geraete_login'],$ausgabe);
-            $ausgabe=str_replace('{geraete_pw}',$sqldata['geraete_pw'],$ausgabe);
-            $ausgabe=str_replace('{adresse}',$sqldata['geraete_adresse'],$ausgabe);
-            $ausgabe=str_replace('{name}',$sqldata['geraete_name'],$ausgabe);
-            $ausgabe=str_replace('{benutzer}',$sqldata['benutzer'],$ausgabe);
-            $ausgabe=str_replace('{kunde}',$sqldata['kunden_name'],$ausgabe);
-            $ausgabe=str_replace('{benutzer}',$_SERVER['PHP_AUTH_USER'],$ausgabe);
-            $ausgabe=str_replace('{ftpdir}',$sqldata['ftpdir'],$ausgabe);
-            
-            
-            
-            /*$benutzer="%ProgramFiles%/TeamViewer/Version5/Teamviewer.exe";
-            $adresse="192.168.200.4";
-            $geraete_login=$sqldata['geraete_login'];
-            $geraete_pw=$sqldata['geraete_pw'];
-            $ausgabe="";*/
-            
-            $sqldata['activex']=$ausgabe;
-
-            $objTemplate->AssignArray($sqldata);
-            $str.=$objTemplate->DisplayToString('Button_Main');
-            //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
-            $objTemplate->ClearAssign();
-            
-        }
-        $sqldata['bemerkung']="Ping";
-        $ausgabe="ping.exe -n 9 ".$adresse;
-        $sqldata['activex']=$ausgabe;
-        $objTemplate->AssignArray($sqldata);
-        $str.=$objTemplate->DisplayToString('Button_ping');
-        $objTemplate->ClearAssign();
-        
-        unset($objTemplate);
-       // echo $str."<br>";
-        return $str;
-        //return $Data;
-    }
 ?>
 </body>
 </html>
