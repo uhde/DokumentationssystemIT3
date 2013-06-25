@@ -68,7 +68,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             <tr>
                 <td class="Key">Link: </td>
                 <td class="Value">
-                    <a href="#" target="_blank" onClick=\'activex.run(\''.$ax_link.'\');\'>
+                    <a href="'.$sqldata["url"].'" target="_blank"'>
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
                 </td>
