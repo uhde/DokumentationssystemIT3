@@ -57,6 +57,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         $sqldata['url_text']=$sqldata['url'];
         $gekuerzed = false;
     }
+    $button = MakeButtons($ax_link);
     echo '
     
         <table class="DeviceInfo">
@@ -75,7 +76,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
                 </td>
 
             <tr>
-            ';
+            '.$button;
     if($gekuerzed) {
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
@@ -94,5 +95,24 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
     ';
     
 ?>
+
+<?php
+function MakeButtons($ausgabe){
+
+        $objTemplate=new Template("../layout/geraete_general.lay.php");
+        
+        $sqldata['activex']=$ausgabe;
+
+        $objTemplate->AssignArray($sqldata);
+        $str.=$objTemplate->DisplayToString('Button_Main');
+        //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
+        $objTemplate->ClearAssign();
+        
+        unset($objTemplate);
+       // echo $str."<br>";
+        return $str;
+        //return $Data;
+    
+}
 </body>
 </html>
