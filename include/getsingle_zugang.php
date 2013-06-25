@@ -99,7 +99,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
 <?php
 function MakeButtons($ausgabe){
 
-    $objTemplate=new Template("../layout/geraete_general.lay.php");
+   /* $objTemplate=new Template("../layout/geraete_general.lay.php");
 
     $sqldata['activex']=$ausgabe;
 
@@ -111,8 +111,8 @@ function MakeButtons($ausgabe){
     unset($objTemplate);
    // echo $str."<br>";
     return $str;
-    //return $Data;
-    
+    //return $Data;*/
+    return "test";
 }
 </body>
 </html>
