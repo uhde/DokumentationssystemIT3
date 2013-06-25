@@ -105,7 +105,7 @@ function MakeButtons($ausgabe){
     $sqldata['activex']=$ausgabe;
 
     $objTemplate->AssignArray($sqldata);
-    $str.=$objTemplate->DisplayToString('Button_Main');
+    $str=$objTemplate->DisplayToString('Button_Main');
     //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
     $objTemplate->ClearAssign();
     
