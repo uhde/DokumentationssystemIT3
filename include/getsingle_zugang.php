@@ -46,6 +46,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             }
         }
     }
+    $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
     $ax_link='\"c:\\progra~1\\intern~1\\iexplore.exe\" google.de';
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
@@ -68,7 +69,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             <tr>
                 <td class="Key">Link: </td>
                 <td class="Value">
-                    <a href="#" onClick=\'activex.run("'.$ax_link.'");\'>
+                    <a href="#" onClick=\'activex.run("'.$ax_link2.'");\'>
                         <span title="'.$sqldata["url"].'">'.$sqldata["url_text"].'</span>
                     </a>
                 </td>
