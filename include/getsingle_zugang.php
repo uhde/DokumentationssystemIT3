@@ -78,8 +78,9 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             </tr>
             
             ';
-    echo '<tr><td>'
-    echo $button.'</tr></td>';
+    echo '<tr><td>';
+    echo $button;
+    echo '</tr></td>';
     if($gekuerzed) {
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
