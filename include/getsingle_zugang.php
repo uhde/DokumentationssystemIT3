@@ -107,6 +107,7 @@ function MakeButtons($ausgabe){
     $objTemplate=new Template("../layout/geraete_general.lay.php");
 
     $sqldata['activex']=$ausgabe;
+    $sqldata['bemerkung'] = "testlink";
 
     $objTemplate->AssignArray($sqldata);
     $str=$objTemplate->DisplayToString('Button_Main');
@@ -115,9 +116,9 @@ function MakeButtons($ausgabe){
     
     unset($objTemplate);
    // echo $str."<br>";
-    //return $str;
+    return $str;
     //return $Data;
-    return "test";
+   // return "test";
 }
 ?>
 </body>
