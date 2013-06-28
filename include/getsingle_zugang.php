@@ -58,7 +58,6 @@ include_once("functions.inc.php");
         $gekuerzed = false;
     }
     $ax_link = addslashes($ax_link);
-    $button = MakeButtons($ax_link);
     echo '
     
         <table class="DeviceInfo">
@@ -79,9 +78,6 @@ include_once("functions.inc.php");
             </tr>
             
             ';
-    echo '<tr><td>';
-    echo $button;
-    echo '</td><td>'.$ax_link.'</tr>';
     if($gekuerzed) {
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
@@ -92,35 +88,12 @@ include_once("functions.inc.php");
     }
             
     echo '
-        <tr>
+            <tr>
                 <td class="Key">Bemerkung: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["zusatz"].'</td>
             </tr> 
-     
         </table> 
-    ';
-    
-?>
-
-<?php
-function MakeButtons($ausgabe){
-
-    $objTemplate=new Template("../layout/geraete_general.lay.php");
-
-    $sqldata['activex'] = $ausgabe;
-    $sqldata['bemerkung'] = "testlink";
-
-    $objTemplate->AssignArray($sqldata);
-    $str=$objTemplate->DisplayToString('Button_Main');
-    //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
-    $objTemplate->ClearAssign();
-    
-    unset($objTemplate);
-   // echo $str."<br>";
-    return $str;
-    //return $Data;
-   // return "test";
-}
+    '; 
 ?>
 </body>
 </html>
