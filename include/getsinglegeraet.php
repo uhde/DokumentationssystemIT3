@@ -200,7 +200,8 @@ function MakeButtons($Data, $adresse){
                 $ausgabe=str_replace('{kunde}',$sqldata['kunden_name'],$ausgabe);
                 $ausgabe=str_replace('{benutzer}',$_SERVER['PHP_AUTH_USER'],$ausgabe);
                 $ausgabe=str_replace('{ftpdir}',$sqldata['ftpdir'],$ausgabe);
-                
+                $ausgabe=str_replace('{dyndns_domain}',$sqldata['dyndns_domain'],$ausgabe);
+                $ausgabe=str_replace('{irdpport}',$sqldata['irdpport'],$ausgabe);
                 
                 
                 /*$benutzer="%ProgramFiles%/TeamViewer/Version5/Teamviewer.exe";
