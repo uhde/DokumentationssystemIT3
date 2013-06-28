@@ -8,14 +8,13 @@
 </head>
 <body>
 <?php
-
+/*
 error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+ini_set('display_errors', TRUE); */
 require_once('config.inc.php');
 include_once("mysql.class.php");
 include_once("template.class.php");
 include_once("functions.inc.php");
-//$browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
@@ -48,8 +47,7 @@ include_once("functions.inc.php");
             }
         }
     }
-   // $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
-    $ax_link = $stdBrowser[$standard_browser_id]['pfad'].$sqldata['url'];
+     $ax_link = $stdBrowser[$standard_browser_id]['pfad'].$sqldata['url'];
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
