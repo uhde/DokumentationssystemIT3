@@ -21,8 +21,8 @@ include_once("functions.inc.php");
        $objMySQL->Kill();
     }
     $sqldata=$objMySQL->QuerySingleRowArray("Select * FROM ".TBL_ZUGAENGE." WHERE id=".$_GET['id']);
-    $temp = $objMySQL->QuerySingleRowArray("SELECT * FROM ".TBL_BENUTZER." WHERE id=".$_SESSION['nutzerid']);
-    $standard_browser_id = $temp['standard_browser'];
+
+    $standard_browser_id = "";
     unset($temp);
     foreach($sqldata AS $Key=>$Value)
     {
