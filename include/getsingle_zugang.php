@@ -22,7 +22,9 @@ include_once("functions.inc.php");
        $objMySQL->Kill();
     }
     $sqldata=$objMySQL->QuerySingleRowArray("Select * FROM ".TBL_ZUGAENGE." WHERE id=".$_GET['id']);
-    
+    $temp = $objMySQL->QuerySingleRowArray("SELECT * FROM ".TBL_BENUTZER." WHERE id=".$_SESSION['nutzerid']);
+    $standard_browser_id = $temp['standard_browser'];
+    unset($temp);
     foreach($sqldata AS $Key=>$Value)
     {
         $sqldata[$Key]=utf8_encode($Value);
@@ -47,7 +49,7 @@ include_once("functions.inc.php");
         }
     }
    // $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
-    $ax_link = '"c:\\progra~2\\Mozilla Firefox\\firefox.exe" '.$sqldata['url'];
+    $ax_link = $stdBrowser[$standard_browser_id]['pfad'].$sqldata['url'];
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
