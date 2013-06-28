@@ -15,7 +15,7 @@ require_once('config.inc.php');
 include_once("mysql.class.php");
 include_once("template.class.php");
 include_once("functions.inc.php");
-$browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
+//$browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
@@ -46,8 +46,8 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             }
         }
     }
-    $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
-    $ax_link = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"test\" -prg=\"c:\\progra~2\\Mozilla Firefox\\firefox.exe\" -arg=\"http://www.google.de\" -kunde=\"5\"  -partner=\"5\"';
+   // $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
+    $ax_link = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel="test" -prg="c:\\progra~2\\Mozilla Firefox\\firefox.exe" -arg="http://www.google.de" -kunde="5"  -partner="5"';
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
@@ -57,6 +57,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
         $sqldata['url_text']=$sqldata['url'];
         $gekuerzed = false;
     }
+    $ax_link = addslashes($ax_link);
     $button = MakeButtons($ax_link);
     echo '
     
@@ -80,7 +81,7 @@ $browser = "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe";
             ';
     echo '<tr><td>';
     echo $button;
-    echo '</tr></td>';
+    echo '</td><td>'.$ax_link'</tr>';
     if($gekuerzed) {
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
@@ -107,7 +108,6 @@ function MakeButtons($ausgabe){
     $objTemplate=new Template("../layout/geraete_general.lay.php");
 
     $sqldata['activex'] = $ausgabe;
-    $sqldata['activex'] = addslashes($sqldata['activex']);
     $sqldata['bemerkung'] = "testlink";
 
     $objTemplate->AssignArray($sqldata);
