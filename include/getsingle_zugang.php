@@ -81,7 +81,7 @@ include_once("functions.inc.php");
             ';
     echo '<tr><td>';
     echo $button;
-    echo '</td><td>'.$ax_link'</tr>';
+    echo '</td><td>'.$ax_link.'</tr>';
     if($gekuerzed) {
         echo '<tr>
                 <td class="Key">Link (kopieren): </td>
