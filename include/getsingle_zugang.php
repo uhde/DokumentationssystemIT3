@@ -106,7 +106,8 @@ function MakeButtons($ausgabe){
 
     $objTemplate=new Template("../layout/geraete_general.lay.php");
 
-    $sqldata['activex']=$ausgabe;
+    $sqldata['activex'] = $ausgabe;
+    $sqldata['activex'] = addslashes($sqldata['activex']);
     $sqldata['bemerkung'] = "testlink";
 
     $objTemplate->AssignArray($sqldata);
