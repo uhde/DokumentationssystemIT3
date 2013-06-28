@@ -47,7 +47,7 @@ include_once("functions.inc.php");
         }
     }
    // $ax_link2 = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel=\"{name}\" -prg=\"c:\\progra~1\\intern~1\\iexplore.exe\" -arg=\"google.de\" -kunde=\"5\" ';
-    $ax_link = 'F:\\Fernwartung\\DokuIT_Log\\DokuIT_Log.exe -ziel="test" -prg="c:\\progra~2\\Mozilla Firefox\\firefox.exe" -arg="http://www.google.de" -kunde="5"  -partner="5"';
+    $ax_link = '"c:\\progra~2\\Mozilla Firefox\\firefox.exe" '.$sqldata['url'];
     // Sollte eine URL länger als 50 Zeichen lang sein , wird der sichtbare Bereich aus Layoutgründen
     // auf 47 Zeichen gefolgt von einem ... begrenzt.
     if (strlen($sqldata['url'])>50) {
