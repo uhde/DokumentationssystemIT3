@@ -148,6 +148,12 @@ include_once("functions.inc.php");
         
 function MakeLoginTable($Data){
     if (is_array($Data)) {
+        // kodiert die Einträge in utf-8, da der dokumentenstandard ja ebenfalls hier utf-8 ist
+        foreach($Data AS $Key=>$Value)
+        {
+            $Data[$Key]=utf8_encode($Value);
+        }
+        
         $objTemplate=new Template("../layout/geraete_general.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
         foreach ($Data as $sqldata){
