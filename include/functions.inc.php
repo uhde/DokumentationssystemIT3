@@ -46,7 +46,7 @@ function GetGeraeteLogin($objMySQL,$id,$loeschen) {
     }
 }
 function GetGeraeteprogramme($objMySQL,$id) {
-    $sql = 'SELECT '.TBL_GERAETE_LOGIN.'.login AS geraete_login, geraete_id, '.TBL_GERAETE_LOGIN.'.passwort AS geraete_pw, '.TBL_GERAETE_LOGIN.'.aktiv, '
+    $sql = 'SELECT '.TBL_GERAETE_LOGIN.'.login AS geraete_login, programm_id, geraete_id, '.TBL_GERAETE_LOGIN.'.passwort AS geraete_pw, '.TBL_GERAETE_LOGIN.'.aktiv, '
     .TBL_PROGRAMME.'.bemerkung, '.TBL_PROGRAMME.'.url, '
     .TBL_KUNDEN.'.name AS kunden_name, '.TBL_KUNDEN.'.dyndns_domain AS dyndns_domain, '
     .TBL_GERAETE.'.irdpport AS irdpport, '.TBL_GERAETE.'.name AS geraete_name, '.TBL_GERAETE.'.benutzer AS benutzer, '.TBL_GERAETE.'.adresse AS geraete_adresse, '.TBL_GERAETE.'.kunde AS geraete_kunde, '.TBL_GERAETE.'.ftpdir AS ftpdir
