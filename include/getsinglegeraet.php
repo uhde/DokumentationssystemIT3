@@ -195,8 +195,9 @@ function MakeButtons($Data, $adresse){
             {
                 // Syntax:  $ausgabe=preg_replace($suchmuster,$ersetzung,$zeichenkette);
                 $ausgabe=$sqldata["url"];
-        
-                if(($sqldata['programm_id']==16||$sqldata['programm_id']==15)&&empty($sqldata['geraete_pw']));
+                
+                $temp = trim($sqldata['geraete_pw']);
+                if(($sqldata['programm_id']==16||$sqldata['programm_id']==15)&&!(empty($temp)));
                 {
                     $ausgabe=str_replace('--Password','',$ausgabe);
                 }
