@@ -197,9 +197,11 @@ function MakeButtons($Data, $adresse){
                 $ausgabe=$sqldata["url"];
                 
                 $temp = trim($sqldata['geraete_pw']);
-                if(($sqldata['programm_id']==16||$sqldata['programm_id']==15) AND $temp=="");
+                if($sqldata['programm_id']==16||$sqldata['programm_id']==15);
                 {
-                    $ausgabe=str_replace('--Password','',$ausgabe);
+                    if($temp=="") {
+                        $ausgabe=str_replace('--Password','',$ausgabe);
+                    }
                 }
                     
                 $ausgabe=str_replace('{geraete_login}',$sqldata['geraete_login'],$ausgabe);
