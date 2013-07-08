@@ -27,11 +27,22 @@ $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
-    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
+    if( $mode['lokal_suchen']==true)
     {
-        $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
-    }else{
-        $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+        if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
+        {
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+        }else{
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+        }
+    }else
+    {
+            if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
+        {
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+        }else{
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+        }
     }
     //echo $sql."<br>";
 } else {
