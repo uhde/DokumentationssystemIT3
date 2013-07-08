@@ -340,7 +340,7 @@ function ClearAllLoad()
             Verwaltung
         </a>
     </td>
-    <td width="130" style="vertical-align: middle;" >
+    <td width="200" style="vertical-align: middle;" >
         <div style="float:right; ">
             <form method="post" action="index.php?page=suche&device_type=42">
                 <input name="lokal_suchen" type="checkbox" value="true">

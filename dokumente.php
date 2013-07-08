@@ -25,11 +25,19 @@ foreach($_GET as $key=>$value)
 if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
    $mode['suche']=$_POST['suchfeld'];
 }
+if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
+   $mode['lokal_suchen']=true;
+}
 $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
-    $sql = "SELECT * FROM ".TBL_DOKUMENTE." WHERE MATCH (`name`,`bemerkung`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+    if( $mode['lokal_suchen']==true)
+    {   
+        $sql = "SELECT * FROM ".TBL_DOKUMENTE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`name`,`bemerkung`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+    }else{
+        $sql = "SELECT * FROM ".TBL_DOKUMENTE." WHERE MATCH (`name`,`bemerkung`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+    }
     //echo $sql."<br>";
 } else {
     $sql = "SELECT * FROM ".TBL_DOKUMENTE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id']).' ORDER BY name '.$_SESSION['sort_order'];

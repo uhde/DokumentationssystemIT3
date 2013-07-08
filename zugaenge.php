@@ -23,6 +23,9 @@ $browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
 if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
    $mode['suche']=$_POST['suchfeld'];
 }
+if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
+   $mode['lokal_suchen']=true;
+}
 $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
