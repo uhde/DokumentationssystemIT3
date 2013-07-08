@@ -45,6 +45,8 @@ if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
 }
 if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
    $mode['lokal_suchen']=true;
+}else {
+    $mode['lokal_suchen']=false;
 }
 // Sortierungspfeile....
 $objTemplate->Assign($sort_name.'_IMG','<img src="syspics/'.$sort_order.'.gif" style="border:0;margin-left:10px;margin-top:3px;">');

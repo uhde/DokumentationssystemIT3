@@ -25,6 +25,8 @@ if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
 }
 if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
    $mode['lokal_suchen']=true;
+}else {
+    $mode['lokal_suchen']=false;
 }
 $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
