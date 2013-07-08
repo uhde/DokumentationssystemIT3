@@ -43,6 +43,9 @@ foreach($_GET as $key=>$value)
 if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
    $mode['suche']=$_POST['suchfeld'];
 }
+if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
+   $mode['lokal_suchen']=true;
+}
 // Sortierungspfeile....
 $objTemplate->Assign($sort_name.'_IMG','<img src="syspics/'.$sort_order.'.gif" style="border:0;margin-left:10px;margin-top:3px;">');
 $objTemplate->Assign($sort_name.'_sort_order','aktiv');
@@ -51,11 +54,22 @@ $Daten[1]['kategorie']=$_SESSION['device_type'];
 $yesterday=time() - (24*60*60); //aktuelle zeit minus 1 tag
 // Wenn die Variable suche gesetzt ist (get) dann wird ein anderes SQL-Query erzeugt.
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
-    if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
+    if( $mode['lokal_suchen']==true)
     {
-        $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
-    }else {
-        $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+        if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
+        {
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+        }else {
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+        }
+    }else
+    {
+        if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
+        {
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+        }else {
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+        }
     }
    // echo $sql."<br>";
 } else {

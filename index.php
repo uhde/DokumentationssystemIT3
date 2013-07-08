@@ -343,6 +343,7 @@ function ClearAllLoad()
     <td width="130" style="vertical-align: middle;" >
         <div style="float:right; ">
             <form method="post" action="index.php?page=suche&device_type=42">
+                <input name="lokal_suchen" type="checkbox" value="true">
                 <input name="suchfeld" type='text' size="10" maxlength="30">
                 <input type="image" src="syspics/search.png" title="Suchen" alt="Absenden" style="width:20px;height:20px;border:none">
             </form>
