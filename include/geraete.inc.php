@@ -54,8 +54,12 @@ $Daten[1]['kategorie']=$_SESSION['device_type'];
 $yesterday=time() - (24*60*60); //aktuelle zeit minus 1 tag
 // Wenn die Variable suche gesetzt ist (get) dann wird ein anderes SQL-Query erzeugt.
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
+    //Wenn nur lokal gesucht werden soll, steht lokal_suchen auf true. 
+    // Dann wird nur innerhalb des spezifischen Kunden gesucht
     if( $mode['lokal_suchen']==true)
     {
+        // Sollten auch gelöschte Geräte angezeigt werden, wird in allen Geräten gesucht.
+        // Ansonsten wird nur in den "nicht gelöschten" gesucht
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
             $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
