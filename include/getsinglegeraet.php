@@ -95,24 +95,31 @@ include_once("functions.inc.php");
                 <td class="sqldata">'.$sqldata["adresse"].'</td>
                 <td class="Key" >DNS-Stand: </td>
                 <td colspan="3" class="sqldata">'.$sqldata["dnstimestamp"].'</td>
-            </tr>
-            <tr>
+            </tr>';
+if(!empty($sqldata["mac_adresse"])) {     
+    echo   '<tr>
                 <td class="Key" >MAC-Adresse: </td>
                 <td class="Value">'.$sqldata["mac_adresse"].'</td>
-            <tr>
+            </tr>';
+    }
+    if(!empty($sqldata["system"]) OR !empty($sqldata["pc"])) { 
+    echo   '<tr>
                 <td class="Key" >Geräte-Typ:</td>
                 <td class="sqldata" >'.$sqldata["pc"].'</td>
                 <td class="Key" >System-Beschreibung:</td>
                 <td class="sqldata">'.$sqldata["system"].'</td>     
                 <td style="width:90px;"></td>
                 <td class="sqldata" style="width:20px;"></td>    
-            </tr>
+            </tr>';}
+    if(!empty($sqldata["bs"]) OR !empty($sqldata["drucker"])) {
+    echo    '
             <tr>
                 <td class="Key" >Betriebssystem: </td>
                 <td class="sqldata">'.$sqldata["bs"].'</td>
                 <td class="Key">Drucker: </td>
                 <td  style="width:50;">'.$sqldata["drucker"].'</td> 
-            </tr>
+            </tr>';}
+    echo '
             <tr>
                 <td class="Key" >Standort: </td>
                 <td class="sqldata">'.$sqldata["zimmer"].'</td>
