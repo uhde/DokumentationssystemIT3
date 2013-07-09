@@ -119,19 +119,22 @@ if(!empty($sqldata["mac_adresse"])) {
                 <td class="Key">Drucker: </td>
                 <td  style="width:50;">'.$sqldata["drucker"].'</td> 
             </tr>';}
+    if(!empty($sqldata["zimmer"]) OR !empty($sqldata["produktnummer"])) {
     echo '
             <tr>
                 <td class="Key" >Standort: </td>
                 <td class="sqldata">'.$sqldata["zimmer"].'</td>
                 <td class="Key" >Produktnummer: </td>
                 <td class="sqldata" >'.$sqldata["produktnummer"].'</td>
-            </tr>
-            <tr>
+            </tr>';}
+    if(!empty($sqldata["sn"]) OR !empty($sqldata["garantie"])) {
+    echo    '<tr>
                 <td class="Key" >SN:</td>
                 <td class="sqldata" >'.$sqldata["sn"].'</td>
                 <td class="Key" >Garantie bis:</td>
                 <td class="sqldata" >'.$sqldata["garantie"].'</td>   
-            </tr>
+            </tr>';}
+    echo '
             <tr>
                 <td class="Key" style="vertical-align:top;">Logins: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["logins"].'</td>
