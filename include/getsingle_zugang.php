@@ -86,12 +86,14 @@ include_once("functions.inc.php");
                 </td>
             </tr>';
     }
-            
+    if(!empty($sqldata["zusatz"])) { 
     echo '
             <tr>
                 <td class="Key">Bemerkung: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["zusatz"].'</td>
-            </tr> 
+            </tr>';
+    }
+    echo '
         </table> 
     '; 
 ?>
