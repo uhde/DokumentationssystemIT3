@@ -134,21 +134,24 @@ if(!empty($sqldata["mac_adresse"])) {
                 <td class="Key" >Garantie bis:</td>
                 <td class="sqldata" >'.$sqldata["garantie"].'</td>   
             </tr>';}
+    if(!empty($sqldata["logins"])) {  
     echo '
             <tr>
                 <td class="Key" style="vertical-align:top;">Logins: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["logins"].'</td>
-            </tr>
-            <tr>
+            </tr>';}
+    if(!empty($sqldata["bemerkung"])) {          
+    echo   '<tr>
                 <td class="Key">Bemerkung: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["bemerkung"].'</td>
-            </tr>
-            <tr>
+            </tr>';}
+    if(!empty($sqldata["buttons"])) {          
+    echo   '<tr>
                 <td class="Key" style="vertical-align:top;">Aktionen: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["buttons"].'</td>
-            </tr> 
+            </tr> ';}
             
-            
+    echo'        
         </table> 
         ';
         
