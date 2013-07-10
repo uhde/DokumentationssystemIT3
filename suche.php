@@ -24,7 +24,6 @@
         //echo $key." -> ".$value." get<br>"; 
         $mode[$key]=$value;
     } 
-    $_POST['suchfeld']=mysql_real_escape_string($_POST['suchfeld']);
     foreach($_POST as $key=>$value) 
     {
         //echo $key." -> ".$value." post<br>"; 
