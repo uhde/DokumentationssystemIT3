@@ -19,15 +19,6 @@ if (isset($_GET['sort_order']) AND !empty($_GET['sort_order'])) {
 
 $browser = "C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
 
-// Setzt das suchfeld. Wird nur aufgerufen, wenn gesucht wird.
-if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
-   $mode['suche']=$_POST['suchfeld'];
-}
-if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
-   $mode['lokal_suchen']=true;
-}else {
-    $mode['lokal_suchen']=false;
-}
 $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
@@ -49,7 +40,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
             $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
         }
     }
-    //echo $sql."<br>";
+    echo $sql."<br>";
 } else {
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
