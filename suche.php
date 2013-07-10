@@ -18,7 +18,7 @@
 
     $Daten[1]['kunde']=$_SESSION['knd_id'];
     $Daten[1]['kategorie']=$_SESSION['device_type'];
-   
+   // Verarbeitung der Übergeben Variablen
    foreach($_GET as $key=>$value) 
     { 
         //echo $key." -> ".$value." get<br>"; 
@@ -28,6 +28,14 @@
     {
         //echo $key." -> ".$value." post<br>"; 
         $mode[$key]=$value;
+    }
+    if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
+       $mode['suche']=$_POST['suchfeld'];
+    }
+    if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
+       $mode['lokal_suchen']=true;
+    }else {
+        $mode['lokal_suchen']=false;
     }
     if(!empty($mode['suchfeld']))
     {

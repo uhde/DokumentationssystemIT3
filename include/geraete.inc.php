@@ -40,14 +40,7 @@ foreach($_GET as $key=>$value)
 { 
     $mode[$key]=$value;
 }  
-if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
-   $mode['suche']=$_POST['suchfeld'];
-}
-if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
-   $mode['lokal_suchen']=true;
-}else {
-    $mode['lokal_suchen']=false;
-}
+
 // Sortierungspfeile....
 $objTemplate->Assign($sort_name.'_IMG','<img src="syspics/'.$sort_order.'.gif" style="border:0;margin-left:10px;margin-top:3px;">');
 $objTemplate->Assign($sort_name.'_sort_order','aktiv');
@@ -77,7 +70,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
             $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
         }
     }
-   // echo $sql."<br>";
+    echo $sql."<br>";
 } else {
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
