@@ -30,7 +30,16 @@
         $mode[$key]=$value;
     }
     if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
-       $mode['suche']=$_POST['suchfeld'];
+        $mode['suche']=$_POST['suchfeld'];
+        $temp = explode(" ",$mode['suche']);
+        foreach( $temp as $key =>$value){
+            if($key == 0) {
+                $mode['suche'] = "+".$temp[$key];
+            }else {
+                $mode['suche'] = $mode['suche']." +".$temp[$key];
+            }
+        }
+        $mode['suche'] = $mode['suche']."*";  
     }
     if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
        $mode['lokal_suchen']=true;
