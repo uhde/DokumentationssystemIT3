@@ -27,9 +27,9 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     {
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE loeschen=1 AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
         }else{
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
         }
     }else
     {

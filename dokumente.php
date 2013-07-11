@@ -17,19 +17,7 @@ if (isset($_GET['sort_order']) AND !empty($_GET['sort_order'])) {
     $sort_order='asc';
     $objTemplate->Assign('sort_order','desc');
 }
-// Restliche Variablen
-foreach($_GET as $key=>$value) 
-{ 
-    $mode[$key]=$value;
-} 
-if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
-   $mode['suche']=$_POST['suchfeld'];
-}
-if(isset($_POST['lokal_suchen'])&&!empty($_POST['lokal_suchen'])) {
-   $mode['lokal_suchen']=true;
-}else {
-    $mode['lokal_suchen']=false;
-}
+
 $Daten[1]['kunde']=$_SESSION['knd_id'];
 $Daten[1]['kategorie']=$_SESSION['device_type'];
 // Liest die Daten aus.
