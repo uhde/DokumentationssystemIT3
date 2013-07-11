@@ -46,7 +46,7 @@
     </tr>
     <tr>
         <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
-        <td colspan="6" class="info_schatten4">
+        <td colspan="{$colspan}" class="info_schatten4">
             <span id="trinfo{$id}" class="TRInfo">
             
             </span>
