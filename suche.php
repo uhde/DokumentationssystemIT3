@@ -32,6 +32,7 @@
     if(isset($_POST['suchfeld'])&&!empty($_POST['suchfeld'])) {
         $mode['suche']=$_POST['suchfeld'];
         $temp = explode(" ",$mode['suche']);
+        $mode['suche']="";
         foreach( $temp as $key =>$value){
             $mode['suche'] = $mode['suche']." +".$temp[$key];
         }
