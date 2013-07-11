@@ -57,17 +57,17 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
         // Ansonsten wird nur in den "nicht gelöschten" gesucht
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`name`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
         }else {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen='1' AND MATCH (`name`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
         }
     }else
     {
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH (`name`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
         }else {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
         }
     }
     //echo $sql."<br>";
