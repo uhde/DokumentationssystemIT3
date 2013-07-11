@@ -48,7 +48,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
    }else{
         $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id'])." ORDER BY titel ".$_SESSION['sort_order'];
    }
-   // echo $sql;
+    echo $sql;
 }
 $arrData_zugaenge=$objMySQL->QueryArray ($sql);
 if ($arrData_zugaenge!==FALSE) {
