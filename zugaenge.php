@@ -56,7 +56,7 @@ if ($arrData_zugaenge!==FALSE) {
     foreach ($arrData_zugaenge AS $Value) {
         // Logins auslesen
         $Value["zusatz"]=nl2br($Value["zusatz"]);
-        $Value['colspan']='6';
+        $Value['colspan']='5';
         // Falls Session mit Kunden-ID nicht da: Setzen
         if (!isset($_SESSION['knd_id']) OR empty($_SESSION['knd_id'])) {
             $_SESSION['knd_id']=$Value['id'];
@@ -89,7 +89,7 @@ if ($arrData_zugaenge!==FALSE) {
         if(isset($mode['suche'])&&(!empty($mode['suche'])))
         {
             $Value['suche_kunde']='<td class="slider2" value="#trinfo{$id}">'.GetKundenName($objMySQL,$Value["kunde"]).'</td>';
-            $Value['colspan']='7';
+            $Value['colspan']='6';
            // $Value['suche_titel']='<th style="width=10%">Kunde</th>';            
         }
         // In dieser Variable "img_loeschen" wird der Bildpfadt zum entsprechenden Bild vermerkt.
