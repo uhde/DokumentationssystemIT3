@@ -40,7 +40,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
             $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
         }
     }
-    echo $sql."<br>";
+    //echo $sql."<br>";
 } else {
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {

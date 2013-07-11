@@ -70,7 +70,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
             $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`system`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE)";
         }
     }
-    echo $sql."<br>";
+    //echo $sql."<br>";
 } else {
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
