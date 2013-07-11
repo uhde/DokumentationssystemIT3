@@ -64,7 +64,7 @@
         $_SESSION['device_type']=1;
         $_SESSION['page']=$arrTopmenu[1]['file'];
     }
-    echo " <br><br>Erläuterung: Es kann bei den Geräten in den Feldern: Name, Bemerkung, Seriennummer, Produktnummer, PC-Typ, Geräte-Typ und Benutzer gesucht werden.";
+    echo " <br><br>Erläuterung: <br>Es kann bei den Geräten(Server, Computer, Durcker, Netzwerk) in den Feldern: <br><b>Name, Bemerkung, Seriennummer, Produktnummer, PC-Typ, Geräte-Typ</b> und <b>Benutzer</b> gesucht werden.";
     echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder Name und Bemerkung durchsucht werden";
     echo "<br>Groß- und Kleinschreibung werden sind nicht relevant.";
 
