@@ -54,7 +54,7 @@
         include('zugaenge.php');
         
         // name`,`system`,`produktnummer`,`pc`,`benutzer`
-         echo "<br><br>Suche Abgeschlossen. <br><br>";
+         echo "<br><br>Suche Abgeschlossen. ";
         
         $time_stop=microtime(true);
         $time_used=$time_stop-$time_start;
@@ -65,7 +65,7 @@
         $_SESSION['page']=$arrTopmenu[1]['file'];
     }
     echo " <br><br>Erläuterung: <br>Es kann bei den Geräten(Server, Computer, Durcker, Netzwerk) in den Feldern: <br><b>Name, Bemerkung, Seriennummer, Produktnummer, PC-Typ, Geräte-Typ</b> und <b>Benutzer</b> gesucht werden.";
-    echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder Name und Bemerkung durchsucht werden";
+    echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder <b>Name</b> und <b>Bemerkung</b> durchsucht werden";
     echo "<br>Groß- und Kleinschreibung werden sind nicht relevant.";
 
 ?>
