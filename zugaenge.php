@@ -27,17 +27,17 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     {
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE loeschen=1 AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE loeschen=1 AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }else{
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }
     }else
     {
             if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }else{
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."*' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }
     }
     //echo $sql."<br>";
@@ -50,7 +50,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
    }
   
 }
-  echo $sql;
+ //echo $sql;
 $arrData_zugaenge=$objMySQL->QueryArray ($sql);
 if ($arrData_zugaenge!==FALSE) {
     $objTemplate->Display('Header');
