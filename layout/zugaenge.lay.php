@@ -1,6 +1,6 @@
 !#----- Header:Begin -----#!
 <div id="frame_devicenav">
-    <table style="width:98%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
+    <table style="padding-right:20px;width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #ddd;" id="DeviceData">
     <thead>
     <tr>
     <th  class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Titel</a></th>
@@ -16,7 +16,7 @@
     </table>
 </div>
 <div id="Buchungen2">
-<table style="width:98.18%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #eee;border-bottom:none;" id="DeviceData">
+<table style="width:100%;border:none;background-color:#666;border-collapse:collapse;border:1px solid #eee;border-bottom:none;" id="DeviceData">
 !#----- Header:End -----#!
 
 
