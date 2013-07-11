@@ -4,8 +4,7 @@
     <thead>
     <tr>
     <th  class="{$name_sort_order}"><a href="index.php?sort_name=name&sort_order={$sort_order}">Titel</a></th>
-    <th style="width:25%;">&nbsp;</th>
-    <th style="width:25%;">&nbsp;</th>
+    
     <th style="width:25%;">&nbsp;</th>
     
     {$suche_titel}
