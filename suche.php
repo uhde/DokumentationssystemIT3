@@ -55,17 +55,19 @@
         
         // name`,`system`,`produktnummer`,`pc`,`benutzer`
          echo "<br><br>Suche Abgeschlossen. <br><br>";
-        echo " Erläuterung: Es kann bei den Geräten in den Feldern: Name, Produktnummer, PC-Typ, Geräte-Typ und Benutzer gesucht werden.";
-        echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder Name und Bemerkung durchsucht werden";
-
+        
         $time_stop=microtime(true);
         $time_used=$time_stop-$time_start;
-        echo "<br>Die Suchanfrage wurde in ".$time_used." Sekunden bearbeitet. ";
+        echo "<br>Die Suchanfrage wurde in ".round($time_used,2)." Sekunden bearbeitet. ";
     }else {
         echo '<h1 style="font-weight:bold;color:rgb(153,0,0);font-size:16pt;margin-top:20px;margin-left:20px;">Bitte geben sie einen Suchtext ein</h1>';
         $_SESSION['device_type']=1;
         $_SESSION['page']=$arrTopmenu[1]['file'];
     }
+    echo " <br><br>Erläuterung: Es kann bei den Geräten in den Feldern: Name, Bemerkung, Seriennummer, Produktnummer, PC-Typ, Geräte-Typ und Benutzer gesucht werden.";
+    echo "<br>Bei den Restlichen Punkten (Dokumente, Zugänge, Bilder) können die Felder Name und Bemerkung durchsucht werden";
+    echo "<br>Groß- und Kleinschreibung werden sind nicht relevant.";
+
 ?>
 <script type="text/javascript">
 document.getElementById('suche').style.visibility='hidden';
