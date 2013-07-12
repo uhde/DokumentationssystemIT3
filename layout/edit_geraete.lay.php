@@ -20,15 +20,9 @@
         CKEDITOR.replace( 'bemerkung', {
             on: {
                 instanceReady: function( ev ) {
-                    this.dataProcessor.writer.lineBreakChars = '<br>';
-                    // Output paragraphs as <p>Text</p>.
-                    this.dataProcessor.writer.setRules( 'p', {
-                        indent: false,
-                        breakBeforeOpen: true,
-                        breakAfterOpen: false,
-                        breakBeforeClose: false,
-                        breakAfterClose: true
-                    });
+                this.dataProcessor.writer.lineBreakChars = '\n';
+                // Output paragraphs as <p>Text</p>.
+                    
                 }
             }
         }
