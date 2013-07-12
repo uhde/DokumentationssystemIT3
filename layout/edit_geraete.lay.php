@@ -9,7 +9,18 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <LINK rel="stylesheet" href="css/styles.css"> 
-
+    
+    <script type='text/javascript' src='js/jquery-1.9.1.min.js'></script>
+    <link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+    <script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
+    <script src="js/ckeditor/ckeditor.js"></script>
+    
+    <script>
+    window.onload = function() {
+        CKEDITOR.replace( 'bemerkung' );
+    };
+    </script>
+    
 </head>
 
 
