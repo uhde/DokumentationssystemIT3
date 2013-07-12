@@ -19,9 +19,8 @@
     window.onload = function() {
         CKEDITOR.replace( 'bemerkung', {
             on: {
-                var writer = CKEDITOR.dataProcessor.writer;
                 instanceReady: function( ev ) {
-                    writer.lineBreakChars = '<br>';
+                    this.dataProcessor.writer.lineBreakChars = '<br>';
                     // Output paragraphs as <p>Text</p>.
                     this.dataProcessor.writer.setRules( 'p', {
                         indent: false,
