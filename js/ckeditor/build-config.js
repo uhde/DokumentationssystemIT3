@@ -39,7 +39,10 @@ var CKBUILDER_CONFIG = {
 		'dialogui' : 1,
 		'button' : 1,
 		'fakeobjects' : 1,
-		'divarea' : 1
+		'divarea' : 1,
+		'htmlwriter' : 1,
+		'div' : 1,
+		'htmlbuttons' : 1
 	},
 	languages : {
 		'en' : 1,
