@@ -70,7 +70,7 @@ if ($arrData!==FALSE) {
             break;
     }
     if ($mode["mode"]=="edit") {
-        
+        $arrdata['bemerkung'] = nl2br('bemerkung');
         $arrData['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $arrData['garantied']=date("d",$arrData['garantie']);
         $arrData['garantiem']=date("m",$arrData['garantie']);
