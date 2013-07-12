@@ -17,7 +17,22 @@
     
     <script>
     window.onload = function() {
-        CKEDITOR.replace( 'bemerkung' );
+        CKEDITOR.replace( 'bemerkung', {
+            on: {
+                instanceReady: function( ev ) {
+                    writer.lineBreakChars = '<br>';
+                    // Output paragraphs as <p>Text</p>.
+                    this.dataProcessor.writer.setRules( 'p', {
+                        indent: false,
+                        breakBeforeOpen: true,
+                        breakAfterOpen: false,
+                        breakBeforeClose: false,
+                        breakAfterClose: true
+                    });
+                }
+            }
+        }
+        );
     };
     </script>
     
