@@ -32,17 +32,12 @@ var CKBUILDER_CONFIG = {
 		'floatingspace' : 1,
 		'wysiwygarea' : 1,
 		'indent' : 1,
-		'link' : 1,
 		'list' : 1,
 		'undo' : 1,
 		'dialog' : 1,
 		'dialogui' : 1,
 		'button' : 1,
-		'fakeobjects' : 1,
-		'divarea' : 1,
-		'htmlwriter' : 1,
-		'div' : 1,
-		'htmlbuttons' : 1
+		'htmlwriter' : 1
 	},
 	languages : {
 		'en' : 1,
