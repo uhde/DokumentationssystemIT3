@@ -15,11 +15,7 @@
     <script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
     <script src="js/ckeditor/ckeditor.js"></script>
     
-    <link href="http://uhdsrv14/dokuit3/js/ckeditor/skins/moono/editor_ie.css?t=D5AC" rel="stylesheet"/>
-    <script src="http://uhdsrv14/dokuit3/js/ckeditor/styles.js?t=D5AC" type="text/javascript"></script>
-    <script src="http://uhdsrv14/dokuit3/js/ckeditor/lang/de.js?t=D5AC" type="text/javascript"></script>
-    <style data-cke-temp="1">CSS-Stylesheet</style>
-    <style id="cke_ui_color" type="text/css">CSS-Stylesheet</style>
+    
     
     <script>
     window.onload = function() {
