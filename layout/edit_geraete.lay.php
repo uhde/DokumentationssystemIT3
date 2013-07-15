@@ -165,7 +165,8 @@
 <tr class="Data0">
     <td align="right" valign="top"><span class="LinkStyle">Bemerkung: </span></td>
     <td colspan="3">
-        <textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung"   onFocus="this.className='aktiv'" onBlur="this.className='text'">{$bemerkung}</textarea>
+        <textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung_1">
+        {$bemerkung}</textarea>
     </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
