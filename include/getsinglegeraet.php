@@ -2,6 +2,7 @@
        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta http-equiv="x-ua-compatible" content="ie=9">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 <link rel="stylesheet" href="../css/reset.css" type="text/css" />
