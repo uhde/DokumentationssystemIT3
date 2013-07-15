@@ -22,10 +22,10 @@ include("../include/functions.inc.php");
     
     $sql = "SELECT id, bemerkung FROM geraete ";
     
-    /*$arrData=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
+    $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
     $sql ="";
     $i = 0;
-    foreach $arrData as $Value {
+    /*foreach $arrData as $Value {
         $Value['bemerkung'] = nl2br($Value['bemerkung']);
         $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
         $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
