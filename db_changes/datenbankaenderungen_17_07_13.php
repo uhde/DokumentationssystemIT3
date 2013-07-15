@@ -29,16 +29,16 @@ include("../include/functions.inc.php");
         $Value['bemerkung'] = nl2br($Value['bemerkung']);
         $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
         $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
-        $objMySQL->Query($sqlquery);
+        $objMySQL->Query($sql);
         $i++;
         echo '.';
     }
     /*$sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
-    $objMySQL->Query($sqlquery);
+    $objMySQL->Query($sql);
     
     // Löscht die alten und nicht mehr benötigten Spalten in geräte
     $sql = "ALTER TABLE `geraete` DROP `programme`, DROP `vncpasswort`, DROP `login`, DROP `passwort`, DROP `ftplogin`, DROP `ftppasswort`, DROP `tv_id`, DROP `tv_pwd`, DROP `xurl`;";
-    $objMySQL->Query($sqlquery);
+    $objMySQL->Query($sql);
     
     echo "Es wurde ".$i." Einträge abgearbeitet.<br><br>";
     echo "Scriptende";*/
