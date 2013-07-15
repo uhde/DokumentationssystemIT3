@@ -224,7 +224,33 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <LINK rel="stylesheet" href="css/styles.css"> 
-
+    
+    <script type='text/javascript' src='js/jquery-1.9.1.min.js'></script>
+    <link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+    <script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
+    <script src="js/ckeditor/ckeditor.js"></script>
+    
+    <link href="http://uhdsrv14/dokuit3/js/ckeditor/skins/moono/editor_ie.css?t=D5AC" rel="stylesheet"/>
+    <script src="http://uhdsrv14/dokuit3/js/ckeditor/styles.js?t=D5AC" type="text/javascript"></script>
+    <script src="http://uhdsrv14/dokuit3/js/ckeditor/lang/de.js?t=D5AC" type="text/javascript"></script>
+    <style data-cke-temp="1">CSS-Stylesheet</style>
+    <style id="cke_ui_color" type="text/css">CSS-Stylesheet</style>
+    
+    <script>
+    window.onload = function() {
+        CKEDITOR.replace( 'bemerkung', {
+            on: {
+                instanceReady: function( ev ) {
+                this.dataProcessor.writer.lineBreakChars = '\n';
+                // Output paragraphs as <p>Text</p>.
+                    
+                }
+            }
+        }
+        );
+    };
+    </script>
+    
 </head>
 
 
@@ -395,6 +421,33 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <LINK rel="stylesheet" href="css/styles.css"> 
+    
+    <script type='text/javascript' src='js/jquery-1.9.1.min.js'></script>
+    <link rel="stylesheet" href="js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+    <script type='text/javascript' src='js/fancyapps-fancyBox-0ffc358/source/jquery.fancybox.js'></script>
+    <script src="js/ckeditor/ckeditor.js"></script>
+    
+    <link href="http://uhdsrv14/dokuit3/js/ckeditor/skins/moono/editor_ie.css?t=D5AC" rel="stylesheet"/>
+    <script src="http://uhdsrv14/dokuit3/js/ckeditor/styles.js?t=D5AC" type="text/javascript"></script>
+    <script src="http://uhdsrv14/dokuit3/js/ckeditor/lang/de.js?t=D5AC" type="text/javascript"></script>
+    <style data-cke-temp="1">CSS-Stylesheet</style>
+    <style id="cke_ui_color" type="text/css">CSS-Stylesheet</style>
+    
+    <script>
+    window.onload = function() {
+        CKEDITOR.replace( 'bemerkung', {
+            on: {
+                instanceReady: function( ev ) {
+                this.dataProcessor.writer.lineBreakChars = '\n';
+                // Output paragraphs as <p>Text</p>.
+                    
+                }
+            }
+        }
+        );
+    };
+    </script>
+    
 </head>
 
 
