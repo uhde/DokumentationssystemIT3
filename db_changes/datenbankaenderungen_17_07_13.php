@@ -44,7 +44,7 @@ include("../include/functions.inc.php");
     $sql = "ALTER TABLE `geraete` DROP `programme`, DROP `vncpasswort`, DROP `login`, DROP `passwort`, DROP `ftplogin`, DROP `ftppasswort`, DROP `tv_id`, DROP `tv_pwd`, DROP `xurl`;";
     $objMySQL->Query($sql);
     
-    echo "Es wurde ".$i." Einträge abgearbeitet.<br><br>";
+    echo "Es wurde ".$i." Eintraege abgearbeitet.<br><br>";
     echo "Scriptende";
 ?>
 </body>
