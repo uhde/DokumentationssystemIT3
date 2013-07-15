@@ -29,7 +29,7 @@ include("../include/functions.inc.php");
         $Value['bemerkung'] = nl2br($Value['bemerkung']);
         $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
         $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
-        //$objMySQL->Query($sql);
+        $objMySQL->Query($sql);
         $i++;
         echo '.';
         if($i%100==0){
@@ -37,7 +37,7 @@ include("../include/functions.inc.php");
         }
     }
     echo "<br>Schleife fertig durchlaufen<br>";
-    /*$sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
+    $sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
     $objMySQL->Query($sql);
     
     // Löscht die alten und nicht mehr benötigten Spalten in geräte
@@ -45,7 +45,7 @@ include("../include/functions.inc.php");
     $objMySQL->Query($sql);
     
     echo "Es wurde ".$i." Einträge abgearbeitet.<br><br>";
-    echo "Scriptende";*/
+    echo "Scriptende";
 ?>
 </body>
 </html>
