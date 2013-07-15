@@ -26,9 +26,10 @@ include("../include/functions.inc.php");
     $sql ="";
     $i = 0;
     foreach($arrData as $Value) {
-        $Value['bemerkung'] = nl2br($Value['bemerkung']);
+        //$Value['bemerkung'] = nl2br($Value['bemerkung']);
+        $Value['bemerkung'] = str_replace(array("\r\n", "\r", "\n"), "<br />", $Value['bemerkung']); 
         $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
-        $sql = $sql." bemerkung = ".mysql_real_escape_string(nl2br($Value['bemerkung']))." WHERE id=".$Value['id']."";
+        $sql = $sql." bemerkung = '".mysql_real_escape_string($Value['bemerkung'])."' WHERE id=".$Value['id']."";
         echo $sql."<br>";
         $objMySQL->Query($sql);
         $i++;
