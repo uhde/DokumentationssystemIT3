@@ -1,3 +1,5 @@
+<html><head></head>
+<body>
 working....
 
 <?php 
@@ -41,3 +43,5 @@ include("../include/functions.inc.php");
     echo "Es wurde ".$i." Einträge abgearbeitet.<br><br>";
     echo "Scriptende";
 ?>
+</body>
+</html>
