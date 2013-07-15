@@ -36,6 +36,7 @@ include("../include/functions.inc.php");
             echo "<br>";
         }
     }
+    echo "<br>Schleife fertig durchlaufen<br>";
     /*$sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
     $objMySQL->Query($sql);
     
