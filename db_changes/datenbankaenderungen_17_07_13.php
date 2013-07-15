@@ -7,8 +7,8 @@ working....
 // konvertiert die Zeilenumbrüche in html umbrüche
 // Fügt außerdem ein Feld für eine Softwareliste ein.
 // Löscht nicht mehr benötigte Spalten in "geraete"
-    error_reporting(E_ALL);
-    ini_set('display_errors', TRUE);
+   // error_reporting(E_ALL);
+   // ini_set('display_errors', TRUE);
 
 require('../include/config.inc.php');
 include("../include/mysql.class.php");
