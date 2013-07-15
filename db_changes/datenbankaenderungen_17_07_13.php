@@ -25,7 +25,7 @@ include("../include/functions.inc.php");
     $arrData=$objMySQL->QueryArray($sql,MYSQL_ASSOC);
     $sql ="";
     $i = 0;
-    /*foreach $arrData as $Value {
+    foreach $arrData as $Value {
         $Value['bemerkung'] = nl2br($Value['bemerkung']);
         $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
         $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
@@ -33,7 +33,7 @@ include("../include/functions.inc.php");
         $i++;
         echo '.';
     }
-    $sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
+    /*$sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
     $objMySQL->Query($sqlquery);
     
     // Löscht die alten und nicht mehr benötigten Spalten in geräte
