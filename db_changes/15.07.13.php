@@ -1,3 +1,5 @@
+working....
+
 <?php 
 // Dieses Script liest alle Gerätebeschreibungen aus, und 
 // konvertiert die Zeilenumbrüche in html umbrüche
@@ -19,7 +21,6 @@ include("../include/functions.inc.php");
     $sql = "SELECT id, bemerkung FROM geraete ";
     
     $arrData=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
-    echo "working...";
     $sql ="";
     $i = 0;
     foreach $arrData as $Value {
