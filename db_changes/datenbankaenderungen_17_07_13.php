@@ -29,7 +29,7 @@ include("../include/functions.inc.php");
         $Value['bemerkung'] = nl2br($Value['bemerkung']);
         $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
         $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
-        $objMySQL->Query($sql);
+        //$objMySQL->Query($sql);
         $i++;
         echo '.';
     }
