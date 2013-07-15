@@ -3,6 +3,8 @@
 // konvertiert die Zeilenumbrüche in html umbrüche
 // Fügt außerdem ein Feld für eine Softwareliste ein.
 // Löscht nicht mehr benötigte Spalten in "geraete"
+    error_reporting(E_ALL);
+    ini_set('display_errors', TRUE);
 
 require('../include/config.inc.php');
 include("../include/mysql.class.php");
@@ -17,7 +19,7 @@ include("../include/functions.inc.php");
     $sql = "SELECT id, bemerkung FROM geraete ";
     
     $arrData=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
-    
+    echo "working...";
     $sql ="";
     $i = 0;
     foreach $arrData as $Value {
@@ -26,6 +28,7 @@ include("../include/functions.inc.php");
         $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
         $objMySQL->Query($sqlquery);
         $i++;
+        echo '.';
     }
     $sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
     $objMySQL->Query($sqlquery);
