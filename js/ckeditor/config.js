@@ -10,11 +10,11 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// The toolbar groups arrangement, optimized for a single toolbar row.
 	config.toolbarGroups = [
-	//	{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		//{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		{ name: 'basicstyles', groups: [ 'basicstyles' ] },
         { name: 'paragraph',   groups: [ 'indent' ] },
-        //{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+        { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
 	];
 
 	// The default plugins included in the basic setup define some buttons that
