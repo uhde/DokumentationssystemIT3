@@ -26,12 +26,15 @@ include("../include/functions.inc.php");
     $sql ="";
     $i = 0;
     foreach($arrData as $Value) {
-        //$Value['bemerkung'] = nl2br($Value['bemerkung']);
-        //$sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
-        //$sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
+        $Value['bemerkung'] = nl2br($Value['bemerkung']);
+        $sql = "UPDATE `".DB_DATABASE."`.`geraete` SET ";
+        $sql = $sql." bemerkung = ".$Value['bemerkung']." WHERE id=".$Value['id']."";
         //$objMySQL->Query($sql);
         $i++;
         echo '.';
+        if($i%100==0){
+            echo "<br>";
+        }
     }
     /*$sql = "ALTER TABLE `geraete`  ADD `software` TEXT NOT NULL AFTER `bemerkung`";
     $objMySQL->Query($sql);
