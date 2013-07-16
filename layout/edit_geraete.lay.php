@@ -1,8 +1,10 @@
 !#----- geraeteedit:Begin -----#!
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <title>Kunden verwalten</title>
-    <meta http-equiv="x-ua-compatible" content="ie=9">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=8">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="creation_date" content="2012-11-16">
     <meta name="revisit-after" content="5 days">
