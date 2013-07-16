@@ -151,6 +151,12 @@ if(!empty($sqldata["mac_adresse"])) {
                 <td class="Key">Bemerkung: </td>
                 <td class="sqldata" colspan="5">'.$sqldata["bemerkung"].'</td>
             </tr>';}
+    if(!empty($sqldata["software"])) { 
+    echo   '<tr>
+                <td class="Key">Software: </td>
+                <td class="sqldata" colspan="5">'.$sqldata["software"].'</td>
+            </tr>';}
+            
     if(!empty($sqldata["buttons"])) {          
     echo   '<tr>
                 <td class="Key" style="vertical-align:top;">Aktionen: </td>
