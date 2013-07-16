@@ -30,7 +30,7 @@
         CKEDITOR.replace( 'bemerkung', {
             on: {
                 instanceReady: function( ev ) {
-                this.dataProcessor.writer.lineBreakChars = '<br>';
+                this.dataProcessor.writer.lineBreakChars = '\n';
                 // Output paragraphs as <p>Text</p>.
                     
                 }
