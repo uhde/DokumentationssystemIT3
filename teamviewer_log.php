@@ -12,5 +12,5 @@ echo "d:".$datum1[0]." month:".$datum1[1]." year:".$datum1[2].'<br>';
 echo "h:".$uhrzeit1[0]."   m:".$uhrzeit1[1]."  s:".$uhrzeit1[2].'<br>';
 $timestamp1 = mktime($uhrzeit1[0],$uhrzeit1[1],$uhrzeit1[2],$datum1[1],$datum1[0],$datum1[2]);
 echo $timestamp1;
-
+echo date(DATE_RFC822,$timestamp1);
 ?>
