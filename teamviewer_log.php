@@ -36,9 +36,13 @@
         echo "----------------<br>";
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.'.'.TBL_TEAMVIEWER_LOG.' WHERE id = '.$teamviewer_id;
+        $sql = 'SELECT * FROM '.DB_DATABASE.'.'.TBL_TEAMVIEWER_LOG.' WHERE id = '.$teamviewer_id." AND start_zeit='".timestamp_anfang."'";
         $test = $objMySQL->Query($sql);
-        if(mysql_num_rows($sql
+        if(mysql_num_rows($test)!=1) {
+            // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
+            $sql = "INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
+            $sql = $sql."start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."'
+            
        
         
     }
