@@ -90,7 +90,7 @@ include_once("functions.inc.php");
     $sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
     
     $sqldata['bemerkung']=str_replace('strong','b',$sqldata['bemerkung']);
-    $sqldata['bemerkung']=str_replace('em','i',$sqldata['bemerkung']);
+    $sqldata['bemerkung']=str_replace('em>','i>',$sqldata['bemerkung']);
     
     
     echo '
