@@ -6,5 +6,9 @@ foreach($logteile as $temp)
 {
     echo $temp."<br>";
 }
+$datum1 = explode('-',$logteile[1]);
+$uhrzeit1 = explode(':',$logteile[2]);
+echo "d:".$datum1[0]." month:".$datum1[1]." year:".$datum1[2].'<br>';
+echo "h:".$uhrzeit1[0]."   m:".$uhrzeit1[1]."  s:".$uhrzeit1[2];
 
 ?>
