@@ -87,7 +87,7 @@ include_once("functions.inc.php");
     $sqldata['bemerkung']=link_klickbar_machen($sqldata['bemerkung']);
     
     // Zeilenumbrüche in HTML Umbrüche Konvertieren
-    //$sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
+    $sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
     
     $sqldata['bemerkung']=str_replace('strong','b',$sqldata['bemerkung']);
     $sqldata['bemerkung']=str_replace('em>','i>',$sqldata['bemerkung']);
