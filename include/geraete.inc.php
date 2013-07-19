@@ -91,7 +91,7 @@ if (is_array($arrData)) {
         if ($Value['adresse']==NULL) {
             $Value['adresse'] = '<span class="keine_ip" title="Keine IP vorhanden!">------</span>';
         }
-        $Value['benutzer'] =  htmlentities($Value['benutzer']);
+        //$Value['benutzer'] =  htmlentities($Value['benutzer']);
         // Hier wird die Anzeige der IP Adresse bestimmt.
         // Falls die IP Adresse Fest ist, wird sie grün eingefärbt.
         if (filter_var($Value['adresse'], FILTER_VALIDATE_IP)) {        
