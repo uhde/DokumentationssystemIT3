@@ -40,9 +40,15 @@
         $test = $objMySQL->Query($sql);
         if(mysql_num_rows($test)!=1) {
             // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
+            //Sucht die Kundennummer raus.
+            $sql = "SELECT kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".teamviewer_id." AND gl.geraete_id=gr.id";
+            $tempdata = $objMySQL->QuerySingleArray($sql);
+            $kunde = $tempdata['kunde'];
+            // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
             $sql = "INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
-            $sql = $sql."start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."'
-            
+            $sql = $sql."teamviewer_id='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
+            $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."'";
+            $objMySQL->Query($sql);
        
         
     }
