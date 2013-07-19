@@ -27,7 +27,7 @@ include_once("functions.inc.php");
     {
         $sqldata[$Key]=utf8_encode($Value);
     }
-    
+    //$sqldata['benutzer'] =  htmlentities($Value['benutzer']);
     // Logins auslesen, und in eine eigene Tabelle schreiben. Tabelle wird hierbei noch nicht dargestellt.
     // Logins werden nur in dem Info teil aufgerufen. Dort wird einfach die Variable '$logins' 
     // in die Tabelle geschrieben.
@@ -228,6 +228,15 @@ function MakeButtons($Data, $adresse){
                         $ausgabe=str_replace('--Password','',$ausgabe);
                     }
                 }
+                $sqldata['geraete_login'] = utf8_encode($sqldata['geraete_login']);
+                $sqldata['geraete_pw'] = utf8_encode($sqldata['geraete_pw']);
+                $sqldata['geraete_adresse'] = utf8_encode($sqldata['geraete_adresse']);
+                $sqldata['geraete_name'] = utf8_encode($sqldata['geraete_name']);
+                
+                $sqldata['benutzer'] = utf8_encode($sqldata['benutzer']);
+                $sqldata['kunden_name'] = utf8_encode($sqldata['kunden_name']);
+                $sqldata['ftpdir'] = utf8_encode($sqldata['ftpdir']);
+                $sqldata['dyndns_domain'] = utf8_encode($sqldata['dyndns_domain']);
                     
                 $ausgabe=str_replace('{geraete_login}',$sqldata['geraete_login'],$ausgabe);
                 $ausgabe=str_replace('{geraete_pw}',$sqldata['geraete_pw'],$ausgabe);
