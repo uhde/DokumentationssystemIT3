@@ -40,11 +40,11 @@ ini_set('display_errors', TRUE);
         $dauer = $timestamp_ende - $timestamp_anfang;
         $sql = 'SELECT * FROM '.DB_DATABASE.'.teamviewer_log WHERE id = '.$teamviewer_id." AND start_zeit='".timestamp_anfang."'";
         $test = $objMySQL->Query($sql);
-        /*if(intval(mysql_num_rows($test))!=1) {
+        if(intval(mysql_num_rows($test))!=1) {
             // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
             //Sucht die Kundennummer raus.
             $sql = "SELECT kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".teamviewer_id." AND gl.geraete_id=gr.id";
-            $tempdata = $objMySQL->QuerySingleArray($sql);
+            $tempdata = $objMySQL->QuerySingleRowArray($sql);
             $kunde = $tempdata['kunde'];
             
             $sql = "INSERT INTO `".DB_DATABASE."`.`teamviewer_log` SET ";
@@ -52,7 +52,7 @@ ini_set('display_errors', TRUE);
             $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."'";
             $objMySQL->Query($sql);
             echo $sql."<br>";
-        }*/
+        }
        
         
     }
