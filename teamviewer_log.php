@@ -14,7 +14,8 @@
     }
     //$logzeile = "216541686                       29-01-2013 13:40:11             29-01-2013 14:54:33             grueninger                      RemoteControl                   {EF6362C2-8AC6-461F-A566-418BEF30E1EE}";
     $count = 0;
-    $log = file("teamviewer_log/test1");
+    $filename = "test1";
+    $log = file("teamviewer_log/".$filename);
     foreach( $log as $logzeile ) 
     {
         // Hier wird eine Zeile des Logs aufgesplittet. Struktur: 0=tv-id 1=datum1 2=uhrzeit1
@@ -42,7 +43,7 @@
         $test = $objMySQL->Query($sql);
         //echo $sql."<br>";
         
-        echo intval(mysql_num_rows($test))."<br>";
+        //echo intval(mysql_num_rows($test))."<br>";
         if(intval(mysql_num_rows($test))<1) {
             if(!empty($teamviewer_id)){
                 // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
@@ -59,9 +60,10 @@
                 $count ++;
             }
         }
-       echo "----------------<br>";
+       //echo "----------------<br>";
         
         
     }
-    echo "count: ".$count;
+    echo "Scriptende<br><br> ";
+    echo "Aus der Datei: ".$filename." wurden ".$count." Einträge übernommenen.";
 ?>
