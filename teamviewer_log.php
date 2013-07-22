@@ -1,7 +1,7 @@
 <?php
 // In diesem Script wird der Teamviewer log aus appdata in seine Einzelteile zerlegt und in eine Datenbank eingetragen.
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
     require_once('include/config.inc.php');
     include_once("include/mysql.class.php");
     include_once("include/template.class.php");
@@ -38,7 +38,7 @@ ini_set('display_errors', TRUE);
         echo "----------------<br>";
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.'.teamviewer_log WHERE id = '.$teamviewer_id." AND start_zeit='".timestamp_anfang."'";
+        $sql = 'SELECT * FROM '.DB_DATABASE.'.teamviewer_log WHERE id = '.$teamviewer_id." AND start_zeit='".$timestamp_anfang."'";
         $test = $objMySQL->Query($sql);
         echo $sql."<br>";
         echo intval(mysql_num_rows($test))."<br>";
