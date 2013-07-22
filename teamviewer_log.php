@@ -13,6 +13,7 @@
        $objMySQL->Kill();
     }
     //$logzeile = "216541686                       29-01-2013 13:40:11             29-01-2013 14:54:33             grueninger                      RemoteControl                   {EF6362C2-8AC6-461F-A566-418BEF30E1EE}";
+    $count = 0;
     $log = file("teamviewer_log/test1");
     foreach( $log as $logzeile ) 
     {
@@ -35,12 +36,12 @@
         echo $timestamp_ende.'<br>';
         $benutzer = $logteile[5];
         $teamviewer_id = $logteile[0];
-        echo "----------------<br>";
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.".teamviewer_log WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."'";
+        $sql = 'SELECT * FROM '.DB_DATABASE.".teamviewer_log WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
         $test = $objMySQL->Query($sql);
         echo $sql."<br>";
+        
         echo intval(mysql_num_rows($test))."<br>";
         if(intval(mysql_num_rows($test))<1) {
             // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
@@ -54,8 +55,11 @@
             $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."'";
             $objMySQL->Query($sql);
             echo $sql."<br>";
+            $count ++;
         }
-       
+       echo "----------------<br>";
+        
         
     }
+    echo "count: ".$count;
 ?>
