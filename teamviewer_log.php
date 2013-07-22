@@ -38,7 +38,7 @@
         echo "----------------<br>";
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.'.teamviewer_log WHERE id = '.$teamviewer_id." AND start_zeit='".$timestamp_anfang."'";
+        $sql = 'SELECT * FROM '.DB_DATABASE.".teamviewer_log WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."'";
         $test = $objMySQL->Query($sql);
         echo $sql."<br>";
         echo intval(mysql_num_rows($test))."<br>";
