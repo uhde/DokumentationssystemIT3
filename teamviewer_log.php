@@ -44,7 +44,7 @@
         
         echo intval(mysql_num_rows($test))."<br>";
         if(intval(mysql_num_rows($test))<1) {
-            if(!empty($teamviewer_id))
+            if(!empty($teamviewer_id)){
                 // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
                 //Sucht die Kundennummer raus.
                 $sql = "SELECT kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".teamviewer_id." AND gl.geraete_id=gr.id";
