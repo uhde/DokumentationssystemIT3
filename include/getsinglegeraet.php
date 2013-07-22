@@ -87,10 +87,13 @@ include_once("functions.inc.php");
     $sqldata['bemerkung']=link_klickbar_machen($sqldata['bemerkung']);
     
     // Zeilenumbrüche in HTML Umbrüche Konvertieren
-    $sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
+    //$sqldata['bemerkung']=nl2br($sqldata['bemerkung']);
     
     $sqldata['bemerkung']=str_replace('strong','b',$sqldata['bemerkung']);
     $sqldata['bemerkung']=str_replace('em>','i>',$sqldata['bemerkung']);
+    
+    $sqldata['software']=str_replace('strong','b',$sqldata['software']);
+    $sqldata['software']=str_replace('em>','i>',$sqldata['software']);
     
     
     echo '
@@ -179,6 +182,7 @@ function MakeLoginTable($Data){
             // kodiert die Einträge in utf-8, da der dokumentenstandard ja ebenfalls hier utf-8 ist
             $sqldata['geraete_login'] = utf8_encode($sqldata['geraete_login']);
             $sqldata['geraete_pw'] = utf8_encode($sqldata['geraete_pw']);
+            $sqldata['bemerkung'] = utf8_encode($sqldata['bemerkung']);
             
             if($sqldata['geraete_login']=="" AND $sqldata['geraete_pw']=="")
             {
