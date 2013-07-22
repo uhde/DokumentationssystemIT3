@@ -40,6 +40,8 @@ ini_set('display_errors', TRUE);
         $dauer = $timestamp_ende - $timestamp_anfang;
         $sql = 'SELECT * FROM '.DB_DATABASE.'.teamviewer_log WHERE id = '.$teamviewer_id." AND start_zeit='".timestamp_anfang."'";
         $test = $objMySQL->Query($sql);
+        echo $sql."<br>";
+        echo intval(mysql_num_rows($test))."<br>";
         if(intval(mysql_num_rows($test))!=1) {
             // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
             //Sucht die Kundennummer raus.
