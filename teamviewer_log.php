@@ -28,19 +28,19 @@
         //echo "d:".$datum1[0]." month:".$datum1[1]." year:".$datum1[2].'<br>';
         //echo "h:".$uhrzeit1[0]."   m:".$uhrzeit1[1]."  s:".$uhrzeit1[2].'<br>';
         $timestamp_anfang = mktime(intval($uhrzeit1[0]),intval($uhrzeit1[1]),intval($uhrzeit1[2]),intval($datum1[1]),intval($datum1[0]),intval($datum1[2]));
-        echo $timestamp_anfang.'<br>';
+        //echo $timestamp_anfang.'<br>';
         //echo "<br>".date(DATE_RFC822,$timestamp_anfang);
         $datum2 = explode('-',$logteile[3]);
         $uhrzeit2 = explode(':',$logteile[4]);
         $timestamp_ende = mktime(intval($uhrzeit2[0]),intval($uhrzeit2[1]),intval($uhrzeit2[2]),intval($datum2[1]),intval($datum2[0]),intval($datum2[2]));
-        echo $timestamp_ende.'<br>';
+        //echo $timestamp_ende.'<br>';
         $benutzer = $logteile[5];
         $teamviewer_id = $logteile[0];
         
         $dauer = $timestamp_ende - $timestamp_anfang;
         $sql = 'SELECT * FROM '.DB_DATABASE.".teamviewer_log WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
         $test = $objMySQL->Query($sql);
-        echo $sql."<br>";
+        //echo $sql."<br>";
         
         echo intval(mysql_num_rows($test))."<br>";
         if(intval(mysql_num_rows($test))<1) {
