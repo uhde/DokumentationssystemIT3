@@ -1,4 +1,6 @@
 <?
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
@@ -70,7 +72,7 @@ if ($arrData!==FALSE) {
             break;
     }
     if ($mode["mode"]=="edit") {
-        $arrdata['randompassword'] = randomPassword2();
+        $arrdata['randompassword'] = randomPassword();
         $arrdata['bemerkung'] = nl2br($arrdata['bemerkung']);
         $arrData['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $arrData['garantied']=date("d",$arrData['garantie']);
@@ -91,7 +93,7 @@ if ($arrData!==FALSE) {
         
 }else{
     if ($mode["mode"]=="create") {
-        $arrdata['randompassword'] = randomPassword2();
+        $arrdata['randompassword'] = randomPassword();
         $mode['garantied_set']=date("d");
         $mode['garantiem_set']=date("m");
         $mode['garantiey_set']=date("Y")+3;
@@ -128,16 +130,7 @@ function MakeKundenAuswahl($kunde_aktuell, $arr_kundendata)
     }
     return $tempstring;
 }
-function randomPassword2() {
-    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-    $pass = array(); //remember to declare $pass as an array
-    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-    for ($i = 0; $i < 8; $i++) {
-        $n = rand(0, $alphaLength);
-        $pass[] = $alphabet[$n];
-    }
-    return implode($pass); //turn the array into a string
-}
+
 function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
     if ($Data!==FALSE) {
         $runde=1;
