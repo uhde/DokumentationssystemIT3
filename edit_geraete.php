@@ -101,7 +101,7 @@ if ($arrData!==FALSE) {
         $mode['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $mode['kundenliste'] = MakeKundenAuswahl($mode['kunde'],$arrkunden_data);
         $objTemplate->AssignArray($mode);
-        $objTemplate->display("geraeteedit");
+        $objTemplate->display("geraetecreate");
     }
     else{
         //$mysqlfail="'SELECT * FROM '.TBL_GERAETE.' WHERE id='.$_GET['id'].' AND kunde='.$_GET['knd_id'],MYSQL_ASSOC";

@@ -227,7 +227,7 @@
 <br>
 
 <tr class="Data0">
-    <span style="padding-left:200px">
+    <span style="padding-left:40%">
         <td align="right" valign="top"><span class="LinkStyle">Zufälliges Passwort: </span></td>
         <td colspan="3">
             <input type="text" value="{$randompassword}">
@@ -448,7 +448,14 @@
     </td>
 </tr>
 </form>
-
+<tr class="Data0">
+    <span style="padding-left:40%">
+        <td align="right" valign="top"><span class="LinkStyle">Zufälliges Passwort: </span></td>
+        <td colspan="3">
+            <input type="text" value="{$randompassword}">
+        </td>
+    </span>
+</tr>
 </table>
 
 </body>
