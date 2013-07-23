@@ -72,7 +72,7 @@ if ($arrData!==FALSE) {
             break;
     }
     if ($mode["mode"]=="edit") {
-        $arrdata['randompassword'] = randomPassword();
+        $arrData['randompassword'] = randomPassword();
         //echo $arrdata['randompassword'];
         $arrData['bemerkung'] = nl2br($arrdata['bemerkung']);
         $arrData['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
@@ -94,7 +94,7 @@ if ($arrData!==FALSE) {
         
 }else{
     if ($mode["mode"]=="create") {
-        $arrData['randompassword'] = randomPassword();
+        $mode['randompassword'] = randomPassword();
         $mode['garantied_set']=date("d");
         $mode['garantiem_set']=date("m");
         $mode['garantiey_set']=date("Y")+3;
