@@ -224,11 +224,15 @@
     </td>
 </tr>
 </form>
+<br>
+
 <tr class="Data0">
-    <td align="right" valign="top"><span class="LinkStyle">Zufälliges Passwort: </span></td>
-    <td colspan="3">
-        <input type="text" value="{$randompassword}">
-    </td>
+    <span style="padding-left:200px">
+        <td align="right" valign="top"><span class="LinkStyle">Zufälliges Passwort: </span></td>
+        <td colspan="3">
+            <input type="text" value="{$randompassword}">
+        </td>
+    </span>
 </tr>
 </table>
 
