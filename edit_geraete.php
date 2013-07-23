@@ -74,7 +74,7 @@ if ($arrData!==FALSE) {
     if ($mode["mode"]=="edit") {
         $arrData['randompassword'] = randomPassword();
         //echo $arrdata['randompassword'];
-        $arrData['bemerkung'] = nl2br($arrdata['bemerkung']);
+        //$arrData['bemerkung'] = nl2br($arrdata['bemerkung']);
         $arrData['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $arrData['garantied']=date("d",$arrData['garantie']);
         $arrData['garantiem']=date("m",$arrData['garantie']);
