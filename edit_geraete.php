@@ -1,4 +1,6 @@
 <?
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
@@ -70,7 +72,9 @@ if ($arrData!==FALSE) {
             break;
     }
     if ($mode["mode"]=="edit") {
-        $arrdata['bemerkung'] = nl2br($arrdata['bemerkung']);
+        $arrData['randompassword'] = randomPassword();
+        //echo $arrdata['randompassword'];
+        //$arrData['bemerkung'] = nl2br($arrdata['bemerkung']);
         $arrData['login_edit']=MakeLoginTable($arrData2,$arrData3,$prog_add,$mode["id"],$mode["kunde"]);
         $arrData['garantied']=date("d",$arrData['garantie']);
         $arrData['garantiem']=date("m",$arrData['garantie']);
@@ -90,6 +94,7 @@ if ($arrData!==FALSE) {
         
 }else{
     if ($mode["mode"]=="create") {
+        $mode['randompassword'] = randomPassword();
         $mode['garantied_set']=date("d");
         $mode['garantiem_set']=date("m");
         $mode['garantiey_set']=date("Y")+3;
