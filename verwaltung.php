@@ -19,7 +19,7 @@
     
 
     $Count=0;
-    if ($daten_prog!==FALSE) {
+    if (is_array($daten_prog)) {
         $objTemplate->Display('Header');
         foreach($daten_prog as $value)
         {
@@ -59,7 +59,7 @@
     }else{
         // Falls keine Daten von MySQL zurückkommen.
         $objTemplate->Display('Keine_Daten');
-        $objTemplate->Display('Footer');
+        $objTemplate->Display('Footer2');
     }
 }
 
