@@ -74,6 +74,7 @@ if ($objMySQL->RowCount()>0) {
     $objTemplate->Display('Footer');
 }else{
     echo 'Keine Kunden vorhanden!<br />';
+    $objTemplate->Display('Footer');
 }
 unset($objTemplate);
 

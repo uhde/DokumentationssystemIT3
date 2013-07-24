@@ -57,10 +57,9 @@
         echo "</table>";
             
     }else{
-    // Falls keine Daten von MySQL zurückkommen.
-        foreach ($Daten AS $Value) {
-            $objTemplate->AssignArray($Value);
-            $objTemplate->Display('Keine_Daten');
+        // Falls keine Daten von MySQL zurückkommen.
+        $objTemplate->Display('Keine_Daten');
+        $objTemplate->Display('Footer');
     }
 }
 
