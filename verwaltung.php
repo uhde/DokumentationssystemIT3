@@ -20,7 +20,7 @@
     
 
     $Count=0;
--    if (is_array($daten_prog)) {
+    if ($daten_prog!==FALSE) {
         $objTemplate->Display('Header');
         foreach($daten_prog as $value)
         {
