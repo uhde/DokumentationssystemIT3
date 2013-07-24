@@ -29,8 +29,7 @@ if ($arrData!==FALSE) {
     else {
         $arrData['checked2']='checked';
     }
-    if(!empty($arrData['routepar']))
-    {
+    
         $objTemplate2=new Template("../layout/geraete_general.lay.php");
         $sqldata['bemerkung'] = "Route Setzten";
         $sqldata['activex'] = "route add ".$arrData['routepar'];
@@ -38,7 +37,7 @@ if ($arrData!==FALSE) {
         $arrData['route_button']=$objTemplate2->DisplayToString('Button_Main');
         $objTemplate2->ClearAssign();
         unset($objTemplate2);
-    }
+    
     $objTemplate->AssignArray($arrData);
     
     if (isset($edit) AND $edit==true) {
