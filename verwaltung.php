@@ -6,7 +6,8 @@
 
 <?php 
     //$Daten[1]['kunde']=$_SESSION['knd_id'];
-
+    error_reporting(E_ALL);
+    ini_set('display_errors', TRUE);
     $objTemplate=new Template("layout/verwaltung.lay.php");
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
