@@ -34,14 +34,14 @@ if ($arrData!==FALSE) {
         print_r($arrData);
         $objTemplate2=new Template("layout/geraete_general.lay.php");
         $sqldata['bemerkung'] = "Route Setzten";
-        $sqldata['activex'] = "route add ".$arrData['routepar'];
+        $sqldata['activex'] = "route add ".$arrData['routepar']."";
         echo "<br>activex: ".$sqldata['activex']." aktivxende<br>";
         $objTemplate2->AssignArray($sqldata);
-        $route_button = $objTemplate2->DisplayToString('Button_Main');
-        echo "route_button: ".$route_button." route_button_ende";
+        $arrData['route_button'] = $objTemplate2->DisplayToString('Button_Main');
+        //echo "route_button: ".$arrData['route_button']." route_button_ende";
         $objTemplate2->ClearAssign();
         unset($objTemplate2);
-        echo $arrData['route_button'];
+        //echo $arrData['route_button'];
     
     $objTemplate->AssignArray($arrData);
     
