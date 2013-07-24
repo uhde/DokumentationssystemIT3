@@ -11,7 +11,8 @@
     $objTemplate=new Template("layout/verwaltung.lay.php");
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
-        $sql="SELECT * FROM ".TBL_PROGRAMME.' WHERE loeschen=0 ORDER BY id';
+    // Hier noch anpassen
+        $sql="SELECT * FROM ".TBL_PROGRAMME.' ORDER BY id';
     } else{
         $sql="SELECT * FROM ".TBL_PROGRAMME.' ORDER BY id';
     }
