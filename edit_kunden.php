@@ -1,4 +1,6 @@
 <?
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 include("include/config.inc.php");
 include("include/mysql.class.php");
 include("include/template.class.php");
