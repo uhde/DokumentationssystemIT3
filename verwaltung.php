@@ -60,7 +60,7 @@
     }else{
         // Falls keine Daten von MySQL zurückkommen.
         $objTemplate->Display('Keine_Daten');
-        $objTemplate->Display('Footer2');
+        //$objTemplate->Display('Footer2');
     
     }
 
