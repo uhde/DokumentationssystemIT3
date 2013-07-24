@@ -32,7 +32,7 @@ if ($arrData!==FALSE) {
         $arrData['checked2']='checked';
     }
         print_r($arrData);
-        $objTemplate2=new Template("../layout/geraete_general.lay.php");
+        $objTemplate2=new Template("layout/geraete_general.lay.php");
         $sqldata['bemerkung'] = "Route Setzten";
         $sqldata['activex'] = "route add ".$arrData['routepar'];
         echo "<br>activex: ".$sqldata['activex']." aktivxende<br>";
