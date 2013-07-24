@@ -37,6 +37,7 @@ if ($arrData!==FALSE) {
         $arrData['route_button']=$objTemplate2->DisplayToString('Button_Main');
         $objTemplate2->ClearAssign();
         unset($objTemplate2);
+        echo $arrData['route_button'];
     
     $objTemplate->AssignArray($arrData);
     
