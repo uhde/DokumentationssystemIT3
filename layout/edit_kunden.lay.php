@@ -164,7 +164,11 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <LINK rel="stylesheet" href="css/styles.css">  
-
+<script language="JavaScript" type="text/javascript">
+    <!--
+    var activex = new ActiveXObject("wscript.shell");
+    //-->
+</script>
 </head>
 
 
