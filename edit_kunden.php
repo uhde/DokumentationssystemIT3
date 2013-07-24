@@ -29,7 +29,7 @@ if ($arrData!==FALSE) {
     else {
         $arrData['checked2']='checked';
     }
-    if(!empty($arrData['routepar'])
+    if(!empty($arrData['routepar']))
     {
         $objTemplate2=new Template("../layout/geraete_general.lay.php");
         $sqldata['bemerkung'] = "Route Setzten";
