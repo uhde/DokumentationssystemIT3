@@ -37,8 +37,8 @@ if ($arrData!==FALSE) {
         $sqldata['activex'] = "route add ".$arrData['routepar'];
         echo "<br>activex: ".$sqldata['activex']." aktivxende<br>";
         $objTemplate2->AssignArray($sqldata);
-        $arrData['route_button']=$objTemplate2->DisplayToString('Button_Main');
-        echo "route_button: ".$arrData['route_button']." route_button";
+        $route_button = $objTemplate2->DisplayToString('Button_Main');
+        echo "route_button: ".$route_button." route_button_ende";
         $objTemplate2->ClearAssign();
         unset($objTemplate2);
         echo $arrData['route_button'];
