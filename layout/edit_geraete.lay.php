@@ -154,7 +154,7 @@
     </td>
 </tr>
 <tr class="Data0">
-    <td align="right"><span class="LinkStyle">Zimmer: </span></td>
+    <td align="right"><span class="LinkStyle">Standort: </span></td>
     <td>
         <span class="StandardText"><input name="zimmer" type="text" size="30" maxlength="30" value="{$zimmer}" ></input></span>
     </td>
@@ -379,7 +379,7 @@
     </td>
 </tr>
 <tr class="Data0">
-    <td align="right"><span class="LinkStyle">Zimmer: </span></td>
+    <td align="right"><span class="LinkStyle">Standort: </span></td>
     <td>
         <span class="StandardText"><input name="zimmer" type="text" size="30" maxlength="30" value="{$zimmer}" ></input></span>
     </td>
