@@ -16,18 +16,7 @@
     }
     //$objTemplate=new Template("layout/suche.lay.php");
 
-    // Überprüfung ob Haken für lokale Suche gesetzt ist. Wenn ja, wird eine Session Variable gesetzt und es wird in die Benutzerdatenbank geschrieben.
     
-    if(isset($_SESSION['lokal_suchen'])&&$_SESSION['lokal_suchen']=='yes'){
-        $_SESSION['lokal_suchen']='yes';
-        $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET lokal_suchen='yes' WHERE id=".$_SESSION['nutzerid']."";
-    } else {
-        $_SESSION['lokal_suchen']='no';
-        $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET lokal_suchen='no' WHERE id=".$_SESSION['nutzerid']."";
-    }
-    $objMySQL->Query($sql);
-    
-    // Ende der Lokale Suche Überprüfung
     
     $Daten[1]['kunde']=$_SESSION['knd_id'];
     $Daten[1]['kategorie']=$_SESSION['device_type'];
@@ -56,6 +45,22 @@
     }else {
         $mode['lokal_suchen']=false;
     }
+    
+    // Überprüfung ob Haken für lokale Suche gesetzt ist. Wenn ja, wird eine Session Variable gesetzt und es wird in die Benutzerdatenbank geschrieben.
+    
+    if($mode['lokal_suchen']){
+        $_SESSION['lokal_suchen']='yes';
+        $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET lokal_suchen='yes' WHERE id=".$_SESSION['nutzerid']."";
+    } else {
+        $_SESSION['lokal_suchen']='no';
+        $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET lokal_suchen='no' WHERE id=".$_SESSION['nutzerid']."";
+    }
+    $objMySQL->Query($sql);
+    //echo $sql."<br>";
+    
+    // Ende der Lokale Suche Überprüfung
+    
+    
     if(!empty($mode['suchfeld']))
     {
         $time_start=microtime(true);
