@@ -51,6 +51,7 @@
     if($mode['lokal_suchen']){
         $_SESSION['lokal_suchen']='yes';
         $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET lokal_suchen='yes' WHERE id=".$_SESSION['nutzerid']."";
+        ?><script type='text/javascript'>$('input[name=lokal_suchen]').attr('checked', true);</script> <?php
     } else {
         $_SESSION['lokal_suchen']='no';
         $sql = "UPDATE `".DB_DATABASE."`.`".TBL_BENUTZER."` SET lokal_suchen='no' WHERE id=".$_SESSION['nutzerid']."";
