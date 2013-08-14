@@ -15,6 +15,7 @@
         $_SESSION['ipordns']=$test["einstellung_dns"];
         $_SESSION['nutzerid']=$test["id"];
         $_SESSION['allekunden']=$test["allekunden_sichtbar"];
+        $_SESSION['lokal_suchen']=$test["lokal_suchen"];
         // Hier noch nutzersichtbar id einfügen!!!
     } else {
         $sql = "INSERT INTO `".DB_DATABASE."`.`".TBL_BENUTZER."` SET ";
