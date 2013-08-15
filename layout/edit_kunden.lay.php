@@ -130,12 +130,13 @@
         <textarea name="bemerkung" cols="74" rows="6" wrap="PHYSICAL" id="bemerkung"   onFocus="this.className='aktiv'" onBlur="this.className='text'">{$bemerkung}</textarea>
     </td>
 </tr>
+<!--
 <tr class="Data0">
     <td align="right"><span class="LinkStyle">Routing parameter (route add wird vorangehängt)</span></td>
     <td>
         <span class="StandardText"><input name="routepar" type="text" size="30" maxlength="120" value="{$routepar}"></input></span>
     </td>
-</tr>
+</tr> -->
 <tr height="14"><td colspan="2" align="center"></td></tr>
 
 <tr class="footer">
@@ -164,11 +165,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <LINK rel="stylesheet" href="css/styles.css">  
-<script language="JavaScript" type="text/javascript">
-    <!--
-    var activex = new ActiveXObject("wscript.shell");
-    //-->
-</script>
+
 </head>
 
 
@@ -291,9 +288,9 @@
     </td>
 </tr>
 
-
+<!--
 <tr height="14"><td colspan="2" align="center">{$route_button}</td></tr>
-
+-->
 <tr class="footer">
 
     <td align="center" >
