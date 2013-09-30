@@ -27,9 +27,9 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     {
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen=1 AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND  MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }else{
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen=1 AND MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }
     }else
     {
@@ -37,7 +37,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
         {
             $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
         }else{
-            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) ORDER BY titel ";
+            $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE MATCH (`titel`,`zusatz`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE ) AND loeschen=1 ORDER BY titel ";
         }
     }
     //echo $sql."<br>";
@@ -46,7 +46,7 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     {
         $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id'])." ORDER BY titel ".$_SESSION['sort_order'];
    }else{
-        $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id'])." ORDER BY titel ".$_SESSION['sort_order'];
+        $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id'])." AND loeschen=1 ORDER BY titel ".$_SESSION['sort_order'];
    }
   
 }
