@@ -158,11 +158,11 @@ include("include/functions.inc.php");
             <colgroup width="150" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">Zugaenge</caption>
             <tr>
-                <td>Name</td>
-                <td>Login</td>
-                <td>Logindaten</td>
-                <td>Bemerkung</td>
-                <td>URL</td>
+                <th>Name</th>
+                <th>Login</th>
+                <th>Logindaten</th>
+                <th>Bemerkung</th>
+                <th>URL</th>
             </tr>
             ';
     
