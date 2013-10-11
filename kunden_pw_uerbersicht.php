@@ -122,7 +122,7 @@ include("include/functions.inc.php");
             <tr><th>Name</th><th>Passwörter</th></tr>
             ';
     
-    foreach ($computer AS $Value) {
+    foreach ($netzwerk AS $Value) {
         foreach($Value AS $Key=>$Value2)
         {
             $Value[$Key]=utf8_encode($Value2);
