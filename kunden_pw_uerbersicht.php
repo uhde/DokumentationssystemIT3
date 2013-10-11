@@ -189,7 +189,7 @@ include("include/functions.inc.php");
                 <td>
                     ".$Value['url']."
                 </td>
-            </tr>";
+            </tr><tr><td>&nbsp;</td></tr>";
         
     }
     echo "</table>";
