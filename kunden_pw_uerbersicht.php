@@ -1,4 +1,10 @@
-<html><head></head>
+<html>
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=9">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+    </head>
 <body>
 
 
@@ -64,7 +70,42 @@ include("include/functions.inc.php");
     
     
     
-    
+    function MakeLoginTable($Data){
+    if (is_array($Data)) {
+        $objTemplate=new Template("../layout/geraete_general.lay.php");
+        $str=$objTemplate->DisplayToString('Login_Header');
+        foreach ($Data as $sqldata){
+            // kodiert die Einträge in utf-8, da der dokumentenstandard ja ebenfalls hier utf-8 ist
+            $sqldata['geraete_login'] = utf8_encode($sqldata['geraete_login']);
+            $sqldata['geraete_pw'] = utf8_encode($sqldata['geraete_pw']);
+            $sqldata['bemerkung'] = utf8_encode($sqldata['bemerkung']);
+            
+            if($sqldata['geraete_login']=="" AND $sqldata['geraete_pw']=="")
+            {
+            }
+            else
+            {
+                // Da der TeamViewer-Lan sich immer auf die IP-Adresse verbindet, wird hier im Feld "geraete_login" die Ip-Adresse eingetragen.
+                if($sqldata['programm_id']==16) {
+                    if((isset($sqldata['geraete_ipv4'])&&$sqldata['geraete_ipv4']!=0)) {
+                        $sqldata['geraete_login']=$sqldata['geraete_ipv4'];
+                    } else { 
+                        $sqldata['geraete_login']=$sqldata['geraete_adresse'];
+                    }
+                }
+                $objTemplate->AssignArray($sqldata);
+                $str.=$objTemplate->DisplayToString('Login_Main');
+                //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
+                $objTemplate->ClearAssign();
+            }
+        }
+        $str.=$objTemplate->DisplayToString('Login_Footer');
+        unset($objTemplate);
+        return $str;
+        //return $Data;
+    }
+    return FALSE;
+}
     
     
     echo "Scriptende";
