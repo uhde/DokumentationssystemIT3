@@ -155,7 +155,7 @@ include("include/functions.inc.php");
     <br><br>";
     
     echo '<table>
-            <colgroup width="150" span="3"></colgroup>
+            
             <caption style="font-size:16px;font-weight:700;">Zugaenge</caption>
             <tr>
                 <th>Name</th>
