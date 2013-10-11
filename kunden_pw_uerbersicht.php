@@ -50,14 +50,16 @@ include("include/functions.inc.php");
             $Value[$Key]=utf8_encode($Value2);
         }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        echo '<tr>
-                <td style="font-size:12px;font-weight:600;">
-                    '.$Value['name']."
-                </td>
-                <td>
-                    ".$Value['logins']."
-                </td>
-            </tr>";
+        if($Value['logins']!=false) {
+            echo '<tr>
+                    <td style="font-size:12px;font-weight:600;">
+                        '.$Value['name']."
+                    </td>
+                    <td>
+                        ".$Value['logins']."
+                    </td>
+                </tr>";
+        }
     }
     echo "</table>";
     echo "<br><br><br><br>";
@@ -76,14 +78,16 @@ include("include/functions.inc.php");
             $Value[$Key]=utf8_encode($Value2);
         }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        echo '<tr>
-                <td style="font-size:12px;font-weight:600;">
-                    '.$Value['name']."
-                </td>
-                <td>
-                    ".$Value['logins']."
-                </td>
-            </tr>";
+        if($Value['logins']!=false) {
+            echo '<tr>
+                    <td style="font-size:12px;font-weight:600;">
+                        '.$Value['name']."
+                    </td>
+                    <td>
+                        ".$Value['logins']."
+                    </td>
+                </tr>";
+        }
     }
     echo "</table>";
     echo "<br><br><br><br>";
@@ -102,14 +106,16 @@ include("include/functions.inc.php");
             $Value[$Key]=utf8_encode($Value2);
         }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        echo '<tr>
-                <td style="font-size:12px;font-weight:600;">
-                    '.$Value['name']."
-                </td>
-                <td>
-                    ".$Value['logins']."
-                </td>
-            </tr>";
+        if($Value['logins']!=false) {
+            echo '<tr>
+                    <td style="font-size:12px;font-weight:600;">
+                        '.$Value['name']."
+                    </td>
+                    <td>
+                        ".$Value['logins']."
+                    </td>
+                </tr>";
+        }
     }
     echo "</table>";
     echo "<br><br><br><br>";
@@ -128,14 +134,16 @@ include("include/functions.inc.php");
             $Value[$Key]=utf8_encode($Value2);
         }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        echo '<tr>
-                <td style="font-size:12px;font-weight:600;">
-                    '.$Value['name']."
-                </td>
-                <td>
-                    ".$Value['logins']."
-                </td>
-            </tr>";
+        if($Value['logins']!=false) {
+            echo '<tr>
+                    <td style="font-size:12px;font-weight:600;">
+                        '.$Value['name']."
+                    </td>
+                    <td>
+                        ".$Value['logins']."
+                    </td>
+                </tr>";
+        }
     }
     echo "</table>";
     
@@ -157,6 +165,7 @@ include("include/functions.inc.php");
     
 function MakeLoginTable($Data){
     if (is_array($Data)) {
+        $daten_enthalten = false;
         $objTemplate=new Template("layout/geraete_general.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
         foreach ($Data as $sqldata){
@@ -180,13 +189,18 @@ function MakeLoginTable($Data){
                 }
                 $objTemplate->AssignArray($sqldata);
                 $str.=$objTemplate->DisplayToString('Login_Main');
+                $daten_enthalten = true;
                 //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
                 $objTemplate->ClearAssign();
             }
         }
         $str.=$objTemplate->DisplayToString('Login_Footer');
         unset($objTemplate);
-        return $str;
+        if($daten_enthalten == false) {
+            return false;
+        }else {
+            return $str;
+        }
         //return $Data;
     }
     return FALSE;
