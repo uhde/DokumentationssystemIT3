@@ -39,7 +39,7 @@ include("include/functions.inc.php");
     
 //$objTemplate->Display('Header');
     echo '<table>
-            <colgroup width="200" span="3"></colgroup>
+            <colgroup width="150" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">SERVER</caption>
             <tr><th>Name</th><th>Passwörter</th></tr>
             ';
@@ -51,7 +51,7 @@ include("include/functions.inc.php");
         }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
         echo '<tr>
-                <td style="font-size:10px;font-weight:400;">
+                <td style="font-size:12px;font-weight:600;">
                     '.$Value['name']."
                 </td>
                 <td>
