@@ -11,7 +11,7 @@
 <?php
 //error_reporting(E_ALL);
 //ini_set('display_errors', TRUE);
-// Diese Seite gibt alle Passwörter eines Kunden aus (Zugaenge und Geräte)
+// Diese Seite gibt alle Logindaten eines Kunden aus (Zugaenge und Geräte)
 $kunden_id=3; //Es geht nur um einen speziellen Kunden. 
 
 
@@ -41,7 +41,7 @@ include("include/functions.inc.php");
     echo '<table>
             <colgroup width="150" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">SERVER</caption>
-            <tr><th>Name</th><th>Passwörter</th></tr>
+            <tr><th>Name</th><th>Logindaten</th></tr>
             ';
     
     foreach ($server AS $Value) {
@@ -69,7 +69,7 @@ include("include/functions.inc.php");
     echo '<table>
             <colgroup width="150" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">Computer</caption>
-            <tr><th>Name</th><th>Passwörter</th></tr>
+            <tr><th>Name</th><th>Logindaten</th></tr>
             ';
     
     foreach ($computer AS $Value) {
@@ -97,7 +97,7 @@ include("include/functions.inc.php");
     echo '<table>
             <colgroup width="150" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">Drucker</caption>
-            <tr><th>Name</th><th>Passwörter</th></tr>
+            <tr><th>Name</th><th>Logindaten</th></tr>
             ';
     
     foreach ($drucker AS $Value) {
@@ -125,7 +125,7 @@ include("include/functions.inc.php");
     echo '<table>
             <colgroup width="150" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">Netzwerkgeräte</caption>
-            <tr><th>Name</th><th>Passwörter</th></tr>
+            <tr><th>Name</th><th>Logindaten</th></tr>
             ';
     
     foreach ($netzwerk AS $Value) {
@@ -150,7 +150,49 @@ include("include/functions.inc.php");
     
     
     
+    echo "<br><br><br><br>";
+    echo "<h1>-------------------------</h1>
+    <br><br>";
     
+    echo '<table>
+            <colgroup width="150" span="3"></colgroup>
+            <caption style="font-size:16px;font-weight:700;">Zugaenge</caption>
+            <tr>
+                <td>Name</td>
+                <td>Login</td>
+                <td>Logindaten</td>
+                <td>Bemerkung</td>
+                <td>URL</td>
+            </tr>
+            ';
+    
+    foreach ($zugaenge AS $Value) {
+        foreach($Value AS $Key=>$Value2)
+        {
+            $Value[$Key]=utf8_encode($Value2);
+        }
+        //$Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
+        if($Value['logins']!=false) {
+            echo '<tr>
+                    <td style="font-size:12px;font-weight:600;">
+                        '.$Value['titel']."
+                    </td>
+                    <td>
+                        ".$Value['login']."
+                    </td>
+                    <td>
+                        ".$Value['passwort']."
+                    </td>
+                    <td>
+                        ".$Value['zusatz']."
+                    </td>
+                    <td>
+                        ".$Value['url']."
+                    </td>
+                </tr>";
+        }
+    }
+    echo "</table>";
     
     
     
