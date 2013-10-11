@@ -221,7 +221,7 @@ function MakeLoginTable($Data){
             }
             else
             {
-                if($sqldata['programm_id']<19) {
+                if($sqldata['programm_id']>19) {
                     // Da der TeamViewer-Lan sich immer auf die IP-Adresse verbindet, wird hier im Feld "geraete_login" die Ip-Adresse eingetragen.
                     if($sqldata['programm_id']==16) {
                         if((isset($sqldata['geraete_ipv4'])&&$sqldata['geraete_ipv4']!=0)) {
