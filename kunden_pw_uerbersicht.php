@@ -2,8 +2,8 @@
     <head>
         <meta http-equiv="x-ua-compatible" content="ie=9">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../css/styles.css" type="text/css" />
-        <link rel="stylesheet" href="../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="css/reset.css" type="text/css" />
     </head>
 <body>
 
@@ -38,10 +38,10 @@ include("include/functions.inc.php");
     $zugaenge=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
     
 //$objTemplate->Display('Header');
-    echo "<table>
-            <caption>SERVER</caption>
+    echo '<table>
+            <caption style="font-size:16px;font-weight:700;">SERVER</caption>
             <tr><th>Name</th><th>Passwörter</th>
-            ";
+            ';
     
     foreach ($server AS $Value) {
         foreach($Value AS $Key=>$Value2)
@@ -56,8 +56,6 @@ include("include/functions.inc.php");
                 <td>
                     ".$Value['logins']."
                 </td>
-                <td>
-                    ".GetGeraeteLogin($objMySQL,$Value['id'],1)."</td>
             </tr>";
     }
     echo "</table>";
