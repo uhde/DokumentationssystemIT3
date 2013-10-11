@@ -172,25 +172,25 @@ include("include/functions.inc.php");
             $Value[$Key]=utf8_encode($Value2);
         }
         //$Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        if($Value['logins']!=false) {
-            echo '<tr>
-                    <td style="font-size:12px;font-weight:600;">
-                        '.$Value['titel']."
-                    </td>
-                    <td>
-                        ".$Value['login']."
-                    </td>
-                    <td>
-                        ".$Value['passwort']."
-                    </td>
-                    <td>
-                        ".$Value['zusatz']."
-                    </td>
-                    <td>
-                        ".$Value['url']."
-                    </td>
-                </tr>";
-        }
+        
+        echo '<tr>
+                <td style="font-size:12px;font-weight:600;">
+                    '.$Value['titel']."
+                </td>
+                <td>
+                    ".$Value['login']."
+                </td>
+                <td>
+                    ".$Value['passwort']."
+                </td>
+                <td>
+                    ".$Value['zusatz']."
+                </td>
+                <td>
+                    ".$Value['url']."
+                </td>
+            </tr>";
+        
     }
     echo "</table>";
     
