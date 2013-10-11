@@ -1,16 +1,18 @@
 <html><head></head>
 <body>
-working....
+
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 // Diese Seite gibt alle Passwörter eines Kunden aus (Zugaenge und Geräte)
 $kunden_id=3; //Es geht nur um einen speziellen Kunden. 
 
 
-require('../include/config.inc.php');
-include("../include/mysql.class.php");
-include("../include/template.class.php");
-include("../include/functions.inc.php");
+require('include/config.inc.php');
+include("include/mysql.class.php");
+include("include/template.class.php");
+include("include/functions.inc.php");
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
