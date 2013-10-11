@@ -40,8 +40,12 @@ include("include/functions.inc.php");
 //$objTemplate->Display('Header');
     echo "<table>
             <caption>SERVER</caption>
-            <tr><th>Name</th><th>Passwöter</th>
+            <tr><th>Name</th><th>Passwörter</th>
             ";
+    foreach($server AS $Key=>$Value)
+    {
+        $server[$Key]=utf8_encode($Value);
+    }
     foreach ($server AS $Value) {
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
         echo "<tr>
@@ -51,6 +55,8 @@ include("include/functions.inc.php");
                 <td>
                     ".$Value['logins']."
                 </td>
+                <td>
+                    ".GetGeraeteLogin($objMySQL,$Value['id'],1)."</td>
             </tr>";
     }
     echo "</table>";
@@ -70,7 +76,7 @@ include("include/functions.inc.php");
     
     
     
-    function MakeLoginTable($Data){
+function MakeLoginTable($Data){
     if (is_array($Data)) {
         $objTemplate=new Template("../layout/geraete_general.lay.php");
         $str=$objTemplate->DisplayToString('Login_Header');
