@@ -9,8 +9,8 @@
 
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
 // Diese Seite gibt alle Passwörter eines Kunden aus (Zugaenge und Geräte)
 $kunden_id=3; //Es geht nur um einen speziellen Kunden. 
 
@@ -42,11 +42,12 @@ include("include/functions.inc.php");
             <caption>SERVER</caption>
             <tr><th>Name</th><th>Passwörter</th>
             ";
-    foreach($server AS $Key=>$Value)
-    {
-        $server[$Key]=utf8_encode($Value);
-    }
+    
     foreach ($server AS $Value) {
+        foreach($Value AS $Key=>$Value2)
+        {
+            $Value[$Key]=utf8_encode($Value2);
+        }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
         echo "<tr>
                 <td>
