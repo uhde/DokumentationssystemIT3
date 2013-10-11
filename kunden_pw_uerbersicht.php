@@ -39,8 +39,9 @@ include("include/functions.inc.php");
     
 //$objTemplate->Display('Header');
     echo '<table>
+            <colgroup width="200" span="3"></colgroup>
             <caption style="font-size:16px;font-weight:700;">SERVER</caption>
-            <tr><th>Name</th><th>Passwörter</th>
+            <tr><th>Name</th><th>Passwörter</th></tr>
             ';
     
     foreach ($server AS $Value) {
@@ -49,9 +50,9 @@ include("include/functions.inc.php");
             $Value[$Key]=utf8_encode($Value2);
         }
         $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
-        echo "<tr>
-                <td>
-                    ".$Value['name']."
+        echo '<tr>
+                <td style="font-size:10px;font-weight:400;">
+                    '.$Value['name']."
                 </td>
                 <td>
                     ".$Value['logins']."
