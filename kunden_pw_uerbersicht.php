@@ -28,7 +28,7 @@ include("include/functions.inc.php");
     $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kategorie=1 AND kunde=".$kunden_id." AND loeschen=1 ORDER BY  name";
     $server=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
     $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kategorie=2 AND kunde=".$kunden_id." AND loeschen=1 ORDER BY  name";
-    $pcs=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
+    $computer=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
     $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kategorie=3 AND kunde=".$kunden_id." AND loeschen=1 ORDER BY  name";
     $drucker=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
     $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kategorie=4 AND kunde=".$kunden_id." AND loeschen=1 ORDER BY  name";
@@ -60,7 +60,86 @@ include("include/functions.inc.php");
             </tr>";
     }
     echo "</table>";
-
+    echo "<br><br><br><br>";
+    echo "<h1>-------------------------</h1>
+    <br><br>";
+    
+    echo '<table>
+            <colgroup width="150" span="3"></colgroup>
+            <caption style="font-size:16px;font-weight:700;">Computer</caption>
+            <tr><th>Name</th><th>Passwörter</th></tr>
+            ';
+    
+    foreach ($computer AS $Value) {
+        foreach($Value AS $Key=>$Value2)
+        {
+            $Value[$Key]=utf8_encode($Value2);
+        }
+        $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
+        echo '<tr>
+                <td style="font-size:12px;font-weight:600;">
+                    '.$Value['name']."
+                </td>
+                <td>
+                    ".$Value['logins']."
+                </td>
+            </tr>";
+    }
+    echo "</table>";
+    echo "<br><br><br><br>";
+    echo "<h1>-------------------------</h1>
+    <br><br>";
+    
+    echo '<table>
+            <colgroup width="150" span="3"></colgroup>
+            <caption style="font-size:16px;font-weight:700;">Drucker</caption>
+            <tr><th>Name</th><th>Passwörter</th></tr>
+            ';
+    
+    foreach ($drucker AS $Value) {
+        foreach($Value AS $Key=>$Value2)
+        {
+            $Value[$Key]=utf8_encode($Value2);
+        }
+        $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
+        echo '<tr>
+                <td style="font-size:12px;font-weight:600;">
+                    '.$Value['name']."
+                </td>
+                <td>
+                    ".$Value['logins']."
+                </td>
+            </tr>";
+    }
+    echo "</table>";
+    echo "<br><br><br><br>";
+    echo "<h1>-------------------------</h1>
+    <br><br>";
+    
+    echo '<table>
+            <colgroup width="150" span="3"></colgroup>
+            <caption style="font-size:16px;font-weight:700;">Netzwerkgeräte</caption>
+            <tr><th>Name</th><th>Passwörter</th></tr>
+            ';
+    
+    foreach ($computer AS $Value) {
+        foreach($Value AS $Key=>$Value2)
+        {
+            $Value[$Key]=utf8_encode($Value2);
+        }
+        $Value['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$Value['id'],1));
+        echo '<tr>
+                <td style="font-size:12px;font-weight:600;">
+                    '.$Value['name']."
+                </td>
+                <td>
+                    ".$Value['logins']."
+                </td>
+            </tr>";
+    }
+    echo "</table>";
+    
+    
     
     
     
@@ -112,9 +191,6 @@ function MakeLoginTable($Data){
     }
     return FALSE;
 }
-    
-    
-    echo "Scriptende";
 ?>
 </body>
 </html>

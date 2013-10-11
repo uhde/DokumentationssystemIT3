@@ -95,7 +95,6 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
     <td class="Key">{$bemerkung}</td>
     <td class="Value">{$geraete_login}</td>
     <td class="Value">{$geraete_pw}</td>
-    <!-- <td class="Value" style="text-align:left;">{$bemerkung}</td> -->
 </tr>
 !#----- Login_Main:End -----#!
 
