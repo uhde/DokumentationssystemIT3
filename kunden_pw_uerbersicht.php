@@ -31,7 +31,7 @@ include("include/functions.inc.php");
     $sql = "SELECT * FROM ".TBL_ZUGAENGE." WHERE kunde=".$kunden_id." AND loeschen=1 ORDER BY titel";
     $zugaenge=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
     
-    $objTemplate->Display('Header');
+//$objTemplate->Display('Header');
     echo "<table>
             <caption>SERVER</caption>
             <tr><th>Name</th><th>Passwöter</th>
