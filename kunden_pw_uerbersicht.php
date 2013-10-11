@@ -221,19 +221,21 @@ function MakeLoginTable($Data){
             }
             else
             {
-                // Da der TeamViewer-Lan sich immer auf die IP-Adresse verbindet, wird hier im Feld "geraete_login" die Ip-Adresse eingetragen.
-                if($sqldata['programm_id']==16) {
-                    if((isset($sqldata['geraete_ipv4'])&&$sqldata['geraete_ipv4']!=0)) {
-                        $sqldata['geraete_login']=$sqldata['geraete_ipv4'];
-                    } else { 
-                        $sqldata['geraete_login']=$sqldata['geraete_adresse'];
+                if($sqldata['programm_id']<19) {
+                    // Da der TeamViewer-Lan sich immer auf die IP-Adresse verbindet, wird hier im Feld "geraete_login" die Ip-Adresse eingetragen.
+                    if($sqldata['programm_id']==16) {
+                        if((isset($sqldata['geraete_ipv4'])&&$sqldata['geraete_ipv4']!=0)) {
+                            $sqldata['geraete_login']=$sqldata['geraete_ipv4'];
+                        } else { 
+                            $sqldata['geraete_login']=$sqldata['geraete_adresse'];
+                        }
                     }
+                    $objTemplate->AssignArray($sqldata);
+                    $str.=$objTemplate->DisplayToString('Login_Main');
+                    $daten_enthalten = true;
+                    //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
+                    $objTemplate->ClearAssign();
                 }
-                $objTemplate->AssignArray($sqldata);
-                $str.=$objTemplate->DisplayToString('Login_Main');
-                $daten_enthalten = true;
-                //$str.=implode('&nbsp;|&nbsp;',$sqldata)."<br />";
-                $objTemplate->ClearAssign();
             }
         }
         $str.=$objTemplate->DisplayToString('Login_Footer');
