@@ -115,7 +115,7 @@ if(!empty($sqldata["mac_adresse"])) {
     echo   '<tr>
                 <td class="Key" >Geräte-Typ:</td>
                 <td class="sqldata" >'.$sqldata["pc"].'</td>
-                <td class="Key" >System-Beschreibung:</td>
+                <td class="Key" >System-Typ:</td>
                 <td class="sqldata">'.$sqldata["system"].'</td>     
                 <td style="width:90px;"></td>
                 <td class="sqldata" style="width:20px;"></td>    
