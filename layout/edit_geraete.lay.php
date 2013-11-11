@@ -105,7 +105,7 @@
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 -->
 <tr class="Data0">
-    <td align="right"><span class="LinkStyle">System-Beschreibung </span></td>
+    <td align="right"><span class="LinkStyle">System-Typ </span></td>
     <td>
         <span class="StandardText"><input name="system" type="text" size="30" maxlength="30" value="{$system}"  ></span>
     </td>
@@ -118,7 +118,7 @@
     <td>
         <span class="StandardText"><input name="bs" type="text" size="30" maxlength="30" value="{$bs}" ></span>
     </td>
-    <td align="right"><span class="LinkStyle">PC-Typ </span></td>
+    <td align="right"><span class="LinkStyle">Geräte-Typ </span></td>
     <td>
         <span class="StandardText"><input name="pc" type="text" size="30" maxlength="30" value="{$pc}" > </span>
     </td>
@@ -328,7 +328,7 @@
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
 -->
 <tr class="Data0">
-    <td align="right"><span class="LinkStyle">System-Beschreibung </span></td>
+    <td align="right"><span class="LinkStyle">System-Typ </span></td>
     <td>
         <span class="StandardText"><input name="system" type="text" size="30" maxlength="30" value="{$system}"  ></span>
     </td>
@@ -341,7 +341,7 @@
     <td>
         <span class="StandardText"><input name="bs" type="text" size="30" maxlength="30" value="{$bs}" ></span>
     </td>
-    <td align="right"><span class="LinkStyle">PC-Typ </span></td>
+    <td align="right"><span class="LinkStyle">Geräte-Typ </span></td>
     <td>
         <span class="StandardText"><input name="pc" type="text" size="30" maxlength="30" value="{$pc}" > </span>
     </td>
