@@ -31,6 +31,7 @@ include_once("functions.inc.php");
     }
     
     // Zeilenumbrüche in HTML Umbrüche Konvertieren
+    $sqldata['zusatz']=link_klickbar_machen($sqldata['zusatz']);
     $sqldata['zusatz']=nl2br($sqldata['zusatz']);
     
     // Dies hier stellt sicher, dass die links immer mit ftp:, http:// oder https beginnen, 
