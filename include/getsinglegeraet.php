@@ -95,7 +95,7 @@ include_once("functions.inc.php");
     $sqldata['software']=str_replace('strong','b',$sqldata['software']);
     $sqldata['software']=str_replace('em>','i>',$sqldata['software']);
     
-    
+    echo 'time= '.$_GET['time'];
     echo '
     
         <table class="DeviceInfo">

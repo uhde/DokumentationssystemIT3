@@ -113,6 +113,7 @@ if (file_exists($page.'.php')) {
 function loadXMLDoc(seite,jq_aufzurufende_id,id,time)
 {
     var xmlhttp;
+    var timejs = new Date().getTime();
     xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function()
     {
@@ -132,7 +133,7 @@ function loadXMLDoc(seite,jq_aufzurufende_id,id,time)
         }
     }
     // Der eigentliche Request.
-    xmlhttp.open("GET",seite+"?id="+id+"&time="+time,true);
+    xmlhttp.open("GET",seite+"?id="+id+"&time="+timejs,true);
     //alert(seite+"?id="+id+"&time="+time);
     xmlhttp.send();
 }
