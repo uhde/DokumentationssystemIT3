@@ -170,13 +170,13 @@ function ClearAllLoad()
     $(document).ready(function() {
             $(".edit").fancybox({
                 afterClose : function() {
-                    location.reload();
+                    //location.reload();
                     return;
                 }
             });
             $(".footer_bt").fancybox({
                 afterClose : function() {
-                    location.reload();
+                    //location.reload();
                     return;
                 }
             });
