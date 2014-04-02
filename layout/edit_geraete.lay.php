@@ -166,20 +166,9 @@
 </tr>
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-    <td align="right"><span class="LinkStyle">Router </span></td>
-    <td>
-        <span class="StandardText"><input name="router" type="text" size="30" maxlength="30" value="{$router}" ></input></span>
-    </td>
-
     <td align="right"><span class="LinkStyle">Irdpport </span></td>
     <td>
         <span class="StandardText"><input name="irdpport" type="text" size="30" maxlength="30" value="{$irdpport}" ></input></span>
-    </td>
-</tr>
-<tr class="Data0">
-    <td align="right"><span class="LinkStyle">Ftpdir </span></td>
-    <td>
-        <span class="StandardText"><input name="ftpdir" type="text" size="30" maxlength="30" value="{$ftpdir}" ></input></span>
     </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
@@ -391,20 +380,9 @@
 </tr>
 <tr height="6" class="Data0"><td colspan="4" align="center"></td></tr>
 <tr class="Data0">
-    <td align="right"><span class="LinkStyle">Router </span></td>
-    <td>
-        <span class="StandardText"><input name="router" type="text" size="30" maxlength="30" value="{$router}" ></input></span>
-    </td>
-
     <td align="right"><span class="LinkStyle">Irdpport </span></td>
     <td>
         <span class="StandardText"><input name="irdpport" type="text" size="30" maxlength="30" value="{$irdpport}" ></input></span>
-    </td>
-</tr>
-<tr class="Data0">
-    <td align="right"><span class="LinkStyle">Ftpdir </span></td>
-    <td>
-        <span class="StandardText"><input name="ftpdir" type="text" size="30" maxlength="30" value="{$ftpdir}" ></input></span>
     </td>
 </tr>
 <tr height="14"><td colspan="4" align="center"><hr style="height:1px; color:#cccccc; width:90%"></td></tr>
