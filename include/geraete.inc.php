@@ -263,7 +263,6 @@ function MakeButtons($Data, $adresse){
                 $ausgabe=str_replace('{benutzer}',$Value['benutzer'],$ausgabe);
                 $ausgabe=str_replace('{kunde}',$Value['kunden_name'],$ausgabe);
                 $ausgabe=str_replace('{benutzer}',$_SERVER['PHP_AUTH_USER'],$ausgabe);
-                $ausgabe=str_replace('{ftpdir}',$Value['ftpdir'],$ausgabe);
                 
                 
                 

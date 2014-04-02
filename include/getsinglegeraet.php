@@ -238,7 +238,7 @@ function MakeButtons($Data, $adresse){
                 
                 $sqldata['benutzer'] = utf8_encode($sqldata['benutzer']);
                 $sqldata['kunden_name'] = utf8_encode($sqldata['kunden_name']);
-                $sqldata['ftpdir'] = utf8_encode($sqldata['ftpdir']);
+
                 $sqldata['dyndns_domain'] = utf8_encode($sqldata['dyndns_domain']);
                     
                 $ausgabe=str_replace('{geraete_login}',$sqldata['geraete_login'],$ausgabe);
@@ -248,7 +248,6 @@ function MakeButtons($Data, $adresse){
                 $ausgabe=str_replace('{benutzer}',$sqldata['benutzer'],$ausgabe);
                 $ausgabe=str_replace('{kunde}',$sqldata['kunden_name'],$ausgabe);
                 $ausgabe=str_replace('{benutzer}',$_SERVER['PHP_AUTH_USER'],$ausgabe);
-                $ausgabe=str_replace('{ftpdir}',$sqldata['ftpdir'],$ausgabe);
                 $ausgabe=str_replace('{dyndns_domain}',$sqldata['dyndns_domain'],$ausgabe);
                 $ausgabe=str_replace('{irdpport}',$sqldata['irdpport'],$ausgabe);
                 
