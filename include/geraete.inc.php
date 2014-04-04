@@ -51,23 +51,24 @@ $yesterday=time() - (24*60*60); //aktuelle zeit minus 1 tag
 if(isset($mode['suche'])&&(!empty($mode['suche']))) {
     //Wenn nur lokal gesucht werden soll, steht lokal_suchen auf true. 
     // Dann wird nur innerhalb des spezifischen Kunden gesucht
+    $suchbare_felder = "(`name`,`sn`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`,`software`)";
     if( $mode['lokal_suchen']==true)
     {
         // Sollten auch gelöschte Geräte angezeigt werden, wird in allen Geräten gesucht.
         // Ansonsten wird nur in den "nicht gelöschten" gesucht
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH (`name`,`sn`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND MATCH ".$suchbare_felder." AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
         }else {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen='1' AND MATCH (`name`,`sn`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE kunde=".$_SESSION['knd_id']." AND loeschen='1' AND MATCH ".$suchbare_felder." AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
         }
     }else
     {
         if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
         {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH (`name`,`sn`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE MATCH ".$suchbare_felder." AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
         }else {
-            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH (`name`,`sn`,`system`,`bemerkung`,`produktnummer`,`pc`,`benutzer`) AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
+            $sql = "SELECT * FROM ".TBL_GERAETE." WHERE loeschen='1' AND MATCH ".$suchbare_felder." AGAINST ('".$mode['suche']."' IN BOOLEAN MODE)";
         }
     }
     //echo $sql."<br>";
