@@ -30,6 +30,7 @@ include("include/functions.inc.php");
     
     echo "rechnername = ".$rechnername."<br>";
     echo "seriennummer = ".$seriennummer."<br>";
+    echo $invent_row;
     
     //$objMySQL->Query($sql);
 ?>
