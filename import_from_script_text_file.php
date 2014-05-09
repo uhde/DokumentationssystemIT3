@@ -18,7 +18,7 @@ include("include/functions.inc.php");
     $url = "http://uhdsrv14.uhde.de/systeminvent/Scans/MUTWS036";
     
     // Gibt ein Feld  mit den inventarisierten DAten aus
-    $invent_row =  @fopen ($url,"r");
+    $invent_row =  file($url);
     /* Das Feld ist folgendermaßen aufgebaut:
     - Pro Zeile (und damit pro Feld gibt es eine Option
     - Die Zeilen sind:
