@@ -10,6 +10,7 @@ include("include/functions.inc.php");
     $basis_url = "http://uhdsrv14.uhde.de/systeminvent/";
     $url = $basis_url.$datei.".txt";
     $liste =  file($url, FILE_IGNORE_NEW_LINES );
+    echo $liste;
 ?>
 <h1>TESTBETRIEB<h1>
 <table>
