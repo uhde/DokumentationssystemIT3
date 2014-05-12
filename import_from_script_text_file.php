@@ -11,14 +11,18 @@ include("include/functions.inc.php");
        $objMySQL->Kill();
     }
     
-    
     // Dieses Script liest Textdateien, welche vom installationsscript erstellt wurden, aus
     // und fügt diese in das DOKUIT system ein
     // DOGE: WOW, Much programming, such nice, cool 
-    $url = "http://uhdsrv14.uhde.de/systeminvent/Scans/MUTWS036";
     
+    
+    // Für das unten stehende Script werden folgende Daten benötigt:
+    // kunde, kategorie, systemname
+    
+    $basis_url = "http://uhdsrv14.uhde.de/systeminvent/Scans/";
+    $url = $basis_url.$systemname.".txt";
     // Gibt ein Feld  mit den inventarisierten DAten aus
-    $invent_row =  file($url);
+    $invent_row =  file($url, FILE_IGNORE_NEW_LINES );
     /* Das Feld ist folgendermaßen aufgebaut:
     - Pro Zeile (und damit pro Feld gibt es eine Option
     - Die Zeilen sind:
@@ -27,12 +31,20 @@ include("include/functions.inc.php");
     $rechnername=$invent_row[0];
     $systemtyp=$invent_row[1];
     $seriennummer=$invent_row[2];
+    $mac=$invent_row[3];
+    $teamviewer_id=$invent_row[4];
+    $sqlquery="INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
+    $sqlquery=$sqlquery."`name` = '".$rechnername."' ";
+    $sqlquery=$sqlquery."`kunde` = '".$kunde."' ";
+    $sqlquery=$sqlquery."`kategorie` = '".$kategorie."' ";
+    $sqlquery=$sqlquery."`system` = '".$systemtyp."' ";
+    $sqlquery=$sqlquery."`sn` = '".$seriennummer."' ";
+    $sqlquery=$sqlquery."`mac_adresse` = '".$mac."' ";
     
-    echo "rechnername = ".$rechnername."<br>";
-    echo "seriennummer = ".$seriennummer."<br>";
-    echo $invent_row;
     
-    //$objMySQL->Query($sql);
+    echo $sqlquery;
+    
+    //$objMySQL->Query($sqlquery);
 ?>
 </body>
 </html>
