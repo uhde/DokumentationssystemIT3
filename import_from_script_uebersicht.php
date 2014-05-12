@@ -1,6 +1,6 @@
-<html><head></head>
-<body>
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
@@ -12,6 +12,8 @@ include("include/functions.inc.php");
     $liste =  file($url, FILE_IGNORE_NEW_LINES );
     echo $liste;
 ?>
+<html><head></head>
+<body>
 <h1>TESTBETRIEB<h1>
 <table>
 <?php
