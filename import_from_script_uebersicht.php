@@ -9,6 +9,7 @@ include("include/functions.inc.php");
     $datei = "NeueRechner";
     $basis_url = "http://uhdsrv14.uhde.de/systeminvent/";
     $url = $basis_url.$datei.".txt";
+    $liste =  file($url, FILE_IGNORE_NEW_LINES );
 ?>
 <h1>TESTBETRIEB<h1>
 <table>
