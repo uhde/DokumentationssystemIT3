@@ -14,14 +14,14 @@ ini_set('display_errors', TRUE);
 <h1>TESTBETRIEB<h1>
 <table>
 <?php
-/*
-    for $rechner in $liste
+
+    foreach($liste as $rechner)
     {
         echo "<tr><td>".$rechner."</td>";
             echo '<td><a href="import_from_script_text_file.php?rechner='.$rechner.'&kunde='.$_GET['kunde'].'&kategorie='.$_GET['kategorie'].' ">hinzufügen</td>';
-            echo '<td><a href="uhdsr.php?rechner='.$rechner.'">TOIDO LINK loeschen</td>';
+            echo '<td><a href="uhdsr.php?rechner='.$rechner.'">TODO LINK loeschen</td>';
         echo "</tr>";
-    }*/
+    }
 ?>
 </table>
 </body>
