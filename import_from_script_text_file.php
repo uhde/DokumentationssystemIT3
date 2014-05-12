@@ -15,6 +15,9 @@ include("include/functions.inc.php");
     // und fügt diese in das DOKUIT system ein
     // DOGE: WOW, Much programming, such nice, cool 
     
+    $systemname = $_GET['rechner'];
+    $kategorie = $_GET['kategorie'];
+    $kunde = $_GET['kunde'];
     
     // Für das unten stehende Script werden folgende Daten benötigt:
     // kunde, kategorie, systemname
