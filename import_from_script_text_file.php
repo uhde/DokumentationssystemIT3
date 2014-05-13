@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="css/reset.css" type="text/css" />
    
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', TRUE);
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
@@ -109,7 +109,7 @@ include("include/functions.inc.php");
     
     //$objMySQL->Query($sqlquery);
 ?>
-<meta http-equiv="refresh" content="5; URL=import_from_script_uebersicht.php>
+<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php">
 
 </head>
 <body>
