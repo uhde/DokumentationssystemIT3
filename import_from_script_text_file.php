@@ -7,8 +7,8 @@
     </head>
 <body>
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', TRUE);
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
@@ -91,13 +91,13 @@ include("include/functions.inc.php");
     $objMySQL->Query($teamviewer_insert);
     $objMySQL->Query($bios_insert);
     $objMySQL->Query($geraetepw_insert);
-   /* echo "Geraete Einfuegen SQL: ".$geraete_einfuegen."<br>";  
+    echo "Geraete Einfuegen SQL: ".$geraete_einfuegen."<br>";  
     echo "Geraete ID: ".$geraete_id."<br>";
     echo $teamviewer_insert."<br>";  
     echo $bios_insert."<br>"; 
     echo $geraetepw_insert."<br>"; 
     //DEBUG Ausgaben
-    */
+    
     
     //$objMySQL->Query($sqlquery);
 ?>
