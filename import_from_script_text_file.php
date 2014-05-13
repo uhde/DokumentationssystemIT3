@@ -29,6 +29,7 @@ include("include/functions.inc.php");
     $tv_prog_id = 15;
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
+    $garantie = time() + (3*365*24*60*60);
     
     $kundenkuerzel = substr($systemname,0,3);
     // Für das unten stehende Script werden folgende Daten benötigt:
@@ -56,7 +57,7 @@ include("include/functions.inc.php");
     $sqlquery=$sqlquery."`system` = '".$systemtyp."', ";
     $sqlquery=$sqlquery."`sn` = '".$seriennummer."', ";
     $sqlquery=$sqlquery."`mac_adresse` = '".$mac."', ";
-    $sqlquery=$sqlquery."`garantie` = '".time() + (3*365*24*60*60)."', "; //Garantie auf jetzt + 3 Jahre gesetzt
+    $sqlquery=$sqlquery."`garantie` = '".$garantie."', "; //Garantie auf jetzt + 3 Jahre gesetzt
     $sqlquery=$sqlquery."`bs` = '".$bs."' ";
     $geraete_einfuegen = $sqlquery; // Zu Übersichtszwecken
     
