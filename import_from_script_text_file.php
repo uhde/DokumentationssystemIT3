@@ -30,6 +30,9 @@ include("include/functions.inc.php");
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
     $garantie = time() + (3*365*24*60*60);
+    $smb_url = "\\uhdsrv14.uhde.de\systeminvent";
+    
+    
     if( substr($systemname,0,7)=="LAPTOP-")
         $kundenkuerzel = substr($systemname,7,3);
     else
@@ -106,10 +109,12 @@ include("include/functions.inc.php");
     //DEBUG Ausgaben
     */
     
-    
     //$objMySQL->Query($sqlquery);
+    
+    // Es folgt das löschen der Einträge
+    unset($smb_url.'\Scans\\'.$systemname.'.txt');
 ?>
-<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php">
+<!--<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php"> -->
 
 </head>
 <body>

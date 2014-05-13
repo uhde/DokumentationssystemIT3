@@ -27,7 +27,7 @@ include("include/functions.inc.php");
             {
                 echo '<tr class="Data0"><td>'.$rechner."</td>";
                     echo '<td><a href="import_from_script_text_file.php?rechner='.$rechner.'&kunde='.$_GET['kunde'].'&kategorie='.$_GET['kategorie'].' ">hinzufügen</td>';
-                    echo '<td><a href="uhdsr.php?rechner='.$rechner.'">TODO LINK loeschen</td>';
+                    //echo '<td><a href="'.$basis_url.'loeschen.php?rechner='.$rechner.'">TODO LINK loeschen</td>';
                 echo "</tr>";
             }
         ?>
