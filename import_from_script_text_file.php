@@ -30,7 +30,7 @@ include("include/functions.inc.php");
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
     $garantie = time() + (3*365*24*60*60);
-    $smb_url = "\\\\uhdsrv14.uhde.de\\systeminvent";
+    $loeschen_url = "http://uhdsrv14.uhde.de/systeminvent/Scans/import_from_script_delete.php?rechner=".$systemname;
     
     
     if( substr($systemname,0,7)=="LAPTOP-")
@@ -110,14 +110,8 @@ include("include/functions.inc.php");
     
     $systemname = trim($systemname);
     //$objMySQL->Query($sqlquery);
+    readfile($loeschen_url);
     
-    // Es folgt das löschen der Einträge
-    echo "<br>".$systemname."<br>";
-    $loeschen_link = $smb_url.'\Scans\\'.$systemname.'.txt';
-    echo $loeschen_link."<br>";
-    //$loeschen_link = realpath($loeschen_link);
-    echo $loeschen_link."<br>";
-    unlink($loeschen_link);
         echo "es wurde alles erfolgreich gelöscht";
     
 ?>
