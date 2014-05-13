@@ -112,7 +112,8 @@ include("include/functions.inc.php");
     //$objMySQL->Query($sqlquery);
     
     // Es folgt das löschen der Einträge
-    unset($smb_url.'\Scans\\'.$systemname.'.txt');
+    $loeschen_link = $smb_url.'\Scans\'.$systemname.'.txt';
+    unset($loeschen_link);
 ?>
 <!--<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php"> -->
 
