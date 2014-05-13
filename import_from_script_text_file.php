@@ -108,7 +108,7 @@ include("include/functions.inc.php");
     echo $geraetepw_insert."<br>"; 
     //DEBUG Ausgaben
     
-    $systemname = strip($systemname);
+    $systemname = trim($systemname);
     //$objMySQL->Query($sqlquery);
     
     // Es folgt das löschen der Einträge
