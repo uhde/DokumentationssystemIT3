@@ -29,7 +29,6 @@ include("include/functions.inc.php");
     $tv_prog_id = 15;
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
-    $tabelle = TBL_GERAETE_LOGIN;
     
     $kundenkuerzel = substr($systemname,0,3);
     // Für das unten stehende Script werden folgende Daten benötigt:
@@ -50,7 +49,7 @@ include("include/functions.inc.php");
     $mac=$invent_row[3];
     $teamviewer_id=$invent_row[4];
     $bs=$invent_row[5];             //Betriebssystem
-    $sqlquery="INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
+    $sqlquery="INSERT INTO `".DB_DATABASE."`.`".TBL_GERAETE"` SET ";
     $sqlquery=$sqlquery."`name` = '".$rechnername."', ";
     $sqlquery=$sqlquery."`kunde` = '".$kunde."', ";
     $sqlquery=$sqlquery."`kategorie` = '".$kategorie."', ";
@@ -64,7 +63,7 @@ include("include/functions.inc.php");
     $geraete_id = mysql_insert_id(); //Die Geräte ID wird geholt
     
 //    http://dev.mysql.com/doc/refman/5.1/de/information-functions.html
-    $sql="INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
+    $sql="INSERT INTO `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` SET ";
     $sql=$sql."`geraete_id` = '".$geraete_id."', ";
     $sql=$sql."`programm_id` = '".$tv_prog_id."', ";
     $sql=$sql."`login` = '".$teamviewer_id."', ";
@@ -72,7 +71,7 @@ include("include/functions.inc.php");
     $sql=$sql."`aktiv` = '1' ";
     $teamviewer_insert = $sql;
     
-    $sql="INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
+    $sql="INSERT INTO `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` SET ";
     $sql=$sql."`geraete_id` = '".$geraete_id."', ";
     $sql=$sql."`programm_id` = '".$bios_prog_id."', ";
     $sql=$sql."`login` = '', ";
@@ -80,7 +79,7 @@ include("include/functions.inc.php");
     $sql=$sql."`aktiv` = '0' ";
     $bios_insert = $sql;
     
-    $sql="INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
+    $sql="INSERT INTO `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` SET ";
     $sql=$sql."`geraete_id` = '".$geraete_id."', ";
     $sql=$sql."`programm_id` = '".$geraetepw_prog_id."', ";
     $sql=$sql."`login` = '".$kundenkuerzel."wsadmin', ";
