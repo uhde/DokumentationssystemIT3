@@ -114,8 +114,8 @@ include("include/functions.inc.php");
     // Es folgt das löschen der Einträge
     $loeschen_link = $smb_url.'\Scans\\'.$systemname.'.txt';
     echo $loeschen_link."<br>";
-    $geloescht = unset($loeschen_link);
-    echo $geloescht."<br>";
+    //$geloescht = unset($loeschen_link);
+    //echo $geloescht."<br>";
     echo "es wurde alles erfolgreich gelöscht";
 ?>
 <!--<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php"> -->
