@@ -20,7 +20,7 @@ include("include/functions.inc.php");
         <link rel="stylesheet" href="css/reset.css" type="text/css" />
     </head>
 <body>
-    <h1>TESTBETRIEB<h1>
+    <b>Hinzufügen von Inventarisierten Systemen</b>
     <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
         <?php
             foreach($liste as $rechner)
