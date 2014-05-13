@@ -49,7 +49,7 @@ include("include/functions.inc.php");
     $mac=$invent_row[3];
     $teamviewer_id=$invent_row[4];
     $bs=$invent_row[5];             //Betriebssystem
-    $sqlquery="INSERT INTO `".DB_DATABASE."`.`".TBL_GERAETE"` SET ";
+    $sqlquery="INSERT INTO `".DB_DATABASE."`.`".TBL_GERAETE."` SET ";
     $sqlquery=$sqlquery."`name` = '".$rechnername."', ";
     $sqlquery=$sqlquery."`kunde` = '".$kunde."', ";
     $sqlquery=$sqlquery."`kategorie` = '".$kategorie."', ";
