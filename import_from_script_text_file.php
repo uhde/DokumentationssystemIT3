@@ -100,20 +100,22 @@ include("include/functions.inc.php");
     $objMySQL->Query($bios_insert);
     $objMySQL->Query($geraetepw_insert);
     
-    /*
+    
     echo "Geraete Einfuegen SQL: ".$geraete_einfuegen."<br>";  
     echo "Geraete ID: ".$geraete_id."<br>";
     echo $teamviewer_insert."<br>";  
     echo $bios_insert."<br>"; 
     echo $geraetepw_insert."<br>"; 
     //DEBUG Ausgaben
-    */
+    
     
     //$objMySQL->Query($sqlquery);
     
     // Es folgt das löschen der Einträge
-    $loeschen_link = $smb_url.'\Scans\'.$systemname.'.txt';
+    $loeschen_link = $smb_url.'\Scans\\'.$systemname.'.txt';
+    echo $loeschen_link."<br>";
     unset($loeschen_link);
+    echo "es wurde alles erfolgreich gelöscht";
 ?>
 <!--<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php"> -->
 
