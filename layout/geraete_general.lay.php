@@ -138,6 +138,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <a class="footer_bt" href="userconf/ipordns.php?site={$site}" id="boxyfoo" > 
     <img src="syspics/switch.png" class="footer_img" alt="DNS to IP" title="DNS/IP Name anezeigen">
 </a>
+<span style="paddin:4px;">&nbsp;</span>
 <a class="footer_bt" data-fancybox-type="iframe" href="import_from_script_uebersicht.php?kunde={$kunde}&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag aus Inventarisierung" title="Neuer Eintrag aus inventarisierung">
 </a>
