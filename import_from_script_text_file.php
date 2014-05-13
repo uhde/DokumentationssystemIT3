@@ -117,7 +117,7 @@ include("include/functions.inc.php");
     echo $loeschen_link."<br>";
     //$loeschen_link = realpath($loeschen_link);
     echo $loeschen_link."<br>";
-    unset($loeschen_link);
+    unlink($loeschen_link);
         echo "es wurde alles erfolgreich gelöscht";
     
 ?>
