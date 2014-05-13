@@ -30,8 +30,11 @@ include("include/functions.inc.php");
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
     $garantie = time() + (3*365*24*60*60);
+    if( substr($systemname,0,7)=="LAPTOP-")
+        $kundenkuerzel = substr($systemname,7,3);
+    else
+        $kundenkuerzel = substr($systemname,0,3);
     
-    $kundenkuerzel = substr($systemname,0,3);
     // Für das unten stehende Script werden folgende Daten benötigt:
     // kunde, kategorie, systemname
     
