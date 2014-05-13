@@ -56,6 +56,7 @@ include("include/functions.inc.php");
     $sqlquery=$sqlquery."`system` = '".$systemtyp."', ";
     $sqlquery=$sqlquery."`sn` = '".$seriennummer."', ";
     $sqlquery=$sqlquery."`mac_adresse` = '".$mac."', ";
+    $sqlquery=$sqlquery."`garantie` = '".time() + (3*365*24*60*60)."', "; //Garantie auf jetzt + 3 Jahre gesetzt
     $sqlquery=$sqlquery."`bs` = '".$bs."' ";
     $geraete_einfuegen = $sqlquery; // Zu Übersichtszwecken
     
