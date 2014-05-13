@@ -29,6 +29,7 @@ include("include/functions.inc.php");
     $tv_prog_id = 15;
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
+    $tabelle = TBL_GERAETE_LOGIN;
     
     $kundenkuerzel = substr($systemname,0,3);
     // Für das unten stehende Script werden folgende Daten benötigt:
@@ -48,7 +49,7 @@ include("include/functions.inc.php");
     $seriennummer=$invent_row[2];
     $mac=$invent_row[3];
     $teamviewer_id=$invent_row[4];
-    $bs=$invent_row[4];             //Betriebssystem
+    $bs=$invent_row[5];             //Betriebssystem
     $sqlquery="INSERT INTO `".DB_DATABASE."`.`".$tabelle."` SET ";
     $sqlquery=$sqlquery."`name` = '".$rechnername."', ";
     $sqlquery=$sqlquery."`kunde` = '".$kunde."', ";
