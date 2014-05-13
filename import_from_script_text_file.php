@@ -30,7 +30,7 @@ include("include/functions.inc.php");
     $bios_prog_id = 22;
     $geraetepw_prog_id = 20;
     $garantie = time() + (3*365*24*60*60);
-    $loeschen_url = "http://uhdsrv14.uhde.de/systeminvent/Scans/import_from_script_delete.php?rechner=".$systemname;
+    $loeschen_url = "https://uhdsrv14/systeminvent/import_from_script_delete.php?rechner=".$systemname;
     
     
     if( substr($systemname,0,7)=="LAPTOP-")
