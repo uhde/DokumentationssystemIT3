@@ -100,14 +100,14 @@ include("include/functions.inc.php");
     $objMySQL->Query($bios_insert);
     $objMySQL->Query($geraetepw_insert);
     
-    /*
+    
     echo "Geraete Einfuegen SQL: ".$geraete_einfuegen."<br>";  
     echo "Geraete ID: ".$geraete_id."<br>";
     echo $teamviewer_insert."<br>";  
     echo $bios_insert."<br>"; 
     echo $geraetepw_insert."<br>"; 
     //DEBUG Ausgaben
-    */
+    
     
     //$objMySQL->Query($sqlquery);
     
