@@ -25,6 +25,7 @@ include("include/functions.inc.php");
     
     $systemname = $_GET['rechner'];
     $kategorie = $_GET['kategorie'];
+    $kategorie = $_GET['kategorie'];
     $kunde = $_GET['kunde'];
     $tv_prog_id = 15;
     $bios_prog_id = 22;
@@ -35,6 +36,7 @@ include("include/functions.inc.php");
     else
         $kundenkuerzel = substr($systemname,0,3);
     
+    $kundenkuerzel = strtolower($kundenkuerzel);
     // Für das unten stehende Script werden folgende Daten benötigt:
     // kunde, kategorie, systemname
     
@@ -95,12 +97,15 @@ include("include/functions.inc.php");
     $objMySQL->Query($teamviewer_insert);
     $objMySQL->Query($bios_insert);
     $objMySQL->Query($geraetepw_insert);
+    
+    /*
     echo "Geraete Einfuegen SQL: ".$geraete_einfuegen."<br>";  
     echo "Geraete ID: ".$geraete_id."<br>";
     echo $teamviewer_insert."<br>";  
     echo $bios_insert."<br>"; 
     echo $geraetepw_insert."<br>"; 
     //DEBUG Ausgaben
+    */
     
     
     //$objMySQL->Query($sqlquery);
