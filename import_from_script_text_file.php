@@ -108,12 +108,13 @@ include("include/functions.inc.php");
     echo $geraetepw_insert."<br>"; 
     //DEBUG Ausgaben
     
-    
+    $systemname = strip($systemname);
     //$objMySQL->Query($sqlquery);
     
     // Es folgt das löschen der Einträge
     echo "<br>".$systemname."<br>";
     $loeschen_link = $smb_url.'\Scans\\'.$systemname.'.txt';
+    echo $loeschen_link."<br>";
     $loeschen_link = realpath($loeschen_link);
     echo $loeschen_link."<br>";
     unset($loeschen_link);
