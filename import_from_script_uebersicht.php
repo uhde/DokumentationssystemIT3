@@ -23,13 +23,19 @@ include("include/functions.inc.php");
     <b>Hinzufügen von Inventarisierten Systemen</b>
     <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
         <?php
+            $leer = true;
             foreach($liste as $rechner)
             {
                 echo '<tr class="Data0"><td>'.$rechner."</td>";
                     echo '<td><a href="import_from_script_text_file.php?rechner='.$rechner.'&kunde='.$_GET['kunde'].'&kategorie='.$_GET['kategorie'].' ">hinzufügen</td>';
                     //echo '<td><a href="'.$basis_url.'loeschen.php?rechner='.$rechner.'">TODO LINK loeschen</td>';
                 echo "</tr>";
+                $rechner = trim($rechner);
+                if(!empty($rechner))
+                    $leer = false;
             }
+            if($leer)
+                echo "<h2>Es sind keine inventarisierten Systeme vorhanden</h2>";
         ?>
     </table>
 </body>
