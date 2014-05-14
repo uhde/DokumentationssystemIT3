@@ -114,7 +114,7 @@ include("include/functions.inc.php");
     echo "es wurde alles erfolgreich gelöscht";
     
 ?>
-<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php?kunde=<?php echo $kategorie."&kunde=".$kunde;?>">
+<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php?kategorie=<?php echo $kategorie."&kunde=".$kunde;?>">
 
 </head>
 <body>
