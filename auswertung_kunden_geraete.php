@@ -269,7 +269,7 @@ include("include/functions.inc.php");
         //Hier wurde bereits die Routine für das verzögerte Löschen hinzugefügt
         //$sqlquery="DELETE FROM `".DB_DATABASE."`.`".TBL_GERAETE."` WHERE `".TBL_GERAETE."`.`id` = ".$mode['id'];
         $sqlquery = "UPDATE `".DB_DATABASE."`.`geraete` SET `loeschen` = '0', `loeschentime` = '".time()."'  WHERE `geraete`.`id` = ".$mode['id'];
-        echo "<h2>Das Gerät wurde gelöscht</h2>";
+        echo "<h2>DER Gerät wurde gelöscht</h2>";
         $objMySQL->Query($sqlquery);
         //$sql = "DELETE FROM `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` WHERE `".TBL_GERAETE_LOGIN."`.`geraete_id` = ".$mode['id'];
         $sqlquery = "UPDATE `".DB_DATABASE."`.`".TBL_GERAETE_LOGIN."` SET `loeschen` = '0', `loeschentime` = '".time()."'  WHERE `geraete_id` = ".$mode['id'];
