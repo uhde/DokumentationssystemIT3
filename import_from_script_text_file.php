@@ -24,7 +24,6 @@ include("include/functions.inc.php");
     
     $systemname = $_GET['rechner'];
     $kategorie = $_GET['kategorie'];
-    $kategorie = $_GET['kategorie'];
     $kunde = $_GET['kunde'];
     $tv_prog_id = 15;
     $bios_prog_id = 22;
@@ -115,7 +114,7 @@ include("include/functions.inc.php");
     echo "es wurde alles erfolgreich gelöscht";
     
 ?>
-<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php">
+<meta http-equiv="refresh" content="0; URL=import_from_script_uebersicht.php?kunde=<?php echo $kategorie."&kunde=".$kunde;?>">
 
 </head>
 <body>
