@@ -35,7 +35,7 @@ include("include/functions.inc.php");
                     $leer = false;
             }
             if($leer)
-                echo "<h2>Es sind keine inventarisierten Systeme vorhanden</h2>";
+                echo "<br><h2>Es sind keine inventarisierten Systeme vorhanden</h2>";
         ?>
     </table>
 </body>
