@@ -20,7 +20,7 @@ include("include/functions.inc.php");
         <link rel="stylesheet" href="css/reset.css" type="text/css" />
     </head>
 <body>
-    <b>Hinzufügen von Inventarisierten Systemen</b>
+    <b>Hinzufügen von Inventarisierten Systemen</b><br>
     <table width="700" border="0" cellpadding="4" cellspacing="0"  align="center" bgcolor="#eeeeee">
         <?php
             $leer = true;
@@ -35,7 +35,7 @@ include("include/functions.inc.php");
                     $leer = false;
             }
             if($leer)
-                echo "<br><h2>Es sind keine inventarisierten Systeme vorhanden</h2>";
+                echo "<h2>Es sind keine inventarisierten Systeme vorhanden</h2>";
         ?>
     </table>
 </body>
