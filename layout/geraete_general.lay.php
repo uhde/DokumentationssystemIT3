@@ -140,7 +140,7 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 </a>
 <span style="paddin:4px;">&nbsp;</span>
 <a class="footer_bt" data-fancybox-type="iframe" href="import_from_script_uebersicht.php?kunde={$kunde}&kategorie={$kategorie}">
-    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag aus Inventarisierung" title="Neuer Eintrag aus inventarisierung">
+    <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag aus Inventarisierung" title="Inventarisiertes Gerät importieren">
 </a>
 
     <!--<td colspan="5" style="background-color:#fff;border-bottom:1px solid #333;padding-left:0px;padding-right:0px;padding-bottom:0px;border-top:1px solid #ddd;">-->
