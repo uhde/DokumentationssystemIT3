@@ -8,8 +8,8 @@
     <body>
 
     <?php 
-    error_reporting(E_ALL);
-    ini_set('display_errors', TRUE);
+    //error_reporting(E_ALL);
+    //ini_set('display_errors', TRUE);
     session_start() ;
     require_once('include/config.inc.php');
     include_once("include/mysql.class.php");
@@ -25,7 +25,9 @@
 
 
     ?>
-    <br><br><h2>
-    <a href="index.php">Zurück...</a></h2>
+    <br><br><br><br><br><br><br><br>
+    <h2>
+        <a href="index.php"><img src="syspics/drucken.png">Zurück...</a>
+    </h2>
     </body>
 </html>
