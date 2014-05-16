@@ -27,7 +27,7 @@
     ?>
     <br><br><br><br><br><br><br><br>
     <h2>
-        <a href="index.php"><img src="syspics/drucken.png">Zurück...</a>
+        <a href="index.php"><img src="syspics/back.png">Zurück...</a>
     </h2>
     </body>
 </html>
