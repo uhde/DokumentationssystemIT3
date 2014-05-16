@@ -142,7 +142,8 @@ Es sind keine {$show_kat}-Geräte bei diesem Kunden eingetragen!
 <a class="footer_bt" data-fancybox-type="iframe" href="import_from_script_uebersicht.php?kunde={$kunde}&kategorie={$kategorie}">
     <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag aus Inventarisierung" title="Inventarisiertes Gerät importieren">
 </a>
-<a class="footer_bt" data-fancybox-type="iframe" href="print_geraete.php">
+<span style="paddin:4px;">&nbsp;</span>
+<a class="footer_bt" href="print_geraete.php">
     <img src="syspics/drucken.png" class="footer_img" alt="Druckbare Liste erzeugen" title="Druckbare Liste erzeugen">
 </a>
 
