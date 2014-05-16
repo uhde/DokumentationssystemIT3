@@ -45,20 +45,139 @@
         {
             $(".TRInfo").text(" ");
         }
-        
-        function slider_generell() {
-            $(this).toggleClass("up");
-            name=$(this).attr("value");
-           // $("#Buchungen .TRInfo").hide();
-            if($(this).hasClass('up')) {
-                $(name).show();
-            }else{
-                $(name).hide();
-            }
-            //Funktioniert nicht... wieso?
-            //vll wegen. $(this)
-        }
         </script>
+        <script type='text/javascript'>
+        $(document).ready(function() {
+            $(".edit").fancybox({
+                afterClose : function() {
+                    //location.reload();
+                    return;
+                }
+            });
+            $(".footer_bt").fancybox({
+                afterClose : function() {
+                    //location.reload();
+                    return;
+                }
+            });
+            // Erstmal alle ausblende
+            // Wird beim reload der Page angewendet
+              $("#Buchungen .TRInfo").hide();
+            // Alles was in dieser "onklick" funktion steht wird angewendet, sobald auf eins geklickt wird
+             $("#Buchungen .slider").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+               // $("#Buchungen .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+
+            });
+             $("#Buchungen .slider_invisible").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen2 .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+            $("#Buchungen .slider2").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+            $("#Buchungen .slider4").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+            $("#Buchungen .TRInfoClose").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                $(name).hide();
+            });
+            $("#Buchungen .TRInfoCloseall").click(function(){
+                $("#Buchungen .TRInfo").hide();
+            });
+            
+            // Das gleiche wird für die Suchfunktion noch 2 mal gemacht, da bei der Suche es immer nur eine buchungs-id geben kann.
+             // Wird bei Zugänge.php benutzt
+             $("#Buchungen2 .TRInfo").hide();
+            // Alles was in dieser "onklick" funktion steht wird angewendet, sobald auf eins geklickt wird
+
+            $("#Buchungen2 .slider3").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen2 .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+            $("#Buchungen2 .slider_invisible").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+            $("#Buchungen2 .TRInfoClose").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                $(name).hide();
+                
+            });
+            
+            
+            // Wird bei dokumente.lay.php benutzt
+            $("#Buchungen3 .TRInfo").hide();
+
+            $("#Buchungen3 .slider2").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen3 .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+             $("#Buchungen3 .slider_invisible").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                //$("#Buchungen2 .TRInfo").hide();
+                if($(this).hasClass('up')) {
+                    $(name).show();
+                }else{
+                    $(name).hide();
+                }
+            });
+            $("#Buchungen3 .TRInfoClose").click(function(){
+                $(this).toggleClass("up");
+                name=$(this).attr("value");
+                $(name).hide();
+            });
+
+    });
+
+</script>
         
         
         
