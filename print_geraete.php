@@ -25,6 +25,7 @@
 
 
     ?>
-    <a href="index.php">Zurück...</a>
+    <br><br><h2>
+    <a href="index.php">Zurück...</a></h2>
     </body>
 </html>
