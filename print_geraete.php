@@ -19,6 +19,7 @@
            echo $objMySQL->Error();
            $objMySQL->Kill();
         }
+    $objTemplate=new Template("layout/geraete_general.lay.php");
     include ("include/geraete.inc.php");
 
 
