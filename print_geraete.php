@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="x-ua-compatible" content="ie=9">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <!--<meta http-equiv="content-type" content="text/html; charset=utf-8">-->
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
         <link rel="stylesheet" href="css/reset.css" type="text/css" />
     </head>
@@ -27,7 +27,7 @@
     ?>
     <br><br><br><br><br><br><br><br>
     <h2>
-        <a href="index.php"><img src="syspics/back.png">Zurück...</a>
+        <a href="index.php"><img src="syspics/back.png">Zurueck...</a>
     </h2>
     </body>
 </html>
