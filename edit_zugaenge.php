@@ -26,6 +26,7 @@ if($mode["mode"]=="edit")
 }
 if ($arrData!==FALSE) {
     if ($mode["mode"]=="edit") {
+        $arrData['kundenliste'] = MakeKundenAuswahl($arrData['kunde'],$arrkunden_data);
         $objTemplate->AssignArray($arrData);
         $objTemplate->display("zugaenge_edit");
         flush();ob_flush();flush();ob_flush();flush();

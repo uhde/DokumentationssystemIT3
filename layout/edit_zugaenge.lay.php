@@ -25,6 +25,12 @@
     </td>
 </tr>
 <tr class="Data0">
+    <td align="right"><span class="LinkStyle">Kunde: </span></td>
+    <td>
+     {$kundenliste}   
+    </td>
+</tr>
+<tr class="Data0">
     <td align="right"><span class="LinkStyle">URL: </span></td>
     <td>
         <span class="StandardText">
