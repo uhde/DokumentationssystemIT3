@@ -84,7 +84,7 @@ function randomPassword() {
 // Folgende Funktion erstellt eine Kundenliste für ein Drop Down Menü
 function MakeKundenAuswahl($kunde_aktuell, $arr_kundendata)
 {
-    $objTemplate=new Template("../layout/edit_geraete.lay.php");
+    $objTemplate=new Template("layout/edit_geraete.lay.php");
     $tempstring = "";
     if (is_array($arr_kundendata))
     {
