@@ -61,6 +61,11 @@
 <a class="footer_bt" data-fancybox-type="iframe" href="edit_zugaenge.php?mode=create&kunde={$kunde}">
     <img src="syspics/new_entry.png" class="footer_img" alt="Neuer Eintrag" title="Neuer Eintrag">
 </a>
+<span style="paddin:4px;">&nbsp;</span>
+<a class="footer_bt" href="print_geraete.php">
+    <img src="syspics/drucken.png" class="footer_img" alt="Druckbare Liste erzeugen" title="Druckbare Liste erzeugen">
+</a>
+
 !#----- Footer:End -----#!
 !#----- Footer2:Begin -----#!
 </table>
