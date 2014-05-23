@@ -81,6 +81,30 @@ function randomPassword() {
     return implode($pass); //turn the array into a string
 }
 
+// Folgende Funktion erstellt eine Kundenliste für ein Drop Down Menü
+function MakeKundenAuswahl($kunde_aktuell, $arr_kundendata)
+{
+    $objTemplate=new Template("../layout/edit_geraete.lay.php");
+    $tempstring = "";
+    if (is_array($arr_kundendata))
+    {
+        $tempstring=$objTemplate->DisplayToString('kunden_liste_start');
+        foreach ($arr_kundendata as $Value)
+        {
+            $objTemplate->AssignArray($Value);
+            if($Value['id']==$kunde_aktuell)
+            {
+                $tempstring.=$objTemplate->DisplayToString('kunden_liste_selected');
+            } else {
+                $tempstring.=$objTemplate->DisplayToString('kunden_liste');
+            }
+        }
+        $tempstring.=$objTemplate->DisplayToString('kunden_liste_end');
+    }else {
+        $tempstring = " ERROR: Die Kundenliste konnte nicht erstellt werden.";
+    }
+    return $tempstring;
+}
 /* Geraete Tabelle kann mit 
 CREATE TABLE `".DB_DATABASE."`.`geraete_login` (
 `id` INT NOT NULL AUTO_INCREMENT ,

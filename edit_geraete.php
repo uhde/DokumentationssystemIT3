@@ -108,29 +108,7 @@ if ($arrData!==FALSE) {
         $objTemplate->display("nogeraete");
     }
 }
-function MakeKundenAuswahl($kunde_aktuell, $arr_kundendata)
-{
-    $objTemplate=new Template("layout/edit_geraete.lay.php");
-    $tempstring = "";
-    if (is_array($arr_kundendata))
-    {
-        $tempstring=$objTemplate->DisplayToString('kunden_liste_start');
-        foreach ($arr_kundendata as $Value)
-        {
-            $objTemplate->AssignArray($Value);
-            if($Value['id']==$kunde_aktuell)
-            {
-                $tempstring.=$objTemplate->DisplayToString('kunden_liste_selected');
-            } else {
-                $tempstring.=$objTemplate->DisplayToString('kunden_liste');
-            }
-        }
-        $tempstring.=$objTemplate->DisplayToString('kunden_liste_end');
-    }else {
-        $tempstring = " ERROR: Die Kundenliste konnte nicht erstellt werden.";
-    }
-    return $tempstring;
-}
+
 
 function MakeLoginTable($Data,$Data2,$prog_add,$geraet_id,$kunden_id){
     if ($Data!==FALSE) {
