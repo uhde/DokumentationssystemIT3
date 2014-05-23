@@ -22,6 +22,9 @@ if($mode["mode"]=="edit")
 }
 if ($arrData!==FALSE) {
     if ($mode["mode"]=="edit") {
+        $sql = "SELECT * FROM ".TBL_KUNDEN." ORDER BY name";
+        $arrkunden_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);  
+        $arrData['kundenliste'] = MakeKundenAuswahl($arrData['kunde'],$arrkunden_data);
         $objTemplate->AssignArray($arrData);
         $objTemplate->display("bilder_edit");
     }
