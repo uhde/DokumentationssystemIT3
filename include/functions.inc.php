@@ -42,7 +42,6 @@ function GetGeraeteLogin($objMySQL,$id,$loeschen) {
         $sqlquery = $sqlquery.'AND '.TBL_GERAETE_LOGIN.'.loeschen='.$loeschen.' ';
     }
     $arrData=$objMySQL->QueryArray($sqlquery,MYSQL_ASSOC);
-    return $sqlquery;
     if ($objMySQL->RowCount()>0) {
         return $arrData;
     }else{
