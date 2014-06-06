@@ -75,12 +75,13 @@ if(isset($mode['suche'])&&(!empty($mode['suche']))) {
 } else {
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
-        $sql = 'SELECT * FROM '.TBL_GERAETE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id']).' AND kategorie='.MySQL::SQLValue($_SESSION['device_type']).'ORDER BY '.$_SESSION['sort_name'].' '.$_SESSION['sort_order'];
+        $sql = 'SELECT * FROM '.TBL_GERAETE." WHERE kunde=".MySQL::SQLValue($_SESSION['knd_id']).' AND kategorie='.MySQL::SQLValue($_SESSION['device_type']);
     } else {
-        $sql = 'SELECT * FROM '.TBL_GERAETE." WHERE loeschen='1' AND kunde=".MySQL::SQLValue($_SESSION['knd_id']).' AND kategorie='.MySQL::SQLValue($_SESSION['device_type']).'ORDER BY '.$_SESSION['sort_name'].' '.$_SESSION['sort_order'];
+        $sql = 'SELECT * FROM '.TBL_GERAETE." WHERE loeschen='1' AND kunde=".MySQL::SQLValue($_SESSION['knd_id']).' AND kategorie='.MySQL::SQLValue($_SESSION['device_type']);
 
     }
 }
+$sql = $sql.'ORDER BY '.$_SESSION['sort_name'].' '.$_SESSION['sort_order'];
 // Liest die Daten aus.
 $arrData=$objMySQL->QueryArray ($sql,MYSQL_ASSOC);
 $Count=0;

@@ -12,6 +12,7 @@
 /*
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);*/
+session_start() ;
 require_once('config.inc.php');
 include_once("mysql.class.php");
 include_once("template.class.php");
