@@ -39,7 +39,7 @@ function GetGeraeteLogin($objMySQL,$id,$loeschen) {
     '.TBL_GERAETE.', '.TBL_GERAETE_LOGIN.', '.TBL_PROGRAMME.' 
     WHERE geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id=geraete_id ';
     if($loeschen==1) {
-        $sqlquery = $sqlquery.'AND '.TBL_GERAETE_LOGIN.'.loeschen='.$loeschen.' '
+        $sqlquery = $sqlquery.'AND '.TBL_GERAETE_LOGIN.'.loeschen='.$loeschen.' ';
     }
     $arrData=$objMySQL->QueryArray($sqlquery,MYSQL_ASSOC);
     //return $sqlquery;
