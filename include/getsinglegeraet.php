@@ -34,8 +34,10 @@ include_once("functions.inc.php");
     if(isset($_SESSION['wiederherstellen'])&&(!empty($_SESSION['wiederherstellen'])))
     {
         $sqldata['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$sqldata['id'],0));
+        $sqldata['logins']=GetGeraeteLogin($objMySQL,$sqldata['id'],0);
     }else {
         $sqldata['logins']=MakeLoginTable(GetGeraeteLogin($objMySQL,$sqldata['id'],1));
+        $sqldata['logins']=GetGeraeteLogin($objMySQL,$sqldata['id'],1);
     }
     $sqldata['buttons']=MakeButtons(GetGeraeteprogramme($objMySQL,$sqldata['id']),$sqldata['adresse']);
     
