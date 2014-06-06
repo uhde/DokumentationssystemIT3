@@ -36,10 +36,13 @@ function link_klickbar_machen($text) {
 function GetGeraeteLogin($objMySQL,$id,$loeschen) {
     $sqlquery='SELECT '.TBL_GERAETE.'.ipv4 AS geraete_ipv4,  '.TBL_GERAETE.'.adresse AS geraete_adresse, '.TBL_GERAETE_LOGIN.'.geraete_id AS geraete_id, '.TBL_PROGRAMME.'.id AS programm_id, 
     '.TBL_GERAETE_LOGIN.'.login AS geraete_login,'.TBL_GERAETE_LOGIN.'.passwort AS geraete_pw, '.TBL_PROGRAMME.'.bemerkung FROM 
-        '.TBL_GERAETE.', '.TBL_GERAETE_LOGIN.', '.TBL_PROGRAMME.' 
-        WHERE  '.TBL_GERAETE_LOGIN.'.loeschen='.$loeschen.' AND geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id=geraete_id ';
+    '.TBL_GERAETE.', '.TBL_GERAETE_LOGIN.', '.TBL_PROGRAMME.' 
+    WHERE geraete_id='.$id.' AND programm_id='.TBL_PROGRAMME.'.id AND '.TBL_GERAETE.'.id=geraete_id ';
+    if($loeschen==1) {
+        $sqlquery = $sqlquery.'AND '.TBL_GERAETE_LOGIN.'.loeschen='.$loeschen.' '
+    }
     $arrData=$objMySQL->QueryArray($sqlquery,MYSQL_ASSOC);
-    return $sqlquery;
+    //return $sqlquery;
     if ($objMySQL->RowCount()>0) {
         return $arrData;
     }else{
