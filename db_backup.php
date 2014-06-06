@@ -261,4 +261,7 @@ if ($handle = opendir($path)) {
 }
 
 echo "<h3>Backup ist fertig</h3>";
+
+
+include('db_cleanup.php');
 ?> 
