@@ -1,6 +1,5 @@
 <html>
 <head>
-
     <title>Bilder auswerten</title>
     <meta http-equiv="x-ua-compatible" content="ie=9">
     <meta name="robots" content="INDEX,FOLLOW">
@@ -10,6 +9,8 @@
     <meta http-equiv="Expires" content="0">
     <LINK rel="stylesheet" href="css/styles.css"> 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 require('include/config.inc.php');
 include("include/mysql.class.php");
 include("include/template.class.php");
