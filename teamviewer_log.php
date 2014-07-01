@@ -52,6 +52,8 @@
                 $tempdata = $objMySQL->QuerySingleRowArray($sql);
                 
                 $kunde = $tempdata['kunde'];
+                if (empty($kunde))
+                    $kunde = -1;
                 echo "<br>".$sql." : <br>";
                 
                 $sql = "INSERT INTO `".DB_DATABASE."`.`teamviewer_log` SET ";
