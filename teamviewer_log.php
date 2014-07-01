@@ -48,13 +48,22 @@
             if(!empty($teamviewer_id)){
                 // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
                 //Sucht die Kundennummer raus.
-                $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".$teamviewer_id." AND gl.geraete_id=gr.id";
-                $tempdata = $objMySQL->QuerySingleRowArray($sql);
-                
-                $kunde = $tempdata['kunde'];
+                if(strlen($teamviewer_id)==9 && ctype_digit($teamviewer_id))
+                {
+                    $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".$teamviewer_id." AND gl.geraete_id=gr.id";
+                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                    
+                    $kunde = $tempdata['kunde'];
+                    
+                }
+                else {
+                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE gr.adresse=".$teamviewer_id." ";
+                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                    
+                    $kunde = $tempdata['kunde'];
+                }
                 if (empty($kunde))
                     $kunde = -1;
-                echo "<br>".$sql." : <br>";
                 
                 $sql = "INSERT INTO `".DB_DATABASE."`.`teamviewer_log` SET ";
                 $sql = $sql."teamviewer_id='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
