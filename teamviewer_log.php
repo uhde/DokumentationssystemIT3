@@ -57,7 +57,7 @@
                     
                 }
                 else {
-                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE gr.adresse=".$teamviewer_id." ";
+                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE gr.adresse='".$teamviewer_id."' ";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     
                     $kunde = $tempdata['kunde'];
