@@ -64,6 +64,7 @@
                 }
                 if (empty($kunde))
                     $kunde = -1;
+                echo "<br>".$sql." : <br>";
                 
                 $sql = "INSERT INTO `".DB_DATABASE."`.`teamviewer_log` SET ";
                 $sql = $sql."teamviewer_id='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
