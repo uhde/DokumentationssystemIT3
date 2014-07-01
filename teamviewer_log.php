@@ -48,7 +48,7 @@
             if(!empty($teamviewer_id)){
                 // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
                 //Sucht die Kundennummer raus.
-                $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".teamviewer_id." AND gl.geraete_id=gr.id";
+                $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".$teamviewer_id." AND gl.geraete_id=gr.id";
                 $tempdata = $objMySQL->QuerySingleRowArray($sql);
                 
                 $kunde = $tempdata['kunde'];
