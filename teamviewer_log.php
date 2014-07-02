@@ -1,5 +1,10 @@
 <?php
 // In diesem Script wird der Teamviewer log aus appdata in seine Einzelteile zerlegt und in eine Datenbank eingetragen.
+
+// Syntax mit der dieses Script aufgerufen werden soll:
+// [scriptpfad]?file=[name des teamviewer logs]
+// Das Teamviewer log muss im dokuit verzeichnis /teamviewer liegen
+
 //error_reporting(E_ALL);
 //ini_set('display_errors', TRUE);
     require_once('include/config.inc.php');
@@ -48,12 +53,16 @@
             if(!empty($teamviewer_id)){
                 // Wenn der Datensatz nicht vorhanden sein sollte, wird dieser Teil der if anweisung ausgeführt.
                 //Sucht die Kundennummer raus.
+                
+                //Prüft ob eine Teamviewer-Lan verbindung vorlag, oder nicht
                 if(strlen($teamviewer_id)==9 && ctype_digit($teamviewer_id))
                 {
-                    $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login=".$teamviewer_id." AND gl.geraete_id=gr.id";
+                    // Falls eine Teamviewer Web verbindung vorlag, wird dieser Code Teil ausgeführt
+                    $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login='".$teamviewer_id."' AND gl.geraete_id=gr.id";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     
                     $kunde = $tempdata['kunde'];
+                    $programm = "Teamviewer - Web";
                     
                 }
                 else {
@@ -61,16 +70,19 @@
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     
                     $kunde = $tempdata['kunde'];
+                    $programm = "Teamviewer - LAN";
                 }
+                // Falls kein Kunde gefunden werden kann, wird er auf minus 1 gesetzt
                 if (empty($kunde))
                     $kunde = -1;
-                echo "<br>".$sql." : <br>";
+                // Debug-Ausgabe
+                //echo "<br>".$sql." : <br>";
                 
                 $sql = "INSERT INTO `".DB_DATABASE."`.`teamviewer_log` SET ";
                 $sql = $sql."teamviewer_id='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
                 $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."'";
                 $objMySQL->Query($sql);
-                echo $sql."<br>";
+                //echo $sql."<br>";
                 $count ++;
             }
         }
