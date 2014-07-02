@@ -96,8 +96,8 @@
     if ($zeile_verarbeitet == true)
         echo "Die Datei wurde erfolgreich eingelesen.";
     else
-        echo "Die Datei konnte nicht gelesen werden.";
+        echo "<h1>Die Datei konnte nicht gelesen werden.</h1>";
         
-    echo "Scriptende<br><br> ";
+    echo "<br>Scriptende<br><br> ";
     echo "Aus der Datei: ".$filename." wurden ".$count." Einträge übernommenen.";
 ?>
