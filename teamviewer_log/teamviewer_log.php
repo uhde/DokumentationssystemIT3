@@ -22,8 +22,10 @@
     $filename = $_GET['file'];
     $log = file($filename);
     $log_tabelle = "teamviewer_log";
+    $zeile_verarbeitet = false;
     foreach( $log as $logzeile ) 
     {
+        $zeile_verarbeitet = true;
         // Hier wird eine Zeile des Logs aufgesplittet. Struktur: 0=tv-id 1=datum1 2=uhrzeit1
         $logteile =  preg_split("/[\s,]+/",$logzeile);
         /*foreach($logteile as $temp)
@@ -91,6 +93,11 @@
         
         
     }
+    if ($zeile_verarbeitet == true)
+        echo "Die Datei wurde erfolgreich eingelesen.";
+    else
+        echo "Die Datei konnte nicht gelesen werden.";
+        
     echo "Scriptende<br><br> ";
     echo "Aus der Datei: ".$filename." wurden ".$count." Einträge übernommenen.";
 ?>
