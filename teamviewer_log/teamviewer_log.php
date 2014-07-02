@@ -20,7 +20,7 @@
     //$logzeile = "216541686                       29-01-2013 13:40:11             29-01-2013 14:54:33             grueninger                      RemoteControl                   {EF6362C2-8AC6-461F-A566-418BEF30E1EE}";
     $count = 0;
     $filename = $_GET['file'];
-    $log = file("teamviewer_log/".$filename);
+    $log = file($filename);
     $log_tabelle = "teamviewer_log";
     foreach( $log as $logzeile ) 
     {
