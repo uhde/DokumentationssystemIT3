@@ -7,10 +7,10 @@
 
 //error_reporting(E_ALL);
 //ini_set('display_errors', TRUE);
-    require_once('include/config.inc.php');
-    include_once("include/mysql.class.php");
-    include_once("include/template.class.php");
-    include_once("include/functions.inc.php");
+    require_once('../include/config.inc.php');
+    include_once("../include/mysql.class.php");
+    include_once("../include/template.class.php");
+    include_once("../include/functions.inc.php");
 
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
@@ -21,6 +21,7 @@
     $count = 0;
     $filename = $_GET['file'];
     $log = file("teamviewer_log/".$filename);
+    $log_tabelle = "teamviewer_log";
     foreach( $log as $logzeile ) 
     {
         // Hier wird eine Zeile des Logs aufgesplittet. Struktur: 0=tv-id 1=datum1 2=uhrzeit1
@@ -44,7 +45,7 @@
         $teamviewer_id = $logteile[0];
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.".teamviewer_log WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
+        $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
         $test = $objMySQL->Query($sql);
         //echo $sql."<br>";
         
@@ -78,7 +79,7 @@
                 // Debug-Ausgabe
                 //echo "<br>".$sql." : <br>";
                 
-                $sql = "INSERT INTO `".DB_DATABASE."`.`teamviewer_log` SET ";
+                $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
                 $sql = $sql."teamviewer_id='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
                 $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."'";
                 $objMySQL->Query($sql);
