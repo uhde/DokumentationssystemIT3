@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 01. Jul 2014 um 15:32
+-- Erstellungszeit: 02. Jul 2014 um 15:06
 -- Server Version: 5.5.37
 -- PHP-Version: 5.4.4-14+deb7u10
 
@@ -17,25 +17,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `test`
+-- Datenbank: `dokuit3`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `teamviewer_log`
+-- Tabellenstruktur für Tabelle `fernwartungs_log`
 --
 
-CREATE TABLE IF NOT EXISTS `teamviewer_log` (
+CREATE TABLE IF NOT EXISTS `fernwartungs_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `teamviewer_id` int(11) NOT NULL,
+  `ziel` varchar(50) NOT NULL,
   `start_zeit` int(11) NOT NULL,
   `end_zeit` int(11) NOT NULL,
   `benutzer` varchar(20) NOT NULL,
   `kunde` int(11) NOT NULL,
   `dauer` int(11) NOT NULL,
+  `programm` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=705 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

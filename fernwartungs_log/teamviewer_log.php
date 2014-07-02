@@ -21,7 +21,7 @@
     $count = 0;
     $filename = $_GET['file'];
     $log = file($filename);
-    $log_tabelle = "teamviewer_log";
+    $log_tabelle = "fernwartungs_log";
     $zeile_verarbeitet = false;
     foreach( $log as $logzeile ) 
     {
@@ -47,7 +47,7 @@
         $teamviewer_id = $logteile[0];
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE teamviewer_id = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
+        $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
         $test = $objMySQL->Query($sql);
         //echo $sql."<br>";
         
@@ -82,8 +82,8 @@
                 //echo "<br>".$sql." : <br>";
                 
                 $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
-                $sql = $sql."teamviewer_id='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
-                $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."'";
+                $sql = $sql."ziel='".$teamviewer_id."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
+                $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
                 $objMySQL->Query($sql);
                 //echo $sql."<br>";
                 $count ++;
