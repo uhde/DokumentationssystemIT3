@@ -136,5 +136,5 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     $gesamt_zeilen = $gesamt_zeilen + $zeilennummer;
   }
 };
-echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen."Zeilen verarbeitet.";
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet.";
 ?>
