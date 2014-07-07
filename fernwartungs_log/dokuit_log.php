@@ -32,7 +32,8 @@ ini_set('display_errors', TRUE);
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
-            if($feldanzahl!=8 && $zeilennummer!=1) 
+            // Bricht ab, wenn eine Linie in der CSV Datei nicht vollständig ist, oder wenn es die erste zeile ist.
+            if($feldanzahl!=8 || $zeilennummer==1) 
             {
                 echo "<h1>folgende Informationen wurden nicht gespeichert</h1><br>";
                 echo "zeilennummer: ".$zeilennummer."<br>";
