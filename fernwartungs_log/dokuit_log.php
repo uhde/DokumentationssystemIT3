@@ -73,7 +73,7 @@
                 }
                 if (empty($kunde))
                 {
-                    $sql = "SELECT id FROM kunde WHERE `name` REGEXP '".$kundenname.".*' ";
+                    $sql = "SELECT id FROM kunden WHERE `name` REGEXP '".$kundenname.".*' ";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     $kunde = $tempdata['kunde'];
                 }
