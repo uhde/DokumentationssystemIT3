@@ -81,12 +81,12 @@
                 }
                 if (empty($kunde))
                     $kunde = -1;
-                echo "<br>Kunden SQL: ".$sql."<br>";
-                foreach( $zeile as $logzeile )
+                //echo "<br>Kunden SQL: ".$sql."<br>";
+                /*foreach( $zeile as $logzeile )
                 {
                     echo $logzeile.", ";
                 }
-                echo "<br>";
+                echo "<br>";*/
                 
                 if($programm == "Teamviewer.exe")
                 {  
