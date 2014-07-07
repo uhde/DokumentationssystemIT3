@@ -26,7 +26,7 @@ ini_set('display_errors', TRUE);
     $zeile_verarbeitet = false;
     
     
-    $zeilenummer = 1;
+    $zeilennummer = 1;
     // Zerlegt die CSV Datei
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
@@ -35,7 +35,7 @@ ini_set('display_errors', TRUE);
             if($feldanzahl!=8 && $zeilennummer!=1) 
             {
                 echo "<h1>folgende Informationen wurden nicht gespeichert</h1><br>";
-                echo "zeilennummer: ".$zeilenummer."<br>";
+                echo "zeilennummer: ".$zeilennummer."<br>";
                 for ($c=0; $c < $feldanzahl; $c++) {
                     echo $zeile[$c] . "<br />\n";
                 }
@@ -44,7 +44,6 @@ ini_set('display_errors', TRUE);
             {
                 //zählen beginnt bei 0
                 $datum          = explode('.',$zeile[0]);
-                echo "<br>Datum = ".$datum.", zeile zum Datum = ". $zeile[0]; 
                 $uhrzeit        = explode(':',$zeile[1]);
                 $benutzer       = $zeile[2];
                 $ziel           = $zeile[3];
@@ -54,7 +53,7 @@ ini_set('display_errors', TRUE);
                 $programm       = $zeile[7];
                 
                 //Timestamps werden generiert
-                $timestamp_anfang   = mktime(intval($uhrzeit1[0]),intval($uhrzeit1[1]),0,intval($datum1[1]),intval($datum1[0]),intval($datum1[2]));
+                $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
                 $timestamp_ende     = $timestamp_anfang + $dauer;
                 
                 
@@ -69,7 +68,7 @@ ini_set('display_errors', TRUE);
                 echo $sql."<br>";
                
             }
-             $zeilenummer++;
+             $zeilennummer++;
         }
         fclose($handle);
     }
