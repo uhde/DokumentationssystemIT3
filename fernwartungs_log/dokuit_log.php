@@ -44,6 +44,7 @@ ini_set('display_errors', TRUE);
             {
                 //zählen beginnt bei 0
                 $datum          = explode('.',$zeile[0]);
+                echo "<br>Datum = ".$datum.", zeile zum Datum = ". $zeile[0]; 
                 $uhrzeit        = explode(':',$zeile[1]);
                 $benutzer       = $zeile[2];
                 $ziel           = $zeile[3];
