@@ -38,9 +38,11 @@
             {
                 echo "<b>folgende Informationen wurden nicht gespeichert: </b><br>";
                 echo "zeilennummer: ".$zeilennummer."<br>";
+                echo "Daten: ";
                 for ($c=0; $c < $feldanzahl; $c++) {
                     echo $zeile[$c] . " ;  ";
                 }
+                echo "<br>";
             }
             else 
             {
