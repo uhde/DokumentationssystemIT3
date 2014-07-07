@@ -19,6 +19,7 @@
     }
   $ordner       = "teamviewer_log";
   $alledateien  = scandir($ordner); //Ordner "files" auslesen
+$gesamt_count = 0;
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="txt" )
@@ -108,6 +109,8 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
         
     echo "<br>Scriptende<br><br> ";
     echo "Aus der Datei: ".$filename." wurden ".$count." Einträge übernommenen.";
+    $gesamt_count = $gesamt_count + $count;
   }
 };
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." Zeilen verarbeitet.";
 ?>

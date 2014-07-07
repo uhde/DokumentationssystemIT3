@@ -21,6 +21,8 @@
     //"02.01.2014";"08:32";"grueninger";......
     $ordner = "dokuit_log";
     $alledateien = scandir($ordner); //Ordner "files" auslesen
+$gesamt_count = 0;
+$gesamt_zeilen = 0;
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
@@ -130,6 +132,9 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
         
     echo "<br>Scriptende<br> ";
     echo "Aus der Datei: ".$filename." wurden ".$count." von ".$zeilennummer." Eintraege uebernommenen.";
+    $gesamt_count = $gesamt_count + $count;
+    $gesamt_zeilen = $gesamt_zeilen + $zeilennummer;
   }
 };
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen."Zeilen verarbeitet.";
 ?>
