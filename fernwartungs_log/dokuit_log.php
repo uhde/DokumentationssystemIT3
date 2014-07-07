@@ -5,8 +5,8 @@
 // [scriptpfad]?file=[name des teamviewer logs]
 // Das Teamviewer log muss im dokuit verzeichnis /teamviewer liegen
 
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
     require_once('../include/config.inc.php');
     include_once("../include/mysql.class.php");
     include_once("../include/template.class.php");
@@ -71,7 +71,7 @@ ini_set('display_errors', TRUE);
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     $kunde = $tempdata['kunde'];
                 }
-                
+                echo "<br>Kunden SQL: ".$sql;
                 foreach( $zeile as $logzeile )
                 {
                     echo $logzeile.", ";
@@ -82,9 +82,12 @@ ini_set('display_errors', TRUE);
                 $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
                 if($programm == "Teamviewer.exe")
                 {  
-                    echo "<b>Teamviewer wird nicht übernommen:</b>";
+                    echo "<b>Teamviewer wird nicht uebernommen:</b>";
                 }
-                
+                else
+                {
+                    
+                }
                 echo $sql."<br>";
                
             }
