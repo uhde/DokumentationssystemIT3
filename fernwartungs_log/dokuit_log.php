@@ -64,7 +64,6 @@ ini_set('display_errors', TRUE);
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     
                     $kunde = $tempdata['kunde'];
-                    $programm = "Teamviewer - Web";
                     
                 }
                 else {
