@@ -17,8 +17,17 @@
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
+  $ordner       = "teamviewer_log";
+  $alledateien  = scandir($ordner); //Ordner "files" auslesen
+     
+foreach ($alledateien as $datei) { // Dateien werden durchlaufen
+  if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
+  {
+    $filename = $ordner."/".$datei;
+    
+    
     $count = 0;
-    $filename = $_GET['file'];
+    //$filename = $_GET['file'];
     $log = file($filename);
     $log_tabelle = "fernwartungs_log";
     $zeile_verarbeitet = false;
@@ -99,4 +108,6 @@
         
     echo "<br>Scriptende<br><br> ";
     echo "Aus der Datei: ".$filename." wurden ".$count." Einträge übernommenen.";
+  }
+};
 ?>
