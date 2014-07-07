@@ -21,7 +21,7 @@
   $alledateien  = scandir($ordner); //Ordner "files" auslesen
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
-  if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
+  if(($datei != '.' && $datei != '..') && substr($datei, -3)=="txt" )
   {
     $filename = $ordner."/".$datei;
     
