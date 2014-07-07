@@ -5,8 +5,8 @@
 // [scriptpfad]?file=[name des teamviewer logs]
 // Das Teamviewer log muss im dokuit verzeichnis /teamviewer liegen
 
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
     require_once('../include/config.inc.php');
     include_once("../include/mysql.class.php");
     include_once("../include/template.class.php");
