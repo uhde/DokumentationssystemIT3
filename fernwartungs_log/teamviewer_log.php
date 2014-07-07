@@ -3,7 +3,7 @@
 
 // Syntax mit der dieses Script aufgerufen werden soll:
 // [scriptpfad]?file=[name des teamviewer logs]
-// Das Teamviewer log muss im dokuit verzeichnis /teamviewer liegen
+// Das Teamviewer log muss im gleichen verzeichnis wie das script liegen
 
 //error_reporting(E_ALL);
 //ini_set('display_errors', TRUE);
@@ -17,7 +17,6 @@
        echo $objMySQL->Error();
        $objMySQL->Kill();
     }
-    //$logzeile = "216541686                       29-01-2013 13:40:11             29-01-2013 14:54:33             grueninger                      RemoteControl                   {EF6362C2-8AC6-461F-A566-418BEF30E1EE}";
     $count = 0;
     $filename = $_GET['file'];
     $log = file($filename);
