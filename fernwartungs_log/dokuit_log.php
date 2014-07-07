@@ -67,7 +67,7 @@
                     
                 }
                 else {
-                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE `adresse` REGEXP '".$ziel.".*'";
+                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE `adresse` REGEXP '".$ziel.".*' OR `name` REGEXP '".$ziel.".*'";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     $kunde = $tempdata['kunde'];
                 }
