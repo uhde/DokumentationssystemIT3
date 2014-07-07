@@ -31,47 +31,44 @@
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
-            $feldanzahl = count($data);
-            if($feldanzahl!=8) 
+            $feldanzahl = count($zeile);
+            if($feldanzahl!=8&& $zeilennummer!=1) 
             {
                 echo "<h1>folgende Informationen wurden nicht gespeichert</h1><br>";
                 echo "zeilennummer: ".$zeilenummer."<br>";
                 for ($c=0; $c < $feldanzahl; $c++) {
-                    echo $data[$c] . "<br />\n";
+                    echo $zeile[$c] . "<br />\n";
                 }
             }
-            //zählen beginnt bei 0
-            $datum          = explode('.',$zeile[0]);
-            $uhrzeit        = explode(':',$zeile[1]);
-            $benutzer       = $zeile[2];
-            $ziel           = $zeile[3];
-            //"partner" wird ausgelassen
-            $dauer          = $zeile[5];
-            $kundenname     = $zeile[6];
-            $programm       = $zeile[7];
-            
-            //Timestamps werden generiert
-            $timestamp_anfang   = mktime(intval($uhrzeit1[0]),intval($uhrzeit1[1]),0,intval($datum1[1]),intval($datum1[0]),intval($datum1[2]));
-            $timestamp_ende     = $timestamp_anfang + $dauer;
-            
-            $i = 0;
-            foreach( $zeile as $logzeile )
+            else 
             {
-                echo $logzeile.", ";
+                //zählen beginnt bei 0
+                $datum          = explode('.',$zeile[0]);
+                $uhrzeit        = explode(':',$zeile[1]);
+                $benutzer       = $zeile[2];
+                $ziel           = $zeile[3];
+                //"partner" wird ausgelassen
+                $dauer          = $zeile[5];
+                $kundenname     = $zeile[6];
+                $programm       = $zeile[7];
+                
+                //Timestamps werden generiert
+                $timestamp_anfang   = mktime(intval($uhrzeit1[0]),intval($uhrzeit1[1]),0,intval($datum1[1]),intval($datum1[0]),intval($datum1[2]));
+                $timestamp_ende     = $timestamp_anfang + $dauer;
+                
+                if (
+                foreach( $zeile as $logzeile )
+                {
+                    echo $logzeile.", ";
+                }
+                echo "<br>";
+                $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
+                $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
+                $sql = $sql."benutzer='".$benutzer."' , kunde='wird noch benötigt' , dauer='".$dauer."' , programm = '".$programm."'";
+                echo $sql."<br>";
+               
             }
-            echo "<br>";
-            $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
-            $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
-            $sql = $sql."benutzer='".$benutzer."' , kunde='wird noch benötigt' , dauer='".$dauer."' , programm = '".$programm."'";
-            echo $sql."<br>";
-            
-            
-            $zeilenummer++;
-            //echo "<p> $feldanzahl Felder in Zeile $row: <br /></p>\n";
-            //$row++;
-            //for ($c=0; $c < $feldanzahl; $c++) {
-            //    echo $data[$c] . "<br />\n";
-            //}
+             $zeilenummer++;
         }
         fclose($handle);
     }
