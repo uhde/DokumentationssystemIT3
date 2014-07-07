@@ -35,10 +35,10 @@ ini_set('display_errors', TRUE);
             // Bricht ab, wenn eine Linie in der CSV Datei nicht vollständig ist, oder wenn es die erste zeile ist.
             if($feldanzahl!=8 || $zeilennummer==1) 
             {
-                echo "<h1>folgende Informationen wurden nicht gespeichert</h1><br>";
+                echo "<h1>folgende Informationen wurden nicht gespeichert: </h1><br>";
                 echo "zeilennummer: ".$zeilennummer."<br>";
                 for ($c=0; $c < $feldanzahl; $c++) {
-                    echo $zeile[$c] . "<br />\n";
+                    echo $zeile[$c] . " ;  ";
                 }
             }
             else 
@@ -57,6 +57,21 @@ ini_set('display_errors', TRUE);
                 $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
                 $timestamp_ende     = $timestamp_anfang + $dauer;
                 
+                if(strlen($ziel)==9 && ctype_digit($ziel))
+                {
+                    // Falls eine Teamviewer Web verbindung vorlag, wird dieser Code Teil ausgeführt
+                    $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login='".$ziel."' AND gl.geraete_id=gr.id";
+                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                    
+                    $kunde = $tempdata['kunde'];
+                    $programm = "Teamviewer - Web";
+                    
+                }
+                else {
+                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE gr.adresse='".$ziel."' ";
+                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                    $kunde = $tempdata['kunde'];
+                }
                 
                 foreach( $zeile as $logzeile )
                 {
@@ -65,7 +80,12 @@ ini_set('display_errors', TRUE);
                 echo "<br>";
                 $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
                 $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
-                $sql = $sql."benutzer='".$benutzer."' , kunde='wird noch benötigt' , dauer='".$dauer."' , programm = '".$programm."'";
+                $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
+                if($programm == "Teamviewer.exe")
+                {  
+                    echo "<b>Teamviewer wird nicht übernommen:</b>";
+                }
+                
                 echo $sql."<br>";
                
             }
