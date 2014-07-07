@@ -87,7 +87,7 @@
                 }
                 echo "<br>";*/
                 
-                if($programm == "Teamviewer.exe")
+                if(strtolower($programm) == "teamviewer.exe")
                 {  
                     //echo "<b>Teamviewer wird nicht uebernommen:</b>";
                 }
