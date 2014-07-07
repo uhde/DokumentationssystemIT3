@@ -30,8 +30,7 @@
     // Zerlegt die CSV Datei
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
-            $zeile_verarbeitet = true;
-            
+            $zeile_verarbeitet  = true;
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
             // Bricht ab, wenn eine Linie in der CSV Zeile nicht vollständig ist, oder wenn es die erste zeile ist.
@@ -107,17 +106,17 @@
                 }
                
             }
-             $zeilennummer++;
+            $zeilennummer++;
         }
         fclose($handle);
     }
     
-
+    echo "<br><br>";
     if ($zeile_verarbeitet == true)
         echo "Die Datei wurde erfolgreich eingelesen.";
     else
         echo "<h1>Die Datei konnte nicht gelesen werden.</h1>";
         
-    echo "<br>Scriptende<br><br> ";
-    echo "Aus der Datei: ".$filename." wurden ".$count." Einträge übernommenen.";
+    echo "<br>Scriptende<br> ";
+    echo "Aus der Datei: ".$filename." wurden ".$count." von ".$zeilennummer." Eintraege uebernommenen.";
 ?>
