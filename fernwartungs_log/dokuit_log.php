@@ -5,8 +5,8 @@
 // [scriptpfad]?file=[name des teamviewer logs]
 // Das Teamviewer log muss im dokuit verzeichnis /teamviewer liegen
 
-//error_reporting(E_ALL);
-//ini_set('display_errors', TRUE);
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
     require_once('../include/config.inc.php');
     include_once("../include/mysql.class.php");
     include_once("../include/template.class.php");
@@ -32,7 +32,7 @@
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
-            if($feldanzahl!=8&& $zeilennummer!=1) 
+            if($feldanzahl!=8 && $zeilennummer!=1) 
             {
                 echo "<h1>folgende Informationen wurden nicht gespeichert</h1><br>";
                 echo "zeilennummer: ".$zeilenummer."<br>";
