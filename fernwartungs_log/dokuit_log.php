@@ -30,12 +30,14 @@
     // Zerlegt die CSV Datei
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
+            $zeile_verarbeitet = true;
+            
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
-            // Bricht ab, wenn eine Linie in der CSV Datei nicht vollständig ist, oder wenn es die erste zeile ist.
+            // Bricht ab, wenn eine Linie in der CSV Zeile nicht vollständig ist, oder wenn es die erste zeile ist.
             if($feldanzahl!=8 || $zeilennummer==1) 
             {
-                echo "<h1>folgende Informationen wurden nicht gespeichert: </h1><br>";
+                echo "<b>folgende Informationen wurden nicht gespeichert: </b><br>";
                 echo "zeilennummer: ".$zeilennummer."<br>";
                 for ($c=0; $c < $feldanzahl; $c++) {
                     echo $zeile[$c] . " ;  ";
@@ -85,18 +87,24 @@
                     echo $logzeile.", ";
                 }
                 echo "<br>";
-                $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
-                $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
-                $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
+                
                 if($programm == "Teamviewer.exe")
                 {  
-                    echo "<b>Teamviewer wird nicht uebernommen:</b>";
+                    //echo "<b>Teamviewer wird nicht uebernommen:</b>";
                 }
                 else
                 {
-                    
+                    $sql2 = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
+                    $test = $objMySQL->Query($sql2);
+                    // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
+                    if(intval(mysql_num_rows($test))<1) {
+                        $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
+                        $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
+                        $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
+                        $objMySQL->Query($sql);
+                        $count++;
+                    }
                 }
-                echo $sql."<br>";
                
             }
              $zeilennummer++;

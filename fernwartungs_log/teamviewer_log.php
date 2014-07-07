@@ -46,7 +46,7 @@
         $teamviewer_id = $logteile[0];
         
         $dauer = $timestamp_ende - $timestamp_anfang;
-        $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."'";
+        $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$teamviewer_id."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
         $test = $objMySQL->Query($sql);
         //echo $sql."<br>";
         
