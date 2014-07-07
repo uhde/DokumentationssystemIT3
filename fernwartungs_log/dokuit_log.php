@@ -19,9 +19,18 @@
     }
     //"Datum";"Zeit";"Benutzer";"Ziel";"Partner";"Dauer";"Kunde";"Programm"
     //"02.01.2014";"08:32";"grueninger";......
+    $ordner = "dokuit_log";
+    $alledateien = scandir($ordner); //Ordner "files" auslesen
+     
+foreach ($alledateien as $datei) { // Dateien werden durchlaufen
+  if(!($datei == '.' || $datei == '..') && substr($datei, -3)==".csv" )
+  {
+    $filename = $ordner."/".$datei;
+       
 
+    
     $count = 0;
-    $filename = $_GET['file'];
+    //$filename = $_GET['file'];
     $log_tabelle = "fernwartungs_log";
     $zeile_verarbeitet = false;
     
@@ -30,19 +39,19 @@
     // Zerlegt die CSV Datei
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
-            $zeile_uebernommen  = false;
+            $zeile_verarbeitet  = true;
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
             // Bricht ab, wenn eine Linie in der CSV Zeile nicht vollständig ist, oder wenn es die erste zeile ist.
             if($feldanzahl!=8 || $zeilennummer==1) 
             {
-                echo "<b>folgende Informationen wurden nicht gespeichert: </b><br>";
+                /*echo "<b>folgende Informationen wurden nicht gespeichert: </b><br>";
                 echo "zeilennummer: ".$zeilennummer."<br>";
                 echo "Daten: ";
                 for ($c=0; $c < $feldanzahl; $c++) {
                     echo $zeile[$c] . " ;  ";
                 }
-                echo "<br>";
+                echo "<br>";*/ 
             }
             else 
             {
@@ -121,4 +130,6 @@
         
     echo "<br>Scriptende<br> ";
     echo "Aus der Datei: ".$filename." wurden ".$count." von ".$zeilennummer." Eintraege uebernommenen.";
+  }
+};
 ?>
