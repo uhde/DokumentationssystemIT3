@@ -67,7 +67,7 @@
                     
                 }
                 else {
-                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE MATCH (`name`) AGAINST ('".$ziel."*') IN BOOLEAN MODE";
+                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE `adresse` REGEXP '".$ziel.".*'";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     $kunde = $tempdata['kunde'];
                 }
