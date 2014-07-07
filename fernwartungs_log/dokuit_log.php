@@ -67,11 +67,11 @@
                     
                 }
                 else {
-                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE gr.adresse='".$ziel."' ";
+                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE MATCH (`name`) AGAINST ('".$ziel."*') IN BOOLEAN MODE";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     $kunde = $tempdata['kunde'];
                 }
-                echo "<br>Kunden SQL: ".$sql;
+                echo "<br>Kunden SQL: ".$sql."<br>";
                 foreach( $zeile as $logzeile )
                 {
                     echo $logzeile.", ";
