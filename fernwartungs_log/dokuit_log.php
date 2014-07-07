@@ -76,9 +76,10 @@
                     $sql = "SELECT id FROM kunden WHERE `name` REGEXP '".$kundenname.".*' ";
                     $tempdata = $objMySQL->QuerySingleRowArray($sql);
                     $kunde = $tempdata['kunde'];
+                    echo "<br><b>tempdata</b>: ".$tempdata."      Kunde:".$kunde;
                 }
-                //if (empty($kunde))
-                    //$kunde = -1;
+                if (empty($kunde))
+                    $kunde = -1;
                 echo "<br>Kunden SQL: ".$sql."<br>";
                 foreach( $zeile as $logzeile )
                 {
