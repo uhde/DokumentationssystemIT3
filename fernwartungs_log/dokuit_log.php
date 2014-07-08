@@ -23,6 +23,7 @@
     $alledateien = scandir($ordner); //Ordner "files" auslesen
 $gesamt_count = 0;
 $gesamt_zeilen = 0;
+$teamviewer_eintraege = 0;
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
@@ -101,22 +102,23 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 echo "<br>";*/
                 
                 if(strtolower($programm) == "teamviewer.exe")
-                {  
+                    $teamviewer_eintraege++;
+                //{  
                     //echo "<b>Teamviewer wird nicht uebernommen:</b>";
-                }
-                else
-                {
-                    $sql2 = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
-                    $test = $objMySQL->Query($sql2);
-                    // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
-                    if(intval(mysql_num_rows($test))<1) {
-                        $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
-                        $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
-                        $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
-                        $objMySQL->Query($sql);
-                        $count++;
+                //}
+                //else
+                //{
+                $sql2 = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
+                $test = $objMySQL->Query($sql2);
+                // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
+                if(intval(mysql_num_rows($test))<1) {
+                    $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
+                    $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
+                    $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
+                    $objMySQL->Query($sql);
+                    $count++;
                     }
-                }
+                //}
                
             }
             $zeilennummer++;
@@ -136,5 +138,5 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     $gesamt_zeilen = $gesamt_zeilen + $zeilennummer;
   }
 };
-echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet.";
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Einträge.";
 ?>
