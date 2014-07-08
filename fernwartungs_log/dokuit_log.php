@@ -28,6 +28,7 @@ $gesamt_zeilen = 0;
 $teamviewer_eintraege = 0;
 $uebersprungen = 0;
 $starttime = time();
+$fehler = 0;
 
 echo "<br>Es koennte einige Minuten dauern, bis das Script durch ist<br>";
 echo "Fortschritt: ";
@@ -37,7 +38,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   {
     $filename = $ordner."/".$datei;
     $count = 0;
-    $fehler = 0;
+    
     //$filename = $_GET['file'];
     $log_tabelle = "fernwartungs_log";
     $zeile_verarbeitet = false;
@@ -82,7 +83,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 if(strtolower($programm) == "teamviewer.exe")
                     $teamviewer_eintraege++;
                     
-                $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
+                $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND benutzer='".$benutzer."'";
                 $test = $objMySQL->Query($sql);
                 // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
                 if(intval(mysql_num_rows($test))<1) {
