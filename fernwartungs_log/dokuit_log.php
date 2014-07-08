@@ -68,13 +68,9 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 $kundenname     = $zeile[6];
                 $programm       = $zeile[7];
                 
-                
-                //echo "<br>Kunden SQL: ".$sql."<br>";
-                /*foreach( $zeile as $logzeile )
-                {
-                    echo $logzeile.", ";
-                }
-                echo "<br>";*/
+                $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
+                $timestamp_ende     = $timestamp_anfang + $dauer;
+
                 
                 if(strtolower($programm) == "teamviewer.exe")
                     $teamviewer_eintraege++;
@@ -88,8 +84,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
                 if(intval(mysql_num_rows($test))<1) {
                     //Timestamps werden generiert
-                    $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
-                    $timestamp_ende     = $timestamp_anfang + $dauer;
+                    
                     
                     if(strlen($ziel)==9 && ctype_digit($ziel))
                     {
