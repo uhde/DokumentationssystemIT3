@@ -34,6 +34,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   {
     $filename = $ordner."/".$datei;
     $count = 0;
+    $fehler = 0;
     //$filename = $_GET['file'];
     $log_tabelle = "fernwartungs_log";
     $zeile_verarbeitet = false;
@@ -46,8 +47,9 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
             // Bricht ab, wenn eine Linie in der CSV Zeile nicht vollständig ist, oder wenn es die erste zeile ist.
-            if($feldanzahl!=8 || $zeilennummer==1) 
+            if($feldanzahl!=8 || $zeilennummer==1 || $zeile[0]="Datum") 
             {
+                $fehler++;
                 /*echo "<b>folgende Informationen wurden nicht gespeichert: </b><br>";
                 echo "zeilennummer: ".$zeilennummer."<br>";
                 echo "Daten: ";
@@ -137,6 +139,6 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
 };
 $endtime = time();
 echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Eintraege.<br> ".$uebersprungen." Eintraege waren schon vorhanden und wurden uebersprungen";
-echo "<br> Es gab ".($gesamt_zeilen-$gesamt_count-$uebersprungen)." Fehlerhafte Zeilen";
+echo "<br> Es gab ".$fehler."(".($gesamt_zeilen-$gesamt_count-$uebersprungen).") Fehlerhafte Zeilen";
 echo "<br><br> Die Abfrage dauerte ".($endtime-$starttime)." Sekunden.";
 ?>
