@@ -1,3 +1,5 @@
+In diesem Script wird das DokuIT_log in seine Einzelteile zerlegt und in eine Datenbank eingetragen.<br>
+<h2>Bitte Warten...</h2>
 <?php
 // In diesem Script wird das DokuIT_log in seine Einzelteile zerlegt und in eine Datenbank eingetragen.
 
