@@ -115,6 +115,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 }
                 else {
                     $uebersprungen++;
+                    echo "_";
                     /*echo "zeilennummer: ".$zeilennummer."<br>";
                     echo "Daten: ";
                     for ($c=0; $c < $feldanzahl; $c++) {
