@@ -115,12 +115,12 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 }
                 else {
                     $uebersprungen++;
-                    echo "zeilennummer: ".$zeilennummer."<br>";
+                    /*echo "zeilennummer: ".$zeilennummer."<br>";
                     echo "Daten: ";
                     for ($c=0; $c < $feldanzahl; $c++) {
                         echo $zeile[$c] . " ;  ";
                     }
-                    echo "<br>".$sql."<br>";
+                    echo "<br>".$sql."<br>";*/
                 }
                 //}
                
