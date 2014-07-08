@@ -20,6 +20,7 @@
   $ordner       = "teamviewer_log";
   $alledateien  = scandir($ordner); //Ordner "files" auslesen
 $gesamt_count = 0;
+$uebersprungen = 0;
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="txt" )
@@ -97,6 +98,8 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 //echo $sql."<br>";
                 $count ++;
             }
+        }else {
+            $uebersprungen++;
         }
        //echo "----------------<br>";
         
@@ -112,5 +115,5 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     $gesamt_count = $gesamt_count + $count;
   }
 };
-echo "<br><br>Es wurden insgesamt ".$gesamt_count." Zeilen verarbeitet.";
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." Zeilen verarbeitet. <br> ".$uebersprungen."Einträge waren schon vorhanden und wurden übersprungen";
 ?>

@@ -24,6 +24,7 @@
 $gesamt_count = 0;
 $gesamt_zeilen = 0;
 $teamviewer_eintraege = 0;
+$uebersprungen = 0;
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
@@ -117,7 +118,10 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                     $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
                     $objMySQL->Query($sql);
                     $count++;
-                    }
+                }
+                else {
+                    $uebersprungen++;
+                }
                 //}
                
             }
@@ -138,5 +142,5 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     $gesamt_zeilen = $gesamt_zeilen + $zeilennummer;
   }
 };
-echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Einträge.";
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Einträge.<br> ".$uebersprungen."Einträge waren schon vorhanden und wurden übersprungen";
 ?>
