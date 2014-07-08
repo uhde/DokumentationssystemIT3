@@ -31,7 +31,7 @@ $starttime = time();
 $fehler = 0;
 
 echo "<br>Es koennte einige Minuten dauern, bis das Script durch ist<br>";
-echo "Fortschritt: ";
+
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
@@ -48,8 +48,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     if (($handle = fopen($filename, "r")) !== FALSE) {
         while (($zeile = fgetcsv($handle, 300, ";",'"')) !== FALSE) {
             $zeile_verarbeitet  = true;
-            if($zeilennummer%100 == 0)
-                echo ".";
+            
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
             // Bricht ab, wenn eine Linie in der CSV Zeile nicht vollständig ist, oder wenn es die erste zeile ist.
@@ -116,7 +115,6 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 }
                 else {
                     $uebersprungen++;
-                    echo "_";
                     /*echo "zeilennummer: ".$zeilennummer."<br>";
                     echo "Daten: ";
                     for ($c=0; $c < $feldanzahl; $c++) {
