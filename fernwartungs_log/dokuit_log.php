@@ -75,8 +75,8 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 if(strtolower($programm) == "teamviewer.exe")
                     $teamviewer_eintraege++;
                     
-                $sql2 = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
-                $test = $objMySQL->Query($sql2);
+                $sql = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
+                $test = $objMySQL->Query($sql);
                 // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
                 if(intval(mysql_num_rows($test))<1) {
                     if(strlen($ziel)==9 && ctype_digit($ziel))
