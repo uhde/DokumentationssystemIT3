@@ -27,6 +27,7 @@ $gesamt_count = 0;
 $gesamt_zeilen = 0;
 $teamviewer_eintraege = 0;
 $uebersprungen = 0;
+$starttime = time();
      
 foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
@@ -144,6 +145,8 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     $gesamt_zeilen = $gesamt_zeilen + $zeilennummer;
   }
 };
+$endtime = time();
 echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Eintraege.<br> ".$uebersprungen."Eintraege waren schon vorhanden und wurden uebersprungen";
-echo "Es gab ".$gesamt_zeilen-$gesamt_count." Fehlerhafte Zeilen";
+echo "<br> Es gab ".($gesamt_zeilen-$gesamt_count-$uebersprungen)." Fehlerhafte Zeilen";
+echo "<br><br> Die Abfrage dauerte ".$endtime-$starttime." Sekunden.";
 ?>
