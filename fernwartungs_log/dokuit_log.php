@@ -33,15 +33,11 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
   if(($datei != '.' && $datei != '..') && substr($datei, -3)=="csv" )
   {
     $filename = $ordner."/".$datei;
-       
-
-    
     $count = 0;
     //$filename = $_GET['file'];
     $log_tabelle = "fernwartungs_log";
     $zeile_verarbeitet = false;
-    
-    
+
     $zeilennummer = 1;
     // Zerlegt die CSV Datei
     if (($handle = fopen($filename, "r")) !== FALSE) {
@@ -72,32 +68,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 $kundenname     = $zeile[6];
                 $programm       = $zeile[7];
                 
-                //Timestamps werden generiert
-                $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
-                $timestamp_ende     = $timestamp_anfang + $dauer;
                 
-                if(strlen($ziel)==9 && ctype_digit($ziel))
-                {
-                    // Falls eine Teamviewer Web verbindung vorlag, wird dieser Code Teil ausgeführt
-                    $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login='".$ziel."' AND gl.geraete_id=gr.id";
-                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
-                    
-                    $kunde = $tempdata['kunde'];
-                    
-                }
-                else {
-                    $sql = "SELECT gr.kunde FROM geraete AS gr WHERE `adresse` REGEXP '".$ziel.".*' OR `name` REGEXP '".$ziel.".*'";
-                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
-                    $kunde = $tempdata['kunde'];
-                }
-                if (empty($kunde))
-                {
-                    $sql = "SELECT id FROM kunden WHERE `name` REGEXP '".$kundenname.".*' ";
-                    $tempdata = $objMySQL->QuerySingleRowArray($sql);
-                    $kunde = $tempdata['id'];
-                }
-                if (empty($kunde))
-                    $kunde = -1;
                 //echo "<br>Kunden SQL: ".$sql."<br>";
                 /*foreach( $zeile as $logzeile )
                 {
@@ -116,6 +87,33 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 $test = $objMySQL->Query($sql2);
                 // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
                 if(intval(mysql_num_rows($test))<1) {
+                    //Timestamps werden generiert
+                    $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
+                    $timestamp_ende     = $timestamp_anfang + $dauer;
+                    
+                    if(strlen($ziel)==9 && ctype_digit($ziel))
+                    {
+                        // Falls eine Teamviewer Web verbindung vorlag, wird dieser Code Teil ausgeführt
+                        $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login='".$ziel."' AND gl.geraete_id=gr.id";
+                        $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                        
+                        $kunde = $tempdata['kunde'];
+                        
+                    }
+                    else {
+                        $sql = "SELECT gr.kunde FROM geraete AS gr WHERE `adresse` REGEXP '".$ziel.".*' OR `name` REGEXP '".$ziel.".*'";
+                        $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                        $kunde = $tempdata['kunde'];
+                    }
+                    if (empty($kunde))
+                    {
+                        $sql = "SELECT id FROM kunden WHERE `name` REGEXP '".$kundenname.".*' ";
+                        $tempdata = $objMySQL->QuerySingleRowArray($sql);
+                        $kunde = $tempdata['id'];
+                    }
+                    if (empty($kunde))
+                        $kunde = -1;
+                
                     $sql = "INSERT INTO `".DB_DATABASE."`.`".$log_tabelle."` SET ";
                     $sql = $sql."ziel='".$ziel."' , start_zeit='".$timestamp_anfang."' , end_zeit='".$timestamp_ende."' , ";
                     $sql = $sql."benutzer='".$benutzer."' , kunde='".$kunde."' , dauer='".$dauer."' , programm = '".$programm."'";
