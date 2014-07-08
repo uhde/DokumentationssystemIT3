@@ -68,32 +68,23 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 $kundenname     = $zeile[6];
                 $programm       = $zeile[7];
                 
+                //Timestamps werden generiert
                 $timestamp_anfang   = mktime(intval($uhrzeit[0]),intval($uhrzeit[1]),0,intval($datum[1]),intval($datum[0]),intval($datum[2]));
                 $timestamp_ende     = $timestamp_anfang + $dauer;
-
                 
                 if(strtolower($programm) == "teamviewer.exe")
                     $teamviewer_eintraege++;
-                //{  
-                    //echo "<b>Teamviewer wird nicht uebernommen:</b>";
-                //}
-                //else
-                //{
+                    
                 $sql2 = 'SELECT * FROM '.DB_DATABASE.".".$log_tabelle." WHERE ziel = '".$ziel."' AND start_zeit='".$timestamp_anfang."' AND end_zeit='".$timestamp_ende."' AND benutzer='".$benutzer."'";
                 $test = $objMySQL->Query($sql2);
                 // Wenn die Zeile nicht schon vorhanden ist, wird sie eingefügt
                 if(intval(mysql_num_rows($test))<1) {
-                    //Timestamps werden generiert
-                    
-                    
                     if(strlen($ziel)==9 && ctype_digit($ziel))
                     {
                         // Falls eine Teamviewer Web verbindung vorlag, wird dieser Code Teil ausgeführt
                         $sql = "SELECT gr.kunde FROM geraete AS gr, geraete_login AS gl WHERE gl.login='".$ziel."' AND gl.geraete_id=gr.id";
                         $tempdata = $objMySQL->QuerySingleRowArray($sql);
-                        
                         $kunde = $tempdata['kunde'];
-                        
                     }
                     else {
                         $sql = "SELECT gr.kunde FROM geraete AS gr WHERE `adresse` REGEXP '".$ziel.".*' OR `name` REGEXP '".$ziel.".*'";
@@ -117,6 +108,12 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
                 }
                 else {
                     $uebersprungen++;
+                    echo "zeilennummer: ".$zeilennummer."<br>";
+                    echo "Daten: ";
+                    for ($c=0; $c < $feldanzahl; $c++) {
+                        echo $zeile[$c] . " ;  ";
+                    }
+                    echo "<br>".$sql."<br>";
                 }
                 //}
                
