@@ -47,7 +47,7 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
             //Überprüft ob die Zeile vollständig ist, damit sie korrekt importiert werden kann
             $feldanzahl = count($zeile);
             // Bricht ab, wenn eine Linie in der CSV Zeile nicht vollständig ist, oder wenn es die erste zeile ist.
-            if($feldanzahl!=8 || $zeilennummer==1 || $zeile[0]="Datum") 
+            if($feldanzahl!=8 || $zeilennummer==1 || $zeile[0]=="Datum") 
             {
                 $fehler++;
                 /*echo "<b>folgende Informationen wurden nicht gespeichert: </b><br>";
