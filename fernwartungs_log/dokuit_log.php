@@ -144,5 +144,6 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
     $gesamt_zeilen = $gesamt_zeilen + $zeilennummer;
   }
 };
-echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Einträge.<br> ".$uebersprungen."Einträge waren schon vorhanden und wurden übersprungen";
+echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Einträge.<br> ".$uebersprungen."Einträge waren schon vorhanden und wurden uebersprungen";
+echo "Es gab ".$gesamt_zeilen-$gesamt_count." Fehlerhafte Zeilen";
 ?>
