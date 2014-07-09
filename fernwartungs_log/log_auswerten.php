@@ -1,6 +1,7 @@
 <?php
 // Dieses Script hat den Zweck die Logdaten auszugeben
-
+echo "test";
+/*
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
     require_once('../include/config.inc.php');
@@ -16,7 +17,7 @@ ini_set('display_errors', TRUE);
     $kunde = $_GET["kunde"];
   //  $starttime = $_GET["starttime"];
     //$endtime = $_GET["endtime"];
-    /*
+    
     $sql = "SELECT * FROM fernwartungs_log WHERE ";
     $sql = $sql."kunde='".$kunde."'";
    // $sql = $sql." AND start_zeit<'".$endtime."' AND ";
