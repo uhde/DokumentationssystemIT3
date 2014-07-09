@@ -14,7 +14,7 @@ ini_set('display_errors', TRUE);
        echo $objMySQL->Error();
        $objMySQL->Kill();
    }
-   echo "test";/*
+
    $kunde = $_GET["kunde"];
   //  $starttime = $_GET["starttime"];
     //$endtime = $_GET["endtime"];
@@ -25,6 +25,7 @@ ini_set('display_errors', TRUE);
   //  $sql = $sql."start_zeit>'".$starttime."'";
     $sql = $sql.";";
     echo "sql: ".$sql."<br>";
+       echo "test";/*
     $arr_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);
         echo '<pre>';
         print_r($arr_data);
