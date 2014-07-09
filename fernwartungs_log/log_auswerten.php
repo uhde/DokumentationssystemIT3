@@ -18,10 +18,11 @@
     $kunde = $_GET["kunde"];
     $starttime = $_GET["starttime"];
     $endtime = $_GET["endtime"];
-    if(isset($_GET["format"])&&!empty($_GET["format"]))
+    if(isset($_GET["format"])&&!empty($_GET["format"])) {
         $format = $_GET['format'];
-    else
+    } else {
         $format = "csv";
+    }
     
     $sql = "SELECT * FROM fernwartungs_log WHERE ";
     $sql = $sql."kunde='".$kunde."'";
