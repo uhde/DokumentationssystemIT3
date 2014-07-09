@@ -15,14 +15,16 @@ ini_set('display_errors', TRUE);
        $objMySQL->Kill();
    }
 
-   $kunde = $_GET["kunde"];
-  //  $starttime = $_GET["starttime"];
-    //$endtime = $_GET["endtime"];
+    $kunde = $_GET["kunde"];
+    $starttime = $_GET["starttime"];
+    $endtime = $_GET["endtime"];
     
     $sql = "SELECT * FROM fernwartungs_log WHERE ";
     $sql = $sql."kunde='".$kunde."'";
-   // $sql = $sql." AND start_zeit<'".$endtime."' AND ";
-  //  $sql = $sql."start_zeit>'".$starttime."'";
+    if(!empty($endtime))
+        $sql = $sql." AND start_zeit<'".$endtime."' AND ";
+    if(!empty($starttime))
+        $sql = $sql."start_zeit>'".$starttime."'";
     $sql = $sql.";";
     //echo "sql: ".$sql."<br>";
 
@@ -33,8 +35,8 @@ ini_set('display_errors', TRUE);
   
     foreach($arr_data as $zeile)
     {
-        $zeile["start_zeit"]=date("d-m-Y H:i:s",$zeile["start_zeit"]);
-        $zeile["end_zeit"]=date("d-m-Y H:i:s",$zeile["end_zeit"]);
+        $zeile["start_zeit"]=date("d.m.Y H:i:s",$zeile["start_zeit"]);
+        $zeile["end_zeit"]=date("d.m.Y H:i:s",$zeile["end_zeit"]);
         unset($zeile['kunde']);
         foreach($zeile as $eintrag)
         {
