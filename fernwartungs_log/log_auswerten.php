@@ -52,7 +52,7 @@
             echo "<br>";
         }
     }else {
-        echo "<table>";
+        echo '<table border="1" width="100%">';
         foreach($arr_data as $zeile)
         {   
             echo "<tr>";
