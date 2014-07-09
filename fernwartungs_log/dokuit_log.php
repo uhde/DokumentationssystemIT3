@@ -144,6 +144,6 @@ foreach ($alledateien as $datei) { // Dateien werden durchlaufen
 };
 $endtime = time();
 echo "<br><br>Es wurden insgesamt ".$gesamt_count." von ".$gesamt_zeilen." Zeilen verarbeitet. Davon waren ".$teamviewer_eintraege." Teamviewer Eintraege.<br> ".$uebersprungen." Eintraege waren schon vorhanden und wurden uebersprungen";
-echo "<br> Es gab ".$fehler."(".($gesamt_zeilen-$gesamt_count-$uebersprungen).") Fehlerhafte Zeilen";
+echo "<br> Es gab ".$fehler." Fehlerhafte Zeilen";
 echo "<br><br> Die Abfrage dauerte ".($endtime-$starttime)." Sekunden.";
 ?>
