@@ -24,15 +24,18 @@ ini_set('display_errors', TRUE);
    // $sql = $sql." AND start_zeit<'".$endtime."' AND ";
   //  $sql = $sql."start_zeit>'".$starttime."'";
     $sql = $sql.";";
-    echo "sql: ".$sql."<br>";
+    //echo "sql: ".$sql."<br>";
 
     $arr_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);
-        echo '<pre>';
-        print_r($arr_data);
-        echo  '</pre>'; 
+        //echo '<pre>';
+        //print_r($arr_data);
+        //echo  '</pre>'; 
   
     foreach($arr_data as $zeile)
     {
+        $zeile["start_zeit"]=date("d-m-Y H:i:s",$zeile["start_zeit"]);
+        $zeile["end_zeit"]=date("d-m-Y H:i:s",$zeile["end_zeit"]);
+        unset($zeile['kunde']);
         foreach($zeile as $eintrag)
         {
             echo '"'.$eintrag.'";';
