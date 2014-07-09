@@ -18,7 +18,7 @@
     $kunde = $_GET["kunde"];
     $starttime = $_GET["starttime"];
     $endtime = $_GET["endtime"];
-    if(isset($_GET["format"]&&!empty($_GET["format"])
+    if(isset($_GET["format"])&&!empty($_GET["format"]))
         $format = $_GET['format'];
     else
         $format = "csv";
@@ -50,9 +50,8 @@
             }
             echo "<br>";
         }
-    }
-    else {
-    echo "<table>"
+    }else {
+        echo "<table>"
         foreach($arr_data as $zeile)
         {   
             echo "<tr>";
