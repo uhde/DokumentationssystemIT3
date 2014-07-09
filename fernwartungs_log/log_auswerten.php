@@ -52,7 +52,7 @@
             echo "<br>";
         }
     }else {
-        echo "<table>"
+        echo "<table>";
         foreach($arr_data as $zeile)
         {   
             echo "<tr>";
@@ -61,10 +61,11 @@
             unset($zeile['kunde']);
             foreach($zeile as $eintrag)
             {
-                echo '<td>'.$eintrag.'<td>';
+                echo '<td>'.$eintrag.'</td>';
             }
             echo "</tr>";
         }
+        echo "</table";
     }
     
 ?>
