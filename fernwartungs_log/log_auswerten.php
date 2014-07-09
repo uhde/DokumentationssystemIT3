@@ -1,14 +1,15 @@
 <?php
 // Dieses Script hat den Zweck die Logdaten auszugeben
-echo "test";
-/*
+
+
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
     require_once('../include/config.inc.php');
     include_once("../include/mysql.class.php");
     include_once("../include/template.class.php");
     include_once("../include/functions.inc.php");
-
+    echo "test";
+/* 
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
