@@ -38,6 +38,6 @@ ini_set('display_errors', TRUE);
             echo '"'.$eintrag.'";';
         }
         echo "<br>";
-    }*/
+    }
     
 ?>
