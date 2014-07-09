@@ -58,7 +58,7 @@
             echo "<tr>";
             $zeile["start_zeit"]=date("d.m.Y H:i:s",$zeile["start_zeit"]);
             $zeile["end_zeit"]=date("d.m.Y H:i:s",$zeile["end_zeit"]);
-            $zeile["dauer"]=date("H:i:s",$zeile["dauer"]);
+            $zeile["dauer"]=intval($zeile["dauer"]/60).":".$zeile['dauer']%60;
             unset($zeile['kunde']);
             foreach($zeile as $eintrag)
             {
