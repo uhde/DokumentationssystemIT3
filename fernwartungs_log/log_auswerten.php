@@ -30,12 +30,12 @@ ini_set('display_errors', TRUE);
         echo '<pre>';
         print_r($arr_data);
         echo  '</pre>'; 
-   echo "test";/*
+  
     foreach($arr_data as $zeile)
     {
         foreach($zeile as $eintrag)
         {
-            echo '"'$eintrag.'";';
+            echo '"'.$eintrag.'";';
         }
         echo "<br>";
     }*/
