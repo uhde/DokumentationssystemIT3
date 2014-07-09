@@ -2,8 +2,8 @@
 // Dieses Script hat den Zweck die Logdaten auszugeben
 
 
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+//error_reporting(E_ALL);
+//ini_set('display_errors', TRUE);
     require_once('../include/config.inc.php');
     include_once("../include/mysql.class.php");
     include_once("../include/template.class.php");
@@ -22,9 +22,9 @@ ini_set('display_errors', TRUE);
     $sql = "SELECT * FROM fernwartungs_log WHERE ";
     $sql = $sql."kunde='".$kunde."'";
     if(!empty($endtime))
-        $sql = $sql." AND start_zeit<'".$endtime."' AND ";
+        $sql = $sql." AND start_zeit<'".$endtime."' ";
     if(!empty($starttime))
-        $sql = $sql."start_zeit>'".$starttime."'";
+        $sql = " AND ".$sql."start_zeit>'".$starttime."'";
     $sql = $sql.";";
     //echo "sql: ".$sql."<br>";
 
