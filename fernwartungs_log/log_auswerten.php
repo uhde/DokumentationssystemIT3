@@ -22,7 +22,11 @@ ini_set('display_errors', TRUE);
    // $sql = $sql." AND start_zeit<'".$endtime."' AND ";
   //  $sql = $sql."start_zeit>'".$starttime."'";
     $sql = $sql.";";
-    $arr_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);  
+    echo "sql: ".$sql."<br>";
+    $arr_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);
+        echo '<pre>';
+        print_r($arr_data);
+        echo  '</pre>'; 
     foreach($arr_data as $zeile)
     {
         foreach($zeile as $eintrag)
