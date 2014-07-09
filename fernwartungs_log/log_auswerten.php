@@ -14,8 +14,8 @@ ini_set('display_errors', TRUE);
        echo $objMySQL->Error();
        $objMySQL->Kill();
    }
-
-    $kunde = $_GET["kunde"];
+   echo "test";/*
+   $kunde = $_GET["kunde"];
   //  $starttime = $_GET["starttime"];
     //$endtime = $_GET["endtime"];
     
