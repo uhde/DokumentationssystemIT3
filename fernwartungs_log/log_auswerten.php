@@ -12,11 +12,11 @@ ini_set('display_errors', TRUE);
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
        $objMySQL->Kill();
-    
+    echo "test";
     $kunde = $_GET["kunde"];
   //  $starttime = $_GET["starttime"];
     //$endtime = $_GET["endtime"];
-    
+    /*
     $sql = "SELECT * FROM fernwartungs_log WHERE ";
     $sql = $sql."kunde='".$kunde."'";
    // $sql = $sql." AND start_zeit<'".$endtime."' AND ";
@@ -34,6 +34,6 @@ ini_set('display_errors', TRUE);
             echo '"'$eintrag.'";';
         }
         echo "<br>";
-    }
+    }*/
     
 ?>
