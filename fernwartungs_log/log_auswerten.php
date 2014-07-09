@@ -58,6 +58,7 @@
             echo "<tr>";
             $zeile["start_zeit"]=date("d.m.Y H:i:s",$zeile["start_zeit"]);
             $zeile["end_zeit"]=date("d.m.Y H:i:s",$zeile["end_zeit"]);
+            $zeile["dauer"]=date("i:s",$zeile["dauer"]);
             unset($zeile['kunde']);
             foreach($zeile as $eintrag)
             {
