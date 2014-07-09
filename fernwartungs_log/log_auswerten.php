@@ -18,6 +18,10 @@
     $kunde = $_GET["kunde"];
     $starttime = $_GET["starttime"];
     $endtime = $_GET["endtime"];
+    if(isset($_GET["format"]&&!empty($_GET["format"])
+        $format = $_GET['format'];
+    else
+        $format = "csv";
     
     $sql = "SELECT * FROM fernwartungs_log WHERE ";
     $sql = $sql."kunde='".$kunde."'";
@@ -32,17 +36,35 @@
         //echo '<pre>';
         //print_r($arr_data);
         //echo  '</pre>'; 
-  
-    foreach($arr_data as $zeile)
+    
+    if($format == "csv")
     {
-        $zeile["start_zeit"]=date("d.m.Y H:i:s",$zeile["start_zeit"]);
-        $zeile["end_zeit"]=date("d.m.Y H:i:s",$zeile["end_zeit"]);
-        unset($zeile['kunde']);
-        foreach($zeile as $eintrag)
+        foreach($arr_data as $zeile)
         {
-            echo '"'.$eintrag.'";';
+            $zeile["start_zeit"]=date("d.m.Y H:i:s",$zeile["start_zeit"]);
+            $zeile["end_zeit"]=date("d.m.Y H:i:s",$zeile["end_zeit"]);
+            unset($zeile['kunde']);
+            foreach($zeile as $eintrag)
+            {
+                echo '"'.$eintrag.'";';
+            }
+            echo "<br>";
         }
-        echo "<br>";
+    }
+    else {
+    echo "<table>"
+        foreach($arr_data as $zeile)
+        {   
+            echo "<tr>";
+            $zeile["start_zeit"]=date("d.m.Y H:i:s",$zeile["start_zeit"]);
+            $zeile["end_zeit"]=date("d.m.Y H:i:s",$zeile["end_zeit"]);
+            unset($zeile['kunde']);
+            foreach($zeile as $eintrag)
+            {
+                echo '<td>'.$eintrag.'<td>';
+            }
+            echo "</tr>";
+        }
     }
     
 ?>
