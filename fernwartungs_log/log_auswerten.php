@@ -9,12 +9,12 @@ ini_set('display_errors', TRUE);
     include_once("../include/template.class.php");
     include_once("../include/functions.inc.php");
     echo "test";
-/* 
+
     $objMySQL = new MySQL();
     if (!$objMySQL->Open(DB_DATABASE, DB_SERVER, DB_USER, DB_PASSWORD)) {
        echo $objMySQL->Error();
        $objMySQL->Kill();
-    echo "test";
+    echo "test";/*
     $kunde = $_GET["kunde"];
   //  $starttime = $_GET["starttime"];
     //$endtime = $_GET["endtime"];
