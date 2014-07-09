@@ -25,11 +25,12 @@ ini_set('display_errors', TRUE);
   //  $sql = $sql."start_zeit>'".$starttime."'";
     $sql = $sql.";";
     echo "sql: ".$sql."<br>";
-       echo "test";/*
+
     $arr_data =  $objMySQL->QueryArray($sql,MYSQL_ASSOC);
         echo '<pre>';
         print_r($arr_data);
         echo  '</pre>'; 
+   echo "test";/*
     foreach($arr_data as $zeile)
     {
         foreach($zeile as $eintrag)
